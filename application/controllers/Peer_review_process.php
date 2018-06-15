@@ -17,7 +17,8 @@ class Peer_review_process extends CI_Controller {
 		}
 	public function index()
 	{	
-		$this->load->view('html/header');
+		$data['c_url']=base_url('peer-review-process');
+		$this->load->view('html/header',$data);
 		$this->load->view('html/peer-review-process');
 		$this->load->view('html/footer');
 		

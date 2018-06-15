@@ -150,7 +150,7 @@ touch with us. Also you may post your valuable feedback after reading our journa
 and after visiting our conferences.</p>
                        </div>  
                        <div class="col-md-2 col-xs-12 text-center padding_0">
-                           <a href="contactus.html" class="btn btn-red btn-lg btn-block ">CONTACT US</a>
+                           <a href="<?php echo base_url('contactus'); ?>" class="btn btn-red btn-lg btn-block ">CONTACT US</a>
                        </div>
                        <!--  <div class="col-md-3 col-sm-6 margin20">
                             <a href="#" class="btn btn-red btn-lg btn-block"><i class="fa fa-search"></i>Search</a>

@@ -106,25 +106,25 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="<?php echo base_url(); ?>" class="current">Home</a></li> 
-                        <li><a href="<?php echo base_url('open-access'); ?>" class="">Open Access</a></li> 
-                        <li><a href="<?php echo base_url('peer-review-process'); ?>" >Peer Review Process </a></li> 
-                        <li><a href="<?php echo base_url('journals'); ?>">Journals</a></li>  
-						<li class="dropdown">
-						  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Guidelines <b class="caret"></b></a>
+                        <li><a href="<?php echo base_url(); ?>" class="<?php if($c_url==base_url()){ echo "current"; } ?>">Home</a></li> 
+                        <li><a href="<?php echo base_url('open-access'); ?>" class="<?php if($c_url==base_url('open-access')){ echo "current"; } ?>">Open Access</a></li> 
+                        <li><a href="<?php echo base_url('peer-review-process'); ?>" class="<?php if($c_url==base_url('peer-review-process')){ echo "current"; } ?>">Peer Review Process </a></li> 
+                        <li><a href="<?php echo base_url('journals'); ?>" class="<?php if($c_url==base_url('journals')){ echo "current"; } ?>">Journals</a></li>  
+						<li class="dropdown <?php if($c_url==base_url('editors') || $c_url==base_url('author-guidelines') || $c_url==base_url('manuscript-guidelines') || $c_url==base_url('membership')){ echo "current"; } ?>">
+						  <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Guidelines <b class="caret"></b></a>
 						  <ul class="dropdown-menu">
-							<li><a href="editors.php">Editors</a></li>
-							<li><a href="author-guidelines.php">Authors</a></li>
-							<li><a href="manuscript-guidelines.php">Manuscript Guidelines</a></li>
-							<li><a href="membership.php">Member ship</a></li>
+							<li><a href="<?php echo base_url('editors'); ?>">Editors</a></li>
+							<li><a href="<?php echo base_url('author-guidelines'); ?>">Authors</a></li>
+							<li><a href="<?php echo base_url('manuscript-guidelines'); ?>">Manuscript Guidelines</a></li>
+							<li><a href="<?php echo base_url('membership'); ?>">Member ship</a></li>
 							
 						  </ul>
 						</li>
                        
-                        <li ><a href="<?php echo base_url('conference'); ?>">Conferences</a></li>
-						<li ><a href="<?php echo base_url('video-article'); ?>">Video Articles</a></li>
-						<li ><a href="<?php echo base_url('menuscript'); ?>">Submit Manuscript</a></li>
-						<li ><a href="<?php echo base_url('contactus'); ?>"> Contact Us</a></li>
+                        <li ><a href="<?php echo base_url('conference'); ?>" class="<?php if($c_url==base_url('conference')){ echo "current"; } ?>">Conferences</a></li>
+						<li ><a href="<?php echo base_url('video-article'); ?>" class="<?php if($c_url==base_url('video-article')){ echo "current"; } ?>">Video Articles</a></li>
+						<li ><a href="<?php echo base_url('menuscript'); ?>" class="<?php if($c_url==base_url('menuscript')){ echo "current"; } ?>">Submit Manuscript</a></li>
+						<li ><a href="<?php echo base_url('contactus'); ?>" class="<?php if($c_url==base_url('contactus')){ echo "current"; } ?>"> Contact Us</a></li>
 
 
                     </ul>

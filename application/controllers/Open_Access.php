@@ -17,7 +17,8 @@ class Open_Access extends CI_Controller {
 		}
 	public function index()
 	{	
-		$this->load->view('html/header');
+		$data['c_url']=base_url('open-access');
+		$this->load->view('html/header',$data);
 		$this->load->view('html/open-access');
 		$this->load->view('html/footer');
 		

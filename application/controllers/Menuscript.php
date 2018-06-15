@@ -19,7 +19,8 @@ class Menuscript extends CI_Controller {
 		}
 	public function index()
 	{	
-		$this->load->view('html/header');
+		$data['c_url']=base_url('menuscript');
+		$this->load->view('html/header',$data);
 		$data['journals_list']=$this->Home_model->get_journals_list();
 		$this->load->view('html/menuscript',$data);
 		$this->load->view('html/footer');

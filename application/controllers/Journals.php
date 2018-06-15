@@ -17,14 +17,16 @@ class Journals extends CI_Controller {
 		}
 	public function index()
 	{	
-		$this->load->view('html/header');
+		$data['c_url']=base_url('journals');
+		$this->load->view('html/header',$data);
 		$this->load->view('html/journals');
 		$this->load->view('html/footer');
 		
 	}
 	public function details()
 	{	
-		$this->load->view('html/header');
+		$data['c_url']=base_url('journals');
+		$this->load->view('html/header',$data);
 		$this->load->view('html/journal-details');
 		$this->load->view('html/footer');
 		

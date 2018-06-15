@@ -17,7 +17,8 @@ class Conference extends CI_Controller {
 		}
 	public function index()
 	{	
-		$this->load->view('html/header');
+		$data['c_url']=base_url('conference');
+		$this->load->view('html/header',$data);
 		$this->load->view('html/conference');
 		$this->load->view('html/footer');
 		

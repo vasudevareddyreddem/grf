@@ -17,7 +17,8 @@ class Video_article extends CI_Controller {
 		}
 	public function index()
 	{	
-		$this->load->view('html/header');
+		$data['c_url']=base_url('video-article');
+		$this->load->view('html/header',$data);
 		$this->load->view('html/video-article');
 		$this->load->view('html/footer');
 		

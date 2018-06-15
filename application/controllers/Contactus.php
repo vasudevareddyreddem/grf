@@ -19,7 +19,8 @@ class Contactus extends CI_Controller {
 		}
 	public function index()
 	{	
-		$this->load->view('html/header');
+		$data['c_url']=base_url('contactus');
+		$this->load->view('html/header',$data);
 		$this->load->view('html/contactus');
 		$this->load->view('html/footer');
 		

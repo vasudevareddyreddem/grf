@@ -17,7 +17,8 @@ class Home extends CI_Controller {
 		}
 	public function index()
 	{	
-		$this->load->view('html/header');
+		$data['c_url']=base_url('');
+		$this->load->view('html/header',$data);
 		$this->load->view('html/index');
 		$this->load->view('html/footer');
 		

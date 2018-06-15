@@ -1,5 +1,3 @@
-<?php include("header.php"); ?>
-<?php include("sidebar.php"); ?>
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -66,4 +64,3 @@
   </div>
  
 
-<?php include("footer.php"); ?>

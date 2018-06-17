@@ -10,7 +10,7 @@ class Home_model extends CI_Model
 	}
 	
 	public function get_journals_list(){
-		$this->db->select('*')->from('admin_journel');
+		$this->db->select('*')->from('grf_journal_category');
 		return $this->db->get()->result_array();	
 	}
 	

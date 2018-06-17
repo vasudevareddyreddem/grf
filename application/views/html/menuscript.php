@@ -113,7 +113,7 @@
 									 <select class="form-control" id="journel" name="journel">
 									<option value="">select</option>
 									<?php foreach($journals_list as $list){ ?>
-									<option value="<?php echo $list['name']; ?>"><?php echo $list['name']; ?></option>
+									<option value="<?php echo $list['category']; ?>"><?php echo $list['category']; ?></option>
 									<?php } ?>
 								
 									</select>

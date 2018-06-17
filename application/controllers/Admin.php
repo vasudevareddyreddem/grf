@@ -20,7 +20,12 @@ class Admin extends CI_Controller {
 		}
 	public function index()
 	{	
-		$this->load->view('admin/index');
+		if(!$this->session->userdata('userdetails'))
+		{
+			$this->load->view('admin/index');
+		}else{
+			redirect('dashboard');
+		}
 	}
 	public function loginpost()
 	{

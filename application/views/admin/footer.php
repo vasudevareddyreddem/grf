@@ -5,7 +5,7 @@
     <strong>GRF Publishers Admin </strong>
   </footer>
 
-<!-- jQuery UI 1.11.4 -->
+!-- jQuery UI 1.11.4 -->
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <!-- bootstrap datepicker -->
 <script src="<?php echo base_url(); ?>assets/vendor/admin/plugins/select2/select2.full.min.js"></script>
@@ -20,6 +20,10 @@
 <script src="<?php echo base_url(); ?>assets/vendor/admin/plugins/datepicker/bootstrap-datepicker.js"></script>
 <!-- Slimscroll -->
 <script src="<?php echo base_url(); ?>assets/vendor/admin/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- DataTables -->
+<script src="<?php echo base_url(); ?>assets/vendor/admin/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/vendor/admin/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<!-- SlimScroll -->
 <!-- FastClick -->
 <script src="<?php echo base_url(); ?>assets/vendor/admin/plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
@@ -31,6 +35,16 @@
 <script src="<?php echo base_url(); ?>assets/vendor/admin/plugins/fullcalendar/fullcalendar.min.js"></script>
 <script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
 <script src="<?php echo base_url(); ?>assets/vendor/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+
+
+
+
+<script>
+  $(function () {
+    //Add text editor
+    $("#compose-textarea").wysihtml5();
+  });
+</script>
 <script>
   $(function () {
     // Replace the <textarea id="editor1"> with a CKEditor
@@ -56,7 +70,7 @@
     CKEDITOR.replace('editor2');
     //bootstrap WYSIHTML5 - text editor
     </script>
-<script src="plugins/iCheck/icheck.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/vendor/admin/plugins/iCheck/icheck.min.js"></script>
 <script>
   $(function () {
     //Initialize Select2 Elements

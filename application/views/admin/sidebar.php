@@ -4,7 +4,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-		<?php if($userdetails['profile_pic']!=''){ ?>
+          <?php if($userdetails['profile_pic']!=''){ ?>
 					<img src="<?php echo base_url('assets/adminpic/'.$userdetails['profile_pic']); ?>" class="img-circle" alt="User Image">
 				<?php }else{  ?>
 						<img src="<?php echo base_url('assets/vendor/admin/img.png'); ?>" class="img-circle" alt="User Image">
@@ -15,7 +15,7 @@
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
-     
+      
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
@@ -48,8 +48,8 @@
           </ul>
         </li>
         <li>
-          <a href="pages/widgets.html">
-            <i class="fa fa-th"></i> <span>Widgets</span>
+          <a href="datatables.php">
+            <i class="fa fa-th"></i> <span>Datatables</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-green">new</small>
             </span>

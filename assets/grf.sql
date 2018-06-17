@@ -146,6 +146,34 @@ CREATE TABLE `grf_journal_category` (
 
 insert  into `grf_journal_category`(`c_id`,`category`,`seo_title`,`seo_url`,`seo_keyword`,`description`,`status`,`create_at`,`update_at`,`create_by`) values (1,'Advanced Research in Biosensor and Bioelectronics(ARBB)','seo title','vbncvbn','seo keywords','vcvzxcvcv',1,'2018-06-17 16:00:30',NULL,1),(2,'Annals of Medical & Surgical Case Reports(AMSC)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(3,'Annals of Pediatrics and Child Care',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(4,'Clinical Oncology Research Journal (CORJ)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(5,'Current Updates in Dermatological Problems (CUDP)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(6,'Dentistry and Dental Ailments Journal (DDAJ)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(7,'Insights of Cardiology: Open Access (ICOA)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(8,'International Journal of Education Advancement (IJEA)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(9,'Journal of Biomarker Research and Studies',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(10,'Journal of Obstetrics and Gynecological Problems(JOGP)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(11,'Journal of Surgery and Insights (JSI)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(12,'Journal of Urology and Renal Problems (JURP)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(13,'Current Trends in Genetics and Microbiology (CTGM)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(14,'Journal of Gastroenterology and Digestive Disorders (JGDD)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(15,'Clinical Orthopedics Advanced Research Journal (COARJ)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(16,'Chronicles of Complementary, Alternative & Integrative Medicine (CCAIM)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(17,'Journal of Sports Science and Physical Therapy (JSSPT)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(18,'Emergency Medicine and Trauma Care Journal (EMTCJ)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(19,'Open Access Journal of Endocrinology Disorders (OAJED)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1);
 
+/*Table structure for table `journals` */
+
+DROP TABLE IF EXISTS `journals`;
+
+CREATE TABLE `journals` (
+  `j_id` int(11) NOT NULL AUTO_INCREMENT,
+  `category` int(11) DEFAULT NULL,
+  `baneer_image` varchar(250) DEFAULT NULL,
+  `title` varchar(250) DEFAULT NULL,
+  `alt_tags` varchar(250) DEFAULT NULL,
+  `seo_title` varchar(250) DEFAULT NULL,
+  `seo_url` varchar(250) DEFAULT NULL,
+  `seo_keywords` varchar(250) DEFAULT NULL,
+  `seo_description` text,
+  `key_words` text,
+  `description` text,
+  `prices` varchar(250) DEFAULT NULL,
+  `status` int(11) DEFAULT '1',
+  `create_at` datetime DEFAULT NULL,
+  `update_at` datetime DEFAULT NULL,
+  `create_by` int(11) DEFAULT NULL,
+  PRIMARY KEY (`j_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+/*Data for the table `journals` */
+
+insert  into `journals`(`j_id`,`category`,`baneer_image`,`title`,`alt_tags`,`seo_title`,`seo_url`,`seo_keywords`,`seo_description`,`key_words`,`description`,`prices`,`status`,`create_at`,`update_at`,`create_by`) values (1,3,'1529236287.jpg','','','','','','','','','',1,'2018-06-17 17:21:27','2018-06-17 17:21:27',1),(2,3,'1529236516.jpg','like that psoot','tags','title seo','url seo','keywords seo','desc seo','<p><strong>liket that  all peoples  are  fake  </strong></p>\r\n','<p><strong>description </strong></p>\r\n','prices',1,'2018-06-17 17:25:16','2018-06-17 17:25:16',1);
+
 /*Table structure for table `menuscript_list` */
 
 DROP TABLE IF EXISTS `menuscript_list`;

@@ -20,7 +20,7 @@
             <!-- /.box-header -->
             <!-- form start -->
 			<div style="padding:20px;">
-            <form id="addflyer" method="post" class="" action="<?php echo base_url('journal/addpost'); ?>" enctype="multipart/form-data">
+            <form id="addflyer" method="post" class="" action="<?php echo base_url('journal_details/addpost'); ?>" enctype="multipart/form-data">
 					<?php $csrf = array(
 								'name' => $this->security->get_csrf_token_name(),
 								'hash' => $this->security->get_csrf_hash()
@@ -101,7 +101,7 @@
 							<div class="form-group">
 								<label class=" control-label">Key words</label>
 								<div class="">
-									<textarea id="editor1" name="editor1" rows="2" cols="80" >
+									<textarea id="editor1" name="key_words" rows="2" cols="80" >
                                             
 								</textarea>
 								</div>
@@ -111,7 +111,7 @@
 							<div class="form-group">
 								<label class=" control-label">Description</label>
 								<div class="">
-									<textarea id="editor2" name="editor1" rows="2" cols="80" >
+									<textarea id="editor2" name="description" rows="2" cols="80" >
                                             
 								</textarea>
 								</div>
@@ -236,6 +236,36 @@ $(document).ready(function() {
 					regexp: {
 					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
 					message:'SEO Description wont allow <> [] = % '
+					}
+				}
+            },key_words: {
+                validators: {
+					notEmpty: {
+						message: 'Keywords is required'
+					},
+					regexp: {
+					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
+					message:'Keywords wont allow <> [] = % '
+					}
+				}
+            },description: {
+                validators: {
+					notEmpty: {
+						message: 'Description is required'
+					},
+					regexp: {
+					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
+					message:'Description wont allow <> [] = % '
+					}
+				}
+            },prices: {
+                validators: {
+					notEmpty: {
+						message: 'Price is required'
+					},
+					regexp: {
+					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
+					message:'Price wont allow <> [] = % '
 					}
 				}
             }

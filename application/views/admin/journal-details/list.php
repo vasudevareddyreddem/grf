@@ -1,12 +1,13 @@
+
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Journal category List
+        Journals List
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?php echo base_url('dashboard'); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Journal category List</li>
+        <li class="active">Journals List</li>
       </ol>
     </section>
 
@@ -18,38 +19,37 @@
 
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Journal category List</h3>
+              <h3 class="box-title">Journals List</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Category Name</th>
-                  <th>SEO Title</th>
-                  <th>SEO URL</th>
-                  <th>SEO Keywords</th>
+                  <th>Category </th>
+                  <th>Title</th>
+                  <th>Image</th>
                   <th>Status</th>
                   <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                <?php if(isset($category_list) && count($category_list)>0){ ?>
-				<?php foreach($category_list as $list){ ?>
+                <?php if(isset($journals_list) && count($journals_list)>0){ ?>
+				<?php foreach($journals_list as $list){ ?>
                 <tr>
-                  <td><?php echo htmlentities($list['category']); ?></td>
-                  <td><?php echo htmlentities($list['seo_title']); ?></td>
-                  <td><?php echo htmlentities($list['seo_url']); ?></td>
-                  <td><?php echo htmlentities($list['seo_keyword']); ?></td>
+                  <td><?php echo htmlentities($list['cat_name']); ?></td>
+                  <td><?php echo htmlentities($list['title']); ?></td>
+                  <td><img width="50px" height="50px" src="<?php echo base_url('assets/banner_pics/'.$list['baneer_image']); ?>">
+				  </td>
                   <td><?php if($list['status']==1){ echo "Active"; }else{ echo "deactive";} ?></td>
                   <td>
-					<a href="<?php echo base_url('journal/edit/'.base64_encode($list['c_id'])); ?>"><i class="fa fa-edit"></i></a>
+					<a href="<?php echo base_url('journal-details/edit/'.base64_encode($list['j_id'])); ?>"><i class="fa fa-edit"></i></a>
 										&nbsp;&nbsp;
 
-					<a href="<?php echo base_url('journal/status/'.base64_encode($list['c_id']).'/'.base64_encode($list['status'])); ?>"><i class="fa fa-check-square-o"></i></a>
+					<a href="<?php echo base_url('journal-details/status/'.base64_encode($list['j_id']).'/'.base64_encode($list['status'])); ?>"><i class="fa fa-check-square-o"></i></a>
 										&nbsp;&nbsp;
 
-					<a href="<?php echo base_url('journal/delete/'.base64_encode($list['c_id'])); ?>"><i class="fa fa-trash-o"></i></a>
+					<a href="<?php echo base_url('journal-details/delete/'.base64_encode($list['j_id'])); ?>"><i class="fa fa-trash-o"></i></a>
 				  
 				  </td>
                 </tr>

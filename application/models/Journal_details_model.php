@@ -14,9 +14,16 @@ class Journal_details_model extends CI_Model
 
 		return $this->db->get()->result_array();	
 	}
-	public function save_journal_category($data){
-		$this->db->insert('grf_journal_category', $data);
+	public function save_journals($data){
+		$this->db->insert('journals', $data);
 		return $insert_id = $this->db->insert_id();
+	}
+	
+	public function get_all_journal_list_details($id){
+		$this->db->select('journals.*,grf_journal_category.category as cat_name')->from('journals');
+		$this->db->join('grf_journal_category ', 'grf_journal_category.c_id = journals.category', 'left');
+		$this->db->where('journals.create_by',$id);
+		return $this->db->get()->result_array();	
 	}
 	
 	public  function check_category_exits($name){

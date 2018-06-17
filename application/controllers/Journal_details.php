@@ -45,10 +45,10 @@ class Journal_details extends CI_Controller {
 		if($this->session->userdata('userdetails'))
 		{
 			$admindetails=$this->session->userdata('userdetails');
-			$data['category_list']=$this->Journal_model->get_journal_list_details($admindetails['id']);
+			$data['journals_list']=$this->Journal_details_model->get_all_journal_list_details($admindetails['id']);
 			
 			//echo '<pre>';print_r($data);exit; 
-			$this->load->view('admin/journal-category/list',$data);
+			$this->load->view('admin/journal-details/list',$data);
 			$this->load->view('admin/footer');
 		}else{
 			$this->session->set_flashdata('error','Please login to continue');
@@ -62,10 +62,10 @@ class Journal_details extends CI_Controller {
 		{
 			$admindetails=$this->session->userdata('userdetails');
 			$c_id=base64_decode($this->uri->segment(3));
-			$data['details']=$this->Journal_model->get_category_details($c_id);
+			$data['details']=$this->Journal_details_model->get_category_details($c_id);
 			
 			//echo '<pre>';print_r($data);exit; 
-			$this->load->view('admin/journal-category/edit',$data);
+			$this->load->view('admin/journal-details/edit',$data);
 			$this->load->view('admin/footer');
 		}else{
 			$this->session->set_flashdata('error','Please login to continue');
@@ -79,30 +79,40 @@ class Journal_details extends CI_Controller {
 		{
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
-				$details=$this->Journal_model->check_category_exits($post['category']);
-				if(count($details)>0){
-					$this->session->set_flashdata('error',"Journal category name already exists. Please use another one.");
-							redirect('journal');	
-				}
+				
 				//echo '<pre>';print_r($post);exit;
+				if(isset($_FILES['journal_banner']['name']) && $_FILES['journal_banner']['name']!=''){
+							$temp = explode(".", $_FILES["journal_banner"]["name"]);
+							$banner_img = round(microtime(true)) . '.' . end($temp);
+							move_uploaded_file($_FILES['journal_banner']['tmp_name'], "assets/banner_pics/" . $banner_img);
+						}else{
+							$banner_img='';
+						}
 				$add_data=array(
 					'category'=>isset($post['category'])?$post['category']:'',
+					'baneer_image'=>$banner_img,
+					'title'=>isset($post['title'])?$post['title']:'',
+					'alt_tags'=>isset($post['alt_tags'])?$post['alt_tags']:'',
 					'seo_title'=>isset($post['seo_title'])?$post['seo_title']:'',
 					'seo_url'=>isset($post['seo_url'])?$post['seo_url']:'',
-					'seo_keyword'=>isset($post['seo_keyword'])?$post['seo_keyword']:'',
+					'seo_keywords'=>isset($post['seo_keyword'])?$post['seo_keyword']:'',
+					'seo_description'=>isset($post['seo_description'])?$post['seo_description']:'',
+					'key_words'=>isset($post['key_words'])?$post['key_words']:'',
 					'description'=>isset($post['description'])?$post['description']:'',
+					'prices'=>isset($post['prices'])?$post['prices']:'',
 					'status'=>1,
 					'create_at'=>date('Y-m-d H:i:s'),
+					'update_at'=>date('Y-m-d H:i:s'),
 					'create_by'=>$admindetails['id'],
 					);
-					$save=$this->Journal_model->save_journal_category($add_data);
+					$save=$this->Journal_details_model->save_journals($add_data);
 						if(count($save)>0){
-							$this->session->set_flashdata('success','Journal category successfully Added');
-							redirect('journal/lists');
+							$this->session->set_flashdata('success','Journal successfully Added');
+							redirect('journal-details/lists');
 							
 						}else{
 							$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");
-							redirect('journal');
+							redirect('journal-details');
 						}
 		}else{
 			$this->session->set_flashdata('error','Please login to continue');
@@ -118,9 +128,9 @@ class Journal_details extends CI_Controller {
 			$post=$this->input->post();
 			
 					//echo '<pre>';print_r($post);exit;
-					$details=$this->Journal_model->get_category_details($post['c_id']);
+					$details=$this->Journal_details_model->get_category_details($post['c_id']);
 					if($details['category']!=$post['category']){
-						$new_details=$this->Journal_model->check_category_exits($post['category']);
+						$new_details=$this->Journal_details_model->check_category_exits($post['category']);
 						if(count($new_details)>0){
 							$this->session->set_flashdata('error',"Journal category name already exists. Please use another one.");
 									redirect('journal/edit/'.base64_encode($post['c_id']));	
@@ -134,7 +144,7 @@ class Journal_details extends CI_Controller {
 					'description'=>isset($post['description'])?$post['description']:'',
 					'update_at'=>date('Y-m-d H:i:s'),
 					);
-					$update=$this->Journal_model->update_category_details($post['c_id'],$update_data);
+					$update=$this->Journal_details_model->update_category_details($post['c_id'],$update_data);
 						if(count($update)>0){
 							$this->session->set_flashdata('success','Journal category successfully Updated');
 							redirect('journal/lists');
@@ -166,7 +176,7 @@ class Journal_details extends CI_Controller {
 					'status'=>$stat,
 					'update_at'=>date('Y-m-d H:i:s'),
 					);
-					$update=$this->Journal_model->update_category_details($c_id,$update_data);
+					$update=$this->Journal_details_model->update_category_details($c_id,$update_data);
 						if(count($update)>0){
 							if($status==1){
 							$this->session->set_flashdata('success','Journal category successfully deactivated');
@@ -192,9 +202,9 @@ class Journal_details extends CI_Controller {
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
 			$c_id=base64_decode($this->uri->segment(3));
-			$details=$this->Journal_model->get_category_details($c_id);
+			$details=$this->Journal_details_model->get_category_details($c_id);
 			
-					$delete=$this->Journal_model->delete_journal_category($c_id);
+					$delete=$this->Journal_details_model->delete_journal_category($c_id);
 					if(count($delete)>0){
 						$this->session->set_flashdata('success','Journal category successfully deleted');
 						redirect('journal/lists');

@@ -115,24 +115,24 @@ class Flyers extends CI_Controller {
 		{
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
-			echo '<pre>';print_r($post);exit;
-						if(isset($_FILES['image']['name']) && $_FILES['image']['name']!=''){
+						$details=$this->Flyers_model->get_flyers_details($post['f_id']);
+					if(isset($_FILES['image']['name']) && $_FILES['image']['name']!=''){
+												unlink('assets/flyers_img/'.$details['fly_image']);
+
 								$temp = explode(".", $_FILES["image"]["name"]);
 								$image = round(microtime(true)) . '.' . end($temp);
 								move_uploaded_file($_FILES['image']['tmp_name'], "assets/flyers_img/" . $image);
 								$org_name=$_FILES["image"]["name"];
 							}else{
-								$image='';
-								$org_name='';
+								$image=$details['fly_image'];
+								$org_name=$details['fly_org_image'];
 							}
 					$update_data=array(
 					'title'=>isset($post['title'])?$post['title']:'',
 					'title_color'=>isset($post['title_color'])?$post['title_color']:'',
 					'fly_image'=>$image,
 					'fly_org_image'=>$org_name,
-					'status'=>1,
-					'create_at'=>date('Y-m-d H:i:s'),
-					'create_by'=>$admindetails['id'],
+					'update_at'=>date('Y-m-d H:i:s'),
 					);
 						$update=$this->Flyers_model->update_flyers_details($post['f_id'],$update_data);
 						if(count($update)>0){

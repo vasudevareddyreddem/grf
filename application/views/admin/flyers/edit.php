@@ -27,7 +27,7 @@
 								'hash' => $this->security->get_csrf_hash()
 						); ?>
 					<input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
-					<input type="hidden" class="form-control" name="title" id="title" value="<?php echo isset($details['title'])?$details['title']:''; ?>" placeholder="Enter title" />
+					<input type="hidden" class="form-control" name="f_id" id="f_id" value="<?php echo isset($details['f_id'])?$details['f_id']:''; ?>" />
 
       
 						<div class="col-md-8">

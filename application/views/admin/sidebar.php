@@ -20,6 +20,11 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
+		 <li class=" treeview">
+          <a href="<?php echo base_url('dashboard'); ?>">
+            <i class="fa fa-th"></i> <span>Dashboard</span>
+           </a>
+        </li>
         <li class="<?php if(isset($u_url) && $u_url==base_url('flyers')){ echo "active"; } ?> treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Flyers</span>

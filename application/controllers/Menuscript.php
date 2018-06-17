@@ -30,7 +30,13 @@ class Menuscript extends CI_Controller {
 		
 		
 		$post=$this->input->post();
-		
+		if(isset($_FILES['image']['name']) && $_FILES['image']['name']!=''){
+							$temp = explode(".", $_FILES["image"]["name"]);
+							$image = round(microtime(true)) . '.' . end($temp);
+							move_uploaded_file($_FILES['image']['tmp_name'], "assets/menuscript/" . $image);
+						}else{
+							$image='';
+						}
 		$addcontact=array(
 		'title'=>isset($post['title'])?$post['title']:'',
 		'firstName'=>isset($post['firstName'])?$post['firstName']:'',
@@ -47,8 +53,26 @@ class Menuscript extends CI_Controller {
 		'image'=>$image,
 		'create_at'=>date('Y-m-d H:i:s'),
 		);
+				
 		$save=$this->Home_model->save_menuscript($addcontact);
 		if(count($save)>0){
+			
+				$data['details']=$post;
+				$this->load->library('email');
+				$this->email->set_newline("\r\n");
+				$this->email->set_mailtype("html");
+				$this->email->from($post['email']);
+				$this->email->to('contact@grfpublishers.org');
+				$this->email->subject('Menuscript - Request');
+				$body = $this->load->view('email/menuscript',$data,TRUE);
+				if(isset($_FILES['image']['name']) && $_FILES['image']['name']!=''){
+					$pdfFilePath=base_url('assets/menuscript/'.$image);
+					$this->email->attach($pdfFilePath);
+				}
+				$this->email->message($body);
+				//echo $body;exit;
+				$this->email->send();	
+			
 				$this->session->set_flashdata('success',"Your message was successfully sent.");
 				redirect('home');
 			}else{

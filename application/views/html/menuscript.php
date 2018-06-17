@@ -133,7 +133,7 @@
 							<div class="form-group">
 								<label class=" control-label">Select File</label>
 								<div class="">
-									<input type="file" class="form-control" name="image" id="image" name="username"  />
+									<input type="file" class="form-control" name="image" id="image"  />
 								</div>
 							</div>
                         </div>

@@ -38,8 +38,22 @@ class Contactus extends CI_Controller {
 		'message'=>isset($post['message'])?$post['message']:'',
 		'create_at'=>date('Y-m-d H:i:s'),
 		);
+		
+		//echo '<pre>';print_r($post);exit;
+		
 		$save=$this->Home_model->save_contactus($addcontact);
 		if(count($save)>0){
+				$data['details']=$post;
+				$this->load->library('email');
+				$this->email->set_newline("\r\n");
+				$this->email->set_mailtype("html");
+				$this->email->from($post['email']);
+				$this->email->to('contact@grfpublishers.org');
+				$this->email->subject('Contact us - Request');
+				$body = $this->load->view('email/contactus',$data,TRUE);
+				$this->email->message($body);
+				//echo $body;exit;
+				$this->email->send();
 				$this->session->set_flashdata('success',"Your message was successfully sent.");
 				redirect('home');
 			}else{

@@ -88,7 +88,7 @@ class Journal extends CI_Controller {
 					'create_at'=>date('Y-m-d H:i:s'),
 					'create_by'=>$admindetails['id'],
 					);
-					$save=$this->Journal_model->save_flyers($add_data);
+					$save=$this->Journal_model->save_journal_category($add_data);
 						if(count($save)>0){
 							$this->session->set_flashdata('success','Journal category successfully Added');
 							redirect('journal/lists');

@@ -37,6 +37,30 @@
             <li><a href="<?php echo base_url('flyers/lists'); ?>"><i class="fa fa-circle-o"></i> List</a></li>
           </ul>
         </li>
+		<li class="<?php if(isset($u_url) && $u_url==base_url('conference-flyers')){ echo "active"; } ?> treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>conference-flyers</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="active"><a href="<?php echo base_url('conference-flyers'); ?>"><i class="fa fa-circle-o"></i> Add</a></li>
+            <li><a href="<?php echo base_url('conference-flyers/lists'); ?>"><i class="fa fa-circle-o"></i> List</a></li>
+          </ul>
+        </li>
+		<li class="<?php if(isset($u_url) && $u_url==base_url('conference-images')){ echo "active"; } ?> treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>conference-images</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="active"><a href="<?php echo base_url('conference-images'); ?>"><i class="fa fa-circle-o"></i> Add</a></li>
+            <li><a href="<?php echo base_url('conference-images/lists'); ?>"><i class="fa fa-circle-o"></i> List</a></li>
+          </ul>
+        </li>
 		<li class="active treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>form</span>

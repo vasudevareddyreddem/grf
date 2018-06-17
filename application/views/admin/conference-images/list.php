@@ -2,11 +2,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Flyers List
+        Conference Images List
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?php echo base_url('dashboard'); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Flyers List</li>
+        <li class="active">Conference Images List</li>
       </ol>
     </section>
 
@@ -18,7 +18,7 @@
 
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Flyers List</h3>
+              <h3 class="box-title">Conference Images List</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -37,18 +37,16 @@
 				<?php foreach($fly_list as $list){ ?>
                 <tr>
                   <td><?php echo htmlentities($list['title']); ?></td>
-                  <td><img width="50px" height="50px" src="<?php echo base_url('assets/flyers_img/'.$list['fly_image']); ?>">
+                  <td><img width="50px" height="50px" src="<?php echo base_url('assets/conference_img/'.$list['fly_image']); ?>">
 				  </td>
                   <td><?php echo htmlentities($list['title_color']); ?></td>
                   <td><?php if($list['status']==1){ echo "Active"; }else{ echo "deactive";} ?></td>
                   <td>
-					<a href="<?php echo base_url('flyers/edit/'.base64_encode($list['f_id'])); ?>"><i class="fa fa-edit"></i></a>
-										&nbsp;&nbsp;
-
-					<a href="<?php echo base_url('flyers/status/'.base64_encode($list['f_id']).'/'.base64_encode($list['status'])); ?>"><i class="fa fa-check-square-o"></i></a>
-										&nbsp;&nbsp;
-
-					<a href="<?php echo base_url('flyers/delete/'.base64_encode($list['f_id'])); ?>"><i class="fa fa-trash-o"></i></a>
+					<a href="<?php echo base_url('conference-images/edit/'.base64_encode($list['f_id'])); ?>"><i class="fa fa-edit"></i></a>
+					&nbsp;&nbsp;
+					<a href="<?php echo base_url('conference-images/status/'.base64_encode($list['f_id']).'/'.base64_encode($list['status'])); ?>"><i class="fa fa-check-square-o"></i></a>
+					&nbsp;&nbsp;
+					<a href="<?php echo base_url('conference-images/delete/'.base64_encode($list['f_id'])); ?>"><i class="fa fa-trash-o"></i></a>
 				  
 				  </td>
                 </tr>

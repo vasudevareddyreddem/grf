@@ -61,6 +61,18 @@
             <li><a href="<?php echo base_url('conference-images/lists'); ?>"><i class="fa fa-circle-o"></i> List</a></li>
           </ul>
         </li>
+		<li class="<?php if(isset($u_url) && $u_url==base_url('journal')){ echo "active"; } ?> treeview">
+          <a href="#">
+            <i class="fa fa-list-ol"></i> <span>Journal Category</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="active"><a href="<?php echo base_url('journal/'); ?>"><i class="fa fa-circle-o"></i> Add</a></li>
+            <li><a href="<?php echo base_url('journal/lists'); ?>"><i class="fa fa-circle-o"></i> List</a></li>
+          </ul>
+        </li>
 		<li class="active treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>form</span>

@@ -31,6 +31,9 @@ class Journals extends CI_Controller {
 		$this->load->view('html/footer');
 		
 	}
+	public  function category(){
+		
+	}
 	
 	
 }

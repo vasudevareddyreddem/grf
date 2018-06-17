@@ -42,7 +42,11 @@ class Flyers extends CI_Controller {
 	{	
 		if($this->session->userdata('userdetails'))
 		{
-			$this->load->view('admin/flyers/list');
+			$admindetails=$this->session->userdata('userdetails');
+			$data['fly_list']=$this->Flyers_model->get_flyers_list($admindetails['id']);
+			
+			//echo '<pre>';print_r($data);exit; 
+			$this->load->view('admin/flyers/list',$data);
 			$this->load->view('admin/footer');
 		}else{
 			$this->session->set_flashdata('error','Please login to continue');

@@ -15,10 +15,10 @@ class Flyers_model extends CI_Model
 	}
 	
 	
-	public function get_medicine_list_details($name){
-		$this->db->select('medicine_list.id,medicine_list.total_amount,medicine_list.qty,medicine_list.cgst,medicine_list.amount,medicine_list.dosage')->from('medicine_list');		
-		$this->db->where('medicine_list.medicine_name',$name);
-        return $this->db->get()->row_array();	
+	public function get_flyers_list($id){
+		$this->db->select('*')->from('grf_flyers');		
+		$this->db->where('grf_flyers.create_by',$id);
+        return $this->db->get()->result_array();	
 	}
 	public function update_medicine_details($med_id,$data){
 		$this->db->where('id',$med_id);

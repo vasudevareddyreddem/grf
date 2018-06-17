@@ -13,23 +13,29 @@ class Journal_model extends CI_Model
 		$this->db->insert('grf_journal_category', $data);
 		return $insert_id = $this->db->insert_id();
 	}
-	public function get_flyers_list($id){
-		$this->db->select('*')->from('grf_conference_flyers');		
-		$this->db->where('grf_conference_flyers.create_by',$id);
+	
+	public  function check_category_exits($name){
+		$this->db->select('*')->from('grf_journal_category');		
+		$this->db->where('category',$name);
+        return $this->db->get()->row_array();
+	}
+	public function get_journal_list_details($id){
+		$this->db->select('*')->from('grf_journal_category');		
+		$this->db->where('grf_journal_category.create_by',$id);
         return $this->db->get()->result_array();	
 	}
-	public function get_flyers_details($id){
-		$this->db->select('*')->from('grf_conference_flyers');		
-		$this->db->where('f_id',$id);
+	public function get_category_details($id){
+		$this->db->select('*')->from('grf_journal_category');		
+		$this->db->where('c_id',$id);
         return $this->db->get()->row_array();	
 	}
-	public function update_flyers_details($id,$data){
-		$this->db->where('f_id',$id);
-    	return $this->db->update("grf_conference_flyers",$data);
+	public function update_category_details($id,$data){
+		$this->db->where('c_id',$id);
+    	return $this->db->update("grf_journal_category",$data);
 	}
-	public function delete_flyers($id){
-		$this->db->where('f_id', $id);
-		return $this->db->delete('grf_conference_flyers');
+	public function delete_journal_category($id){
+		$this->db->where('c_id', $id);
+		return $this->db->delete('grf_journal_category');
 	}
 	
 

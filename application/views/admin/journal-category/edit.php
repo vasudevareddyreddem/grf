@@ -1,12 +1,11 @@
 <div class="content-wrapper">
 <section class="content-header">
       <h1>
-        Edit Flyers 
+        Edit Journal category 
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?php echo base_url('dashboard'); ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li><a href="<?php echo base_url('flyers/lists'); ?>">Flyers List</a></li>
-        <li class="active">Edit Flyers</li>
+        <li class="active"> Edit Journal category</li>
       </ol>
     </section>
    <section class="content">
@@ -16,42 +15,56 @@
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Edit Flyers </h3>
+              <h3 class="box-title"> Edit Journal category</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
 			<div style="padding:20px;">
-            <form id="addflyer" method="post" class="" action="<?php echo base_url('flyers/editpost'); ?>" enctype="multipart/form-data">
-							<?php $csrf = array(
+            <form id="addflyer" method="post" class="" action="<?php echo base_url('journal/editpost'); ?>" enctype="multipart/form-data">
+					<?php $csrf = array(
 								'name' => $this->security->get_csrf_token_name(),
 								'hash' => $this->security->get_csrf_hash()
 						); ?>
-					<input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
-					<input type="hidden" class="form-control" name="f_id" id="f_id" value="<?php echo isset($details['f_id'])?$details['f_id']:''; ?>" />
-
+										<input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+<input type="hidden" class="form-control" name="c_id" id="c_id" value="<?php echo isset($details['c_id'])?$details['c_id']:''; ?>">
       
 						<div class="col-md-8">
 							<div class="form-group">
-								<label class=" control-label">Title</label>
+								<label class=" control-label">Category</label>
 								<div class="">
-									<input type="text" class="form-control" name="title" id="title" value="<?php echo isset($details['title'])?$details['title']:''; ?>" placeholder="Enter title" />
-								</div>
-							</div>
-                        </div>
-						
-						<div class="col-md-8">
-							<div class="form-group">
-								<label class=" control-label">Image</label>
-								<div class="">
-									<input type="file" class="form-control" name="image" id="image" value="" />
+									<input type="text" class="form-control" name="category" id="category" value="<?php echo isset($details['category'])?$details['category']:''; ?>" placeholder="Enter Category" />
 								</div>
 							</div>
                         </div>
 						<div class="col-md-8">
 							<div class="form-group">
-								<label class=" control-label">Title Color Code</label>
+								<label class=" control-label">SEO Title</label>
 								<div class="">
-									<input type="text" class="form-control" name="title_color" id="title_color" value="<?php echo isset($details['title_color'])?$details['title_color']:''; ?>" placeholder="Enter Title Color Code" />
+									<input type="text" class="form-control" name="seo_title" value="<?php echo isset($details['seo_title'])?$details['seo_title']:''; ?>" id="seo_title" placeholder="Enter SEO Title" />
+								</div>
+							</div>
+                        </div>
+						<div class="col-md-8">
+							<div class="form-group">
+								<label class=" control-label">SEO URL</label>
+								<div class="">
+									<input type="text" class="form-control" name="seo_url" value="<?php echo isset($details['seo_url'])?$details['seo_url']:''; ?>" id="seo_url" placeholder="Enter SEO URL" />
+								</div>
+							</div>
+                        </div>
+						<div class="col-md-8">
+							<div class="form-group">
+								<label class=" control-label">SEO Keywords</label>
+								<div class="">
+									<input type="text" class="form-control" name="seo_keyword" value="<?php echo isset($details['seo_keyword'])?$details['seo_keyword']:''; ?>" id="seo_keyword" placeholder="Enter SEO Keywords" />
+								</div>
+							</div>
+                        </div>
+						<div class="col-md-8">
+							<div class="form-group">
+								<label class=" control-label">Description</label>
+								<div class="">
+									<textarea  class="form-control" name="description"  id="description" placeholder="Enter Description" ><?php echo isset($details['description'])?$details['description']:''; ?></textarea>
 								</div>
 							</div>
                         </div>
@@ -60,7 +73,7 @@
 						  <div class="form-group">
                             <div class="col-lg-4 col-lg-offset-8">
                                 <button type="submit" class="btn btn-primary" name="signup" value="Sign up">Update</button>
-								<a href="<?php echo base_url('flyers/lists'); ?>" type="submit" class="btn btn-warning" >Cancel</a>
+								<a href="<?php echo base_url('journal/lists'); ?>" type="submit" class="btn btn-warning" >Cancel</a>
                                 
                             </div>
                         </div>
@@ -87,36 +100,58 @@ $(document).ready(function() {
     $('#addflyer').bootstrapValidator({
         
         fields: {
-             title: {
+             category: {
                 validators: {
 					notEmpty: {
-						message: 'Title is required'
+						message: 'Category is required'
 					},
 					regexp: {
 					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'Title wont allow <> [] = % '
+					message:'Category wont allow <> [] = % '
 					}
 				}
-            },image: {
+            },seo_title: {
                 validators: {
-										regexp: {
-					regexp: "(.*?)\.(png|jpeg|jpg|gif)$",
-					message: 'Uploaded file is not a valid. Only png,jpg,jpeg,gif files are allowed'
+					notEmpty: {
+						message: 'SEO Title is required'
+					},
+					regexp: {
+					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
+					message:'SEO Title wont allow <> [] = % '
 					}
 				}
             },
-           
-            title_color: {
-					 validators: {
+			seo_url: {
+                validators: {
 					notEmpty: {
-						message: 'Title color code is required'
+						message: 'SEO Url is required'
 					},
 					regexp: {
 					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'Title color code wont allow <> [] = % '
+					message:'SEO Url wont allow <> [] = % '
 					}
 				}
+            },seo_keyword: {
+                validators: {
+					notEmpty: {
+						message: 'SEO Keywords is required'
+					},
+					regexp: {
+					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
+					message:'SEO Keywords wont allow <> [] = % '
+					}
 				}
+            },description: {
+                validators: {
+					notEmpty: {
+						message: 'Description is required'
+					},
+					regexp: {
+					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
+					message:'Description wont allow <> [] = % '
+					}
+				}
+            }
             }
         })
      

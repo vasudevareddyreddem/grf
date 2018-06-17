@@ -43,7 +43,7 @@ class Journal extends CI_Controller {
 		if($this->session->userdata('userdetails'))
 		{
 			$admindetails=$this->session->userdata('userdetails');
-			$data['fly_list']=$this->Conference_img_model->get_flyers_list($admindetails['id']);
+			$data['category_list']=$this->Journal_model->get_journal_list_details($admindetails['id']);
 			
 			//echo '<pre>';print_r($data);exit; 
 			$this->load->view('admin/journal-category/list',$data);
@@ -59,8 +59,8 @@ class Journal extends CI_Controller {
 		if($this->session->userdata('userdetails'))
 		{
 			$admindetails=$this->session->userdata('userdetails');
-			$f_id=base64_decode($this->uri->segment(3));
-			$data['details']=$this->Conference_img_model->get_flyers_details($f_id);
+			$c_id=base64_decode($this->uri->segment(3));
+			$data['details']=$this->Journal_model->get_category_details($c_id);
 			
 			//echo '<pre>';print_r($data);exit; 
 			$this->load->view('admin/journal-category/edit',$data);
@@ -77,7 +77,12 @@ class Journal extends CI_Controller {
 		{
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
-			echo '<pre>';print_r($post);exit;
+				$details=$this->Journal_model->check_category_exits($post['category']);
+				if(count($details)>0){
+					$this->session->set_flashdata('error',"Journal category name already exists. Please use another one.");
+							redirect('journal');	
+				}
+				//echo '<pre>';print_r($post);exit;
 				$add_data=array(
 					'category'=>isset($post['category'])?$post['category']:'',
 					'seo_title'=>isset($post['seo_title'])?$post['seo_title']:'',
@@ -109,33 +114,32 @@ class Journal extends CI_Controller {
 		{
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
-						$details=$this->Conference_img_model->get_flyers_details($post['f_id']);
-					if(isset($_FILES['image']['name']) && $_FILES['image']['name']!=''){
-									unlink('assets/conference_img/'.$details['fly_image']);
-
-								$temp = explode(".", $_FILES["image"]["name"]);
-								$image = round(microtime(true)) . '.' . end($temp);
-								move_uploaded_file($_FILES['image']['tmp_name'], "assets/conference_img/" . $image);
-								$org_name=$_FILES["image"]["name"];
-							}else{
-								$image=$details['fly_image'];
-								$org_name=$details['fly_org_image'];
-							}
+			
+					//echo '<pre>';print_r($post);exit;
+					$details=$this->Journal_model->get_category_details($post['c_id']);
+					if($details['category']!=$post['category']){
+						$new_details=$this->Journal_model->check_category_exits($post['category']);
+						if(count($new_details)>0){
+							$this->session->set_flashdata('error',"Journal category name already exists. Please use another one.");
+									redirect('journal/edit/'.base64_encode($post['c_id']));	
+						}
+					}
 					$update_data=array(
-					'title'=>isset($post['title'])?$post['title']:'',
-					'title_color'=>isset($post['title_color'])?$post['title_color']:'',
-					'fly_image'=>$image,
-					'fly_org_image'=>$org_name,
+					'category'=>isset($post['category'])?$post['category']:'',
+					'seo_title'=>isset($post['seo_title'])?$post['seo_title']:'',
+					'seo_url'=>isset($post['seo_url'])?$post['seo_url']:'',
+					'seo_keyword'=>isset($post['seo_keyword'])?$post['seo_keyword']:'',
+					'description'=>isset($post['description'])?$post['description']:'',
 					'update_at'=>date('Y-m-d H:i:s'),
 					);
-						$update=$this->Conference_img_model->update_flyers_details($post['f_id'],$update_data);
+					$update=$this->Journal_model->update_category_details($post['c_id'],$update_data);
 						if(count($update)>0){
-							$this->session->set_flashdata('success','Conference image successfully Updated');
-							redirect('conference-images/lists');
+							$this->session->set_flashdata('success','Journal category successfully Updated');
+							redirect('journal/lists');
 							
 						}else{
 							$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");
-							redirect('conference-images/lists');
+							redirect('journal/lists');
 						}
 		}else{
 			$this->session->set_flashdata('error','Please login to continue');
@@ -149,7 +153,7 @@ class Journal extends CI_Controller {
 		{
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
-			$f_id=base64_decode($this->uri->segment(3));
+			$c_id=base64_decode($this->uri->segment(3));
 			$status=base64_decode($this->uri->segment(4));
 			if($status==1){
 				$stat=0;
@@ -160,18 +164,18 @@ class Journal extends CI_Controller {
 					'status'=>$stat,
 					'update_at'=>date('Y-m-d H:i:s'),
 					);
-					$update=$this->Conference_img_model->update_flyers_details($f_id,$update_data);
+					$update=$this->Journal_model->update_category_details($c_id,$update_data);
 						if(count($update)>0){
 							if($status==1){
-							$this->session->set_flashdata('success','Conference image successfully deactivated');
+							$this->session->set_flashdata('success','Journal category successfully deactivated');
 							}else{
-							$this->session->set_flashdata('success','Conference image successfully activated');
+							$this->session->set_flashdata('success','Journal category successfully activated');
 							}
-							redirect('conference-images/lists');
+							redirect('journal/lists');
 							
 						}else{
 							$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");
-							redirect('conference-images/lists');
+							redirect('journal/lists');
 						}
 		}else{
 			$this->session->set_flashdata('error','Please login to continue');
@@ -185,17 +189,16 @@ class Journal extends CI_Controller {
 		{
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
-			$f_id=base64_decode($this->uri->segment(3));
-			$details=$this->Conference_img_model->get_flyers_details($f_id);
+			$c_id=base64_decode($this->uri->segment(3));
+			$details=$this->Journal_model->get_category_details($c_id);
 			
-					$delete=$this->Conference_img_model->delete_flyers($f_id);
+					$delete=$this->Journal_model->delete_journal_category($c_id);
 					if(count($delete)>0){
-						unlink('assets/conference_img/'.$details['fly_image']);
-						$this->session->set_flashdata('success','Conference image successfully deleted');
-						redirect('conference-images/lists');
+						$this->session->set_flashdata('success','Journal category successfully deleted');
+						redirect('journal/lists');
 					}else{
 						$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");
-						redirect('conference-images/lists');
+						redirect('journal/lists');
 					}
 		}else{
 			$this->session->set_flashdata('error','Please login to continue');

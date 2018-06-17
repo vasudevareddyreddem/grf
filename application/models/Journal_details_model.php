@@ -53,5 +53,36 @@ class Journal_details_model extends CI_Model
 		return $this->db->get()->result_array();	
 	}
 	
+	/* journal banners*/
+	public  function save_journals_banners($data){
+		$this->db->insert('journal_banners', $data);
+		return $insert_id = $this->db->insert_id();
+	}
+	
+	public  function get_all_journal_banner_list_details($id){
+		$this->db->select('journal_banners.*,journals.title as journaltitle')->from('journal_banners');
+		$this->db->join('journals ', 'journals.j_id = journal_banners.journal_id', 'left');
+		
+        $this->db->where('journal_banners.create_by',$id);
+
+		return $this->db->get()->result_array();
+	}
+	
+	public  function update_journalbanner_details($id,$data){
+		$this->db->where('id',$id);
+    	return $this->db->update("journal_banners",$data);
+	}
+	
+	public  function get_journal_banner_details($id){
+		$this->db->select('journal_banners.*')->from('journal_banners');		
+		$this->db->where('id',$id);
+        return $this->db->get()->row_array();
+	}
+	public  function delete_journal_banner($b_id){
+		$this->db->where('id', $b_id);
+		return $this->db->delete('journal_banners');
+	}
+	/* journal banners*/
+	
 
 }

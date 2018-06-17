@@ -26,6 +26,7 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
+                  <th style="display:none">id </th>
                   <th>Category </th>
                   <th>Title</th>
                   <th>Image</th>
@@ -37,6 +38,7 @@
                 <?php if(isset($journals_list) && count($journals_list)>0){ ?>
 				<?php foreach($journals_list as $list){ ?>
                 <tr>
+                  <td style="display:none"><?php echo htmlentities($list['j_id']); ?></td>
                   <td><?php echo htmlentities($list['cat_name']); ?></td>
                   <td><?php echo htmlentities($list['title']); ?></td>
                   <td><img width="50px" height="50px" src="<?php echo base_url('assets/banner_pics/'.$list['baneer_image']); ?>">
@@ -83,7 +85,9 @@
 
 <script>
   $(function () {
-    $("#example1").DataTable();
+    $("#example1").DataTable({
+		 "order": [[0, "desc" ]]
+	});
     $('#example2').DataTable({
       "paging": true,
       "lengthChange": false,

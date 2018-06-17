@@ -23,6 +23,7 @@ class Journal_details_model extends CI_Model
 		$this->db->select('journals.*,grf_journal_category.category as cat_name')->from('journals');
 		$this->db->join('grf_journal_category ', 'grf_journal_category.c_id = journals.category', 'left');
 		$this->db->where('journals.create_by',$id);
+		$this->db->order_by('journals.j_id',"desc");
 		return $this->db->get()->result_array();	
 	}
 	
@@ -44,6 +45,12 @@ class Journal_details_model extends CI_Model
 	public function delete_journal($id){
 		$this->db->where('j_id', $id);
 		return $this->db->delete('journals');
+	}
+	public function get_all_journal_list($id){
+		$this->db->select('journals.title,journals.j_id')->from('journals');		
+        $this->db->where('create_by',$id);
+
+		return $this->db->get()->result_array();	
 	}
 	
 

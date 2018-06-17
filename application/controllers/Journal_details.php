@@ -127,32 +127,38 @@ class Journal_details extends CI_Controller {
 		{
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
-			
-					echo '<pre>';print_r($post);exit;
-					$details=$this->Journal_details_model->get_category_details($post['c_id']);
-					if($details['category']!=$post['category']){
-						$new_details=$this->Journal_details_model->check_category_exits($post['category']);
-						if(count($new_details)>0){
-							$this->session->set_flashdata('error',"Journal category name already exists. Please use another one.");
-									redirect('journal/edit/'.base64_encode($post['c_id']));	
+								$details=$this->Journal_details_model->get_journal_details($post['j_id']);
+
+					//echo '<pre>';print_r($post);exit;
+					if(isset($_FILES['journal_banner']['name']) && $_FILES['journal_banner']['name']!=''){
+							$temp = explode(".", $_FILES["journal_banner"]["name"]);
+							$banner_img = round(microtime(true)) . '.' . end($temp);
+							move_uploaded_file($_FILES['journal_banner']['tmp_name'], "assets/banner_pics/" . $banner_img);
+						}else{
+							$banner_img=$details['baneer_image'];
 						}
-					}
 					$update_data=array(
 					'category'=>isset($post['category'])?$post['category']:'',
+					'baneer_image'=>$banner_img,
+					'title'=>isset($post['title'])?$post['title']:'',
+					'alt_tags'=>isset($post['alt_tags'])?$post['alt_tags']:'',
 					'seo_title'=>isset($post['seo_title'])?$post['seo_title']:'',
 					'seo_url'=>isset($post['seo_url'])?$post['seo_url']:'',
-					'seo_keyword'=>isset($post['seo_keyword'])?$post['seo_keyword']:'',
+					'seo_keywords'=>isset($post['seo_keyword'])?$post['seo_keyword']:'',
+					'seo_description'=>isset($post['seo_description'])?$post['seo_description']:'',
+					'key_words'=>isset($post['key_words'])?$post['key_words']:'',
 					'description'=>isset($post['description'])?$post['description']:'',
+					'prices'=>isset($post['prices'])?trim($post['prices']):'',
 					'update_at'=>date('Y-m-d H:i:s'),
 					);
-					$update=$this->Journal_details_model->update_category_details($post['c_id'],$update_data);
+					$update=$this->Journal_details_model->update_journal_details($post['j_id'],$update_data);
 						if(count($update)>0){
-							$this->session->set_flashdata('success','Journal category successfully Updated');
-							redirect('journal/lists');
+							$this->session->set_flashdata('success','Journal successfully Updated');
+								redirect('journal-details/lists');
 							
 						}else{
 							$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");
-							redirect('journal/lists');
+								redirect('journal-details/lists');
 						}
 		}else{
 			$this->session->set_flashdata('error','Please login to continue');
@@ -203,6 +209,8 @@ class Journal_details extends CI_Controller {
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
 			$j_id=base64_decode($this->uri->segment(3));
+				$details=$this->Journal_details_model->get_journal_details($j_id);
+					unlink('assets/banner_pics/'.$details['baneer_image']);
 			
 					$delete=$this->Journal_details_model->delete_journal($j_id);
 					if(count($delete)>0){
@@ -212,6 +220,22 @@ class Journal_details extends CI_Controller {
 						$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");
 							redirect('journal-details/lists');
 					}
+		}else{
+			$this->session->set_flashdata('error','Please login to continue');
+			redirect('admin');
+		}
+		
+	}
+	public function add_banners()
+	{	
+		if($this->session->userdata('userdetails'))
+		{
+			$admindetails=$this->session->userdata('userdetails');
+			$data['journals_list']=$this->Journal_details_model->get_all_journal_list($admindetails['id']);
+			
+			//echo '<pre>';print_r($data);exit;
+			$this->load->view('admin/journal-details/add-banners',$data);
+			$this->load->view('admin/footer');
 		}else{
 			$this->session->set_flashdata('error','Please login to continue');
 			redirect('admin');

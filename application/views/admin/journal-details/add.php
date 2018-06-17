@@ -121,7 +121,7 @@
 							<div class="form-group">
 								<label class=" control-label">Prices</label>
 								<div class="">
-									<textarea  class="form-control" name="prices" value="" id="prices" ></textarea>
+									<textarea  class="form-control" name="prices" id="prices" ></textarea>
 								</div>
 							</div>
                         </div>
@@ -222,50 +222,30 @@ $(document).ready(function() {
                 validators: {
 					notEmpty: {
 						message: 'SEO Keywords is required'
-					},
-					regexp: {
-					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'SEO Keywords wont allow <> [] = % '
 					}
 				}
             },seo_description: {
                 validators: {
 					notEmpty: {
 						message: 'SEO Description is required'
-					},
-					regexp: {
-					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'SEO Description wont allow <> [] = % '
 					}
 				}
             },key_words: {
                 validators: {
 					notEmpty: {
 						message: 'Keywords is required'
-					},
-					regexp: {
-					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'Keywords wont allow <> [] = % '
 					}
 				}
             },description: {
                 validators: {
 					notEmpty: {
 						message: 'Description is required'
-					},
-					regexp: {
-					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'Description wont allow <> [] = % '
 					}
 				}
             },prices: {
                 validators: {
 					notEmpty: {
 						message: 'Price is required'
-					},
-					regexp: {
-					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'Price wont allow <> [] = % '
 					}
 				}
             }

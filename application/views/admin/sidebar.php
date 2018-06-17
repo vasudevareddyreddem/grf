@@ -81,9 +81,10 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="<?php echo base_url('journal-details/'); ?>"><i class="fa fa-circle-o"></i> Details</a></li>
+            <li class="active"><a href="<?php echo base_url('journal-details/'); ?>"><i class="fa fa-circle-o"></i>Add Details</a></li>
 			<li class="active"><a href="<?php echo base_url('journal-details/lists'); ?>"><i class="fa fa-circle-o"></i> Details List</a></li>
-			<li class="active"><a href="<?php echo base_url('journal-details/banners'); ?>"><i class="fa fa-circle-o"></i> Banners</a></li>
+			<li class="active"><a href="<?php echo base_url('journal-details/add-banners'); ?>"><i class="fa fa-circle-o"></i> Add Banners</a></li>
+			<li class="active"><a href="<?php echo base_url('journal-details/banners-list'); ?>"><i class="fa fa-circle-o"></i> Banners List</a></li>
 			<li class="active"><a href="<?php echo base_url('journal-details/edotirs-board'); ?>"><i class="fa fa-circle-o"></i> Editors Board</a></li>
           </ul>
         </li>

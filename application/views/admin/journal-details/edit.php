@@ -26,7 +26,7 @@
 								'hash' => $this->security->get_csrf_hash()
 						); ?>
 										<input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
-					<input type="hidden" name="p_id" name="p_id" value="<?php echo isset($details['p_id'])?$details['p_id']:''; ?>">	
+					<input type="hidden" name="j_id" name="j_id" value="<?php echo isset($details['j_id'])?$details['j_id']:''; ?>">	
       
 						<div class="col-md-6">
 							<div class="form-group">
@@ -126,7 +126,7 @@
 							<div class="form-group">
 								<label class=" control-label">Prices</label>
 								<div class="">
-									<textarea  class="form-control" name="prices" value="" id="prices" >
+									<textarea  class="form-control" name="prices" id="prices" >
 									<?php echo isset($details['prices'])?$details['prices']:''; ?>
 									</textarea>
 								</div>
@@ -173,9 +173,7 @@ $(document).ready(function() {
             },
 			journal_banner: {
                 validators: {
-					notEmpty: {
-						message: 'Journal banner is required'
-					},
+					
 					regexp: {
 					regexp: "(.*?)\.(png|jpeg|jpg|gif)$",
 					message: 'Uploaded file is not a valid. Only png,jpg,jpeg,gif files are allowed'
@@ -229,50 +227,30 @@ $(document).ready(function() {
                 validators: {
 					notEmpty: {
 						message: 'SEO Keywords is required'
-					},
-					regexp: {
-					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'SEO Keywords wont allow <> [] = % '
 					}
 				}
             },seo_description: {
                 validators: {
 					notEmpty: {
 						message: 'SEO Description is required'
-					},
-					regexp: {
-					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'SEO Description wont allow <> [] = % '
 					}
 				}
             },key_words: {
                 validators: {
 					notEmpty: {
 						message: 'Keywords is required'
-					},
-					regexp: {
-					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'Keywords wont allow <> [] = % '
 					}
 				}
             },description: {
                 validators: {
 					notEmpty: {
 						message: 'Description is required'
-					},
-					regexp: {
-					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'Description wont allow <> [] = % '
 					}
 				}
             },prices: {
                 validators: {
 					notEmpty: {
 						message: 'Price is required'
-					},
-					regexp: {
-					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'Price wont allow <> [] = % '
 					}
 				}
             }

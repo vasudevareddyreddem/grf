@@ -272,11 +272,11 @@ $(document).ready(function() {
 			address: {
                  validators: {
 					notEmpty: {
-						message: 'Message is required'
+						message: 'Address is required'
 					},
 					regexp: {
 					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'Message wont allow <> [] = % '
+					message:'Address wont allow <> [] = % '
 					}
 				
 				}

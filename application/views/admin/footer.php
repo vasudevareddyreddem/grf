@@ -1,8 +1,8 @@
 <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b>by</b> prachatech 
+      <b>by</b> GRF Publishers 
     </div>
-    <strong>Schools Mangement </strong>
+    <strong>GRF Publishers Admin </strong>
   </footer>
 
 <!-- jQuery UI 1.11.4 -->

@@ -37,6 +37,22 @@ class Admin_model extends CI_Model
 		$this->db->where('status', 1);
         return $this->db->get()->row_array();	
 	}
+	public function get_adminpassword_details($admin_id){
+		$this->db->select('admin.password')->from('admin');		
+		$this->db->where('id', $admin_id);
+		$this->db->where('status', 1);
+        return $this->db->get()->row_array();	
+	}
+	public function check_email_exits($email){
+		$this->db->select('*')->from('admin');		
+		$this->db->where('email', $email);
+        return $this->db->get()->row_array();	
+	}
+	public  function update_profile_details($id,$data){
+		$this->db->where('id',$id);
+    	return $this->db->update("admin",$data);
+	}
+	
 	
 
 }

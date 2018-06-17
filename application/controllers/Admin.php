@@ -20,17 +20,14 @@ class Admin extends CI_Controller {
 		}
 	public function index()
 	{	
-		//$this->load->view('admin/header');
-		//$this->load->view('admin/sidebar');
 		$this->load->view('admin/index');
-		//$this->load->view('admin/footer');
 	}
 	public function loginpost()
 	{
 		if(!$this->session->userdata('userdetails'))
 		{
 			$post=$this->input->post();
-			//echo '<pre>';print_r($post);
+			//echo '<pre>';print_r($post);exit;
 			$login_deta=array('email'=>$post['email'],'password'=>md5($post['password']));
 			$check_login=$this->Admin_model->login_details($login_deta);
 				$this->load->helper('cookie');
@@ -64,33 +61,36 @@ class Admin extends CI_Controller {
 			redirect('dashboard');
 		}
 	}
+	public function forgotpassword()
+	{	
+		$this->load->view('admin/forgotpasword');
+	}
 	
-	
-	public function emps(){
-		
-		
-		/*test*/
-		$this->zend->load('Zend/Barcode');
-		//generate barcode
-		
-		/*test*/
-		
-		$filename = $this->security->sanitize_filename($this->input->post('name'), TRUE);
-		$data=array('d_name'=>$filename);
-		$logindatasave = $this->Doctor_model->save_doctors($data);
-		
-		
-		
-		$file = Zend_Barcode::draw('code128', 'image', array('text' => $logindatasave), array());
-		$code = time().$logindatasave;
-		 $store_image1 = imagepng($file, $this->config->item('documentroot')."assets/barcodes/{$code}.png");
-			
-		$this->Doctor_model->update_doctors_details($logindatasave,$code);
-		//echo '<pre>';print_r($test);
-		
+	public function forgotpost(){
+		$post=$this->input->post();
+		$check_email=$this->Admin_model->check_email_exits($post['email']);
+			if(count($check_email)>0){
+				
+				$data['details']=$check_email;
+				$this->load->library('email');
+				$this->email->set_newline("\r\n");
+				$this->email->set_mailtype("html");
+				$this->email->from($post['email']);
+				$this->email->to('admin@grfpublishers.org');
+				$this->email->subject('forgot - password');
+				$body = $this->load->view('email/forgot',$data,TRUE);
+				$this->email->message($body);
+				$this->email->send();
+				$this->session->set_flashdata('success','Check Your Email to reset your password!');
+				redirect('admin');
+
+			}else{
+				$this->session->set_flashdata('error','The email you entered is not a registered email. Please try again. ');
+				redirect('admin');	
+			}
 		
 	}
 	
-	
+		
 	
 }

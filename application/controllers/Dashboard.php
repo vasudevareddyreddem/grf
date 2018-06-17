@@ -36,6 +36,20 @@ class Dashboard extends CI_Controller {
 			redirect('admin');
 		}
 	}
+	public function profile()
+	{
+		if($this->session->userdata('userdetails'))
+		{
+			$admindetails=$this->session->userdata('userdetails');
+			$data['userdetails']=$this->Admin_model->get_admin_details($admindetails['id']);
+			$this->load->view('admin/profile',$data);
+			$this->load->view('admin/footer');
+
+		}else{
+			$this->session->set_flashdata('loginerror','Please login to continue');
+			redirect('admin');
+		}
+	}
 	public function changepassword()
 	{
 		if($this->session->userdata('userdetails'))
@@ -92,8 +106,6 @@ class Dashboard extends CI_Controller {
 	}
 	public function logout(){
 		$admindetails=$this->session->userdata('userdetails');
-		$up_details=array('hos_curent_login'=>0);
-		$update=$this->Admin_model->update_login_details($admindetails['a_id'],$up_details);
 		$userinfo = $this->session->userdata('userdetails');
         $this->session->unset_userdata($userinfo);
 		$this->session->sess_destroy('userdetails');

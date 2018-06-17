@@ -8,8 +8,6 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/admin/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/admin/dist/css/custom.css">
-
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
@@ -33,9 +31,9 @@
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Sign in to start your session</p>
+    <p class="login-box-msg">Forgot Password</p>
 
-    <form action="<?php echo base_url('admin/loginpost'); ?>" method="post">
+    <form action="<?php echo base_url('admin/forgotpost'); ?>" method="post">
 	<?php $csrf = array(
 								'name' => $this->security->get_csrf_token_name(),
 								'hash' => $this->security->get_csrf_hash()
@@ -43,29 +41,17 @@
 										<input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
 
       <div class="form-group has-feedback">
-        <input type="email" class="form-control" id="email" name="email" value="<?php echo $this->input->cookie('username');?>"	placeholder="Email" required>
+        <input type="email" class="form-control" id="email" name="email" value=""	placeholder="Email Address" required>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
-      <div class="form-group has-feedback">
-        <input type="password" class="form-control" id="password" name="password" value="<?php echo $this->input->cookie('password');?>" placeholder="Password" required>
-        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-      </div>
+      
       <div class="row">
         <div class="col-xs-8">
-          <div class="checkbox icheck">
-            <label>
-			<?php if($this->input->cookie('remember')!=''){ ?>
-
-              <input type="checkbox" checked name="remember_me" value="1"> Remember Me
-			  <?php } else{ ?>
-				<input type="checkbox" name="remember_me" value="1"> Remember Me
-			  <?php } ?>
-            </label>
-          </div>
+         
         </div>
         <!-- /.col -->
-        <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+        <div class="col-xs-6">
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Forgot Password</button>
         </div>
         <!-- /.col -->
       </div>
@@ -73,7 +59,6 @@
 
     <!-- /.social-auth-links -->
 
-    <a href="<?php echo base_url('admin/forgotpassword'); ?>">I forgot my password</a><br>
 
   </div>
   <!-- /.login-box-body -->
@@ -97,13 +82,3 @@
 </script>
 </body>
 </html>
-<?php if($this->session->flashdata('success')): ?>
-<div class="alert_msg1 animated slideInUp bg-succ">
-   <?php echo $this->session->flashdata('success');?> &nbsp; <i class="fa fa-check text-success ico_bac" aria-hidden="true"></i>
-</div>
-<?php endif; ?>
-<?php if($this->session->flashdata('error')): ?>
-<div class="alert_msg1 animated slideInUp bg-warn">
-   <?php echo $this->session->flashdata('error');?> &nbsp; <i class="fa fa-exclamation-triangle text-success ico_bac" aria-hidden="true"></i>
-</div>
-<?php endif; ?>

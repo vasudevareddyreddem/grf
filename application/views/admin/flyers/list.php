@@ -37,13 +37,14 @@
 				<?php foreach($fly_list as $list){ ?>
                 <tr>
                   <td><?php echo htmlentities($list['title']); ?></td>
-                  <td>PSP browser</td>
+                  <td><img width="50px" height="50px" src="<?php echo base_url('assets/flyers_img/'.$list['fly_image']); ?>">
+				  </td>
                   <td><?php echo htmlentities($list['title_color']); ?></td>
                   <td><?php if($list['status']==1){ echo "Active"; }else{ echo "deactive";} ?></td>
                   <td>
 					<a href="<?php echo base_url('flyers/edit/'.base64_encode($list['f_id'])); ?>"><i class="fa fa-edit"></i></a>
-					<a href="<?php echo base_url('flyers/view/'.base64_encode($list['f_id'])); ?>"><i class="fa fa-eye"></i></a>
-					<a href="<?php echo base_url('flyers/status/'.base64_encode($list['f_id'])); ?>"><i class="fa fa-check-square-o"></i></a>
+					
+					<a href="<?php echo base_url('flyers/status/'.base64_encode($list['f_id']).'/'.base64_encode($list['status'])); ?>"><i class="fa fa-check-square-o"></i></a>
 					<a href="<?php echo base_url('flyers/delete/'.base64_encode($list['f_id'])); ?>"><i class="fa fa-trash-o"></i></a>
 				  
 				  </td>

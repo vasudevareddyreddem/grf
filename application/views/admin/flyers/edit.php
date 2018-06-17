@@ -1,11 +1,12 @@
 <div class="content-wrapper">
 <section class="content-header">
       <h1>
-        Add Flyers 
+        Edit Flyers 
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?php echo base_url('dashboard'); ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li class="active">Add Flyers</li>
+        <li><a href="<?php echo base_url('flyers/lists'); ?>">Flyers List</a></li>
+        <li class="active">Edit Flyers</li>
       </ol>
     </section>
    <section class="content">
@@ -15,24 +16,25 @@
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Add Flyers </h3>
+              <h3 class="box-title">Edit Flyers </h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
 			<div style="padding:20px;">
-            <form id="addflyer" method="post" class="" action="<?php echo base_url('flyers/addpost'); ?>" enctype="multipart/form-data">
-					<?php $csrf = array(
+            <form id="addflyer" method="post" class="" action="<?php echo base_url('flyers/editpost'); ?>" enctype="multipart/form-data">
+							<?php $csrf = array(
 								'name' => $this->security->get_csrf_token_name(),
 								'hash' => $this->security->get_csrf_hash()
 						); ?>
-										<input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+					<input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+					<input type="hidden" class="form-control" name="title" id="title" value="<?php echo isset($details['title'])?$details['title']:''; ?>" placeholder="Enter title" />
 
       
 						<div class="col-md-8">
 							<div class="form-group">
 								<label class=" control-label">Title</label>
 								<div class="">
-									<input type="text" class="form-control" name="title" id="title" value="" placeholder="Enter title" />
+									<input type="text" class="form-control" name="title" id="title" value="<?php echo isset($details['title'])?$details['title']:''; ?>" placeholder="Enter title" />
 								</div>
 							</div>
                         </div>
@@ -49,7 +51,7 @@
 							<div class="form-group">
 								<label class=" control-label">Title Color Code</label>
 								<div class="">
-									<input type="text" class="form-control" name="title_color" value="" id="title_color" placeholder="Enter Title Color Code" />
+									<input type="text" class="form-control" name="title_color" id="title_color" value="<?php echo isset($details['title_color'])?$details['title_color']:''; ?>" placeholder="Enter Title Color Code" />
 								</div>
 							</div>
                         </div>
@@ -57,8 +59,8 @@
 						<div class="clearfix">&nbsp;</div>
 						  <div class="form-group">
                             <div class="col-lg-4 col-lg-offset-8">
-                                <button type="submit" class="btn btn-primary" name="signup" value="Sign up">Add</button>
-								<a href="<?php echo base_url('dashboard'); ?>" type="submit" class="btn btn-warning" >Cancel</a>
+                                <button type="submit" class="btn btn-primary" name="signup" value="Sign up">Update</button>
+								<a href="<?php echo base_url('flyers/lists'); ?>" type="submit" class="btn btn-warning" >Cancel</a>
                                 
                             </div>
                         </div>
@@ -97,10 +99,7 @@ $(document).ready(function() {
 				}
             },image: {
                 validators: {
-					notEmpty: {
-						message: 'image is required'
-					},
-					regexp: {
+										regexp: {
 					regexp: "(.*?)\.(png|jpeg|jpg|gif)$",
 					message: 'Uploaded file is not a valid. Only png,jpg,jpeg,gif files are allowed'
 					}

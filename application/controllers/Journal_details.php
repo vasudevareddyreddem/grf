@@ -61,9 +61,10 @@ class Journal_details extends CI_Controller {
 		if($this->session->userdata('userdetails'))
 		{
 			$admindetails=$this->session->userdata('userdetails');
-			$c_id=base64_decode($this->uri->segment(3));
-			$data['details']=$this->Journal_details_model->get_category_details($c_id);
-			
+			$j_id=base64_decode($this->uri->segment(3));
+			$data['details']=$this->Journal_details_model->get_journal_details($j_id);
+			$data['journals_list']=$this->Journal_details_model->get_journal_category_list($admindetails['id']);
+
 			//echo '<pre>';print_r($data);exit; 
 			$this->load->view('admin/journal-details/edit',$data);
 			$this->load->view('admin/footer');
@@ -127,7 +128,7 @@ class Journal_details extends CI_Controller {
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
 			
-					//echo '<pre>';print_r($post);exit;
+					echo '<pre>';print_r($post);exit;
 					$details=$this->Journal_details_model->get_category_details($post['c_id']);
 					if($details['category']!=$post['category']){
 						$new_details=$this->Journal_details_model->check_category_exits($post['category']);
@@ -165,7 +166,7 @@ class Journal_details extends CI_Controller {
 		{
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
-			$c_id=base64_decode($this->uri->segment(3));
+			$j_id=base64_decode($this->uri->segment(3));
 			$status=base64_decode($this->uri->segment(4));
 			if($status==1){
 				$stat=0;
@@ -176,18 +177,18 @@ class Journal_details extends CI_Controller {
 					'status'=>$stat,
 					'update_at'=>date('Y-m-d H:i:s'),
 					);
-					$update=$this->Journal_details_model->update_category_details($c_id,$update_data);
+					$update=$this->Journal_details_model->update_journal_details($j_id,$update_data);
 						if(count($update)>0){
 							if($status==1){
-							$this->session->set_flashdata('success','Journal category successfully deactivated');
+							$this->session->set_flashdata('success','Journal successfully deactivated');
 							}else{
-							$this->session->set_flashdata('success','Journal category successfully activated');
+							$this->session->set_flashdata('success','Journal successfully activated');
 							}
-							redirect('journal/lists');
+							redirect('journal-details/lists');
 							
 						}else{
 							$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");
-							redirect('journal/lists');
+							redirect('journal-details/lists');
 						}
 		}else{
 			$this->session->set_flashdata('error','Please login to continue');
@@ -201,16 +202,15 @@ class Journal_details extends CI_Controller {
 		{
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
-			$c_id=base64_decode($this->uri->segment(3));
-			$details=$this->Journal_details_model->get_category_details($c_id);
+			$j_id=base64_decode($this->uri->segment(3));
 			
-					$delete=$this->Journal_details_model->delete_journal_category($c_id);
+					$delete=$this->Journal_details_model->delete_journal($j_id);
 					if(count($delete)>0){
-						$this->session->set_flashdata('success','Journal category successfully deleted');
-						redirect('journal/lists');
+						$this->session->set_flashdata('success','Journal successfully deleted');
+							redirect('journal-details/lists');
 					}else{
 						$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");
-						redirect('journal/lists');
+							redirect('journal-details/lists');
 					}
 		}else{
 			$this->session->set_flashdata('error','Please login to continue');

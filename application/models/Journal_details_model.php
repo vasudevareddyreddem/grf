@@ -27,23 +27,23 @@ class Journal_details_model extends CI_Model
 	}
 	
 	public  function check_category_exits($name){
-		$this->db->select('*')->from('grf_journal_category');		
+		$this->db->select('*')->from('journals');		
 		$this->db->where('category',$name);
         return $this->db->get()->row_array();
 	}
 	
-	public function get_category_details($id){
-		$this->db->select('*')->from('grf_journal_category');		
-		$this->db->where('c_id',$id);
+	public function get_journal_details($id){
+		$this->db->select('*')->from('journals');		
+		$this->db->where('j_id',$id);
         return $this->db->get()->row_array();	
 	}
-	public function update_category_details($id,$data){
-		$this->db->where('c_id',$id);
-    	return $this->db->update("grf_journal_category",$data);
+	public function update_journal_details($id,$data){
+		$this->db->where('j_id',$id);
+    	return $this->db->update("journals",$data);
 	}
-	public function delete_journal_category($id){
-		$this->db->where('c_id', $id);
-		return $this->db->delete('grf_journal_category');
+	public function delete_journal($id){
+		$this->db->where('j_id', $id);
+		return $this->db->delete('journals');
 	}
 	
 

@@ -146,6 +146,42 @@ CREATE TABLE `grf_journal_category` (
 
 insert  into `grf_journal_category`(`c_id`,`category`,`seo_title`,`seo_url`,`seo_keyword`,`description`,`status`,`create_at`,`update_at`,`create_by`) values (1,'Advanced Research in Biosensor and Bioelectronics(ARBB)','seo title','vbncvbn','seo keywords','vcvzxcvcv',1,'2018-06-17 16:00:30',NULL,1),(2,'Annals of Medical & Surgical Case Reports(AMSC)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(3,'Annals of Pediatrics and Child Care',NULL,NULL,NULL,NULL,0,'2018-06-17 16:00:30','2018-06-17 19:48:18',1),(4,'Clinical Oncology Research Journal (CORJ)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(5,'Current Updates in Dermatological Problems (CUDP)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(6,'Dentistry and Dental Ailments Journal (DDAJ)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(7,'Insights of Cardiology: Open Access (ICOA)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(8,'International Journal of Education Advancement (IJEA)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(9,'Journal of Biomarker Research and Studies',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(10,'Journal of Obstetrics and Gynecological Problems(JOGP)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(11,'Journal of Surgery and Insights (JSI)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(12,'Journal of Urology and Renal Problems (JURP)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(13,'Current Trends in Genetics and Microbiology (CTGM)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(14,'Journal of Gastroenterology and Digestive Disorders (JGDD)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(15,'Clinical Orthopedics Advanced Research Journal (COARJ)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(16,'Chronicles of Complementary, Alternative & Integrative Medicine (CCAIM)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(17,'Journal of Sports Science and Physical Therapy (JSSPT)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(18,'Emergency Medicine and Trauma Care Journal (EMTCJ)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(19,'Open Access Journal of Endocrinology Disorders (OAJED)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1);
 
+/*Table structure for table `journal_article_in_press` */
+
+DROP TABLE IF EXISTS `journal_article_in_press`;
+
+CREATE TABLE `journal_article_in_press` (
+  `a_id` int(11) NOT NULL AUTO_INCREMENT,
+  `journal_id` int(11) DEFAULT NULL,
+  `journal_cat_id` varchar(25) DEFAULT NULL,
+  `year_of_article` varchar(250) DEFAULT NULL,
+  `title` varchar(250) DEFAULT NULL,
+  `author_name` varchar(250) DEFAULT NULL,
+  `article_type` varchar(250) DEFAULT NULL,
+  `url` varchar(250) DEFAULT NULL,
+  `seo_title` varchar(250) DEFAULT NULL,
+  `seo_keyword` varchar(250) DEFAULT NULL,
+  `seo_description` varchar(250) DEFAULT NULL,
+  `research_article` varchar(250) DEFAULT NULL,
+  `abstract` varchar(250) DEFAULT NULL,
+  `introduction` varchar(250) DEFAULT NULL,
+  `references` varchar(250) DEFAULT NULL,
+  `figures` varchar(250) DEFAULT NULL,
+  `suggested_citation` varchar(250) DEFAULT NULL,
+  `tables` varchar(250) DEFAULT NULL,
+  `pdf_file` varchar(250) DEFAULT NULL,
+  `image` varchar(250) DEFAULT NULL,
+  `status` int(11) DEFAULT '1',
+  `create_at` datetime DEFAULT NULL,
+  `pdate_at` datetime DEFAULT NULL,
+  `create_by` int(11) DEFAULT NULL,
+  PRIMARY KEY (`a_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+/*Data for the table `journal_article_in_press` */
+
+insert  into `journal_article_in_press`(`a_id`,`journal_id`,`journal_cat_id`,`year_of_article`,`title`,`author_name`,`article_type`,`url`,`seo_title`,`seo_keyword`,`seo_description`,`research_article`,`abstract`,`introduction`,`references`,`figures`,`suggested_citation`,`tables`,`pdf_file`,`image`,`status`,`create_at`,`pdate_at`,`create_by`) values (1,3,'1','2016','fgsdfg','gfdgsdfg','gsdfgsdfg','','','','','','','','','','','','1529341236.pdf','',1,'2018-06-18 22:30:35',NULL,1);
+
 /*Table structure for table `journal_banners` */
 
 DROP TABLE IF EXISTS `journal_banners`;
@@ -166,6 +202,32 @@ CREATE TABLE `journal_banners` (
 /*Data for the table `journal_banners` */
 
 insert  into `journal_banners`(`id`,`journal_id`,`baneer_image`,`title`,`alt_tags`,`status`,`create_at`,`update_at`,`create_by`) values (2,3,'1529253750.jpg','ghdfghdgh','bvbxcvb',1,'2018-06-17 21:59:39','2018-06-17 22:12:30',1);
+
+/*Table structure for table `journal_editors` */
+
+DROP TABLE IF EXISTS `journal_editors`;
+
+CREATE TABLE `journal_editors` (
+  `j_e_id` int(11) NOT NULL AUTO_INCREMENT,
+  `journal_id` int(11) DEFAULT NULL,
+  `image` varchar(250) DEFAULT NULL,
+  `name` varchar(250) DEFAULT NULL,
+  `email` varchar(250) DEFAULT NULL,
+  `phone` varchar(250) DEFAULT NULL,
+  `designation` varchar(250) DEFAULT NULL,
+  `position` varchar(250) DEFAULT NULL,
+  `country` varchar(250) DEFAULT NULL,
+  `university` varchar(250) DEFAULT NULL,
+  `status` int(11) DEFAULT '1',
+  `create_at` datetime DEFAULT NULL,
+  `update_at` datetime DEFAULT NULL,
+  `create_by` int(11) DEFAULT NULL,
+  PRIMARY KEY (`j_e_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+/*Data for the table `journal_editors` */
+
+insert  into `journal_editors`(`j_e_id`,`journal_id`,`image`,`name`,`email`,`phone`,`designation`,`position`,`country`,`university`,`status`,`create_at`,`update_at`,`create_by`) values (2,4,'1529334192.jpg','vasudevareddy reddem','cvb@gmail.com','8500050944','des','Editor in cheif','Aruba','bxcvbxcvb',1,'2018-06-18 20:33:11','2018-06-18 20:33:11',1),(3,3,'1529336187.jpg','bxcvbxcvb','vcbxcvb@gmail.com','8500050944','des','Editorial board member','Australia','cvzxcv',1,'2018-06-18 20:38:50','2018-06-18 21:06:26',1);
 
 /*Table structure for table `journals` */
 

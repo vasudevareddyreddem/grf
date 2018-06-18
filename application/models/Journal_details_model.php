@@ -113,5 +113,19 @@ class Journal_details_model extends CI_Model
         return $this->db->get()->row_array();
 	}
 	
+	/*save_journal_article_in_press*/
+	public function save_journal_article_in_press($data){
+		$this->db->insert('journal_article_in_press', $data);
+		return $insert_id = $this->db->insert_id();
+	}
+
+	public function get_article_in_press_list($id){
+		$this->db->select('journal_article_in_press.*,journals.title as journaltitle,grf_journal_category.category')->from('journal_article_in_press');
+		$this->db->join('journals ', 'journals.j_id = journal_article_in_press.journal_id', 'left');
+		$this->db->join('grf_journal_category ', 'grf_journal_category.c_id = journal_article_in_press.journal_cat_id', 'left');
+		$this->db->where('journal_article_in_press.create_by',$id);
+		return $this->db->get()->result_array();
+	}	
+	
 
 }

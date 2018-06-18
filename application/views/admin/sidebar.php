@@ -73,7 +73,7 @@
             <li><a href="<?php echo base_url('journal/lists'); ?>"><i class="fa fa-circle-o"></i> List</a></li>
           </ul>
         </li>
-		<li class="<?php if(isset($u_url) && $u_url==base_url('journal-details')){ echo "active"; } ?> treeview">
+		<li class="<?php if(isset($u_url) && $u_url==base_url('journal-details') || $u_url==base_url('article-in-press')){ echo "active"; } ?> treeview">
           <a href="#">
             <i class="fa fa-list-ol"></i> <span>Journals</span>
             <span class="pull-right-container">

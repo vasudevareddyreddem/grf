@@ -47,10 +47,10 @@ class Article_in_press extends CI_Controller {
 		if($this->session->userdata('userdetails'))
 		{
 			$admindetails=$this->session->userdata('userdetails');
-			$data['fly_list']=$this->Flyers_model->get_flyers_list($admindetails['id']);
+			$data['article_in_press_list']=$this->Journal_details_model->get_article_in_press_list($admindetails['id']);
 			
 			//echo '<pre>';print_r($data);exit; 
-			$this->load->view('admin/flyers/list',$data);
+			$this->load->view('admin/article_in_press/list',$data);
 			$this->load->view('admin/footer');
 		}else{
 			$this->session->set_flashdata('error','Please login to continue');
@@ -64,7 +64,7 @@ class Article_in_press extends CI_Controller {
 		{
 			$admindetails=$this->session->userdata('userdetails');
 			$f_id=base64_decode($this->uri->segment(3));
-			$data['details']=$this->Flyers_model->get_flyers_details($f_id);
+			$data['details']=$this->Journal_details_model->get_flyers_details($f_id);
 			
 			//echo '<pre>';print_r($data);exit; 
 			$this->load->view('admin/flyers/edit',$data);
@@ -82,30 +82,52 @@ class Article_in_press extends CI_Controller {
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
 			//echo '<pre>';print_r($post);exit;
-						if(isset($_FILES['image']['name']) && $_FILES['image']['name']!=''){
-								$temp = explode(".", $_FILES["image"]["name"]);
-								$image = round(microtime(true)) . '.' . end($temp);
-								move_uploaded_file($_FILES['image']['tmp_name'], "assets/flyers_img/" . $image);
+						if(isset($_FILES['pdf_file']['name']) && $_FILES['pdf_file']['name']!=''){
+								$temp = explode(".", $_FILES["pdf_file"]["name"]);
+								$pdf = round(microtime(true)) . '.' . end($temp);
+								move_uploaded_file($_FILES['pdf_file']['tmp_name'], "assets/article_in_press/" . $pdf);
 							}else{
-								$image='';
+								$pdf='';
+							}
+							if(isset($_FILES['image']['name']) && $_FILES['image']['name']!=''){
+								$temp = explode(".", $_FILES["image"]["name"]);
+								$img = round(microtime(true)) . '.' . end($temp);
+								move_uploaded_file($_FILES['image']['tmp_name'], "assets/article_in_press/" . $img);
+							}else{
+								$img='';
 							}
 					$add_data=array(
+					'journal_id'=>isset($post['journal'])?$post['journal']:'',
+					'journal_cat_id'=>isset($post['category'])?$post['category']:'',
+					'year_of_article'=>isset($post['year_of_article'])?$post['year_of_article']:'',
 					'title'=>isset($post['title'])?$post['title']:'',
-					'title_color'=>isset($post['title_color'])?$post['title_color']:'',
-					'fly_image'=>$image,
-					'fly_org_image'=>isset($_FILES['image']['name'])?$_FILES['image']['name']:'',
+					'author_name'=>isset($post['author_name'])?$post['author_name']:'',
+					'article_type'=>isset($post['article_type'])?$post['article_type']:'',
+					'url'=>isset($post['url'])?$post['url']:'',
+					'seo_title'=>isset($post['seo_title'])?$post['seo_title']:'',
+					'seo_keyword'=>isset($post['seo_keyword'])?$post['seo_keyword']:'',
+					'seo_description'=>isset($post['seo_description'])?$post['seo_description']:'',
+					'research_article'=>isset($post['research_article'])?$post['research_article']:'',
+					'abstract'=>isset($post['abstract'])?$post['abstract']:'',
+					'introduction'=>isset($post['introduction'])?$post['introduction']:'',
+					'references'=>isset($post['references'])?$post['references']:'',
+					'figures'=>isset($post['figures'])?$post['figures']:'',
+					'suggested_citation'=>isset($post['suggested_citation'])?$post['suggested_citation']:'',
+					'tables'=>isset($post['tables'])?$post['tables']:'',
+					'pdf_file'=>$pdf,
+					'image'=>$img,
 					'status'=>1,
 					'create_at'=>date('Y-m-d H:i:s'),
 					'create_by'=>$admindetails['id'],
 					);
-					$save=$this->Flyers_model->save_flyers($add_data);
+					$save=$this->Journal_details_model->save_journal_article_in_press($add_data);
 						if(count($save)>0){
-							$this->session->set_flashdata('success','Flyer successfully Added');
-							redirect('flyers/lists');
+							$this->session->set_flashdata('success','Article in press successfully Added');
+							redirect('article-in-press/lists');
 							
 						}else{
 							$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");
-							redirect('flyers');
+							redirect('article-in-press');
 						}
 		}else{
 			$this->session->set_flashdata('error','Please login to continue');
@@ -119,7 +141,7 @@ class Article_in_press extends CI_Controller {
 		{
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
-						$details=$this->Flyers_model->get_flyers_details($post['f_id']);
+						$details=$this->Journal_details_model->get_flyers_details($post['f_id']);
 					if(isset($_FILES['image']['name']) && $_FILES['image']['name']!=''){
 												unlink('assets/flyers_img/'.$details['fly_image']);
 
@@ -132,13 +154,28 @@ class Article_in_press extends CI_Controller {
 								$org_name=$details['fly_org_image'];
 							}
 					$update_data=array(
+					'journal'=>isset($post['journal'])?$post['journal']:'',
+					'title_color'=>isset($post['category'])?$post['category']:'',
+					'year_of_article'=>isset($post['year_of_article'])?$post['year_of_article']:'',
 					'title'=>isset($post['title'])?$post['title']:'',
-					'title_color'=>isset($post['title_color'])?$post['title_color']:'',
+					'author_name'=>isset($post['author_name'])?$post['author_name']:'',
+					'article_type'=>isset($post['article_type'])?$post['article_type']:'',
+					'url'=>isset($post['url'])?$post['url']:'',
+					'seo_title'=>isset($post['seo_title'])?$post['seo_title']:'',
+					'seo_keyword'=>isset($post['seo_keyword'])?$post['seo_keyword']:'',
+					'seo_description'=>isset($post['seo_description'])?$post['seo_description']:'',
+					'research_article'=>isset($post['research_article'])?$post['research_article']:'',
+					'abstract'=>isset($post['abstract'])?$post['abstract']:'',
+					'introduction'=>isset($post['introduction'])?$post['introduction']:'',
+					'references'=>isset($post['references'])?$post['references']:'',
+					'figures'=>isset($post['figures'])?$post['figures']:'',
+					'suggested_citation'=>isset($post['suggested_citation'])?$post['suggested_citation']:'',
+					'tables'=>isset($post['tables'])?$post['tables']:'',
 					'fly_image'=>$image,
 					'fly_org_image'=>$org_name,
 					'update_at'=>date('Y-m-d H:i:s'),
 					);
-						$update=$this->Flyers_model->update_flyers_details($post['f_id'],$update_data);
+						$update=$this->Journal_details_model->update_flyers_details($post['f_id'],$update_data);
 						if(count($update)>0){
 							$this->session->set_flashdata('success','Flyer successfully Updated');
 							redirect('flyers/lists');
@@ -170,7 +207,7 @@ class Article_in_press extends CI_Controller {
 					'status'=>$stat,
 					'update_at'=>date('Y-m-d H:i:s'),
 					);
-					$update=$this->Flyers_model->update_flyers_details($f_id,$update_data);
+					$update=$this->Journal_details_model->update_flyers_details($f_id,$update_data);
 						if(count($update)>0){
 							if($status==1){
 							$this->session->set_flashdata('success','Flyer successfully deactivated');
@@ -196,9 +233,9 @@ class Article_in_press extends CI_Controller {
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
 			$f_id=base64_decode($this->uri->segment(3));
-			$details=$this->Flyers_model->get_flyers_details($f_id);
+			$details=$this->Journal_details_model->get_flyers_details($f_id);
 			
-					$delete=$this->Flyers_model->delete_flyers($f_id);
+					$delete=$this->Journal_details_model->delete_flyers($f_id);
 					if(count($delete)>0){
 						unlink('assets/flyers_img/'.$details['fly_image']);
 						$this->session->set_flashdata('success','Flyer successfully deleted');

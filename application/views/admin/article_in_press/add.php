@@ -1,11 +1,11 @@
 <div class="content-wrapper">
 <section class="content-header">
       <h1>
-        Add Journal upload 
+        Add Article in press 
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?php echo base_url('dashboard'); ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li class="active"> Add Journal upload</li>
+        <li class="active"> Add Article in press</li>
       </ol>
     </section>
    <section class="content">
@@ -15,12 +15,12 @@
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title"> Add Journal upload</h3>
+              <h3 class="box-title"> Add Article in press</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
 			<div style="padding:20px;">
-            <form id="addflyer" method="post" class="" action="<?php echo base_url('journal_details/addpost'); ?>" enctype="multipart/form-data">
+            <form id="addflyer" method="post" class="" action="<?php echo base_url('article_in_press/addpost'); ?>" enctype="multipart/form-data">
 					<?php $csrf = array(
 								'name' => $this->security->get_csrf_token_name(),
 								'hash' => $this->security->get_csrf_hash()
@@ -59,12 +59,20 @@
 							<div class="form-group">
 								<label class=" control-label">Years of article </label>
 								<div class="">
-									 <select class="form-control" id="category" name="category">
+									 <select class="form-control" id="year_of_article" name="year_of_article">
 									  <option value="">Select</option>
-									 <?php foreach($journals_category_list as $list){ ?>
-									<option value="<?php echo $list['c_id']; ?>"><?php echo $list['category']; ?></option>
+									  <?php
+								  $currently_selected = date('Y'); 
+								  $earliest_year = 1950; 
+								  $latest_year = date('Y');  ?>
+
+									<?php foreach ( range( $latest_year, $earliest_year ) as $i ) { ?>
+									<option value="<?php echo $i; ?>"><?php echo $i; ?></option>
 									<?php } ?>
 									</select>
+									
+								
+																	
 								</div>
 							</div>
                         </div>
@@ -245,21 +253,67 @@ $(document).ready(function() {
     $('#addflyer').bootstrapValidator({
         
         fields: {
-             category: {
+             journal: {
+                validators: {
+					notEmpty: {
+						message: 'Journal is required'
+					}
+				}
+            },
+			category: {
                 validators: {
 					notEmpty: {
 						message: 'Category is required'
 					}
 				}
             },
-			journal_banner: {
+			year_of_article: {
                 validators: {
 					notEmpty: {
-						message: 'Journal banner is required'
+						message: 'Year of article is required'
+					}
+				}
+            },
+			author_name: {
+                validators: {
+					notEmpty: {
+						message: 'Author Name is required'
 					},
 					regexp: {
-					regexp: "(.*?)\.(png|jpeg|jpg|gif)$",
-					message: 'Uploaded file is not a valid. Only png,jpg,jpeg,gif files are allowed'
+					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
+					message:'Author Name wont allow <> [] = % '
+					}
+				}
+            },article_type: {
+                validators: {
+					notEmpty: {
+						message: 'Article Type is required'
+					},
+					regexp: {
+					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
+					message:'Article Type wont allow <> [] = % '
+					}
+				}
+            },
+			pdf_file: {
+                validators: {
+					notEmpty: {
+						message: 'Select PDF File is required'
+					},
+					regexp: {
+					regexp: "(.*?)\.(pdf)$",
+					message: 'Uploaded file is not a valid. Only pdf file are allowed'
+					}
+				}
+            },
+			image: {
+                validators: {
+					notEmpty: {
+						message: 'Select Image is required'
+					},
+					regexp: {
+					regexp: "(.*?)\.(doc|docx|html)$",
+					message: 'Uploaded file is not a valid. Only doc,docx,html file are allowed'
 					}
 				}
             },
@@ -275,14 +329,14 @@ $(document).ready(function() {
 					}
 				}
             },
-			alt_tags: {
+			url: {
                 validators: {
 					notEmpty: {
-						message: 'Alt tags is required'
+						message: 'Url is required'
 					},
 					regexp: {
 					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'Alt tags wont allow <> [] = % '
+					message:'Url wont allow <> [] = % '
 					}
 				}
             },seo_title: {
@@ -318,22 +372,47 @@ $(document).ready(function() {
 						message: 'SEO Description is required'
 					}
 				}
-            },key_words: {
+            },research_article: {
                 validators: {
 					notEmpty: {
-						message: 'Keywords is required'
+						message: 'Research Article is required'
 					}
 				}
-            },description: {
+            },
+			abstract: {
                 validators: {
 					notEmpty: {
-						message: 'Description is required'
+						message: 'Abstract is required'
 					}
 				}
-            },prices: {
+            },introduction: {
                 validators: {
 					notEmpty: {
-						message: 'Price is required'
+						message: 'Introduction is required'
+					}
+				}
+            },references: {
+                validators: {
+					notEmpty: {
+						message: 'References is required'
+					}
+				}
+            },figures: {
+                validators: {
+					notEmpty: {
+						message: 'figures is required'
+					}
+				}
+            },suggested_citation: {
+                validators: {
+					notEmpty: {
+						message: 'Suggested citation is required'
+					}
+				}
+            },tables: {
+                validators: {
+					notEmpty: {
+						message: 'Tables is required'
 					}
 				}
             }

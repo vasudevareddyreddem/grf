@@ -3,11 +3,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Journals List
+        Article in press List
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?php echo base_url('dashboard'); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Journals List</li>
+        <li class="active">Article in press List</li>
       </ol>
     </section>
 
@@ -19,7 +19,7 @@
 
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Journals List</h3>
+              <h3 class="box-title">Article in press List</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -27,31 +27,32 @@
                 <thead>
                 <tr>
                   <th style="display:none">id </th>
-                  <th>Category </th>
-                  <th>Title</th>
-                  <th>Image</th>
+                  <th>Created Date</th>
+                  <th>Ap Title</th>
+                  <th>Ap Author</th>
+                  <th>Year</th>
                   <th>Status</th>
                   <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                <?php if(isset($journals_list) && count($journals_list)>0){ ?>
-				<?php foreach($journals_list as $list){ ?>
+                <?php if(isset($article_in_press_list) && count($article_in_press_list)>0){ ?>
+				<?php foreach($article_in_press_list as $list){ ?>
                 <tr>
                   <td style="display:none"><?php echo htmlentities($list['j_id']); ?></td>
-                  <td><?php echo htmlentities($list['cat_name']); ?></td>
+                  <td><?php echo Date('Y-M-d',strtotime(htmlentities($list['create_at'])));?></td>
                   <td><?php echo htmlentities($list['title']); ?></td>
-                  <td><img width="50px" height="50px" src="<?php echo base_url('assets/banner_pics/'.$list['baneer_image']); ?>">
-				  </td>
+                  <td><?php echo htmlentities($list['author_name']); ?></td>
+                  <td><?php echo htmlentities($list['year_of_article']); ?></td>
                   <td><?php if($list['status']==1){ echo "Active"; }else{ echo "deactive";} ?></td>
                   <td>
-					<a href="<?php echo base_url('journal-details/edit/'.base64_encode($list['j_id'])); ?>"><i class="fa fa-edit"></i></a>
+					<a href="<?php echo base_url('article-in-press/edit/'.base64_encode($list['a_id'])); ?>"><i class="fa fa-edit"></i></a>
 										&nbsp;&nbsp;
 
-					<a href="<?php echo base_url('journal-details/status/'.base64_encode($list['j_id']).'/'.base64_encode($list['status'])); ?>"><i class="fa fa-check-square-o"></i></a>
+					<a href="<?php echo base_url('article-in-press/status/'.base64_encode($list['a_id']).'/'.base64_encode($list['status'])); ?>"><i class="fa fa-check-square-o"></i></a>
 										&nbsp;&nbsp;
 
-					<a href="<?php echo base_url('journal-details/delete/'.base64_encode($list['j_id'])); ?>"><i class="fa fa-trash-o"></i></a>
+					<a href="<?php echo base_url('article-in-press/delete/'.base64_encode($list['a_id'])); ?>"><i class="fa fa-trash-o"></i></a>
 				  
 				  </td>
                 </tr>

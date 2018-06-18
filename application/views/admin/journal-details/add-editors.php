@@ -44,6 +44,21 @@
                         </div>
 						<div class="col-md-8">
 							<div class="form-group">
+								<label class=" control-label">Select Journal category</label>
+								<div class="">
+									 <select class="form-control" id="journal" name="journal">
+									  <option value="">Select</option>
+									 <?php foreach($journals_list as $list){ ?>
+									 
+									 									<option value="<?php echo $list['j_id']; ?>"><?php echo $list['title']; ?></option>
+
+									<?php } ?>
+									</select>
+								</div>
+							</div>
+                        </div>
+						<div class="col-md-8">
+							<div class="form-group">
 								<label class=" control-label">Title</label>
 								<div class="">
 									<input type="text" class="form-control" name="title" id="title" value="" placeholder="Enter title" />

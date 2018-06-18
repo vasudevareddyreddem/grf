@@ -421,6 +421,8 @@ class Journal_details extends CI_Controller {
 		{
 			$admindetails=$this->session->userdata('userdetails');
 			$data['journals_list']=$this->Journal_details_model->get_all_journal_list($admindetails['id']);
+			$data['journals_category_list']=$this->Journal_details_model->get_journal_category_list($admindetails['id']);
+
 			
 			//echo '<pre>';print_r($data);exit;
 			$this->load->view('admin/journal-details/add-editors',$data);

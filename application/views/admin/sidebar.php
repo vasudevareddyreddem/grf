@@ -85,7 +85,8 @@
 			<li class="active"><a href="<?php echo base_url('journal-details/lists'); ?>"><i class="fa fa-circle-o"></i> Details List</a></li>
 			<li class="active"><a href="<?php echo base_url('journal-details/add-banners'); ?>"><i class="fa fa-circle-o"></i> Add Banners</a></li>
 			<li class="active"><a href="<?php echo base_url('journal-details/banners-list'); ?>"><i class="fa fa-circle-o"></i> Banners List</a></li>
-			<li class="active"><a href="<?php echo base_url('journal-details/edotirs-board'); ?>"><i class="fa fa-circle-o"></i> Editors Board</a></li>
+			<li class="active"><a href="<?php echo base_url('journal-details/add-edotirs'); ?>"><i class="fa fa-circle-o"></i>Add Editors</a></li>
+			<li class="active"><a href="<?php echo base_url('journal-details/edotirs-list'); ?>"><i class="fa fa-circle-o"></i> Editors List</a></li>
           </ul>
         </li>
 		<li class="active treeview">

@@ -84,5 +84,24 @@ class Journal_details_model extends CI_Model
 	}
 	/* journal banners*/
 	
+	/* journal editors*/
+	public function save_journals_editors($data){
+		$this->db->insert('journal_editors', $data);
+		return $insert_id = $this->db->insert_id();
+	}
+	
+	public function get_all_journal_editor_list_details($id){
+		$this->db->select('journal_editors.*,journals.title as journaltitle')->from('journal_editors');
+		$this->db->join('journals ', 'journals.j_id = journal_editors.journal_id', 'left');
+
+        $this->db->where('journal_editors.create_by',$id);
+
+		return $this->db->get()->result_array();
+	}
+	public  function update_journaleditors_details($id,$data){
+		$this->db->where('j_e_id',$id);
+    	return $this->db->update("journal_editors",$data);
+	}
+	
 
 }

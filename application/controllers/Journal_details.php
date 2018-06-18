@@ -415,6 +415,22 @@ class Journal_details extends CI_Controller {
 		}
 		
 	}
+	public function edotirs_board()
+	{	
+		if($this->session->userdata('userdetails'))
+		{
+			$admindetails=$this->session->userdata('userdetails');
+			$data['journals_list']=$this->Journal_details_model->get_all_journal_list($admindetails['id']);
+			
+			//echo '<pre>';print_r($data);exit;
+			$this->load->view('admin/journal-details/add-editors',$data);
+			$this->load->view('admin/footer');
+		}else{
+			$this->session->set_flashdata('error','Please login to continue');
+			redirect('admin');
+		}
+		
+	}
 	
 	
 	

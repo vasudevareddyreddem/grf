@@ -102,6 +102,16 @@ class Journal_details_model extends CI_Model
 		$this->db->where('j_e_id',$id);
     	return $this->db->update("journal_editors",$data);
 	}
+	public  function delete_journal_editor($j_e_id){
+		$this->db->where('j_e_id', $j_e_id);
+		return $this->db->delete('journal_editors');
+	}
+	
+	public  function get_journal_editor_details($id){
+		$this->db->select('journal_editors.*')->from('journal_editors');		
+		$this->db->where('j_e_id',$id);
+        return $this->db->get()->row_array();
+	}
 	
 
 }

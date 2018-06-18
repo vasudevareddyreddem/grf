@@ -1,11 +1,11 @@
 <div class="content-wrapper">
 <section class="content-header">
       <h1>
-        Edit Journal Banner
+        Edit Journal Editor
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?php echo base_url('dashboard'); ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li class="active">Edit Journal Banner</li>
+        <li class="active">Edit Journal Editor</li>
       </ol>
     </section>
    <section class="content">
@@ -15,68 +15,134 @@
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Edit Journal Banner </h3>
+              <h3 class="box-title">Edit Journal Editor </h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
 			<div style="padding:20px;">
-            <form id="addflyer" method="post" class="" action="<?php echo base_url('journal_details/editbannerpost'); ?>" enctype="multipart/form-data">
+			
+			<?php //echo '<pre>';print_r($journals_list);exit; ?>
+            <form id="addflyer" method="post" class="" action="<?php echo base_url('journal_details/edit_editorpost'); ?>" enctype="multipart/form-data">
 					<?php $csrf = array(
 								'name' => $this->security->get_csrf_token_name(),
 								'hash' => $this->security->get_csrf_hash()
 						); ?>
 										<input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
-										<input type="hidden" name="j_b_id" value="<?php echo isset($details['id'])?$details['id']:''; ?>" />
+										<input type="hidden" name="j_e_id" value="<?php echo isset($details['j_e_id'])?$details['j_e_id']:''; ?>" />
 
-					<div class="col-md-8">
+					<div class="col-md-6">
 							<div class="form-group">
 								<label class=" control-label">Select Journal</label>
 								<div class="">
 									 <select class="form-control" id="journal" name="journal">
 									  <option value="">Select</option>
 									 <?php foreach($journals_list as $list){ ?>
-										<?php if($list['j_id']== $details['journal_id']){ ?>
-												<option value="<?php echo $list['j_id']; ?>" selected><?php echo $list['title']; ?></option>
-												<?php }else{ ?>
-														<option value="<?php echo $list['j_id']; ?>"><?php echo $list['title']; ?></option>
+									 <?php if($details['journal_id']== $list['j_id']){ ?>
+										<option selected value="<?php echo $list['j_id']; ?>"><?php echo $list['title']; ?></option>
+									 <?php }else{ ?>
+									 		<option value="<?php echo $list['j_id']; ?>"><?php echo $list['title']; ?></option>
 
-												 <?php } ?>
+									 <?php } ?>
 									<?php } ?>
 									</select>
 								</div>
 							</div>
                         </div>
-						<div class="col-md-8">
+						
+						<div class="col-md-6">
 							<div class="form-group">
-								<label class=" control-label">Title</label>
+								<label class=" control-label">Name</label>
 								<div class="">
-									<input type="text" class="form-control" name="title" id="title" value="<?php echo isset($details['title'])?$details['title']:''; ?>" placeholder="Enter title" />
+									<input type="text" class="form-control" name="name" id="name" value="<?php echo isset($details['name'])?$details['name']:''; ?>" placeholder="Enter Name" />
+								</div>
+							</div>
+                        </div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class=" control-label">Email</label>
+								<div class="">
+									<input type="text" class="form-control" name="email" id="email" value="<?php echo isset($details['email'])?$details['email']:''; ?>" placeholder="Enter Email " />
+								</div>
+							</div>
+                        </div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class=" control-label">Phone  Number</label>
+								<div class="">
+									<input type="text" class="form-control" name="phone" id="phone" value="<?php echo isset($details['phone'])?$details['phone']:''; ?>" placeholder="Enter Phone Number " />
+								</div>
+							</div>
+                        </div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class=" control-label">Designation</label>
+								<div class="">
+									<input type="text" class="form-control" name="designation" id="designation" value="<?php echo isset($details['designation'])?$details['designation']:''; ?>" placeholder="Enter Designation" />
 								</div>
 							</div>
                         </div>
 						
-						<div class="col-md-8">
+						<div class="col-md-6">
 							<div class="form-group">
-								<label class=" control-label">Select Banner Image</label>
+								<label class=" control-label">Select upload Image</label>
 								<div class="">
 									<input type="file" class="form-control" name="image" id="image" value="" />
 								</div>
 							</div>
                         </div>
-						<div class="col-md-8">
+						<div class="col-md-6">
 							<div class="form-group">
-								<label class=" control-label">Alt Tags</label>
+								<label class=" control-label">University</label>
 								<div class="">
-									<input type="text" class="form-control" name="alt_tags"id="alt_tags" placeholder="Enter Alt Tags" value="<?php echo isset($details['alt_tags'])?$details['alt_tags']:''; ?>" />
+									<input type="text" class="form-control" name="university" id="university" value="<?php echo isset($details['university'])?$details['university']:''; ?>" placeholder="Enter University" />
 								</div>
 							</div>
                         </div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class=" control-label">Country</label>
+								<div class="">
+									 <select class="form-control" id="country" name="country">
+									  <?php 
+										$countries = array("Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegowina", "Botswana", "Bouvet Island", "Brazil", "British Indian Ocean Territory", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Comoros", "Congo", "Congo, the Democratic Republic of the", "Cook Islands", "Costa Rica", "Cote d'Ivoire", "Croatia (Hrvatska)", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Falkland Islands (Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "France Metropolitan", "French Guiana", "French Polynesia", "French Southern Territories", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard and Mc Donald Islands", "Holy See (Vatican City State)", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran (Islamic Republic of)", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea, Democratic People's Republic of", "Korea, Republic of", "Kuwait", "Kyrgyzstan", "Lao, People's Democratic Republic", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libyan Arab Jamahiriya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia, The Former Yugoslav Republic of", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia, Federated States of", "Moldova, Republic of", "Monaco", "Mongolia", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "Northern Mariana Islands", "Norway", "Oman", "Pakistan", "Palau", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Pitcairn", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion", "Romania", "Russian Federation", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Seychelles", "Sierra Leone", "Singapore", "Slovakia (Slovak Republic)", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "Spain", "Sri Lanka", "St. Helena", "St. Pierre and Miquelon", "Sudan", "Suriname", "Svalbard and Jan Mayen Islands", "Swaziland", "Sweden", "Switzerland", "Syrian Arab Republic", "Taiwan, Province of China", "Tajikistan", "Tanzania, United Republic of", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "United States Minor Outlying Islands", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Virgin Islands (British)", "Virgin Islands (U.S.)", "Wallis and Futuna Islands", "Western Sahara", "Yemen", "Yugoslavia", "Zambia", "Zimbabwe");
+									  ?>
+										<option value="">select</option>
+										
+										<?php foreach($countries as $status):
+										if($details['country'] == $status):
+										$selected ='selected=selected';
+										else : 
+										$selected = '';	
+										endif;	
+										?>	
+										<option value = "<?php echo $status;?>" <?php echo $selected;?>><?php echo $status;?></option>									<?php endforeach; ?>
+										
+										
+								
+									</select>
+								</div>
+							</div>
+                        </div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class=" control-label">Position</label>
+								<div class="">
+									  <select id="position" name="position" class="form-control">
+										<option value=""> Select Position  </option>
+										<option value="Editor in cheif" <?php if($details['position']=='Editor in cheif'){ echo "selected"; } ?>> Editor in cheif </option>
+										<option value="Executive editor" <?php if($details['position']=='Executive editor'){ echo "selected"; } ?>> Executive editor </option>
+										<option value="Editorial board member" <?php if($details['position']=='Editorial board member'){ echo "selected"; } ?>> Editorial board member </option>
+									</select>
+								</div>
+							</div>
+                        </div>
+						
 					
 						<div class="clearfix">&nbsp;</div>
 						  <div class="form-group">
                             <div class="col-lg-4 col-lg-offset-8">
-                                <button type="submit" class="btn btn-primary" name="signup" value="Sign up">update</button>
-								<a href="<?php echo base_url('journal-details/banners-list'); ?>" type="submit" class="btn btn-warning" >Cancel</a>
+                                <button type="submit" class="btn btn-primary" name="signup" value="Sign up">Update</button>
+								<a href="<?php echo base_url('journal-details/edotirs-list'); ?>" type="submit" class="btn btn-warning" >Cancel</a>
                                 
                             </div>
                         </div>
@@ -110,17 +176,30 @@ $(document).ready(function() {
 					}
 				}
             },
-			title: {
+			
+			name: {
                 validators: {
 					notEmpty: {
-						message: 'Title is required'
+						message: 'Name is required'
 					},
 					regexp: {
 					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'Title wont allow <> [] = % '
+					message:'Name wont allow <> [] = % '
 					}
 				}
-            },image: {
+            },
+			 email: {
+                validators: {
+					notEmpty: {
+						message: 'Email is required'
+					},
+					regexp: {
+					regexp: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+					message: 'Please enter a valid email address. For example johndoe@domain.com.'
+					}
+				}
+            },
+			image: {
                 validators: {
 					
 					regexp: {
@@ -129,18 +208,52 @@ $(document).ready(function() {
 					}
 				}
             },
-           
-            alt_tags: {
+           phone: {
+                 validators: {
+					notEmpty: {
+						message: 'Phone  Number is required'
+					},
+					regexp: {
+					regexp:  /^[0-9]{10,14}$/,
+					message:'Phone  Number must be 10 to 14 digits'
+					}
+				
+				}
+            },
+            designation: {
 					 validators: {
 					notEmpty: {
-						message: 'Alt Tags is required'
+						message: 'Designation is required'
 					},
 					regexp: {
 					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'Alt Tags  wont allow <> [] = % '
+					message:'Designation  wont allow <> [] = % '
 					}
 				}
+				},
+            university: {
+					 validators: {
+					notEmpty: {
+						message: 'University is required'
+					},
+					regexp: {
+					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
+					message:'University  wont allow <> [] = % '
+					}
 				}
+				},country: {
+                validators: {
+					notEmpty: {
+						message: 'Country is required'
+					}
+				}
+            },position: {
+                validators: {
+					notEmpty: {
+						message: 'position is required'
+					}
+				}
+            }
             }
         })
      

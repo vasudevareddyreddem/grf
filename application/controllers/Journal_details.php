@@ -531,24 +531,85 @@ class Journal_details extends CI_Controller {
 		}
 		
 	}
-	public function bannerdelete()
+	public function editordelete()
 	{	
 		if($this->session->userdata('userdetails'))
 		{
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
-			$b_id=base64_decode($this->uri->segment(3));
-				$details=$this->Journal_details_model->get_journal_banner_details($b_id);
-					unlink('assets/journal_banner_pics/'.$details['baneer_image']);
+			$j_e_id=base64_decode($this->uri->segment(3));
+				$details=$this->Journal_details_model->get_journal_editor_details($j_e_id);
+					unlink('assets/editors_pics/'.$details['image']);
 			
-					$delete=$this->Journal_details_model->delete_journal_banner($b_id);
+					$delete=$this->Journal_details_model->delete_journal_editor($j_e_id);
 					if(count($delete)>0){
-						$this->session->set_flashdata('success','Journal banner successfully deleted');
-							redirect('journal-details/banners-list');
+						$this->session->set_flashdata('success','Journal Editor successfully deleted');
+							redirect('journal-details/edotirs-list');
 					}else{
 						$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");
-							redirect('journal-details/banners-list');
+							redirect('journal-details/edotirs-list');
 					}
+		}else{
+			$this->session->set_flashdata('error','Please login to continue');
+			redirect('admin');
+		}
+		
+	}
+	public function editor_edit()
+	{	
+		if($this->session->userdata('userdetails'))
+		{
+			$admindetails=$this->session->userdata('userdetails');
+			$j_e_id=base64_decode($this->uri->segment(3));
+			$data['details']=$this->Journal_details_model->get_journal_editor_details($j_e_id);
+			$data['journals_list']=$this->Journal_details_model->get_all_journal_list($admindetails['id']);
+			$data['journals_category_list']=$this->Journal_details_model->get_journal_category_list($admindetails['id']);
+			//echo '<pre>';print_r($data);exit; 
+			$this->load->view('admin/journal-details/edit-editors',$data);
+			$this->load->view('admin/footer');
+		}else{
+			$this->session->set_flashdata('error','Please login to continue');
+			redirect('admin');
+		}
+		
+	}
+	public function edit_editorpost()
+	{	
+		if($this->session->userdata('userdetails'))
+		{
+			$admindetails=$this->session->userdata('userdetails');
+			$post=$this->input->post();
+				$details=$this->Journal_details_model->get_journal_editor_details($post['j_e_id']);
+				if(isset($_FILES['image']['name']) && $_FILES['image']['name']!=''){
+						unlink('assets/editors_pics/'.$details['image']);
+							$temp = explode(".", $_FILES["image"]["name"]);
+							$img = round(microtime(true)) . '.' . end($temp);
+							move_uploaded_file($_FILES['image']['tmp_name'], "assets/editors_pics/" . $img);
+						}else{
+							$img=$details['image'];
+						}
+					$update_data=array(
+					'journal_id'=>isset($post['journal'])?$post['journal']:'',
+					'image'=>$img,
+					'name'=>isset($post['name'])?$post['name']:'',
+					'email'=>isset($post['email'])?$post['email']:'',
+					'phone'=>isset($post['phone'])?$post['phone']:'',
+					'designation'=>isset($post['designation'])?$post['designation']:'',
+					'position'=>isset($post['position'])?$post['position']:'',
+					'country'=>isset($post['country'])?$post['country']:'',
+					'university'=>isset($post['university'])?$post['university']:'',
+					'status'=>1,
+					'update_at'=>date('Y-m-d H:i:s'),
+					);
+					$update=$this->Journal_details_model->update_journaleditors_details($post['j_e_id'],$update_data);
+						if(count($update)>0){
+							$this->session->set_flashdata('success','Journal Editor Details successfully Updated');
+								redirect('journal-details/edotirs-list');
+							
+						}else{
+							$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");
+								redirect('journal-details/editor-edit/'.base64_encode($post['j_e_id']));
+						}
 		}else{
 			$this->session->set_flashdata('error','Please login to continue');
 			redirect('admin');

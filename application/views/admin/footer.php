@@ -56,20 +56,29 @@
 </script>
 <script>
   $(function () {
-    // Replace the <textarea id="editor1"> with a CKEditor
-    // instance, using default configuration.
     CKEDITOR.replace('editor2');
-    //bootstrap WYSIHTML5 - text editor
+    $(".textarea").wysihtml5();
+  }); $(function () {
+    CKEDITOR.replace('editor3');
+    $(".textarea").wysihtml5();
+  });
+  $(function () {
+    CKEDITOR.replace('editor4');
+    $(".textarea").wysihtml5();
+  });
+  $(function () {
+    CKEDITOR.replace('editor5');
+    $(".textarea").wysihtml5();
+  }); 
+  $(function () {
+    CKEDITOR.replace('editor6');
+    $(".textarea").wysihtml5();
+  });$(function () {
+    CKEDITOR.replace('editor7');
     $(".textarea").wysihtml5();
   });
 </script>
-<script>
-  $(function () {
-    // Replace the <textarea id="editor1"> with a CKEditor
-    // instance, using default configuration.
-    CKEDITOR.replace('editor3');
-    //bootstrap WYSIHTML5 - text editor
-    </script>
+
 <script src="<?php echo base_url(); ?>assets/vendor/admin/plugins/iCheck/icheck.min.js"></script>
 <script>
   $(function () {

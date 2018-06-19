@@ -173,14 +173,14 @@ CREATE TABLE `journal_article_in_press` (
   `image` varchar(250) DEFAULT NULL,
   `status` int(11) DEFAULT '1',
   `create_at` datetime DEFAULT NULL,
-  `pdate_at` datetime DEFAULT NULL,
+  `update_at` datetime DEFAULT NULL,
   `create_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`a_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `journal_article_in_press` */
 
-insert  into `journal_article_in_press`(`a_id`,`journal_id`,`journal_cat_id`,`year_of_article`,`title`,`author_name`,`article_type`,`url`,`seo_title`,`seo_keyword`,`seo_description`,`research_article`,`abstract`,`introduction`,`references`,`figures`,`suggested_citation`,`tables`,`pdf_file`,`image`,`status`,`create_at`,`pdate_at`,`create_by`) values (1,3,'1','2016','fgsdfg','gfdgsdfg','gsdfgsdfg','','','','','','','','','','','','1529341236.pdf','',1,'2018-06-18 22:30:35',NULL,1);
+insert  into `journal_article_in_press`(`a_id`,`journal_id`,`journal_cat_id`,`year_of_article`,`title`,`author_name`,`article_type`,`url`,`seo_title`,`seo_keyword`,`seo_description`,`research_article`,`abstract`,`introduction`,`references`,`figures`,`suggested_citation`,`tables`,`pdf_file`,`image`,`status`,`create_at`,`update_at`,`create_by`) values (2,4,'8','2018','like that psoot','test','Article type','vasu.com','seo title','seo keywords','seo description','<p>Research Article</p>\r\n','<p>Abstract</p>\r\n','<p>Introduction</p>\r\n','<p>References</p>\r\n','<p>Figures</p>\r\n','<p>Suggested citation</p>\r\n','<p>Tables</p>\r\n','1529377243.pdf','1529377243.html',1,'2018-06-19 08:30:42','2018-06-19 08:48:44',1);
 
 /*Table structure for table `journal_banners` */
 

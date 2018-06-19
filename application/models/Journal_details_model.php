@@ -125,6 +125,19 @@ class Journal_details_model extends CI_Model
 		$this->db->join('grf_journal_category ', 'grf_journal_category.c_id = journal_article_in_press.journal_cat_id', 'left');
 		$this->db->where('journal_article_in_press.create_by',$id);
 		return $this->db->get()->result_array();
+	}
+	public  function update_Article_in_press_details($a_id,$data){
+		$this->db->where('a_id',$a_id);
+    	return $this->db->update("journal_article_in_press",$data);
+	}
+	public  function get_article_in_press_details($a_id){
+		$this->db->select('journal_article_in_press.*')->from('journal_article_in_press');		
+		$this->db->where('a_id',$a_id);
+        return $this->db->get()->row_array();
+	}
+	public  function delete_article_in_press($a_id){
+		$this->db->where('a_id', $a_id);
+		return $this->db->delete('journal_article_in_press');
 	}	
 	
 

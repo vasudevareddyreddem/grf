@@ -67,13 +67,13 @@
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
-      <div class="item active"> <a href="#X"><img src="http://grfpublishers.com/public/journals/51/journalThumbnail_en_US.jpg" alt="Los Angeles" style="width:100%;"></a>
+      <div class="item active"> <a href="#X"><img src="<?php echo base_url('assets/vendor/img/3.jpg'); ?>" alt="Los Angeles" style="width:100%;"></a>
       </div>
 
-      <div class="item"> <a href="#X"><img src="http://grfpublishers.com/public/journals/49/journalThumbnail_en_US.jpg" alt="Chicago" style="width:100%;"></a>
+      <div class="item"> <a href="#X"><img src="<?php echo base_url('assets/vendor/img/3.jpg'); ?>" alt="Chicago" style="width:100%;"></a>
       </div>
     
-      <div class="item"> <a href="#X"><img src="http://grfpublishers.com/public/journals/47/journalThumbnail_en_US.jpg" alt="New york" style="width:100%;"></a>
+      <div class="item"> <a href="#X"><img src="<?php echo base_url('assets/vendor/img/3.jpg'); ?>" alt="New york" style="width:100%;"></a>
       </div>
     </div>
 

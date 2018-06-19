@@ -115,6 +115,18 @@
             <li><a href="<?php echo base_url('latestupdates/lists'); ?>"><i class="fa fa-circle-o"></i> List</a></li>
           </ul>
         </li>
+		<li class="<?php if(isset($u_url) && $u_url==base_url('faq')){ echo "active"; } ?> treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Faq's</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="active"><a href="<?php echo base_url('faq'); ?>"><i class="fa fa-circle-o"></i> Add</a></li>
+            <li><a href="<?php echo base_url('faq/lists'); ?>"><i class="fa fa-circle-o"></i> List</a></li>
+          </ul>
+        </li>
 		<li class="active treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>form</span>

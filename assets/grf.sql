@@ -118,11 +118,11 @@ CREATE TABLE `grf_flyers` (
   `create_by` int(11) DEFAULT NULL,
   `update_at` datetime DEFAULT NULL,
   PRIMARY KEY (`f_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 /*Data for the table `grf_flyers` */
 
-insert  into `grf_flyers`(`f_id`,`title`,`title_color`,`fly_image`,`fly_org_image`,`status`,`create_at`,`create_by`,`update_at`) values (5,'like that','ffff','1529223020.jpg','3333.jpg',1,'2018-06-17 13:26:31',1,'2018-06-17 13:57:58');
+insert  into `grf_flyers`(`f_id`,`title`,`title_color`,`fly_image`,`fly_org_image`,`status`,`create_at`,`create_by`,`update_at`) values (5,'like that','ffff','1529223020.jpg','3333.jpg',1,'2018-06-17 13:26:31',1,'2018-06-17 13:57:58'),(6,'','','1529423004.jpg','222.jpg',1,'2018-06-19 21:13:24',1,NULL);
 
 /*Table structure for table `grf_journal_category` */
 
@@ -180,7 +180,7 @@ CREATE TABLE `journal_article_in_press` (
 
 /*Data for the table `journal_article_in_press` */
 
-insert  into `journal_article_in_press`(`a_id`,`journal_id`,`journal_cat_id`,`year_of_article`,`title`,`author_name`,`article_type`,`url`,`seo_title`,`seo_keyword`,`seo_description`,`research_article`,`abstract`,`introduction`,`references`,`figures`,`suggested_citation`,`tables`,`pdf_file`,`image`,`status`,`create_at`,`update_at`,`create_by`) values (2,4,'8','2018','like that psoot','test','Article type','vasu.com','seo title','seo keywords','seo description','<p>Research Article</p>\r\n','<p>Abstract</p>\r\n','<p>Introduction</p>\r\n','<p>References</p>\r\n','<p>Figures</p>\r\n','<p>Suggested citation</p>\r\n','<p>Tables</p>\r\n','1529377243.pdf','1529377243.html',1,'2018-06-19 08:30:42','2018-06-19 08:48:44',1);
+insert  into `journal_article_in_press`(`a_id`,`journal_id`,`journal_cat_id`,`year_of_article`,`title`,`author_name`,`article_type`,`url`,`seo_title`,`seo_keyword`,`seo_description`,`research_article`,`abstract`,`introduction`,`references`,`figures`,`suggested_citation`,`tables`,`pdf_file`,`image`,`status`,`create_at`,`update_at`,`create_by`) values (2,4,'8','2018','like that psoot','test','Article type','vasu.com','seo title','seo keywords','seo description','<p>Research Article</p>\r\n','<p>Abstract</p>\r\n','<p>Introduction</p>\r\n','<p>References</p>\r\n','<p>Figures</p>\r\n','<p>Suggested citation</p>\r\n','<p>Tables</p>\r\n','1529377243.pdf','1529377243.html',1,'2018-06-19 08:30:42','2018-06-19 20:23:02',1);
 
 /*Table structure for table `journal_banners` */
 
@@ -283,6 +283,46 @@ CREATE TABLE `menuscript_list` (
 /*Data for the table `menuscript_list` */
 
 insert  into `menuscript_list`(`id`,`title`,`firstName`,`lastName`,`university`,`country`,`email`,`phone`,`menuscript_title`,`address`,`message`,`journel`,`abstract`,`image`,`create_at`) values (1,'MR','reddem','vasudevareddy','jntua','Algeria','test@gmail.com','8500050944','cvcv','cvxcvxcvxcv ','cxvzxcvxzcv','Journal of Gastroenterology and Digestive Disorders (JGDD)','test',NULL,'2018-06-14 23:22:23'),(2,'MR','vasudevareddy','htrtytry','University','India','vasu@gmail.com','8500050944','menu ttile','hyd','i like  that','Annals of Medical & Surgical Case Reports(AMSC)','dgfg','','2018-06-16 14:07:09'),(3,'MR','vasudevareddy','htrtytry','University','India','vasu@gmail.com','8500050944','menu ttile','hyd','i like  that','Annals of Medical & Surgical Case Reports(AMSC)','dgfg','','2018-06-16 14:09:21'),(4,'MR','vasudevareddy','htrtytry','University','India','vasu@gmail.com','8500050944','menu ttile','hyd','i like  that','Annals of Medical & Surgical Case Reports(AMSC)','dgfg','','2018-06-16 14:10:41'),(5,'MR','vasudevareddy','htrtytry','University','India','vasu@gmail.com','8500050944','menu ttile','hyd','i like  that','Annals of Medical & Surgical Case Reports(AMSC)','dgfg','','2018-06-16 14:11:24'),(6,'MR','vasudevareddy','htrtytry','University','India','vasu@gmail.com','8500050944','menu ttile','hyd','i like  that','Annals of Medical & Surgical Case Reports(AMSC)','dgfg','','2018-06-16 14:11:49');
+
+/*Table structure for table `testimonial` */
+
+DROP TABLE IF EXISTS `testimonial`;
+
+CREATE TABLE `testimonial` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(250) DEFAULT NULL,
+  `professional` varchar(250) DEFAULT NULL,
+  `image` varchar(250) DEFAULT NULL,
+  `description` text,
+  `status` int(11) DEFAULT NULL,
+  `create_at` datetime DEFAULT NULL,
+  `update_at` datetime DEFAULT NULL,
+  `create_by` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+/*Data for the table `testimonial` */
+
+insert  into `testimonial`(`id`,`name`,`professional`,`image`,`description`,`status`,`create_at`,`update_at`,`create_by`) values (2,'vasudevareddy reddem','profinal','1529423720.jpg','gdfgsfgdsf',1,'2018-06-19 21:25:19','0000-00-00 00:00:00',1),(3,'vasudevareddy reddem','profinal','1529424434.jpg','gdfgsfgdsf',1,'2018-06-19 21:35:03','0000-00-00 00:00:00',1);
+
+/*Table structure for table `updates` */
+
+DROP TABLE IF EXISTS `updates`;
+
+CREATE TABLE `updates` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(250) DEFAULT NULL,
+  `updates` varchar(250) DEFAULT NULL,
+  `status` varchar(250) DEFAULT NULL,
+  `create_at` datetime DEFAULT NULL,
+  `update_at` datetime DEFAULT NULL,
+  `create_by` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+/*Data for the table `updates` */
+
+insert  into `updates`(`id`,`title`,`updates`,`status`,`create_at`,`update_at`,`create_by`) values (2,'gfdgdfg','reddem','1','2018-06-19 22:28:18',NULL,1),(3,'like that psoot','vasu','1','2018-06-19 22:28:10',NULL,1);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

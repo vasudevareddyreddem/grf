@@ -91,6 +91,30 @@
 			<li class=""><a href="<?php echo base_url('article-in-press/lists'); ?>"><i class="fa fa-circle-o"></i> Article in press List</a></li>
           </ul>
         </li>
+		<li class="<?php if(isset($u_url) && $u_url==base_url('testimonial')){ echo "active"; } ?> treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Testimonial</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="active"><a href="<?php echo base_url('testimonial'); ?>"><i class="fa fa-circle-o"></i> Add</a></li>
+            <li><a href="<?php echo base_url('testimonial/lists'); ?>"><i class="fa fa-circle-o"></i> List</a></li>
+          </ul>
+        </li>
+		<li class="<?php if(isset($u_url) && $u_url==base_url('latestupdates')){ echo "active"; } ?> treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Latest updates</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="active"><a href="<?php echo base_url('latestupdates'); ?>"><i class="fa fa-circle-o"></i> Add</a></li>
+            <li><a href="<?php echo base_url('latestupdates/lists'); ?>"><i class="fa fa-circle-o"></i> List</a></li>
+          </ul>
+        </li>
 		<li class="active treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>form</span>

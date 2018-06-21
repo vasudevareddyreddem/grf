@@ -76,6 +76,9 @@
   });$(function () {
     CKEDITOR.replace('editor7');
     $(".textarea").wysihtml5();
+  });$(function () {
+    CKEDITOR.replace('editor8');
+    $(".textarea").wysihtml5();
   });
 </script>
 

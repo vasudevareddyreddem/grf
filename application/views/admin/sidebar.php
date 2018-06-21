@@ -163,24 +163,7 @@
             <li><a href="<?php echo base_url('guidelines/lists'); ?>"><i class="fa fa-circle-o"></i> List</a></li>
           </ul>
         </li>
-		<li class="active treeview">
-          <a href="#">
-            <i class="fa fa-dashboard"></i> <span>form</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li class="active"><a href="form.php"><i class="fa fa-circle-o"></i> single form</a></li>
-            <li><a href="twosideform.php"><i class="fa fa-circle-o"></i> two side form</a></li>
-          </ul>
-        </li>
         
-        <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
-        <li class="header">LABELS</li>
-        <li><a href="<?php echo base_url('testimonial'); ?>"><i class="fa fa-circle-o text-red"></i> <span>Testimonial</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->

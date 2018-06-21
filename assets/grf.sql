@@ -183,11 +183,11 @@ CREATE TABLE `guidelines` (
   `update_at` datetime DEFAULT NULL,
   `create_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 /*Data for the table `guidelines` */
 
-insert  into `guidelines`(`id`,`pagename`,`title`,`description`,`seo_title`,`seo_url`,`seo_keyword`,`seo_description`,`status`,`create_at`,`update_at`,`create_by`) values (5,'reddy','gdg','<p>gfd</p>\r\n','fgdgf','df','dfdgf','dfd','1','2018-06-21 08:58:58','2018-06-21 09:08:05',1),(6,'fbghfhf','vasu','<p>gf</p>\r\n','ghfg','fghffg','fg','fgfgf','1','2018-06-21 08:59:14','2018-06-21 09:07:51',1);
+insert  into `guidelines`(`id`,`pagename`,`title`,`description`,`seo_title`,`seo_url`,`seo_keyword`,`seo_description`,`status`,`create_at`,`update_at`,`create_by`) values (5,'reddy','gdg','<p>gfd</p>\r\n','fgdgf','df','dfdgf','dfd','1','2018-06-21 08:58:58','2018-06-21 09:08:05',1),(6,'fbghfhf','vasu','<p>gf</p>\r\n','ghfg','fghffg','fg','fgfgf','1','2018-06-21 08:59:14','2018-06-21 09:07:51',1),(7,'','','','','','','','1','2018-06-21 22:20:05',NULL,1);
 
 /*Table structure for table `journal_article_in_press` */
 
@@ -326,6 +326,48 @@ CREATE TABLE `menuscript_list` (
 /*Data for the table `menuscript_list` */
 
 insert  into `menuscript_list`(`id`,`title`,`firstName`,`lastName`,`university`,`country`,`email`,`phone`,`menuscript_title`,`address`,`message`,`journel`,`abstract`,`image`,`create_at`) values (1,'MR','reddem','vasudevareddy','jntua','Algeria','test@gmail.com','8500050944','cvcv','cvxcvxcvxcv ','cxvzxcvxzcv','Journal of Gastroenterology and Digestive Disorders (JGDD)','test',NULL,'2018-06-14 23:22:23'),(2,'MR','vasudevareddy','htrtytry','University','India','vasu@gmail.com','8500050944','menu ttile','hyd','i like  that','Annals of Medical & Surgical Case Reports(AMSC)','dgfg','','2018-06-16 14:07:09'),(3,'MR','vasudevareddy','htrtytry','University','India','vasu@gmail.com','8500050944','menu ttile','hyd','i like  that','Annals of Medical & Surgical Case Reports(AMSC)','dgfg','','2018-06-16 14:09:21'),(4,'MR','vasudevareddy','htrtytry','University','India','vasu@gmail.com','8500050944','menu ttile','hyd','i like  that','Annals of Medical & Surgical Case Reports(AMSC)','dgfg','','2018-06-16 14:10:41'),(5,'MR','vasudevareddy','htrtytry','University','India','vasu@gmail.com','8500050944','menu ttile','hyd','i like  that','Annals of Medical & Surgical Case Reports(AMSC)','dgfg','','2018-06-16 14:11:24'),(6,'MR','vasudevareddy','htrtytry','University','India','vasu@gmail.com','8500050944','menu ttile','hyd','i like  that','Annals of Medical & Surgical Case Reports(AMSC)','dgfg','','2018-06-16 14:11:49');
+
+/*Table structure for table `published_gallery` */
+
+DROP TABLE IF EXISTS `published_gallery`;
+
+CREATE TABLE `published_gallery` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `image` varchar(250) DEFAULT NULL,
+  `alt_tags` varchar(250) DEFAULT NULL,
+  `status` int(11) DEFAULT NULL,
+  `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `create_by` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+/*Data for the table `published_gallery` */
+
+insert  into `published_gallery`(`id`,`image`,`alt_tags`,`status`,`create_at`,`update_at`,`create_by`) values (2,'1529603448.jpg','testing',1,'2018-06-21 23:20:51','2018-06-21 23:20:47',1);
+
+/*Table structure for table `reviewerboard` */
+
+DROP TABLE IF EXISTS `reviewerboard`;
+
+CREATE TABLE `reviewerboard` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `category` varchar(45) DEFAULT NULL,
+  `journal` varchar(45) DEFAULT NULL,
+  `name` varchar(250) DEFAULT NULL,
+  `university` varchar(250) DEFAULT NULL,
+  `country` varchar(250) DEFAULT NULL,
+  `reviewer_board` text,
+  `status` int(11) DEFAULT '1',
+  `craete_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `create_by` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+/*Data for the table `reviewerboard` */
+
+insert  into `reviewerboard`(`id`,`category`,`journal`,`name`,`university`,`country`,`reviewer_board`,`status`,`craete_at`,`update_at`,`create_by`) values (2,'2','3','vasudeva','vasu','Armenia','fgsdfgsdf',1,'2018-06-21 22:44:01','0000-00-00 00:00:00',1);
 
 /*Table structure for table `testimonial` */
 

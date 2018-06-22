@@ -119,6 +119,14 @@
                         </div>
 						<div class="col-md-12">
 							<div class="form-group">
+								<label class=" control-label">Article Video</label>
+								<div class="">
+									<input type="file" class="form-control" name="video" id="video" />
+								</div>
+							</div>
+                        </div>
+						<div class="col-md-12">
+							<div class="form-group">
 								<label class=" control-label">URL</label>
 								<div class="">
 									<input type="text" class="form-control" name="url" value="" id="url" placeholder="Enter URl" />
@@ -314,6 +322,14 @@ $(document).ready(function() {
 					regexp: {
 					regexp: "(.*?)\.(doc|docx|html)$",
 					message: 'Uploaded file is not a valid. Only doc,docx,html file are allowed'
+					}
+				}
+            },
+			video: {
+                validators: {
+					regexp: {
+					regexp: "(.*?)\.(mp3|mp4|mpeg|mpg|mov)$",
+					message: 'Uploaded file is not a valid. Only mp3,mp4,mpeg,mpg,mov file are allowed'
 					}
 				}
             },

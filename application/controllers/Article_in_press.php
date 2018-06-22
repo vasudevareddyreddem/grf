@@ -98,6 +98,15 @@ class Article_in_press extends CI_Controller {
 							}else{
 								$img='';
 							}
+							if(isset($_FILES['video']['name']) && $_FILES['video']['name']!=''){
+								$temp = explode(".", $_FILES["video"]["name"]);
+								$video = round(microtime(true)) . '.' . end($temp);
+								move_uploaded_file($_FILES['video']['tmp_name'], "assets/article_in_press/" . $video);
+								$video_article=1;
+							}else{
+								$video='';
+								$video_article=0;
+							}
 					$add_data=array(
 					'journal_id'=>isset($post['journal'])?$post['journal']:'',
 					'journal_cat_id'=>isset($post['category'])?$post['category']:'',
@@ -118,6 +127,8 @@ class Article_in_press extends CI_Controller {
 					'tables'=>isset($post['tables'])?$post['tables']:'',
 					'pdf_file'=>$pdf,
 					'image'=>$img,
+					'video'=>$video,
+					'video_article'=>$video_article,
 					'status'=>1,
 					'create_at'=>date('Y-m-d H:i:s'),
 					'create_by'=>$admindetails['id'],
@@ -161,7 +172,16 @@ class Article_in_press extends CI_Controller {
 							}else{
 								$img=$details['image'];
 							}
-							
+							if(isset($_FILES['video']['name']) && $_FILES['video']['name']!=''){
+								unlink('assets/article_in_press/'.$details['video']);
+								$temp = explode(".", $_FILES["video"]["name"]);
+								$video = round(microtime(true)) . '.' . end($temp);
+								move_uploaded_file($_FILES['video']['tmp_name'], "assets/article_in_press/" . $video);
+								$video_article=1;
+							}else{
+								$video=$details['video'];
+								$video_article=$details['video_article'];
+							}
 							$update_data=array(
 								'journal_id'=>isset($post['journal'])?$post['journal']:'',
 								'journal_cat_id'=>isset($post['category'])?$post['category']:'',
@@ -182,6 +202,8 @@ class Article_in_press extends CI_Controller {
 								'tables'=>isset($post['tables'])?$post['tables']:'',
 								'pdf_file'=>$pdf,
 								'image'=>$img,
+								'video'=>$video,
+								'video_article'=>$video_article,
 								'update_at'=>date('Y-m-d H:i:s'),
 								);
 						$update=$this->Journal_details_model->update_Article_in_press_details($post['a_id'],$update_data);

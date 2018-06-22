@@ -24,6 +24,15 @@ class Home_model extends CI_Model
 		return $insert_id = $this->db->insert_id();
 	}
 	
+	public  function save_newsletter($data){
+		$this->db->insert('newsletters', $data);
+		return $insert_id = $this->db->insert_id();
+	}
+	public function get_already_email($email){
+		$this->db->select('*')->from('newsletters');		
+		$this->db->where('email',$email);
+        return $this->db->get()->row_array();
+	}
 	
 	/* out souce lab chating */
 	

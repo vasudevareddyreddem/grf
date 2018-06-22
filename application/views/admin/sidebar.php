@@ -187,6 +187,15 @@
             <li><a href="<?php echo base_url('guidelines/lists'); ?>"><i class="fa fa-circle-o"></i> List</a></li>
           </ul>
         </li>
+		<li class="<?php if(isset($u_url) && $u_url==base_url('unsubscribes')){ echo "active"; } ?> treeview">
+          <a href="<?php echo base_url('unsubscribes'); ?>">
+            <i class="fa fa-dashboard"></i> <span>Unsubscribes</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          
+        </li>
         
       </ul>
     </section>

@@ -263,10 +263,10 @@
          <div class="cp-newsletter-holder">
             <!-- Post Comments Form -->
             <div class="cp-comments-form">
-               <form name="newsletters" id="signupnews" class="material" method="post" action="righttd.php" novalidate="novalidate">
-                  <div class="material-input input"><input type="text" name="txtFirstName" class="form-control" placeholder="Name*" style="width:100%;" onkeypress="return checkspecial(event);" id="txtFirstName"><span class="material-bar"></span></div>
+               <form name="newsletters" id="signupnews" class="material" method="post" action="<?php echo base_url('home/newsletterpost'); ?>" novalidate="novalidate">
+                  <div class="material-input input"><input type="text" name="name" class="form-control" placeholder="Name*" style="width:100%;" onkeypress="return checkspecial(event);" id="txtFirstName"><span class="material-bar"></span></div>
                   <span class="error_msg"></span>           
-                  <div class="material-input input"><input type="email" name="txtEmail" class="form-control" placeholder="Email*" style="width:100%;" onkeypress="return checkspecialname(event);" id="txtEmail"><span class="material-bar"></span></div>
+                  <div class="material-input input"><input type="email" name="email" class="form-control" placeholder="Email*" style="width:100%;" onkeypress="return checkspecialname(event);" id="txtEmail"><span class="material-bar"></span></div>
                   <span class="error_msg"></span>
                   <input type="submit" name="btnSign" id="btnSign" value="Submit" class="btn btn-large" style="float:right;">
                </form>

@@ -159,11 +159,11 @@ CREATE TABLE `grf_journal_category` (
   `update_at` datetime DEFAULT NULL,
   `create_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`c_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
 
 /*Data for the table `grf_journal_category` */
 
-insert  into `grf_journal_category`(`c_id`,`category`,`seo_title`,`seo_url`,`seo_keyword`,`description`,`status`,`create_at`,`update_at`,`create_by`) values (1,'Advanced Research in Biosensor and Bioelectronics(ARBB)','seo title','vbncvbn','seo keywords','vcvzxcvcv',1,'2018-06-17 16:00:30',NULL,1),(2,'Annals of Medical & Surgical Case Reports(AMSC)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(3,'Annals of Pediatrics and Child Care',NULL,NULL,NULL,NULL,0,'2018-06-17 16:00:30','2018-06-17 19:48:18',1),(4,'Clinical Oncology Research Journal (CORJ)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(5,'Current Updates in Dermatological Problems (CUDP)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(6,'Dentistry and Dental Ailments Journal (DDAJ)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(7,'Insights of Cardiology: Open Access (ICOA)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(8,'International Journal of Education Advancement (IJEA)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(9,'Journal of Biomarker Research and Studies',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(10,'Journal of Obstetrics and Gynecological Problems(JOGP)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(11,'Journal of Surgery and Insights (JSI)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(12,'Journal of Urology and Renal Problems (JURP)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(13,'Current Trends in Genetics and Microbiology (CTGM)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(14,'Journal of Gastroenterology and Digestive Disorders (JGDD)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(15,'Clinical Orthopedics Advanced Research Journal (COARJ)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(16,'Chronicles of Complementary, Alternative & Integrative Medicine (CCAIM)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(17,'Journal of Sports Science and Physical Therapy (JSSPT)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(18,'Emergency Medicine and Trauma Care Journal (EMTCJ)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1),(19,'Open Access Journal of Endocrinology Disorders (OAJED)',NULL,NULL,NULL,NULL,1,'2018-06-17 16:00:30',NULL,1);
+insert  into `grf_journal_category`(`c_id`,`category`,`seo_title`,`seo_url`,`seo_keyword`,`description`,`status`,`create_at`,`update_at`,`create_by`) values (20,'Medical','Medical','Medical','Medical','Medical',1,'2018-06-22 22:51:30',NULL,1),(21,'Pharmaceutial','Pharmaceutial','Pharmaceutial','Pharmaceutial','Pharmaceutial',1,'2018-06-22 22:51:46',NULL,1),(22,'Clinical','Clinical','Clinical','Clinical','Clinical',1,'2018-06-22 22:51:59',NULL,1),(23,'Engineering','Engineering','Engineering','Engineering','Engineering',1,'2018-06-22 22:52:12',NULL,1),(24,'Basic-Sciences','Basic-Sciences','Basic-Sciences','Basic-Sciences','Basic-Sciences',1,'2018-06-22 22:52:27',NULL,1);
 
 /*Table structure for table `guidelines` */
 
@@ -368,6 +368,24 @@ CREATE TABLE `news_article` (
 /*Data for the table `news_article` */
 
 insert  into `news_article`(`id`,`title`,`description`,`link`,`status`,`create_at`,`update_at`,`create_by`) values (6,'dfgfgsfg','vasudevareddy','link',1,'2018-06-22 20:29:37','2018-06-22 20:26:44',1),(7,'title','sdfgsdf','gsdfgsdfg',1,'2018-06-22 20:29:12','2018-06-22 20:29:12',1);
+
+/*Table structure for table `newsletters` */
+
+DROP TABLE IF EXISTS `newsletters`;
+
+CREATE TABLE `newsletters` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(250) DEFAULT NULL,
+  `email` varchar(250) DEFAULT NULL,
+  `status` int(11) DEFAULT '1',
+  `create_at` datetime DEFAULT NULL,
+  `update_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+/*Data for the table `newsletters` */
+
+insert  into `newsletters`(`id`,`name`,`email`,`status`,`create_at`,`update_at`) values (1,'vasudevareddy reddem','vasu@gmail.com',1,'2018-06-22 23:15:03','2018-06-22 23:15:03'),(2,'ghghd','ghdgfhf@gmail.com',0,'2018-06-22 23:15:56','2018-06-22 23:30:56');
 
 /*Table structure for table `published_gallery` */
 

@@ -67,9 +67,13 @@
 				</tbody>
 				<tfoot>
                 <tr>
-                  <th>Title</th>
+                  <th style="display:none">id </th>
+                  <th>Journal </th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Position</th>
                   <th>Image</th>
-                  <th>Title Color Code</th>
+                  <th>Status</th>
                   <th>Action</th>
                 </tr>
                 </tfoot>

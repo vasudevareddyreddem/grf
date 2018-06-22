@@ -59,9 +59,10 @@
 				</tbody>
 				<tfoot>
                 <tr>
-                  <th>Title</th>
-                  <th>Image</th>
-                  <th>Title Color Code</th>
+                 <th>Title</th>
+                  <th>Updates</th>
+                  <th>Created date</th>
+                  <th>Status</th>
                   <th>Action</th>
                 </tr>
                 </tfoot>

@@ -64,9 +64,12 @@
 				</tbody>
 				<tfoot>
                 <tr>
-                  <th>Title</th>
-                  <th>Image</th>
-                  <th>Title Color Code</th>
+                  <th style="display:none">id </th>
+                  <th>Created Date</th>
+                  <th>Ap Title</th>
+                  <th>Ap Author</th>
+                  <th>Year</th>
+                  <th>Status</th>
                   <th>Action</th>
                 </tr>
                 </tfoot>

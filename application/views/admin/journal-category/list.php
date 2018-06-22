@@ -61,9 +61,11 @@
 				</tbody>
 				<tfoot>
                 <tr>
-                  <th>Title</th>
-                  <th>Image</th>
-                  <th>Title Color Code</th>
+                  <th>Category Name</th>
+                  <th>SEO Title</th>
+                  <th>SEO URL</th>
+                  <th>SEO Keywords</th>
+                  <th>Status</th>
                   <th>Action</th>
                 </tr>
                 </tfoot>

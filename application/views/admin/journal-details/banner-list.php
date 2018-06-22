@@ -63,9 +63,11 @@
 				</tbody>
 				<tfoot>
                 <tr>
+                  <th style="display:none">id </th>
+                  <th>Journal </th>
                   <th>Title</th>
                   <th>Image</th>
-                  <th>Title Color Code</th>
+                  <th>Status</th>
                   <th>Action</th>
                 </tr>
                 </tfoot>

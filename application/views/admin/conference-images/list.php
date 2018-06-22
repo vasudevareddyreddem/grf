@@ -61,6 +61,7 @@
                   <th>Title</th>
                   <th>Image</th>
                   <th>Title Color Code</th>
+                  <th>Status</th>
                   <th>Action</th>
                 </tr>
                 </tfoot>

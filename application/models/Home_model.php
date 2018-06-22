@@ -10,7 +10,8 @@ class Home_model extends CI_Model
 	}
 	
 	public function get_journals_list(){
-		$this->db->select('*')->from('grf_journal_category');
+		$this->db->select('j_id,title')->from('journals');
+		$this->db->where('status',1);
 		return $this->db->get()->result_array();	
 	}
 	

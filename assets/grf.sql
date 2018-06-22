@@ -120,7 +120,7 @@ CREATE TABLE `grf_conference_images` (
 
 /*Data for the table `grf_conference_images` */
 
-insert  into `grf_conference_images`(`f_id`,`title`,`title_color`,`fly_image`,`fly_org_image`,`status`,`create_at`,`create_by`,`update_at`) values (8,'ghdfghdgh','cvzxcvzxc','1529225120.jpg','222.jpg',1,'2018-06-17 14:15:19',1,NULL),(9,'','','','',0,'2018-06-17 15:15:07',1,'2018-06-17 15:46:32');
+insert  into `grf_conference_images`(`f_id`,`title`,`title_color`,`fly_image`,`fly_org_image`,`status`,`create_at`,`create_by`,`update_at`) values (8,'ghdfghdgh','cvzxcvzxc','1529225120.jpg','222.jpg',1,'2018-06-17 14:15:19',1,NULL);
 
 /*Table structure for table `grf_flyers` */
 
@@ -183,11 +183,11 @@ CREATE TABLE `guidelines` (
   `update_at` datetime DEFAULT NULL,
   `create_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 /*Data for the table `guidelines` */
 
-insert  into `guidelines`(`id`,`pagename`,`title`,`description`,`seo_title`,`seo_url`,`seo_keyword`,`seo_description`,`status`,`create_at`,`update_at`,`create_by`) values (5,'reddy','gdg','<p>gfd</p>\r\n','fgdgf','df','dfdgf','dfd','1','2018-06-21 08:58:58','2018-06-21 09:08:05',1),(6,'fbghfhf','vasu','<p>gf</p>\r\n','ghfg','fghffg','fg','fgfgf','1','2018-06-21 08:59:14','2018-06-21 09:07:51',1),(7,'','','','','','','','1','2018-06-21 22:20:05',NULL,1);
+insert  into `guidelines`(`id`,`pagename`,`title`,`description`,`seo_title`,`seo_url`,`seo_keyword`,`seo_description`,`status`,`create_at`,`update_at`,`create_by`) values (5,'reddy','gdg','<p>gfd</p>\r\n','fgdgf','df','dfdgf','dfd','1','2018-06-21 08:58:58','2018-06-21 09:08:05',1),(6,'fbghfhf','vasu','<p>gf</p>\r\n','ghfg','fghffg','fg','fgfgf','1','2018-06-21 08:59:14','2018-06-21 09:07:51',1),(7,'fgsdfgsdfg','fvbxvcb','<p>fgdfg</p>\r\n','fgsdfg','sdfgsdfg','sdfgsdfg','sdfgsdf','1','2018-06-21 22:20:05','2018-06-22 20:32:30',1),(8,'Page Name vasu','Title','<p>xcxc</p>\r\n','cvzxcv','cxvzxcv','cvzxc','cvzxcvzxcv','1','2018-06-22 20:33:17','2018-06-22 20:33:28',1);
 
 /*Table structure for table `journal_article_in_press` */
 
@@ -214,16 +214,18 @@ CREATE TABLE `journal_article_in_press` (
   `tables` varchar(250) DEFAULT NULL,
   `pdf_file` varchar(250) DEFAULT NULL,
   `image` varchar(250) DEFAULT NULL,
+  `video` varchar(250) DEFAULT NULL,
+  `video_article` int(11) DEFAULT '0',
   `status` int(11) DEFAULT '1',
   `create_at` datetime DEFAULT NULL,
   `update_at` datetime DEFAULT NULL,
   `create_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`a_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 /*Data for the table `journal_article_in_press` */
 
-insert  into `journal_article_in_press`(`a_id`,`journal_id`,`journal_cat_id`,`year_of_article`,`title`,`author_name`,`article_type`,`url`,`seo_title`,`seo_keyword`,`seo_description`,`research_article`,`abstract`,`introduction`,`references`,`figures`,`suggested_citation`,`tables`,`pdf_file`,`image`,`status`,`create_at`,`update_at`,`create_by`) values (2,4,'8','2018','like that psoot','test','Article type','vasu.com','seo title','seo keywords','seo description','<p>Research Article</p>\r\n','<p>Abstract</p>\r\n','<p>Introduction</p>\r\n','<p>References</p>\r\n','<p>Figures</p>\r\n','<p>Suggested citation</p>\r\n','<p>Tables</p>\r\n','1529377243.pdf','1529377243.html',1,'2018-06-19 08:30:42','2018-06-19 20:23:02',1),(3,0,'','','title','','','','seo title','key words','description','','','','','','','','','',1,'2018-06-21 08:45:15',NULL,1);
+insert  into `journal_article_in_press`(`a_id`,`journal_id`,`journal_cat_id`,`year_of_article`,`title`,`author_name`,`article_type`,`url`,`seo_title`,`seo_keyword`,`seo_description`,`research_article`,`abstract`,`introduction`,`references`,`figures`,`suggested_citation`,`tables`,`pdf_file`,`image`,`video`,`video_article`,`status`,`create_at`,`update_at`,`create_by`) values (2,4,'8','2018','like that psoot','test','Article type','vasu.com','seo title','seo keywords','seo description','<p>Research Article</p>\r\n','<p>Abstract</p>\r\n','<p>Introduction</p>\r\n','<p>References</p>\r\n','<p>Figures</p>\r\n','<p>Suggested citation</p>\r\n','<p>Tables</p>\r\n','1529377243.pdf','1529377243.html',NULL,0,1,'2018-06-19 08:30:42','2018-06-19 20:23:02',1),(5,3,'3','2010','vbxcvb','vbxcvb','xcvbxcvb','vbxcvb','xcvbx','vcbxcvb','xcvb','<p>vbxcvb</p>\r\n','<p>vbxcvbxcvb</p>\r\n','<p>vbxcvbxc</p>\r\n','<p>vbxbvxvb</p>\r\n','<p>vbxvbxcvbcv</p>\r\n','<p>vbxcvbxcvb</p>\r\n','<p>vbxcvbxcv</p>\r\n','1529687924.pdf','1529687924.html','1529687924.mp4',1,1,'2018-06-22 22:48:43',NULL,1);
 
 /*Table structure for table `journal_banners` */
 
@@ -300,6 +302,26 @@ CREATE TABLE `journals` (
 
 insert  into `journals`(`j_id`,`category`,`baneer_image`,`title`,`alt_tags`,`seo_title`,`seo_url`,`seo_keywords`,`seo_description`,`key_words`,`description`,`prices`,`status`,`create_at`,`update_at`,`create_by`) values (3,6,'1529245047.jpg','like that psoot','sdfgsdf','seo title','www.google.com','key word','seo description','<p><strong>Hi  how  are you</strong></p>\r\n','<p>This  is  very  gud  persion.</p>\r\n','ntg like that',1,'2018-06-17 19:47:26','2018-06-17 19:47:26',1),(4,6,'1529247087.jpg','bxcbvxcvb','vbxcvb','vbxcvb','vbxcvb','cvbxcvb   vbcvbx','vbxcvb vcbxcbxc vbcxvb','<p>Gavin Publishers is an online international open access, peer reviewed journals publishing organization which publishes all kinds of manuscripts (Research, Review, Case Reports, Editorials, Brief Reviews, Research Highlights, etc.,) from the fields related to Clinical, Pharmaceutical, Medical Sciences and Engineering.</p>\r\n\r\n<p>Our passion for serving the scientific community drove us to publish our journals through an open access mode (free to read and free to download). We strive hard to spread the knowledge and to broaden the scope of Gavin Publishers Journals worldwide. We welcome distinguished researchers, scholar, academicians and people involved in and around the fields of Clinical, Biological, Pharmaceutical, Medical, Life Sciences and Engineering with open arms to come forward to share and to gain the knowledge by an open access mode and generate a platform for emerging scholars and researchers where they can build a huge forum of scientific community at global level.</p>\r\n\r\n<p> </p>\r\n\r\n<p> </p>\r\n','<p><strong>Journal of Pharmaceutical and Pharmacological Sciences</strong> is an open access, peer-reviewed and online publishing journal which covers high quality manuscripts relevant and applicable to the broad field of both applied Pharmaceutical and Pharmacological sciences. As a scientific journal it renders novel, clear connection to Pharmaceutical requirements and Pharmacological applications by the perceived palatability of Pharmacy and their utilization in highly interdisciplinary applied sciences.</p>\r\n\r\n<p> </p>\r\n\r\n<p><strong>Focus and Scope</strong></p>\r\n\r\n<p> </p>\r\n\r\n<p><strong>Journal of Pharmaceutical and Pharmacological Sciences</strong>targets to distribute most finish and solid wellspring of data on the revelations and current improvements in the method of original articles, review articles, case reports, communications, etc. in various aspects of the field of Pharmaceutical and Pharmacological studies and making them freely accessible through online with no confinements or whatever other memberships to specialists around the world.</p>\r\n\r\n<p> </p>\r\n\r\n<p>Journal Impact Factor 0.32*</p>\r\n\r\n<p> </p>\r\n\r\n<p><strong>Indexing & Abstracting </strong></p>\r\n\r\n<p> </p>\r\n\r\n<p><a name=\"_Hlk499637175\">All published articles are assigned to Digital Object Identifier (DOI) – Crossref.</a></p>\r\n\r\n<p> </p>\r\n\r\n<p>All published articles of this journal are included in the indexing and abstracting coverage of:</p>\r\n\r\n<p> </p>\r\n\r\n<p>*Genamics – JournalSeek</p>\r\n\r\n<p>*Academic Keys</p>\r\n\r\n<p>*ResearchBib - Academic Research Index</p>\r\n\r\n<p>*Free Medical Journals - Geneva Foundation for Medical Education and Research</p>\r\n\r\n<p>*International Innovative Journal Impact Factor (IIJIF)</p>\r\n\r\n<p>*Al-Azhar University</p>\r\n','dfdfsad fgsdfgfd',1,'2018-06-17 20:21:27','2018-06-17 20:23:38',1);
 
+/*Table structure for table `media_partners` */
+
+DROP TABLE IF EXISTS `media_partners`;
+
+CREATE TABLE `media_partners` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(250) DEFAULT NULL,
+  `image` varchar(250) DEFAULT NULL,
+  `alt_tags` varchar(250) DEFAULT NULL,
+  `status` int(11) DEFAULT '1',
+  `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `create_by` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+/*Data for the table `media_partners` */
+
+insert  into `media_partners`(`id`,`title`,`image`,`alt_tags`,`status`,`create_at`,`update_at`,`create_by`) values (4,'vasu','1529678018.jpg','nhfg hgh fgsfgsf',1,'2018-06-22 20:03:37','2018-06-22 20:02:57',1);
+
 /*Table structure for table `menuscript_list` */
 
 DROP TABLE IF EXISTS `menuscript_list`;
@@ -326,6 +348,26 @@ CREATE TABLE `menuscript_list` (
 /*Data for the table `menuscript_list` */
 
 insert  into `menuscript_list`(`id`,`title`,`firstName`,`lastName`,`university`,`country`,`email`,`phone`,`menuscript_title`,`address`,`message`,`journel`,`abstract`,`image`,`create_at`) values (1,'MR','reddem','vasudevareddy','jntua','Algeria','test@gmail.com','8500050944','cvcv','cvxcvxcvxcv ','cxvzxcvxzcv','Journal of Gastroenterology and Digestive Disorders (JGDD)','test',NULL,'2018-06-14 23:22:23'),(2,'MR','vasudevareddy','htrtytry','University','India','vasu@gmail.com','8500050944','menu ttile','hyd','i like  that','Annals of Medical & Surgical Case Reports(AMSC)','dgfg','','2018-06-16 14:07:09'),(3,'MR','vasudevareddy','htrtytry','University','India','vasu@gmail.com','8500050944','menu ttile','hyd','i like  that','Annals of Medical & Surgical Case Reports(AMSC)','dgfg','','2018-06-16 14:09:21'),(4,'MR','vasudevareddy','htrtytry','University','India','vasu@gmail.com','8500050944','menu ttile','hyd','i like  that','Annals of Medical & Surgical Case Reports(AMSC)','dgfg','','2018-06-16 14:10:41'),(5,'MR','vasudevareddy','htrtytry','University','India','vasu@gmail.com','8500050944','menu ttile','hyd','i like  that','Annals of Medical & Surgical Case Reports(AMSC)','dgfg','','2018-06-16 14:11:24'),(6,'MR','vasudevareddy','htrtytry','University','India','vasu@gmail.com','8500050944','menu ttile','hyd','i like  that','Annals of Medical & Surgical Case Reports(AMSC)','dgfg','','2018-06-16 14:11:49');
+
+/*Table structure for table `news_article` */
+
+DROP TABLE IF EXISTS `news_article`;
+
+CREATE TABLE `news_article` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(250) DEFAULT NULL,
+  `description` varchar(250) DEFAULT NULL,
+  `link` varchar(250) DEFAULT NULL,
+  `status` int(11) DEFAULT '1',
+  `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `create_by` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+/*Data for the table `news_article` */
+
+insert  into `news_article`(`id`,`title`,`description`,`link`,`status`,`create_at`,`update_at`,`create_by`) values (6,'dfgfgsfg','vasudevareddy','link',1,'2018-06-22 20:29:37','2018-06-22 20:26:44',1),(7,'title','sdfgsdf','gsdfgsdfg',1,'2018-06-22 20:29:12','2018-06-22 20:29:12',1);
 
 /*Table structure for table `published_gallery` */
 

@@ -81,14 +81,26 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class=""><a href="<?php echo base_url('journal-details/'); ?>"><i class="fa fa-circle-o"></i>Add Details</a></li>
-			<li class=""><a href="<?php echo base_url('journal-details/lists'); ?>"><i class="fa fa-circle-o"></i> Details List</a></li>
-			<li class=""><a href="<?php echo base_url('journal-details/add-banners'); ?>"><i class="fa fa-circle-o"></i> Add Banners</a></li>
-			<li class=""><a href="<?php echo base_url('journal-details/banners-list'); ?>"><i class="fa fa-circle-o"></i> Banners List</a></li>
-			<li class=""><a href="<?php echo base_url('journal-details/add-edotirs'); ?>"><i class="fa fa-circle-o"></i>Add Editors</a></li>
-			<li class=""><a href="<?php echo base_url('journal-details/edotirs-list'); ?>"><i class="fa fa-circle-o"></i> Editors List</a></li>
-			<li class=""><a href="<?php echo base_url('article-in-press'); ?>"><i class="fa fa-circle-o"></i> Article in press</a></li>
-			<li class=""><a href="<?php echo base_url('article-in-press/lists'); ?>"><i class="fa fa-circle-o"></i> Article in press List</a></li>
+				<li class=""><a href="<?php echo base_url('journal-details/'); ?>"><i class="fa fa-circle-o"></i>Add Details</a></li>
+				<li class=""><a href="<?php echo base_url('journal-details/lists'); ?>"><i class="fa fa-circle-o"></i> Details List</a></li>
+				<li class=""><a href="<?php echo base_url('journal-details/add-banners'); ?>"><i class="fa fa-circle-o"></i> Add Banners</a></li>
+				<li class=""><a href="<?php echo base_url('journal-details/banners-list'); ?>"><i class="fa fa-circle-o"></i> Banners List</a></li>
+				<li class=""><a href="<?php echo base_url('journal-details/add-edotirs'); ?>"><i class="fa fa-circle-o"></i>Add Editors</a></li>
+				<li class=""><a href="<?php echo base_url('journal-details/edotirs-list'); ?>"><i class="fa fa-circle-o"></i> Editors List</a></li>
+				<li class=""><a href="<?php echo base_url('article-in-press'); ?>"><i class="fa fa-circle-o"></i> Article in press</a></li>
+				<li class=""><a href="<?php echo base_url('article-in-press/lists'); ?>"><i class="fa fa-circle-o"></i> Article in press List</a></li>
+				<li class="<?php if(isset($u_url) && $u_url==base_url('Media-partner')){ echo "active"; } ?> treeview">
+					  <a href="#">
+						<i class="fa fa-dashboard"></i> <span>Article In process Fee</span>
+						<span class="pull-right-container">
+						  <i class="fa fa-angle-left pull-right"></i>
+						</span>
+					  </a>
+					  <ul class="treeview-menu">
+						<li class="active"><a href="<?php echo base_url('Article-in-process-fee'); ?>"><i class="fa fa-circle-o"></i> Add</a></li>
+						<li><a href="<?php echo base_url('Article-in-process-fee/lists'); ?>"><i class="fa fa-circle-o"></i> List</a></li>
+					  </ul>
+				</li>
           </ul>
         </li>
 		<li class="<?php if(isset($u_url) && $u_url==base_url('Media-partner')){ echo "active"; } ?> treeview">

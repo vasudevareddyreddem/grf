@@ -60,7 +60,29 @@ CREATE TABLE `article_in_process_fee` (
 
 /*Data for the table `article_in_process_fee` */
 
-insert  into `article_in_process_fee`(`id`,`journal_id`,`journal_cat_id`,`table`,`status`,`create_at`,`update_at`,`create_by`) values (1,3,20,'<p>test like  that</p>\r\n',1,'2018-06-23 21:23:24','2018-06-23 21:23:24',1),(2,3,24,'<p>vasu</p>\r\n',1,'2018-06-23 21:29:47','2018-06-23 21:45:19',1);
+insert  into `article_in_process_fee`(`id`,`journal_id`,`journal_cat_id`,`table`,`status`,`create_at`,`update_at`,`create_by`) values (1,3,20,'<p>test like  that</p>\r\n',1,'2018-06-23 21:23:24','2018-06-23 21:23:24',1),(2,4,21,'',1,'2018-06-23 21:29:47','2018-06-23 22:19:37',1);
+
+/*Table structure for table `conference_process` */
+
+DROP TABLE IF EXISTS `conference_process`;
+
+CREATE TABLE `conference_process` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `journal_id` int(11) DEFAULT NULL,
+  `journal_cat_id` int(11) DEFAULT NULL,
+  `title` varchar(250) DEFAULT NULL,
+  `url` varchar(250) DEFAULT NULL,
+  `venu_place` varchar(250) DEFAULT NULL,
+  `status` int(11) DEFAULT '1',
+  `create_at` datetime DEFAULT NULL,
+  `update_at` datetime DEFAULT NULL,
+  `create_by` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+/*Data for the table `conference_process` */
+
+insert  into `conference_process`(`id`,`journal_id`,`journal_cat_id`,`title`,`url`,`venu_place`,`status`,`create_at`,`update_at`,`create_by`) values (2,4,21,'vbvbxvb','vbxvb','cxvbxcvb',1,'2018-06-23 22:15:43','2018-06-23 22:20:10',1);
 
 /*Table structure for table `contactus` */
 

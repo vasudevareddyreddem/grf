@@ -3,11 +3,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Article in press List
+        Issues List
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?php echo base_url('dashboard'); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Article in press List</li>
+        <li class="active">Issues List</li>
       </ol>
     </section>
 
@@ -19,7 +19,7 @@
 
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Article in press List</h3>
+              <h3 class="box-title">Issues List</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -59,13 +59,13 @@
 				  </td>
                   <td><?php if($list['status']==1){ echo "Active"; }else{ echo "deactive";} ?></td>
                   <td>
-					<a href="<?php echo base_url('article-in-press/edit/'.base64_encode($list['id'])); ?>"><i class="fa fa-edit"></i></a>
+					<a href="<?php echo base_url('issues/edit/'.base64_encode($list['id'])); ?>"><i class="fa fa-edit"></i></a>
 										&nbsp;&nbsp;
 
-					<a href="<?php echo base_url('article-in-press/status/'.base64_encode($list['id']).'/'.base64_encode($list['status'])); ?>"><i class="fa fa-check-square-o"></i></a>
+					<a href="<?php echo base_url('issues/status/'.base64_encode($list['id']).'/'.base64_encode($list['status'])); ?>"><i class="fa fa-check-square-o"></i></a>
 										&nbsp;&nbsp;
 
-					<a href="<?php echo base_url('article-in-press/delete/'.base64_encode($list['id'])); ?>"><i class="fa fa-trash-o"></i></a>
+					<a href="<?php echo base_url('issues/delete/'.base64_encode($list['id'])); ?>"><i class="fa fa-trash-o"></i></a>
 				  
 				  </td>
                 </tr>

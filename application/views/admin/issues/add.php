@@ -72,7 +72,7 @@
 								</div>
 							</div>
                         </div>
-						<div class="col-md-6">
+						<div class="col-md-12">
 							<div class="form-group">
 								<label class=" control-label">Years of article </label>
 								<div class="">
@@ -93,7 +93,7 @@
 								</div>
 							</div>
                         </div>
-						<div class="col-md-6">
+						<div class="col-md-6" id="archieve_show" style="display:none;">
 							<div class="form-group">
 								<label class=" control-label">Archieve List</label>
 								<div class="">
@@ -148,12 +148,10 @@
    					dataType: 'json',
    					type: 'POST',
    					success: function (data) {
-						//console.log(data);return false;
+						$('#archieve_show').show();
    						$('#archieve_list').empty();
-   						//$('#archieve_list').append("<option value=''>select</option>");
    						for(i=0; i<data.list.length; i++) {
    							$('#archieve_list').append("<input type='checkbox' name='article_ids[]' value="+data.list[i].a_id+">"+data.list[i].title+"<br>");                      
-   							//$('#archieve_list').append("<option value="+data.list[i].j_id+">"+data.list[i].title+"</option>");                      
                          
    						}
    						//console.log(data);return false;

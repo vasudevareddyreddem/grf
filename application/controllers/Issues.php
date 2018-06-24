@@ -167,18 +167,18 @@ class Issues extends CI_Controller {
 					'status'=>$stat,
 					'update_at'=>date('Y-m-d H:i:s'),
 					);
-					$update=$this->Faq_model->update_faq_details($f_id,$update_data);
+					$update=$this->Issues_model->update_issues_details($f_id,$update_data);
 						if(count($update)>0){
 							if($status==1){
-							$this->session->set_flashdata('success',"Faq's successfully deactivated");
+							$this->session->set_flashdata('success',"Issue successfully deactivated");
 							}else{
-							$this->session->set_flashdata('success',"Faq's successfully activated");
+							$this->session->set_flashdata('success',"Issue successfully activated");
 							}
-							redirect('faq/lists');
+							redirect('issues/lists');
 							
 						}else{
 							$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");
-							redirect('faq/lists');
+							redirect('issues/lists');
 						}
 		}else{
 			$this->session->set_flashdata('error','Please login to continue');
@@ -192,15 +192,23 @@ class Issues extends CI_Controller {
 		{
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
-			$f_id=base64_decode($this->uri->segment(3));
-			
-					$delete=$this->Faq_model->delete_updates($f_id);
+			$i_id=base64_decode($this->uri->segment(3));
+			$issue=$this->Issues_model->get_issue_details($i_id);
+			$get_article_list=$this->Issues_model->get_articles_list($issue['id']);
+			if(count($get_article_list)>0){
+					foreach($get_article_list as $lis){
+						$this->Issues_model->delete_article($lis['issue_a_id']);
+					}
+			}
+			$delete=$this->Issues_model->delete_issues($issue['id']);
 					if(count($delete)>0){
+						unlink('assets/issues/'.$issue['image']);
+
 						$this->session->set_flashdata('success',"Faq's successfully deleted");
-						redirect('faq/lists');
+						redirect('issues/lists');
 					}else{
 						$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");
-						redirect('faq/lists');
+						redirect('issues/lists');
 					}
 		}else{
 			$this->session->set_flashdata('error','Please login to continue');
@@ -212,11 +220,37 @@ class Issues extends CI_Controller {
 	public  function get_article_list_for_issues(){
 		$post=$this->input->post();
 		$details=$this->Issues_model->get_all_article_list_for_issues($post['cate_id'],$post['jou_id'],$post['year']);
-		//echo $this->db->last_query();exit;
-		if(count($details) > 0)
+		$issue_wise_article_list=$this->Issues_model->get_all_issues_list_for_issues($post['cate_id'],$post['jou_id'],$post['year']);
+			
+		//echo '<pre>';print_r($issue_wise_article_list);
+			if(count($issue_wise_article_list)>0){
+					foreach($issue_wise_article_list  as $list){
+						$article_list[]=$this->Issues_model->get_all_article_list($list['id']);
+					}
+					
+					foreach($article_list as $li){
+						foreach($li as $lis){
+							$ids[]=$lis['article_id'];
+						}
+					}
+					foreach($details as $l){
+						if (in_array($l['a_id'], $ids))
+						  {
+						  unset($l['a_id']);
+						  }else{
+							  $ddd[]=$l;
+						  }
+						//echo '<pre>';print_r($l);exit;
+					}
+			}else{
+				
+				$ddd=$details;
+			}
+		
+		if(isset($ddd) && count($ddd) > 0)
 				{
 				$data['msg']=1;
-				$data['list']=$details;
+				$data['list']=$ddd;
 				echo json_encode($data);exit;	
 				}else{
 					$data['msg']=2;

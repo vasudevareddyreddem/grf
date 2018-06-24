@@ -41,29 +41,45 @@ class Issues_model extends CI_Model
 		$this->db->where('issue_wise_article_list.i_a_id',$id);
         return $this->db->get()->result_array();
 	}
-	public function get_conference_process_list($id){
-		$this->db->select('conference_process.*,journals.title as journaltitle,grf_journal_category.category')->from('conference_process');
-
-		$this->db->join('journals ', 'journals.j_id = conference_process.journal_id', 'left');
-		$this->db->join('grf_journal_category ', 'grf_journal_category.c_id = conference_process.journal_cat_id', 'left');
-				
-		$this->db->where('conference_process.create_by',$id);
+	
+	public  function get_all_issues_list_for_issues($cat_id,$j_id,$year){
+		$this->db->select('id')->from('issues');		
+		$this->db->where('journal_id', $j_id);
+		$this->db->where('journal_cat_id', $cat_id);
+		$this->db->where('year', $year);
+		$this->db->where('status', 1);
         return $this->db->get()->result_array();
-
-				
 	}
-	public function get_conference_process_details($id){
-		$this->db->select('*')->from('conference_process');		
+	
+	public  function get_all_article_list($id){
+		$this->db->select('article_id')->from('issue_wise_article_list');		
+		$this->db->where('i_a_id', $id);
+        return $this->db->get()->result_array();
+	}
+	
+	public function get_issue_details($id){
+		$this->db->select('*')->from('issues');		
 		$this->db->where('id',$id);
         return $this->db->get()->row_array();	
 	}
-	public function update_conference_process_details($id,$data){
-		$this->db->where('id',$id);
-    	return $this->db->update("conference_process",$data);
+	
+	public  function get_articles_list($id){
+		$this->db->select('*')->from('issue_wise_article_list');		
+		$this->db->where('i_a_id', $id);
+        return $this->db->get()->result_array();
 	}
-	public function delete_conference_process($id){
+	public function update_issues_details($id,$data){
+		$this->db->where('id',$id);
+    	return $this->db->update("issues",$data);
+	}
+	public function delete_issues($id){
 		$this->db->where('id', $id);
-		return $this->db->delete('conference_process');
+		return $this->db->delete('issues');
+	}
+	
+	public  function delete_article($issue_a_id){
+		$this->db->where('issue_a_id', $issue_a_id);
+		return $this->db->delete('journal_article_in_press');
 	}
 	
 	public  function get_all_article_list_for_issues($cat_id,$j_id,$year){

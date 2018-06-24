@@ -39,7 +39,7 @@
                 <?php if(isset($article_in_press_list) && count($article_in_press_list)>0){ ?>
 				<?php foreach($article_in_press_list as $list){ ?>
                 <tr>
-                  <td style="display:none"><?php echo htmlentities($list['j_id']); ?></td>
+                  <td style="display:none"><?php echo htmlentities($list['a_id']); ?></td>
                   <td><?php echo Date('Y-M-d',strtotime(htmlentities($list['create_at'])));?></td>
                   <td><?php echo htmlentities($list['title']); ?></td>
                   <td><?php echo htmlentities($list['author_name']); ?></td>

@@ -28,7 +28,12 @@ class Dashboard extends CI_Controller {
 		if($this->session->userdata('userdetails'))
 		{
 			$admindetails=$this->session->userdata('userdetails');
-			$this->load->view('admin/dashboard');
+			$data['category_count']=$this->Admin_model->get_category_count($admindetails['id']);
+			$data['journal_count']=$this->Admin_model->get_journal_count($admindetails['id']);
+			$data['article_count']=$this->Admin_model->get_article_count($admindetails['id']);
+			$data['editors_count']=$this->Admin_model->get_editors_count($admindetails['id']);
+			//echo '<pre>';print_r($data);exit;
+			$this->load->view('admin/dashboard',$data);
 			$this->load->view('admin/footer');
 
 		}else{

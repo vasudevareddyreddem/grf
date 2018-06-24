@@ -61,5 +61,30 @@ class Admin_model extends CI_Model
 	}
 	
 	
+	/* dashboad purpose*/
+	
+	public  function get_category_count($id){
+		$this->db->select('COUNT(c_id) AS count')->from('grf_journal_category');		
+		$this->db->where('create_by', $id);
+        return $this->db->get()->row_array();
+	}
+	public  function get_journal_count($id){
+		$this->db->select('COUNT(j_id) AS count')->from('journals');		
+		$this->db->where('create_by', $id);
+        return $this->db->get()->row_array();
+	}
+	public  function get_article_count($id){
+		$this->db->select('COUNT(a_id) AS count')->from('journal_article_in_press');		
+		$this->db->where('create_by', $id);
+        return $this->db->get()->row_array();
+	}
+	public  function get_editors_count($id){
+		$this->db->select('COUNT(j_e_id) AS count')->from('journal_editors');		
+		$this->db->where('create_by', $id);
+        return $this->db->get()->row_array();
+	}
+	/* dashboad purpose*/
+	
+	
 
 }

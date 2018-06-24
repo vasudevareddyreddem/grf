@@ -41,7 +41,7 @@
                   <td style="display:none"><?php echo htmlentities($list['id']); ?></td>
                   <td><?php echo htmlentities($list['journaltitle']); ?></td>
                   <td><?php echo htmlentities($list['title']); ?></td>
-                  <td><?php echo htmlentities($list['details']); ?></td>
+                  <td><?php echo $list['details']; ?></td>
                   <td><?php if($list['status']==1){ echo "Active"; }else{ echo "deactive";} ?></td>
                   <td>
 					<a href="<?php echo base_url('special-issue/edit/'.base64_encode($list['id'])); ?>"><i class="fa fa-edit"></i></a>

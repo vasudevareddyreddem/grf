@@ -5,7 +5,7 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?php echo base_url('dashboard'); ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li class="active"> Add Add Conference process</li>
+        <li class="active"> Add Conference process</li>
       </ol>
     </section>
    <section class="content">

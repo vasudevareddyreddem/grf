@@ -48,7 +48,6 @@ class Special_issue extends CI_Controller {
 		{
 			$admindetails=$this->session->userdata('userdetails');
 			$data['special_isses_list']=$this->Special_issue_model->get_special_issue_list($admindetails['id']);
-			
 			//echo '<pre>';print_r($data);exit; 
 			$this->load->view('admin/special_issues/list',$data);
 			$this->load->view('admin/footer');
@@ -67,7 +66,6 @@ class Special_issue extends CI_Controller {
 			$data['details']=$this->Special_issue_model->get_special_issue_details($f_id);
 			$data['journals_list']=$this->Journal_details_model->get_all_journal_list($admindetails['id']);
 			$data['journals_category_list']=$this->Journal_details_model->get_journal_category_list($admindetails['id']);
-			
 			//echo '<pre>';print_r($data);exit; 
 			$this->load->view('admin/special_issues/edit',$data);
 			$this->load->view('admin/footer');
@@ -115,6 +113,8 @@ class Special_issue extends CI_Controller {
 		{
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
+			
+			//echo '<pre>';print_r($post);exit;
 			$update_data=array(
 					'journal_id'=>isset($post['journal'])?$post['journal']:'',
 					'journal_cat_id'=>isset($post['category'])?$post['category']:'',

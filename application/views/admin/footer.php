@@ -79,6 +79,12 @@
   });$(function () {
     CKEDITOR.replace('editor8');
     $(".textarea").wysihtml5();
+  });$(function () {
+    CKEDITOR.replace('editor9');
+    $(".textarea").wysihtml5();
+  });$(function () {
+    CKEDITOR.replace('editor10');
+    $(".textarea").wysihtml5();
   });
 </script>
 

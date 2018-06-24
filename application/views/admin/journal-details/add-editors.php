@@ -42,6 +42,19 @@
 								</div>
 							</div>
                         </div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class=" control-label">Category</label>
+								<div class="">
+									 <select class="form-control" id="category" name="category">
+									  <option value="">Select</option>
+									 <?php foreach($journals_category_list as $list){ ?>
+									<option value="<?php echo $list['c_id']; ?>"><?php echo $list['category']; ?></option>
+									<?php } ?>
+									</select>
+								</div>
+							</div>
+                        </div>
 						
 						<div class="col-md-6">
 							<div class="form-group">
@@ -122,6 +135,22 @@
 								</div>
 							</div>
                         </div>
+						<div class="col-md-12">
+							<div class="form-group">
+								<label class=" control-label">Priority</label>
+								<div class="">
+									<input type="text" class="form-control" name="priority" id="priority" placeholder="Enter Priority" />
+								</div>
+							</div>
+                        </div>
+						<div class="col-md-12">
+							<div class="form-group">
+								<label class=" control-label">Biography</label>
+								<div class="">
+									<textarea  class="form-control" name="biography" rows="2" id="biography" placeholder="Enter Biography" ></textarea>
+								</div>
+							</div>
+                        </div>
 						
 					
 						<div class="clearfix">&nbsp;</div>
@@ -159,6 +188,13 @@ $(document).ready(function() {
                 validators: {
 					notEmpty: {
 						message: 'Journal is required'
+					}
+				}
+            },
+			category: {
+                validators: {
+					notEmpty: {
+						message: 'Category is required'
 					}
 				}
             },
@@ -208,6 +244,18 @@ $(document).ready(function() {
 				
 				}
             },
+			priority: {
+                 validators: {
+					notEmpty: {
+						message: 'Priority is required'
+					},
+					regexp: {
+					regexp:  /^[0-9]*$/,
+					message:'Priority must be digits'
+					}
+				
+				}
+            },
             designation: {
 					 validators: {
 					notEmpty: {
@@ -219,7 +267,18 @@ $(document).ready(function() {
 					}
 				}
 				},
-            university: {
+            biography: {
+					 validators: {
+					notEmpty: {
+						message: 'Biography is required'
+					},
+					regexp: {
+					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
+					message:'Biography  wont allow <> [] = % '
+					}
+				}
+				}, 
+				university: {
 					 validators: {
 					notEmpty: {
 						message: 'University is required'

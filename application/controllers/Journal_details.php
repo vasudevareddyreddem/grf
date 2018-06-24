@@ -452,12 +452,15 @@ class Journal_details extends CI_Controller {
 					'journal_id'=>isset($post['journal'])?$post['journal']:'',
 					'image'=>$img,
 					'name'=>isset($post['name'])?$post['name']:'',
+					'journal_cat_id'=>isset($post['category'])?$post['category']:'',
 					'email'=>isset($post['email'])?$post['email']:'',
 					'phone'=>isset($post['phone'])?$post['phone']:'',
 					'designation'=>isset($post['designation'])?$post['designation']:'',
 					'position'=>isset($post['position'])?$post['position']:'',
 					'country'=>isset($post['country'])?$post['country']:'',
 					'university'=>isset($post['university'])?$post['university']:'',
+					'priority'=>isset($post['priority'])?$post['priority']:'',
+					'biography'=>isset($post['biography'])?$post['biography']:'',
 					'status'=>1,
 					'create_at'=>date('Y-m-d H:i:s'),
 					'update_at'=>date('Y-m-d H:i:s'),
@@ -590,6 +593,7 @@ class Journal_details extends CI_Controller {
 						}
 					$update_data=array(
 					'journal_id'=>isset($post['journal'])?$post['journal']:'',
+					'journal_cat_id'=>isset($post['category'])?$post['category']:'',
 					'image'=>$img,
 					'name'=>isset($post['name'])?$post['name']:'',
 					'email'=>isset($post['email'])?$post['email']:'',
@@ -598,6 +602,8 @@ class Journal_details extends CI_Controller {
 					'position'=>isset($post['position'])?$post['position']:'',
 					'country'=>isset($post['country'])?$post['country']:'',
 					'university'=>isset($post['university'])?$post['university']:'',
+					'priority'=>isset($post['priority'])?$post['priority']:'',
+					'biography'=>isset($post['biography'])?$post['biography']:'',
 					'status'=>1,
 					'update_at'=>date('Y-m-d H:i:s'),
 					);

@@ -20,7 +20,7 @@
             <!-- /.box-header -->
             <!-- form start -->
 			<div style="padding:20px;">
-            <form id="addReviewer" method="post" class="" action="<?php echo base_url('reviewerboard/addpost'); ?>" enctype="multipart/form-data">
+            <form id="addReviewer" onsubmit="return checkvalidation();" method="post" class="" action="<?php echo base_url('reviewerboard/addpost'); ?>" enctype="multipart/form-data">
 					<?php $csrf = array(
 								'name' => $this->security->get_csrf_token_name(),
 								'hash' => $this->security->get_csrf_hash()
@@ -30,7 +30,7 @@
 							<div class="form-group">
 								<label class=" control-label">Select Category</label>
 								<div class="">
-									 <select class="form-control" id="category" name="category">
+									 <select class="form-control" id="category" onchange="get_gournals(this.value);" name="category">
 									  <option value="">Select</option>
 									 <?php foreach($journals_category_list as $list){ ?>
 									 
@@ -126,6 +126,13 @@
     </section> 
 </div>
   <script type="text/javascript">
+  function checkvalidation(){
+	  var id=$('#journal').val();
+	  if(id==''){
+		  alert('Please select at least one Journal');
+		 return false; 
+	  }
+  }
 $(document).ready(function() {
     $('#addReviewer').bootstrapValidator({
         

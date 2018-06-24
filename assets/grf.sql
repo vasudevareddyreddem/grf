@@ -56,11 +56,11 @@ CREATE TABLE `article_in_process_fee` (
   `update_at` datetime DEFAULT NULL,
   `create_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `article_in_process_fee` */
 
-insert  into `article_in_process_fee`(`id`,`journal_id`,`journal_cat_id`,`table`,`status`,`create_at`,`update_at`,`create_by`) values (1,3,20,'<p>test like  that</p>\r\n',1,'2018-06-23 21:23:24','2018-06-23 21:23:24',1),(2,4,21,'',1,'2018-06-23 21:29:47','2018-06-23 22:19:37',1);
+insert  into `article_in_process_fee`(`id`,`journal_id`,`journal_cat_id`,`table`,`status`,`create_at`,`update_at`,`create_by`) values (1,13,22,'<p>test like  that</p>\r\n',1,'2018-06-23 21:23:24','2018-06-24 17:09:00',1),(2,11,21,'',1,'2018-06-23 21:29:47','2018-06-24 17:08:47',1),(3,5,20,'<p>cvcvzxcv</p>\r\n',1,'2018-06-24 17:07:17','2018-06-24 17:08:39',1);
 
 /*Table structure for table `article_procedures` */
 
@@ -89,11 +89,11 @@ CREATE TABLE `article_procedures` (
   `update_at` datetime DEFAULT NULL,
   `create_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 /*Data for the table `article_procedures` */
 
-insert  into `article_procedures`(`id`,`journal_id`,`journal_cat_id`,`year_of_article`,`procedures_category`,`conference_title`,`title`,`author_name`,`doi_url`,`seo_url`,`seo_title`,`seo_keyword`,`seo_description`,`abstract`,`biography`,`pdf_file`,`image`,`status`,`create_at`,`update_at`,`create_by`) values (3,3,22,'2016','Speaker Abstract','vbx','bxcvbx','cvbxcvb','cxvbxcv','vbxvb','vbxcvb','vcbvcb','vbxcvb','<p>vbxvb</p>\r\n','<p>vbxvb</p>\r\n',NULL,NULL,1,'2018-06-24 11:41:40','2018-06-24 11:51:24',1);
+insert  into `article_procedures`(`id`,`journal_id`,`journal_cat_id`,`year_of_article`,`procedures_category`,`conference_title`,`title`,`author_name`,`doi_url`,`seo_url`,`seo_title`,`seo_keyword`,`seo_description`,`abstract`,`biography`,`pdf_file`,`image`,`status`,`create_at`,`update_at`,`create_by`) values (3,3,22,'2016','Speaker Abstract','vbx','bxcvbx','cvbxcvb','cxvbxcv','vbxvb','vbxcvb','vcbvcb','vbxcvb','<p>vbxvb</p>\r\n','<p>vbxvb</p>\r\n',NULL,NULL,1,'2018-06-24 11:41:40','2018-06-24 11:51:24',1),(4,5,20,'2016','Speaker Abstract','Conference Title','Title','Author Name','DOI Url','vbvb','xcvbxcvb','vbxcvb','vbxcvb','<p>bvxcvb</p>\r\n','<p>vcbxcbv</p>\r\n',NULL,NULL,1,'2018-06-24 17:16:36','2018-06-24 17:17:57',1);
 
 /*Table structure for table `conference_process` */
 
@@ -111,11 +111,11 @@ CREATE TABLE `conference_process` (
   `update_at` datetime DEFAULT NULL,
   `create_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `conference_process` */
 
-insert  into `conference_process`(`id`,`journal_id`,`journal_cat_id`,`title`,`url`,`venu_place`,`status`,`create_at`,`update_at`,`create_by`) values (2,4,21,'vbvbxvb','vbxvb','cxvbxcvb',1,'2018-06-23 22:15:43','2018-06-23 22:20:10',1);
+insert  into `conference_process`(`id`,`journal_id`,`journal_cat_id`,`title`,`url`,`venu_place`,`status`,`create_at`,`update_at`,`create_by`) values (2,12,22,'vbvbxvb','vbxvb','cxvbxcvb',1,'2018-06-23 22:15:43','2018-06-24 17:12:27',1),(3,11,21,'gfgfg','fgsfdg','kadapa',1,'2018-06-24 17:12:09','2018-06-24 17:12:09',1);
 
 /*Table structure for table `contactus` */
 
@@ -264,6 +264,41 @@ CREATE TABLE `guidelines` (
 
 insert  into `guidelines`(`id`,`pagename`,`title`,`description`,`seo_title`,`seo_url`,`seo_keyword`,`seo_description`,`status`,`create_at`,`update_at`,`create_by`) values (5,'reddy','gdg','<p>gfd</p>\r\n','fgdgf','df','dfdgf','dfd','1','2018-06-21 08:58:58','2018-06-21 09:08:05',1),(6,'fbghfhf','vasu','<p>gf</p>\r\n','ghfg','fghffg','fg','fgfgf','1','2018-06-21 08:59:14','2018-06-21 09:07:51',1),(7,'fgsdfgsdfg','fvbxvcb','<p>fgdfg</p>\r\n','fgsdfg','sdfgsdfg','sdfgsdfg','sdfgsdf','1','2018-06-21 22:20:05','2018-06-22 20:32:30',1),(8,'Page Name vasu','Title','<p>xcxc</p>\r\n','cvzxcv','cxvzxcv','cvzxc','cvzxcvzxcv','1','2018-06-22 20:33:17','2018-06-22 20:33:28',1);
 
+/*Table structure for table `issue_wise_article_list` */
+
+DROP TABLE IF EXISTS `issue_wise_article_list`;
+
+CREATE TABLE `issue_wise_article_list` (
+  `issue_a_id` int(11) NOT NULL AUTO_INCREMENT,
+  `i_a_id` int(11) DEFAULT NULL,
+  `article_id` int(11) DEFAULT NULL,
+  `status` int(11) DEFAULT '1',
+  `create_at` datetime DEFAULT NULL,
+  `create_by` int(11) DEFAULT NULL,
+  PRIMARY KEY (`issue_a_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `issue_wise_article_list` */
+
+/*Table structure for table `issues` */
+
+DROP TABLE IF EXISTS `issues`;
+
+CREATE TABLE `issues` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `number` varchar(250) DEFAULT NULL,
+  `image` varchar(250) DEFAULT NULL,
+  `journal_cat_id` varchar(250) DEFAULT NULL,
+  `journal_id` varchar(250) DEFAULT NULL,
+  `year` varchar(250) DEFAULT NULL,
+  `status` int(11) DEFAULT NULL,
+  `create_at` datetime DEFAULT NULL,
+  `create_by` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `issues` */
+
 /*Table structure for table `journal_article_in_press` */
 
 DROP TABLE IF EXISTS `journal_article_in_press`;
@@ -296,11 +331,11 @@ CREATE TABLE `journal_article_in_press` (
   `update_at` datetime DEFAULT NULL,
   `create_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`a_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 /*Data for the table `journal_article_in_press` */
 
-insert  into `journal_article_in_press`(`a_id`,`journal_id`,`journal_cat_id`,`year_of_article`,`title`,`author_name`,`article_type`,`url`,`seo_title`,`seo_keyword`,`seo_description`,`research_article`,`abstract`,`introduction`,`references`,`figures`,`suggested_citation`,`tables`,`pdf_file`,`image`,`video`,`video_article`,`status`,`create_at`,`update_at`,`create_by`) values (5,3,'3','2010','vbxcvb','vbxcvb','xcvbxcvb','vbxcvb','xcvbx','vcbxcvb','xcvb','<p>vbxcvb</p>\r\n','<p>vbxcvbxcvb</p>\r\n','<p>vbxcvbxc</p>\r\n','<p>vbxbvxvb</p>\r\n','<p>vbxvbxcvbcv</p>\r\n','<p>vbxcvbxcvb</p>\r\n','<p>vbxcvbxcv</p>\r\n','1529687924.pdf','1529687924.html','1529687924.mp4',1,1,'2018-06-22 22:48:43',NULL,1);
+insert  into `journal_article_in_press`(`a_id`,`journal_id`,`journal_cat_id`,`year_of_article`,`title`,`author_name`,`article_type`,`url`,`seo_title`,`seo_keyword`,`seo_description`,`research_article`,`abstract`,`introduction`,`references`,`figures`,`suggested_citation`,`tables`,`pdf_file`,`image`,`video`,`video_article`,`status`,`create_at`,`update_at`,`create_by`) values (5,5,'20','2010','vbxcvb','vbxcvb','xcvbxcvb','vbxcvb','xcvbx','vcbxcvb','xcvb','<p>vbxcvb</p>\r\n','<p>vbxcvbxcvb</p>\r\n','<p>vbxcvbxc</p>\r\n','<p>vbxbvxvb</p>\r\n','<p>vbxvbxcvbcv</p>\r\n','<p>vbxcvbxcvb</p>\r\n','<p>vbxcvbxcv</p>\r\n','1529687924.pdf','1529687924.html','1529687924.mp4',1,1,'2018-06-22 22:48:43','2018-06-24 17:56:39',1),(6,11,'21','2013',' Lorem Ipsum has been the industrys standard dummy text ever since the 1500s','testing','Article Type','URL','SEO Title','SEO Keywords','SEO Description','<p>Research Article</p>\r\n','<p>Abstract</p>\r\n','<p>Introduction</p>\r\n','<p>References</p>\r\n','<p>Figures</p>\r\n','<p>Suggested citation</p>\r\n','<p>Tables</p>\r\n','1529839780.pdf','1529839780.docx','',0,1,'2018-06-24 16:59:39','2018-06-24 18:09:43',1),(7,11,'21','2013','Lorem Ipsum is simply dummy text of the printing and typesetting','Author Name','Article Type','url','seo title','seo keywords','SEO Description','<p>Research Article</p>\r\n','<p>Abstract</p>\r\n','<p>Introduction</p>\r\n','<p>References</p>\r\n','<p>Figures</p>\r\n','<p>Suggested citation</p>\r\n','<p>Tables</p>\r\n','1529843950.pdf','1529843950.jpg','',0,1,'2018-06-24 18:09:10',NULL,1);
 
 /*Table structure for table `journal_banners` */
 
@@ -330,6 +365,7 @@ DROP TABLE IF EXISTS `journal_editors`;
 CREATE TABLE `journal_editors` (
   `j_e_id` int(11) NOT NULL AUTO_INCREMENT,
   `journal_id` int(11) DEFAULT NULL,
+  `journal_cat_id` int(11) DEFAULT NULL,
   `image` varchar(250) DEFAULT NULL,
   `name` varchar(250) DEFAULT NULL,
   `email` varchar(250) DEFAULT NULL,
@@ -338,16 +374,18 @@ CREATE TABLE `journal_editors` (
   `position` varchar(250) DEFAULT NULL,
   `country` varchar(250) DEFAULT NULL,
   `university` varchar(250) DEFAULT NULL,
+  `priority` varchar(250) DEFAULT NULL,
+  `biography` text,
   `status` int(11) DEFAULT '1',
   `create_at` datetime DEFAULT NULL,
   `update_at` datetime DEFAULT NULL,
   `create_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`j_e_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 /*Data for the table `journal_editors` */
 
-insert  into `journal_editors`(`j_e_id`,`journal_id`,`image`,`name`,`email`,`phone`,`designation`,`position`,`country`,`university`,`status`,`create_at`,`update_at`,`create_by`) values (2,4,'1529334192.jpg','vasudevareddy reddem','cvb@gmail.com','8500050944','des','Editor in cheif','Aruba','bxcvbxcvb',1,'2018-06-18 20:33:11','2018-06-18 20:33:11',1),(3,3,'1529336187.jpg','bxcvbxcvb','vcbxcvb@gmail.com','8500050944','des','Editorial board member','Australia','cvzxcv',1,'2018-06-18 20:38:50','2018-06-18 21:06:26',1);
+insert  into `journal_editors`(`j_e_id`,`journal_id`,`journal_cat_id`,`image`,`name`,`email`,`phone`,`designation`,`position`,`country`,`university`,`priority`,`biography`,`status`,`create_at`,`update_at`,`create_by`) values (2,12,22,'1529334192.jpg','vasudevareddy reddem','cvb@gmail.com','8500050944','des','Editor in cheif','Aruba','bxcvbxcvb','1','testing',1,'2018-06-18 20:33:11','2018-06-24 16:52:09',1),(3,12,22,'1529336187.jpg','bxcvbxcvb','vcbxcvb@gmail.com','8500050944','des','Editorial board member','Australia','cvzxcv','1','fgfgdfg',1,'2018-06-18 20:38:50','2018-06-24 16:51:46',1),(4,11,21,'1529838815.jpg','vaasudevareddy','vaasudevareddy@gmail.com','8500050944','Designation','Editor in cheif','United States','us','1','biography',1,'2018-06-24 16:43:34','2018-06-24 16:55:32',1);
 
 /*Table structure for table `journals` */
 
@@ -371,11 +409,11 @@ CREATE TABLE `journals` (
   `update_at` datetime DEFAULT NULL,
   `create_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`j_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 /*Data for the table `journals` */
 
-insert  into `journals`(`j_id`,`category`,`baneer_image`,`title`,`alt_tags`,`seo_title`,`seo_url`,`seo_keywords`,`seo_description`,`key_words`,`description`,`prices`,`status`,`create_at`,`update_at`,`create_by`) values (3,6,'1529245047.jpg','like that psoot','sdfgsdf','seo title','www.google.com','key word','seo description','<p><strong>Hi  how  are you</strong></p>\r\n','<p>This  is  very  gud  persion.</p>\r\n','ntg like that',1,'2018-06-17 19:47:26','2018-06-17 19:47:26',1),(4,6,'1529247087.jpg','bxcbvxcvb','vbxcvb','vbxcvb','vbxcvb','cvbxcvb   vbcvbx','vbxcvb vcbxcbxc vbcxvb','<p>Gavin Publishers is an online international open access, peer reviewed journals publishing organization which publishes all kinds of manuscripts (Research, Review, Case Reports, Editorials, Brief Reviews, Research Highlights, etc.,) from the fields related to Clinical, Pharmaceutical, Medical Sciences and Engineering.</p>\r\n\r\n<p>Our passion for serving the scientific community drove us to publish our journals through an open access mode (free to read and free to download). We strive hard to spread the knowledge and to broaden the scope of Gavin Publishers Journals worldwide. We welcome distinguished researchers, scholar, academicians and people involved in and around the fields of Clinical, Biological, Pharmaceutical, Medical, Life Sciences and Engineering with open arms to come forward to share and to gain the knowledge by an open access mode and generate a platform for emerging scholars and researchers where they can build a huge forum of scientific community at global level.</p>\r\n\r\n<p> </p>\r\n\r\n<p> </p>\r\n','<p><strong>Journal of Pharmaceutical and Pharmacological Sciences</strong> is an open access, peer-reviewed and online publishing journal which covers high quality manuscripts relevant and applicable to the broad field of both applied Pharmaceutical and Pharmacological sciences. As a scientific journal it renders novel, clear connection to Pharmaceutical requirements and Pharmacological applications by the perceived palatability of Pharmacy and their utilization in highly interdisciplinary applied sciences.</p>\r\n\r\n<p> </p>\r\n\r\n<p><strong>Focus and Scope</strong></p>\r\n\r\n<p> </p>\r\n\r\n<p><strong>Journal of Pharmaceutical and Pharmacological Sciences</strong>targets to distribute most finish and solid wellspring of data on the revelations and current improvements in the method of original articles, review articles, case reports, communications, etc. in various aspects of the field of Pharmaceutical and Pharmacological studies and making them freely accessible through online with no confinements or whatever other memberships to specialists around the world.</p>\r\n\r\n<p> </p>\r\n\r\n<p>Journal Impact Factor 0.32*</p>\r\n\r\n<p> </p>\r\n\r\n<p><strong>Indexing & Abstracting </strong></p>\r\n\r\n<p> </p>\r\n\r\n<p><a name=\"_Hlk499637175\">All published articles are assigned to Digital Object Identifier (DOI) – Crossref.</a></p>\r\n\r\n<p> </p>\r\n\r\n<p>All published articles of this journal are included in the indexing and abstracting coverage of:</p>\r\n\r\n<p> </p>\r\n\r\n<p>*Genamics – JournalSeek</p>\r\n\r\n<p>*Academic Keys</p>\r\n\r\n<p>*ResearchBib - Academic Research Index</p>\r\n\r\n<p>*Free Medical Journals - Geneva Foundation for Medical Education and Research</p>\r\n\r\n<p>*International Innovative Journal Impact Factor (IIJIF)</p>\r\n\r\n<p>*Al-Azhar University</p>\r\n','dfdfsad fgsdfgfd',1,'2018-06-17 20:21:27','2018-06-17 20:23:38',1);
+insert  into `journals`(`j_id`,`category`,`baneer_image`,`title`,`alt_tags`,`seo_title`,`seo_url`,`seo_keywords`,`seo_description`,`key_words`,`description`,`prices`,`status`,`create_at`,`update_at`,`create_by`) values (5,20,'1529837540.jpg','Advanced Research in Biosensor and Bioelectronics(ARBB)','Advanced Research in Biosensor and Bioelectronics(ARBB)','Advanced Research in Biosensor and Bioelectronics(ARBB)','Advanced Research in Biosensor and Bioelectronics(ARBB)','Advanced Research in Biosensor and Bioelectronics(ARBB)','Advanced Research in Biosensor and Bioelectronics(ARBB)','<p>Advanced Research in Biosensor and Bioelectronics(ARBB)</p>\r\n','<p>Advanced Research in Biosensor and Bioelectronics(ARBB)</p>\r\n','Advanced Research in Biosensor and Bioelectronics(ARBB)',1,'2018-06-24 16:22:20','2018-06-24 16:22:20',1),(6,20,'1529837589.jpg','Annals of Medical & Surgical Case Reports(AMSC)','Annals of Medical & Surgical Case Reports(AMSC)','Annals of Medical & Surgical Case Reports(AMSC)','Annals of Medical & Surgical Case Reports(AMSC)','Annals of Medical & Surgical Case Reports(AMSC)','Annals of Medical & Surgical Case Reports(AMSC)','<p>Annals of Medical & Surgical Case Reports(AMSC)</p>\r\n','<p>Annals of Medical & Surgical Case Reports(AMSC)</p>\r\n','Annals of Medical & Surgical Case Reports(AMSC)',1,'2018-06-24 16:23:09','2018-06-24 16:23:09',1),(7,20,'1529837614.jpg','Annals of Pediatrics and Child Care','Annals of Pediatrics and Child Care','Annals of Pediatrics and Child Care','Annals of Pediatrics and Child Care','Annals of Pediatrics and Child Care','Annals of Pediatrics and Child Care','<p>Annals of Pediatrics and Child Care</p>\r\n','<p>Annals of Pediatrics and Child Care</p>\r\n','Annals of Pediatrics and Child Care',1,'2018-06-24 16:23:34','2018-06-24 16:23:34',1),(8,20,'1529837638.jpg','Clinical Oncology Research Journal (CORJ)','Clinical Oncology Research Journal (CORJ)','Clinical Oncology Research Journal (CORJ)','Clinical Oncology Research Journal (CORJ)','Clinical Oncology Research Journal (CORJ)','Clinical Oncology Research Journal (CORJ)','<p>Clinical Oncology Research Journal (CORJ)</p>\r\n','<p>Clinical Oncology Research Journal (CORJ)</p>\r\n','Clinical Oncology Research Journal (CORJ)',1,'2018-06-24 16:23:58','2018-06-24 16:23:58',1),(9,20,'1529837664.jpg','Current Updates in Dermatological Problems (CUDP)','Current Updates in Dermatological Problems (CUDP)','Current Updates in Dermatological Problems (CUDP)','Current Updates in Dermatological Problems (CUDP)','Current Updates in Dermatological Problems (CUDP)','Current Updates in Dermatological Problems (CUDP)','<p>Current Updates in Dermatological Problems (CUDP)</p>\r\n','<p>Current Updates in Dermatological Problems (CUDP)</p>\r\n','Current Updates in Dermatological Problems (CUDP)',1,'2018-06-24 16:24:23','2018-06-24 16:24:23',1),(10,20,'1529837689.jpg','Dentistry and Dental Ailments Journal (DDAJ)','Dentistry and Dental Ailments Journal (DDAJ)','Dentistry and Dental Ailments Journal (DDAJ)','Dentistry and Dental Ailments Journal (DDAJ)','Dentistry and Dental Ailments Journal (DDAJ)','Dentistry and Dental Ailments Journal (DDAJ)','<p>Dentistry and Dental Ailments Journal (DDAJ)</p>\r\n','<p>Dentistry and Dental Ailments Journal (DDAJ)</p>\r\n','Dentistry and Dental Ailments Journal (DDAJ)',1,'2018-06-24 16:24:49','2018-06-24 16:24:49',1),(11,21,'1529837715.jpg','Insights of Cardiology: Open Access (ICOA)','Insights of Cardiology: Open Access (ICOA)','Insights of Cardiology: Open Access (ICOA)','Insights of Cardiology: Open Access (ICOA)','Insights of Cardiology: Open Access (ICOA)','Insights of Cardiology: Open Access (ICOA)','<p>Insights of Cardiology: Open Access (ICOA)</p>\r\n','<p>Insights of Cardiology: Open Access (ICOA)</p>\r\n','Insights of Cardiology: Open Access (ICOA)',1,'2018-06-24 16:25:14','2018-06-24 16:25:14',1),(12,22,'1529837744.jpg','International Journal of Education Advancement (IJEA)','International Journal of Education Advancement (IJEA)','International Journal of Education Advancement (IJEA)','International Journal of Education Advancement (IJEA)','International Journal of Education Advancement (IJEA)','International Journal of Education Advancement (IJEA)','<p>International Journal of Education Advancement (IJEA)</p>\r\n','<p>International Journal of Education Advancement (IJEA)</p>\r\n','International Journal of Education Advancement (IJEA)',1,'2018-06-24 16:25:43','2018-06-24 16:25:43',1),(13,22,'1529837768.jpg','Journal of Biomarker Research and Studies','Journal of Biomarker Research and Studies','Journal of Biomarker Research and Studies','Journal of Biomarker Research and Studies','Journal of Biomarker Research and Studies','Journal of Biomarker Research and Studies','<p>Journal of Biomarker Research and Studies</p>\r\n','<p>Journal of Biomarker Research and Studies</p>\r\n','Journal of Biomarker Research and Studies',1,'2018-06-24 16:26:07','2018-06-24 16:26:07',1);
 
 /*Table structure for table `media_partners` */
 
@@ -498,11 +536,11 @@ CREATE TABLE `reviewerboard` (
   `update_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `create_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `reviewerboard` */
 
-insert  into `reviewerboard`(`id`,`category`,`journal`,`name`,`university`,`country`,`reviewer_board`,`status`,`craete_at`,`update_at`,`create_by`) values (2,'2','3','vasudeva','vasu','Armenia','fgsdfgsdf',1,'2018-06-21 22:44:01','0000-00-00 00:00:00',1);
+insert  into `reviewerboard`(`id`,`category`,`journal`,`name`,`university`,`country`,`reviewer_board`,`status`,`craete_at`,`update_at`,`create_by`) values (2,'20','6','vasudeva','vasu','Armenia','fgsdfgsdf',1,'2018-06-24 17:22:40','0000-00-00 00:00:00',1),(3,'21','11','name','us','Afghanistan','tetsing',1,'2018-06-24 17:21:54','2018-06-24 17:21:54',1);
 
 /*Table structure for table `special_issue` */
 
@@ -519,11 +557,11 @@ CREATE TABLE `special_issue` (
   `update_at` datetime DEFAULT NULL,
   `create_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 /*Data for the table `special_issue` */
 
-insert  into `special_issue`(`id`,`journal_id`,`journal_cat_id`,`title`,`details`,`status`,`create_at`,`update_at`,`create_by`) values (2,4,21,'ghdfgh','<p>ghgfhdgjdghjf   bhh</p>\r\n',1,'2018-06-24 15:24:50','2018-06-24 15:24:50',1),(3,3,21,'ghdg','<p>vasu</p>\r\n',1,'2018-06-24 15:25:11','2018-06-24 15:29:28',1);
+insert  into `special_issue`(`id`,`journal_id`,`journal_cat_id`,`title`,`details`,`status`,`create_at`,`update_at`,`create_by`) values (2,11,21,'ghdfgh','<p>ghgfhdgjdghjf   bhh</p>\r\n                                            \r\n        ',1,'2018-06-24 15:24:50','2018-06-24 17:27:04',1),(3,13,22,'ghdg','<p>vasu <strong>devareddy </strong></p>\r\n',1,'2018-06-24 15:25:11','2018-06-24 17:28:22',1),(4,11,21,'title','<p>testing  purpose</p>\r\n',1,'2018-06-24 17:26:52','2018-06-24 17:26:52',1),(5,11,21,'gfgfg','                                            \r\n        fgsfgsdfgdfg',1,'2018-06-24 17:28:01','2018-06-24 17:28:01',1);
 
 /*Table structure for table `testimonial` */
 

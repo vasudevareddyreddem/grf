@@ -53,6 +53,13 @@ class Admin_model extends CI_Model
     	return $this->db->update("admin",$data);
 	}
 	
+	public  function get_category_wise_journals_list($cat){
+		$this->db->select('j_id,title')->from('journals');		
+		$this->db->where('category', $cat);
+		$this->db->where('status', 1);
+        return $this->db->get()->result_array();	
+	}
+	
 	
 
 }

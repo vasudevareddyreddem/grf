@@ -26,27 +26,11 @@
 								'hash' => $this->security->get_csrf_hash()
 						); ?>
 										<input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
-
-					<div class="col-md-6">
-							<div class="form-group">
-								<label class=" control-label">Select Journal</label>
-								<div class="">
-									 <select class="form-control" id="journal" name="journal">
-									  <option value="">Select</option>
-									 <?php foreach($journals_list as $list){ ?>
-									 
-									 			<option value="<?php echo $list['j_id']; ?>"><?php echo $list['title']; ?></option>
-
-									<?php } ?>
-									</select>
-								</div>
-							</div>
-                        </div>
 						<div class="col-md-6">
 							<div class="form-group">
 								<label class=" control-label">Category</label>
 								<div class="">
-									 <select class="form-control" id="category" name="category">
+									 <select class="form-control" id="category" onchange="get_gournals(this.value);" name="category">
 									  <option value="">Select</option>
 									 <?php foreach($journals_category_list as $list){ ?>
 									<option value="<?php echo $list['c_id']; ?>"><?php echo $list['category']; ?></option>
@@ -55,6 +39,17 @@
 								</div>
 							</div>
                         </div>
+					<div class="col-md-6">
+							<div class="form-group">
+								<label class=" control-label">Select Journal</label>
+								<div class="">
+									 <select class="form-control" id="journal" name="journal">
+									 
+									</select>
+								</div>
+							</div>
+                        </div>
+						
 						
 						<div class="col-md-6">
 							<div class="form-group">
@@ -180,6 +175,31 @@
     </section> 
 </div>
   <script type="text/javascript">
+  function get_gournals(id){
+	
+		if(id!=''){
+			jQuery.ajax({
+   					url: "<?php echo base_url('admin/get_journals_list');?>",
+   					data: {
+   						cat_id: id,
+   					},
+   					dataType: 'json',
+   					type: 'POST',
+   					success: function (data) {
+						//console.log(data);return false;
+   						$('#journal').empty();
+   						$('#journal').append("<option value=''>select</option>");
+   						for(i=0; i<data.list.length; i++) {
+   							$('#journal').append("<option value="+data.list[i].j_id+">"+data.list[i].title+"</option>");                      
+                         
+   						}
+   						//console.log(data);return false;
+   					}
+   				
+   				});
+				
+			}
+}
 $(document).ready(function() {
     $('#addflyer').bootstrapValidator({
         

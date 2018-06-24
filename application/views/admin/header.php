@@ -343,3 +343,30 @@
    <?php echo $this->session->flashdata('error');?> &nbsp; <i class="fa fa-exclamation-triangle text-success ico_bac" aria-hidden="true"></i>
 </div>
 <?php endif; ?>
+<script>
+function get_gournals(id){
+	
+		if(id!=''){
+			jQuery.ajax({
+   					url: "<?php echo base_url('admin/get_journals_list');?>",
+   					data: {
+   						cat_id: id,
+   					},
+   					dataType: 'json',
+   					type: 'POST',
+   					success: function (data) {
+						//console.log(data);return false;
+   						$('#journal').empty();
+   						$('#journal').append("<option value=''>select</option>");
+   						for(i=0; i<data.list.length; i++) {
+   							$('#journal').append("<option value="+data.list[i].j_id+">"+data.list[i].title+"</option>");                      
+                         
+   						}
+   						//console.log(data);return false;
+   					}
+   				
+   				});
+				
+			}
+}
+</script>

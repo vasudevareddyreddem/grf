@@ -66,7 +66,7 @@ class Conference_process extends CI_Controller {
 			$admindetails=$this->session->userdata('userdetails');
 			$f_id=base64_decode($this->uri->segment(3));
 			$data['details']=$this->Conference_process_model->get_conference_process_details($f_id);
-			$data['journals_list']=$this->Journal_details_model->get_all_journal_list($admindetails['id']);
+			$data['journals_list']=$this->Journal_details_model->get_all_category_journal_list($admindetails['id'],$data['details']['journal_cat_id']);
 			$data['journals_category_list']=$this->Journal_details_model->get_journal_category_list($admindetails['id']);
 			
 			//echo '<pre>';print_r($data);exit; 

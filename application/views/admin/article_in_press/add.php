@@ -26,6 +26,21 @@
 								'hash' => $this->security->get_csrf_hash()
 						); ?>
 										<input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+					
+					
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class=" control-label">Category</label>
+								<div class="">
+									 <select class="form-control" id="category" onchange="get_gournals(this.value);" name="category">
+									  <option value="">Select</option>
+									 <?php foreach($journals_category_list as $list){ ?>
+									<option value="<?php echo $list['c_id']; ?>"><?php echo $list['category']; ?></option>
+									<?php } ?>
+									</select>
+								</div>
+							</div>
+                        </div>
 					<div class="col-md-6">
 							<div class="form-group">
 								<label class=" control-label">Select Journal</label>
@@ -42,19 +57,6 @@
 							</div>
                         </div>
       
-						<div class="col-md-6">
-							<div class="form-group">
-								<label class=" control-label">Category</label>
-								<div class="">
-									 <select class="form-control" id="category" name="category">
-									  <option value="">Select</option>
-									 <?php foreach($journals_category_list as $list){ ?>
-									<option value="<?php echo $list['c_id']; ?>"><?php echo $list['category']; ?></option>
-									<?php } ?>
-									</select>
-								</div>
-							</div>
-                        </div>
 						<div class="col-md-6">
 							<div class="form-group">
 								<label class=" control-label">Years of article </label>
@@ -257,6 +259,7 @@
     </section> 
 </div>
   <script type="text/javascript">
+  
 $(document).ready(function() {
     $('#addflyer').bootstrapValidator({
         

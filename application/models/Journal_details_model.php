@@ -138,6 +138,15 @@ class Journal_details_model extends CI_Model
 	public  function delete_article_in_press($a_id){
 		$this->db->where('a_id', $a_id);
 		return $this->db->delete('journal_article_in_press');
+	}
+
+	/*edit  in hournal  details  purpose*/
+	public function get_all_category_journal_list($a_id,$cat){
+		$this->db->select('j_id,title')->from('journals');		
+		$this->db->where('create_by', $a_id);
+		$this->db->where('category', $cat);
+		$this->db->where('status', 1);
+        return $this->db->get()->result_array();
 	}	
 	
 

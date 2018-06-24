@@ -96,6 +96,22 @@ class Admin extends CI_Controller {
 		
 	}
 	
+	public  function get_journals_list(){
+		$post=$this->input->post();
+		$details=$this->Admin_model->get_category_wise_journals_list($post['cat_id']);
+		//echo $this->db->last_query();exit;
+		if(count($details) > 0)
+				{
+				$data['msg']=1;
+				$data['list']=$details;
+				echo json_encode($data);exit;	
+				}else{
+					$data['msg']=2;
+					echo json_encode($data);exit;
+				}
+		
+	}
+	
 		
 	
 }

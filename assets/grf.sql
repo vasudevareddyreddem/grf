@@ -276,9 +276,11 @@ CREATE TABLE `issue_wise_article_list` (
   `create_at` datetime DEFAULT NULL,
   `create_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`issue_a_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 /*Data for the table `issue_wise_article_list` */
+
+insert  into `issue_wise_article_list`(`issue_a_id`,`i_a_id`,`article_id`,`status`,`create_at`,`create_by`) values (9,5,8,1,'2018-06-24 21:24:55',1),(10,5,9,1,'2018-06-24 21:24:55',1),(11,5,10,1,'2018-06-24 21:24:55',1),(12,5,11,1,'2018-06-24 21:24:55',1),(13,6,6,1,'2018-06-24 22:19:12',1),(14,6,7,1,'2018-06-24 22:19:12',1);
 
 /*Table structure for table `issues` */
 
@@ -293,11 +295,14 @@ CREATE TABLE `issues` (
   `year` varchar(250) DEFAULT NULL,
   `status` int(11) DEFAULT NULL,
   `create_at` datetime DEFAULT NULL,
+  `update_at` datetime DEFAULT NULL,
   `create_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 /*Data for the table `issues` */
+
+insert  into `issues`(`id`,`number`,`image`,`journal_cat_id`,`journal_id`,`year`,`status`,`create_at`,`update_at`,`create_by`) values (5,'44','1529855695.jpg','21','11','2013',1,'2018-06-24 21:24:54',NULL,1),(6,'2','1529858952.jpg','21','11','2013',0,'2018-06-24 22:19:12','2018-06-24 22:19:33',1);
 
 /*Table structure for table `journal_article_in_press` */
 
@@ -331,11 +336,11 @@ CREATE TABLE `journal_article_in_press` (
   `update_at` datetime DEFAULT NULL,
   `create_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`a_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 /*Data for the table `journal_article_in_press` */
 
-insert  into `journal_article_in_press`(`a_id`,`journal_id`,`journal_cat_id`,`year_of_article`,`title`,`author_name`,`article_type`,`url`,`seo_title`,`seo_keyword`,`seo_description`,`research_article`,`abstract`,`introduction`,`references`,`figures`,`suggested_citation`,`tables`,`pdf_file`,`image`,`video`,`video_article`,`status`,`create_at`,`update_at`,`create_by`) values (5,5,'20','2010','vbxcvb','vbxcvb','xcvbxcvb','vbxcvb','xcvbx','vcbxcvb','xcvb','<p>vbxcvb</p>\r\n','<p>vbxcvbxcvb</p>\r\n','<p>vbxcvbxc</p>\r\n','<p>vbxbvxvb</p>\r\n','<p>vbxvbxcvbcv</p>\r\n','<p>vbxcvbxcvb</p>\r\n','<p>vbxcvbxcv</p>\r\n','1529687924.pdf','1529687924.html','1529687924.mp4',1,1,'2018-06-22 22:48:43','2018-06-24 17:56:39',1),(6,11,'21','2013',' Lorem Ipsum has been the industrys standard dummy text ever since the 1500s','testing','Article Type','URL','SEO Title','SEO Keywords','SEO Description','<p>Research Article</p>\r\n','<p>Abstract</p>\r\n','<p>Introduction</p>\r\n','<p>References</p>\r\n','<p>Figures</p>\r\n','<p>Suggested citation</p>\r\n','<p>Tables</p>\r\n','1529839780.pdf','1529839780.docx','',0,1,'2018-06-24 16:59:39','2018-06-24 18:09:43',1),(7,11,'21','2013','Lorem Ipsum is simply dummy text of the printing and typesetting','Author Name','Article Type','url','seo title','seo keywords','SEO Description','<p>Research Article</p>\r\n','<p>Abstract</p>\r\n','<p>Introduction</p>\r\n','<p>References</p>\r\n','<p>Figures</p>\r\n','<p>Suggested citation</p>\r\n','<p>Tables</p>\r\n','1529843950.pdf','1529843950.jpg','',0,1,'2018-06-24 18:09:10',NULL,1);
+insert  into `journal_article_in_press`(`a_id`,`journal_id`,`journal_cat_id`,`year_of_article`,`title`,`author_name`,`article_type`,`url`,`seo_title`,`seo_keyword`,`seo_description`,`research_article`,`abstract`,`introduction`,`references`,`figures`,`suggested_citation`,`tables`,`pdf_file`,`image`,`video`,`video_article`,`status`,`create_at`,`update_at`,`create_by`) values (5,5,'20','2010','vbxcvb','vbxcvb','xcvbxcvb','vbxcvb','xcvbx','vcbxcvb','xcvb','<p>vbxcvb</p>\r\n','<p>vbxcvbxcvb</p>\r\n','<p>vbxcvbxc</p>\r\n','<p>vbxbvxvb</p>\r\n','<p>vbxvbxcvbcv</p>\r\n','<p>vbxcvbxcvb</p>\r\n','<p>vbxcvbxcv</p>\r\n','1529687924.pdf','1529687924.html','1529687924.mp4',1,1,'2018-06-22 22:48:43','2018-06-24 17:56:39',1),(6,11,'21','2013',' Lorem Ipsum has been the industrys standard dummy text ever since the 1500s','testing','Article Type','URL','SEO Title','SEO Keywords','SEO Description','<p>Research Article</p>\r\n','<p>Abstract</p>\r\n','<p>Introduction</p>\r\n','<p>References</p>\r\n','<p>Figures</p>\r\n','<p>Suggested citation</p>\r\n','<p>Tables</p>\r\n','1529839780.pdf','1529839780.docx','',0,1,'2018-06-24 16:59:39','2018-06-24 18:09:43',1),(7,11,'21','2013','Lorem Ipsum is simply dummy text of the printing and typesetting','Author Name','Article Type','url','seo title','seo keywords','SEO Description','<p>Research Article</p>\r\n','<p>Abstract</p>\r\n','<p>Introduction</p>\r\n','<p>References</p>\r\n','<p>Figures</p>\r\n','<p>Suggested citation</p>\r\n','<p>Tables</p>\r\n','1529843950.pdf','1529843950.jpg','',0,1,'2018-06-24 18:09:10',NULL,1),(8,11,'21','2013','Editors shall be honoured in position as chair/co-chair for any conferences organized','Author Name','Article Type','url','SEO Title','Annals of Medical & Surgical Case Reports(AMSC)','stes','<p>sddfds</p>\r\n','<p>dfasdfasdf</p>\r\n','','<p>asdfsdfsad</p>\r\n','<p>fasdfasd</p>\r\n','<p>fasdfasdfsd</p>\r\n','<p>dfsdfasdfsd</p>\r\n','1529853128.pdf','1529853128.jpg','',0,1,'2018-06-24 20:42:07',NULL,1),(9,11,'21','2013','We promote all the articles of the Editors that are published in our journals','vaas','Article Type','url','SEO Title','seo keywords','test','<p>dfasdfs</p>\r\n','<p>cvzxcvzxcv</p>\r\n','<p>cvzxcvzxcv</p>\r\n','<p>cvzcxvzxcv</p>\r\n','<p>cvzxcv dfdfadsf</p>\r\n','<p>dfdsf df asd</p>\r\n','<p>dfasdfasdfsd</p>\r\n','1529853190.pdf','1529853190.jpg','',0,1,'2018-06-24 20:43:09',NULL,1),(10,11,'21','2013','The review comments that are given by the editors','Author Name','Article Type','url','seo title','The review comments that are given by the editors','The review comments that are given by the editors','<p>The review comments that are given by the editors</p>\r\n','<p>The review comments that are given by the editors</p>\r\n','<p>The review comments that are given by the editors</p>\r\n','<p>The review comments that are given by the editors</p>\r\n','<p>The review comments that are given by the editors</p>\r\n','<p>The review comments that are given by the editors</p>\r\n','<p>cvzcv</p>\r\n','1529853247.pdf','1529853247.jpg','',0,1,'2018-06-24 20:44:06',NULL,1),(11,11,'21','2013','After one year of due course','After one year of due course','After one year of due course','After one year of due course','After one year of due course','After one year of due course','After one year of due course','<p>After one year of due course</p>\r\n','<p>After one year of due course</p>\r\n','<p>After one year of due course</p>\r\n','<p>After one year of due course</p>\r\n','<p>After one year of due course</p>\r\n','<p>After one year of due course</p>\r\n','<p>After one year of due course</p>\r\n','1529853304.pdf','1529853304.jpg','',0,1,'2018-06-24 20:45:03',NULL,1),(12,11,'21','2013','Editors can be promoted as senior editor and executive','Editors can be promoted as senior editor and executive','Editors can be promoted as senior editor and executive','Editors can be promoted as senior editor and executive','Editors can be promoted as senior editor and executive','Editors can be promoted as senior editor and executive','Editors can be promoted as senior editor and executive','<p>Editors can be promoted as senior editor and executive</p>\r\n','<p>Editors can be promoted as senior editor and executive</p>\r\n','<p>Editors can be promoted as senior editor and executive</p>\r\n','<p>Editors can be promoted as senior editor and executive</p>\r\n','<p>Editors can be promoted as senior editor and executive</p>\r\n','<p>Editors can be promoted as senior editor and executive</p>\r\n','<p>Editors can be promoted as senior editor and executive</p>\r\n','1529853353.pdf','1529853353.jpg','',0,1,'2018-06-24 20:45:52',NULL,1);
 
 /*Table structure for table `journal_banners` */
 

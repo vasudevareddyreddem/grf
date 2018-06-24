@@ -56,11 +56,44 @@ CREATE TABLE `article_in_process_fee` (
   `update_at` datetime DEFAULT NULL,
   `create_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `article_in_process_fee` */
 
 insert  into `article_in_process_fee`(`id`,`journal_id`,`journal_cat_id`,`table`,`status`,`create_at`,`update_at`,`create_by`) values (1,3,20,'<p>test like  that</p>\r\n',1,'2018-06-23 21:23:24','2018-06-23 21:23:24',1),(2,4,21,'',1,'2018-06-23 21:29:47','2018-06-23 22:19:37',1);
+
+/*Table structure for table `article_procedures` */
+
+DROP TABLE IF EXISTS `article_procedures`;
+
+CREATE TABLE `article_procedures` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `journal_id` int(11) DEFAULT NULL,
+  `journal_cat_id` int(11) DEFAULT NULL,
+  `year_of_article` varchar(250) DEFAULT NULL,
+  `procedures_category` varchar(250) DEFAULT NULL,
+  `conference_title` varchar(250) DEFAULT NULL,
+  `title` varchar(250) DEFAULT NULL,
+  `author_name` varchar(250) DEFAULT NULL,
+  `doi_url` varchar(250) DEFAULT NULL,
+  `seo_url` varchar(250) DEFAULT NULL,
+  `seo_title` varchar(250) DEFAULT NULL,
+  `seo_keyword` text,
+  `seo_description` text,
+  `abstract` text,
+  `biography` text,
+  `pdf_file` varchar(250) DEFAULT NULL,
+  `image` varchar(250) DEFAULT NULL,
+  `status` int(11) DEFAULT NULL,
+  `create_at` datetime DEFAULT NULL,
+  `update_at` datetime DEFAULT NULL,
+  `create_by` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+/*Data for the table `article_procedures` */
+
+insert  into `article_procedures`(`id`,`journal_id`,`journal_cat_id`,`year_of_article`,`procedures_category`,`conference_title`,`title`,`author_name`,`doi_url`,`seo_url`,`seo_title`,`seo_keyword`,`seo_description`,`abstract`,`biography`,`pdf_file`,`image`,`status`,`create_at`,`update_at`,`create_by`) values (3,3,22,'2016','Speaker Abstract','vbx','bxcvbx','cvbxcvb','cxvbxcv','vbxvb','vbxcvb','vcbvcb','vbxcvb','<p>vbxvb</p>\r\n','<p>vbxvb</p>\r\n',NULL,NULL,1,'2018-06-24 11:41:40','2018-06-24 11:51:24',1);
 
 /*Table structure for table `conference_process` */
 
@@ -470,6 +503,27 @@ CREATE TABLE `reviewerboard` (
 /*Data for the table `reviewerboard` */
 
 insert  into `reviewerboard`(`id`,`category`,`journal`,`name`,`university`,`country`,`reviewer_board`,`status`,`craete_at`,`update_at`,`create_by`) values (2,'2','3','vasudeva','vasu','Armenia','fgsdfgsdf',1,'2018-06-21 22:44:01','0000-00-00 00:00:00',1);
+
+/*Table structure for table `special_issue` */
+
+DROP TABLE IF EXISTS `special_issue`;
+
+CREATE TABLE `special_issue` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `journal_id` int(11) DEFAULT NULL,
+  `journal_cat_id` int(11) DEFAULT NULL,
+  `title` varchar(250) DEFAULT NULL,
+  `details` text,
+  `status` int(11) DEFAULT NULL,
+  `create_at` datetime DEFAULT NULL,
+  `update_at` datetime DEFAULT NULL,
+  `create_by` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+/*Data for the table `special_issue` */
+
+insert  into `special_issue`(`id`,`journal_id`,`journal_cat_id`,`title`,`details`,`status`,`create_at`,`update_at`,`create_by`) values (2,4,21,'ghdfgh','<p>ghgfhdgjdghjf   bhh</p>\r\n',1,'2018-06-24 15:24:50','2018-06-24 15:24:50',1),(3,3,21,'ghdg','<p>vasu</p>\r\n',1,'2018-06-24 15:25:11','2018-06-24 15:29:28',1);
 
 /*Table structure for table `testimonial` */
 

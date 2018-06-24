@@ -88,6 +88,7 @@
 				<li class=""><a href="<?php echo base_url('journal-details/add-edotirs'); ?>"><i class="fa fa-circle-o"></i>Add Editors</a></li>
 				<li class=""><a href="<?php echo base_url('journal-details/edotirs-list'); ?>"><i class="fa fa-circle-o"></i> Editors List</a></li>
 				<li class=""><a href="<?php echo base_url('article-in-press'); ?>"><i class="fa fa-circle-o"></i> Article in press</a></li>
+				<li class=""><a href="<?php echo base_url('article-in-press/view'); ?>"><i class="fa fa-circle-o"></i> Article in press view</a></li>
 				<li class=""><a href="<?php echo base_url('article-in-press/lists'); ?>"><i class="fa fa-circle-o"></i> Article in press List</a></li>
 				<li class="<?php if(isset($u_url) && $u_url==base_url('Media-partner')){ echo "active"; } ?> treeview">
 					  <a href="#">

@@ -63,8 +63,10 @@ class Issues extends CI_Controller {
 		if($this->session->userdata('userdetails'))
 		{
 			$admindetails=$this->session->userdata('userdetails');
-			$f_id=base64_decode($this->uri->segment(3));
-			$data['details']=$this->Faq_model->get_faq_details($f_id);
+			$i_id=base64_decode($this->uri->segment(3));
+			$data['details']=$this->Issues_model->get_get_isseus_details($i_id);
+			$data['journals_list']=$this->Journal_details_model->get_all_category_journal_list($admindetails['id'],$data['details']['journal_cat_id']);
+			$data['journals_category_list']=$this->Journal_details_model->get_journal_category_list($admindetails['id']);
 			
 			//echo '<pre>';print_r($data);exit; 
 			$this->load->view('admin/Issues/edit',$data);
@@ -204,7 +206,7 @@ class Issues extends CI_Controller {
 					if(count($delete)>0){
 						unlink('assets/issues/'.$issue['image']);
 
-						$this->session->set_flashdata('success',"Faq's successfully deleted");
+						$this->session->set_flashdata('success',"Issue successfully deleted");
 						redirect('issues/lists');
 					}else{
 						$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");

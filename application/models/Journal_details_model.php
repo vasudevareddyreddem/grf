@@ -147,6 +147,16 @@ class Journal_details_model extends CI_Model
 		$this->db->where('category', $cat);
 		$this->db->where('status', 1);
         return $this->db->get()->result_array();
+	}
+		public  function get_all_article_list_for_issues($cat_id,$j_id,$year){
+		$this->db->select('journal_article_in_press.*,journals.title as journaltitle,grf_journal_category.category')->from('journal_article_in_press');		
+		$this->db->join('journals ', 'journals.j_id = journal_article_in_press.journal_id', 'left');
+		$this->db->join('grf_journal_category ', 'grf_journal_category.c_id = journal_article_in_press.journal_cat_id', 'left');
+		$this->db->where('journal_article_in_press.journal_id', $j_id);
+		$this->db->where('journal_article_in_press.journal_cat_id', $cat_id);
+		$this->db->where('journal_article_in_press.year_of_article', $year);
+		$this->db->where('journal_article_in_press.status', 1);
+        return $this->db->get()->result_array();
 	}	
 	
 

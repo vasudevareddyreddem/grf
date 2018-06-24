@@ -58,6 +58,30 @@ class Article_in_press extends CI_Controller {
 		}
 		
 	}
+	public function view()
+	{	
+		if($this->session->userdata('userdetails'))
+		{
+			$admindetails=$this->session->userdata('userdetails');
+			$data['article_in_press_list']=$this->Journal_details_model->get_article_in_press_list($admindetails['id']);
+			$data['journals_list']=$this->Journal_details_model->get_all_journal_list($admindetails['id']);
+			$data['journals_category_list']=$this->Journal_details_model->get_journal_category_list($admindetails['id']);
+			$post=$this->input->post();
+			if(isset($post['signup']) && $post['signup']=='submit'){
+				$data['details']=$this->Journal_details_model->get_all_article_list_for_issues($post['category'],$post['journal'],$post['year_of_article']);
+
+			}else{
+				$data['details']=array();
+			}
+			//echo '<pre>';print_r($details);exit; 
+			$this->load->view('admin/article_in_press/view',$data);
+			$this->load->view('admin/footer');
+		}else{
+			$this->session->set_flashdata('error','Please login to continue');
+			redirect('admin');
+		}
+		
+	}
 	public function edit()
 	{	
 		if($this->session->userdata('userdetails'))

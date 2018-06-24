@@ -27,32 +27,45 @@
                 <thead>
                 <tr>
                   <th style="display:none">id </th>
-                  <th>Created Date</th>
-                  <th>Ap Title</th>
-                  <th>Ap Author</th>
-                  <th>Year</th>
+                  <th>Category</th>
+                  <th>Journal</th>
+                  <th>Issue No</th>
+                  <th>Image</th>
+                  <th>Articles</th>
                   <th>Status</th>
                   <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                <?php if(isset($article_in_press_list) && count($article_in_press_list)>0){ ?>
-				<?php foreach($article_in_press_list as $list){ ?>
+                <?php if(isset($issues_list) && count($issues_list)>0){ ?>
+				<?php foreach($issues_list as $list){ ?>
                 <tr>
-                  <td style="display:none"><?php echo htmlentities($list['j_id']); ?></td>
-                  <td><?php echo Date('Y-M-d',strtotime(htmlentities($list['create_at'])));?></td>
-                  <td><?php echo htmlentities($list['title']); ?></td>
-                  <td><?php echo htmlentities($list['author_name']); ?></td>
-                  <td><?php echo htmlentities($list['year_of_article']); ?></td>
+                  <td style="display:none"><?php echo htmlentities($list['id']); ?></td>
+                  <td><?php echo htmlentities($list['category']); ?></td>
+                  <td><?php echo htmlentities($list['journaltitle']); ?></td>
+                  <td><?php echo htmlentities($list['number']); ?></td>
+				  <td><img width="50px" height="50px" src="<?php echo base_url('assets/issues/'.$list['image']); ?>">
+				  <td>
+				  <?php if(count($list['articles_list'])>0){?>
+				  <?php $cnt=1;foreach($list['articles_list'] as $lis){
+					  echo '('.$cnt.') '.$lis['title'].'<br>';
+					  $cnt++;} ?>
+				  <?php }else{ ?>
+					No Articles
+				  <?php } ?>
+				  
+				  
+				  
+				  </td>
                   <td><?php if($list['status']==1){ echo "Active"; }else{ echo "deactive";} ?></td>
                   <td>
-					<a href="<?php echo base_url('article-in-press/edit/'.base64_encode($list['a_id'])); ?>"><i class="fa fa-edit"></i></a>
+					<a href="<?php echo base_url('article-in-press/edit/'.base64_encode($list['id'])); ?>"><i class="fa fa-edit"></i></a>
 										&nbsp;&nbsp;
 
-					<a href="<?php echo base_url('article-in-press/status/'.base64_encode($list['a_id']).'/'.base64_encode($list['status'])); ?>"><i class="fa fa-check-square-o"></i></a>
+					<a href="<?php echo base_url('article-in-press/status/'.base64_encode($list['id']).'/'.base64_encode($list['status'])); ?>"><i class="fa fa-check-square-o"></i></a>
 										&nbsp;&nbsp;
 
-					<a href="<?php echo base_url('article-in-press/delete/'.base64_encode($list['a_id'])); ?>"><i class="fa fa-trash-o"></i></a>
+					<a href="<?php echo base_url('article-in-press/delete/'.base64_encode($list['id'])); ?>"><i class="fa fa-trash-o"></i></a>
 				  
 				  </td>
                 </tr>
@@ -65,10 +78,11 @@
 				<tfoot>
                 <tr>
                   <th style="display:none">id </th>
-                  <th>Created Date</th>
-                  <th>Ap Title</th>
-                  <th>Ap Author</th>
-                  <th>Year</th>
+                  <th>Category</th>
+                  <th>Journal</th>
+                  <th>Issue No</th>
+                  <th>Image</th>
+                  <th>Articles</th>
                   <th>Status</th>
                   <th>Action</th>
                 </tr>

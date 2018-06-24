@@ -47,7 +47,7 @@ class Issues extends CI_Controller {
 		if($this->session->userdata('userdetails'))
 		{
 			$admindetails=$this->session->userdata('userdetails');
-			$data['updates_list']=$this->Faq_model->get_faqs_list($admindetails['id']);
+			$data['issues_list']=$this->Issues_model->get_get_all_isseus_list($admindetails['id']);
 			
 			//echo '<pre>';print_r($data);exit; 
 			$this->load->view('admin/Issues/list',$data);
@@ -81,10 +81,17 @@ class Issues extends CI_Controller {
 		{
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
-			echo '<pre>';print_r($post);exit;
+			//echo '<pre>';print_r($post);exit;
+			if(isset($_FILES['image']['name']) && $_FILES['image']['name']!=''){
+								$temp = explode(".", $_FILES["image"]["name"]);
+								$img = round(microtime(true)) . '.' . end($temp);
+								move_uploaded_file($_FILES['image']['tmp_name'], "assets/issues/" . $img);
+							}else{
+								$img='';
+							}
 					$add_data=array(
 					'number'=>isset($post['issue_number'])?$post['issue_number']:'',
-					'image'=>isset($post['description'])?$post['description']:'',
+					'image'=>$img,
 					'journal_cat_id'=>isset($post['category'])?$post['category']:'',
 					'journal_id'=>isset($post['journal'])?$post['journal']:'',
 					'year'=>isset($post['year_of_article'])?$post['year_of_article']:'',
@@ -92,14 +99,24 @@ class Issues extends CI_Controller {
 					'create_at'=>date('Y-m-d H:i:s'),
 					'create_by'=>$admindetails['id'],
 					);
-					$save=$this->Faq_model->save_faq($add_data);
+					$save=$this->Issues_model->save_issues($add_data);
 						if(count($save)>0){
-							$this->session->set_flashdata('success',"Faq's successfully Added");
-							redirect('faq/lists');
+							foreach($post['article_ids'] as $list){
+									$add_article_data=array(
+										'i_a_id'=>$save,
+										'article_id'=>$list,
+										'status'=>1,
+										'create_at'=>date('Y-m-d H:i:s'),
+										'create_by'=>$admindetails['id'],
+										);
+										$this->Issues_model->save_issue_article_ids($add_article_data);
+							}
+							$this->session->set_flashdata('success',"Issue successfully Created");
+							redirect('issues/lists');
 							
 						}else{
 							$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");
-							redirect('faq');
+							redirect('issues');
 						}
 		}else{
 			$this->session->set_flashdata('error','Please login to continue');

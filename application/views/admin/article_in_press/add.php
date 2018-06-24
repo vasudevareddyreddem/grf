@@ -323,8 +323,8 @@ $(document).ready(function() {
 						message: 'Select Image is required'
 					},
 					regexp: {
-					regexp: "(.*?)\.(doc|docx|html)$",
-					message: 'Uploaded file is not a valid. Only doc,docx,html file are allowed'
+					regexp: "(.*?)\.(png|pdf|jpg|jpeg|gif)$",
+					message: 'Uploaded file is not a valid. Only png,pdf,jpg,jpeg,gif file are allowed'
 					}
 				}
             },

@@ -81,10 +81,13 @@ class Issues extends CI_Controller {
 		{
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
-			//echo '<pre>';print_r($post);exit;
+			echo '<pre>';print_r($post);exit;
 					$add_data=array(
-					'question'=>isset($post['question'])?$post['question']:'',
-					'description'=>isset($post['description'])?$post['description']:'',
+					'number'=>isset($post['issue_number'])?$post['issue_number']:'',
+					'image'=>isset($post['description'])?$post['description']:'',
+					'journal_cat_id'=>isset($post['category'])?$post['category']:'',
+					'journal_id'=>isset($post['journal'])?$post['journal']:'',
+					'year'=>isset($post['year_of_article'])?$post['year_of_article']:'',
 					'status'=>1,
 					'create_at'=>date('Y-m-d H:i:s'),
 					'create_by'=>$admindetails['id'],
@@ -186,6 +189,22 @@ class Issues extends CI_Controller {
 			$this->session->set_flashdata('error','Please login to continue');
 			redirect('admin');
 		}
+		
+	}
+	
+	public  function get_article_list_for_issues(){
+		$post=$this->input->post();
+		$details=$this->Issues_model->get_all_article_list_for_issues($post['cate_id'],$post['jou_id'],$post['year']);
+		//echo $this->db->last_query();exit;
+		if(count($details) > 0)
+				{
+				$data['msg']=1;
+				$data['list']=$details;
+				echo json_encode($data);exit;	
+				}else{
+					$data['msg']=2;
+					echo json_encode($data);exit;
+				}
 		
 	}
 	

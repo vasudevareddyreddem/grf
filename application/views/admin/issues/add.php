@@ -25,8 +25,39 @@
 								'name' => $this->security->get_csrf_token_name(),
 								'hash' => $this->security->get_csrf_hash()
 						); ?>
-										<input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+					<input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
 					<div class="col-md-6">
+							<div class="form-group">
+								<label class=" control-label">Issue Number</label>
+								<div class="">
+									<input type="text" class="form-control" name="issue_number" value="" id="issue_number" placeholder="Enter Issue Number" />
+								</div>
+							</div>
+                        </div>
+						
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class=" control-label">Select Image</label>
+								<div class="">
+									<input type="file" class="form-control" name="image" id="image" />
+								</div>
+							</div>
+                        </div>
+      
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class=" control-label">Category</label>
+								<div class="">
+									 <select class="form-control" id="category" onchange="get_gournals(this.value);" name="category">
+									  <option value="">Select</option>
+									 <?php foreach($journals_category_list as $list){ ?>
+									<option value="<?php echo $list['c_id']; ?>"><?php echo $list['category']; ?></option>
+									<?php } ?>
+									</select>
+								</div>
+							</div>
+                        </div>
+							<div class="col-md-6">
 							<div class="form-group">
 								<label class=" control-label">Select Journal</label>
 								<div class="">
@@ -41,25 +72,11 @@
 								</div>
 							</div>
                         </div>
-      
-						<div class="col-md-6">
-							<div class="form-group">
-								<label class=" control-label">Category</label>
-								<div class="">
-									 <select class="form-control" id="category" name="category">
-									  <option value="">Select</option>
-									 <?php foreach($journals_category_list as $list){ ?>
-									<option value="<?php echo $list['c_id']; ?>"><?php echo $list['category']; ?></option>
-									<?php } ?>
-									</select>
-								</div>
-							</div>
-                        </div>
 						<div class="col-md-6">
 							<div class="form-group">
 								<label class=" control-label">Years of article </label>
 								<div class="">
-									 <select class="form-control" id="year_of_article" name="year_of_article">
+									 <select class="form-control" id="year_of_article" onchange="get_article_list(this.value);" name="year_of_article">
 									  <option value="">Select</option>
 									  <?php
 								  $currently_selected = date('Y'); 
@@ -78,21 +95,14 @@
                         </div>
 						<div class="col-md-6">
 							<div class="form-group">
-								<label class=" control-label">Issue Number</label>
+								<label class=" control-label">Archieve List</label>
 								<div class="">
-									<input type="text" class="form-control" name="author_name" value="" id="author_name" placeholder="Enter Author Name" />
+								<span id="archieve_list">
+								</span>
 								</div>
 							</div>
                         </div>
 						
-						<div class="col-md-6">
-							<div class="form-group">
-								<label class=" control-label">Select Image</label>
-								<div class="">
-									<input type="file" class="form-control" name="image" id="image" />
-								</div>
-							</div>
-                        </div>
 						
 						
 					
@@ -123,6 +133,37 @@
     </section> 
 </div>
   <script type="text/javascript">
+  
+  function get_article_list(year){
+	 var cat_id=$('#category').val();
+	 var journal_id=$('#journal').val();
+	 if(cat_id!='' && journal_id!=''&& year!=''){
+			jQuery.ajax({
+   					url: "<?php echo base_url('issues/get_article_list_for_issues');?>",
+   					data: {
+   						cate_id: cat_id,
+   						jou_id: journal_id,
+						year: year,
+   					},
+   					dataType: 'json',
+   					type: 'POST',
+   					success: function (data) {
+						//console.log(data);return false;
+   						$('#archieve_list').empty();
+   						//$('#archieve_list').append("<option value=''>select</option>");
+   						for(i=0; i<data.list.length; i++) {
+   							$('#archieve_list').append("<input type='checkbox' name='article_ids[]' value="+data.list[i].a_id+">"+data.list[i].title+"<br>");                      
+   							//$('#archieve_list').append("<option value="+data.list[i].j_id+">"+data.list[i].title+"</option>");                      
+                         
+   						}
+   						//console.log(data);return false;
+   					}
+   				
+   				});
+				
+			}
+	  
+  }
 $(document).ready(function() {
     $('#addflyer').bootstrapValidator({
         
@@ -131,6 +172,17 @@ $(document).ready(function() {
                 validators: {
 					notEmpty: {
 						message: 'Journal is required'
+					}
+				}
+            },
+			issue_number: {
+                validators: {
+					notEmpty: {
+						message: 'Issue Number is required'
+					},
+					regexp: {
+					regexp:  /^[0-9]*$/,
+					message:'Issue Number must be digits'
 					}
 				}
             },
@@ -148,153 +200,15 @@ $(document).ready(function() {
 					}
 				}
             },
-			author_name: {
-                validators: {
-					notEmpty: {
-						message: 'Author Name is required'
-					},
-					regexp: {
-					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'Author Name wont allow <> [] = % '
-					}
-				}
-            },article_type: {
-                validators: {
-					notEmpty: {
-						message: 'Article Type is required'
-					},
-					regexp: {
-					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'Article Type wont allow <> [] = % '
-					}
-				}
-            },
-			pdf_file: {
-                validators: {
-					notEmpty: {
-						message: 'Select PDF File is required'
-					},
-					regexp: {
-					regexp: "(.*?)\.(pdf)$",
-					message: 'Uploaded file is not a valid. Only pdf file are allowed'
-					}
-				}
-            },
+			
 			image: {
                 validators: {
 					notEmpty: {
 						message: 'Select Image is required'
 					},
 					regexp: {
-					regexp: "(.*?)\.(doc|docx|html)$",
-					message: 'Uploaded file is not a valid. Only doc,docx,html file are allowed'
-					}
-				}
-            },
-			video: {
-                validators: {
-					regexp: {
-					regexp: "(.*?)\.(mp3|mp4|mpeg|mpg|mov)$",
-					message: 'Uploaded file is not a valid. Only mp3,mp4,mpeg,mpg,mov file are allowed'
-					}
-				}
-            },
-           
-			title: {
-                validators: {
-					notEmpty: {
-						message: 'Title is required'
-					},
-					regexp: {
-					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'Title wont allow <> [] = % '
-					}
-				}
-            },
-			url: {
-                validators: {
-					notEmpty: {
-						message: 'Url is required'
-					},
-					regexp: {
-					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'Url wont allow <> [] = % '
-					}
-				}
-            },seo_title: {
-                validators: {
-					notEmpty: {
-						message: 'SEO Title is required'
-					},
-					regexp: {
-					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'SEO Title wont allow <> [] = % '
-					}
-				}
-            },
-			seo_url: {
-                validators: {
-					notEmpty: {
-						message: 'SEO Url is required'
-					},
-					regexp: {
-					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'SEO Url wont allow <> [] = % '
-					}
-				}
-            },seo_keyword: {
-                validators: {
-					notEmpty: {
-						message: 'SEO Keywords is required'
-					}
-				}
-            },seo_description: {
-                validators: {
-					notEmpty: {
-						message: 'SEO Description is required'
-					}
-				}
-            },research_article: {
-                validators: {
-					notEmpty: {
-						message: 'Research Article is required'
-					}
-				}
-            },
-			abstract: {
-                validators: {
-					notEmpty: {
-						message: 'Abstract is required'
-					}
-				}
-            },introduction: {
-                validators: {
-					notEmpty: {
-						message: 'Introduction is required'
-					}
-				}
-            },references: {
-                validators: {
-					notEmpty: {
-						message: 'References is required'
-					}
-				}
-            },figures: {
-                validators: {
-					notEmpty: {
-						message: 'figures is required'
-					}
-				}
-            },suggested_citation: {
-                validators: {
-					notEmpty: {
-						message: 'Suggested citation is required'
-					}
-				}
-            },tables: {
-                validators: {
-					notEmpty: {
-						message: 'Tables is required'
+					regexp: "(.*?)\.(png|jpg|jpeg|gif)$",
+					message: 'Uploaded file is not a valid. Only png,jpg,jpeg,gif file are allowed'
 					}
 				}
             }

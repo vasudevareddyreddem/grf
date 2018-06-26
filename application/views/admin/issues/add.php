@@ -20,7 +20,7 @@
             <!-- /.box-header -->
             <!-- form start -->
 			<div style="padding:20px;">
-            <form id="addflyer" method="post" class="" action="<?php echo base_url('issues/addpost'); ?>" enctype="multipart/form-data">
+            <form id="addflyer" method="post" onsubmit="return checkvalidation();" class="" action="<?php echo base_url('issues/addpost'); ?>" enctype="multipart/form-data">
 					<?php $csrf = array(
 								'name' => $this->security->get_csrf_token_name(),
 								'hash' => $this->security->get_csrf_hash()
@@ -109,7 +109,7 @@
 						<div class="clearfix">&nbsp;</div>
 						  <div class="form-group">
                             <div class="col-lg-4 col-lg-offset-8">
-                                <button type="submit" class="btn btn-primary" name="signup" value="Sign up">Add</button>
+                                <button type="submit" id="test"  class="btn btn-primary" name="signup" value="Sign up">Add</button>
 								<a href="<?php echo base_url('dashboard'); ?>" type="submit" class="btn btn-warning" >Cancel</a>
                                 
                             </div>
@@ -133,7 +133,26 @@
     </section> 
 </div>
   <script type="text/javascript">
-  
+  function checkvalidation(){
+	  var inputList = document.getElementsByTagName("input");
+        var numChecked = 0;
+
+        for (var i = 0; i < inputList.length; i++) {
+            if (inputList[i].type == "checkbox" && inputList[i].checked) {
+                numChecked = numChecked + 1;
+            }
+        }
+		if(numChecked > 5 || numChecked==0){
+			alert('Please select maximum 5 or lessthan 5');
+			 document.getElementById("test").disabled = false; 
+			return false;
+			
+		}else{
+			return true;
+		}
+	 
+	 
+  }
   function get_article_list(year){
 	 var cat_id=$('#category').val();
 	 var journal_id=$('#journal').val();
@@ -151,7 +170,7 @@
 						$('#archieve_show').show();
    						$('#archieve_list').empty();
    						for(i=0; i<data.list.length; i++) {
-   							$('#archieve_list').append("<input type='checkbox' name='article_ids[]' value="+data.list[i].a_id+">"+data.list[i].title+"<br>");                      
+   							$('#archieve_list').append("<input type='checkbox' name='article_ids[]' value="+data.list[i].a_id+">&nbsp;&nbsp;&nbsp;"+data.list[i].title+"<br>");                      
                          
    						}
    						//console.log(data);return false;

@@ -25,7 +25,19 @@
             <i class="fa fa-th"></i> <span>Dashboard</span>
            </a>
         </li>
-        <li class="<?php if(isset($u_url) && $u_url==base_url('flyers')){ echo "active"; } ?> treeview">
+        <li class="<?php if(isset($u_url) && $u_url==base_url('banners')){ echo "active"; } ?> treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Home Banners</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="active"><a href="<?php echo base_url('banners'); ?>"><i class="fa fa-circle-o"></i> Add</a></li>
+            <li><a href="<?php echo base_url('banners/lists'); ?>"><i class="fa fa-circle-o"></i> List</a></li>
+          </ul>
+        </li>
+		<li class="<?php if(isset($u_url) && $u_url==base_url('flyers')){ echo "active"; } ?> treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Flyers</span>
             <span class="pull-right-container">
@@ -210,6 +222,7 @@
           <ul class="treeview-menu">
             <li class="active"><a href="<?php echo base_url('latestupdates'); ?>"><i class="fa fa-circle-o"></i> Add</a></li>
             <li><a href="<?php echo base_url('latestupdates/lists'); ?>"><i class="fa fa-circle-o"></i> List</a></li>
+            <li><a href="<?php echo base_url('latestupdates/scroll'); ?>"><i class="fa fa-circle-o"></i> Scroll Content</a></li>
           </ul>
         </li>
 		<li class="<?php if(isset($u_url) && $u_url==base_url('faq')){ echo "active"; } ?> treeview">

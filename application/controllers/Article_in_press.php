@@ -305,6 +305,66 @@ class Article_in_press extends CI_Controller {
 			redirect('admin');
 		}
 		
+	}public function viewstatus()
+	{	
+		if($this->session->userdata('userdetails'))
+		{
+			$admindetails=$this->session->userdata('userdetails');
+			$post=$this->input->post();
+			$a_id=base64_decode($this->uri->segment(3));
+			$status=base64_decode($this->uri->segment(4));
+			if($status==1){
+				$stat=0;
+			}else{
+				$stat=1;
+			}
+			$update_data=array(
+					'status'=>$stat,
+					'update_at'=>date('Y-m-d H:i:s'),
+					);
+					$update=$this->Journal_details_model->update_Article_in_press_details($a_id,$update_data);
+						if(count($update)>0){
+							if($status==1){
+							$this->session->set_flashdata('success','Article in press successfully deactivated');
+							}else{
+							$this->session->set_flashdata('success','Article in press successfully activated');
+							}
+							redirect('article-in-press/view');
+							
+						}else{
+							$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");
+							redirect('article-in-press/view');
+						}
+		}else{
+			$this->session->set_flashdata('error','Please login to continue');
+			redirect('admin');
+		}
+		
+	}
+	public function viewdelete()
+	{	
+		if($this->session->userdata('userdetails'))
+		{
+			$admindetails=$this->session->userdata('userdetails');
+			$post=$this->input->post();
+			$a_id=base64_decode($this->uri->segment(3));
+			$details=$this->Journal_details_model->get_article_in_press_details($a_id);
+			
+					$delete=$this->Journal_details_model->delete_article_in_press($a_id);
+					if(count($delete)>0){
+						unlink('assets/article_in_press/'.$details['pdf_file']);
+						unlink('assets/article_in_press/'.$details['image']);
+						$this->session->set_flashdata('success','Article in press successfully deleted');
+						redirect('article-in-press/view');
+					}else{
+						$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");
+						redirect('article-in-press/view');
+					}
+		}else{
+			$this->session->set_flashdata('error','Please login to continue');
+			redirect('admin');
+		}
+		
 	}
 	
 	

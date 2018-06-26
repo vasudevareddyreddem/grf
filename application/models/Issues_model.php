@@ -105,6 +105,14 @@ class Issues_model extends CI_Model
 		$this->db->where('status', 1);
         return $this->db->get()->result_array();
 	}
-	
+	public  function get_all_remaining_article_list_for_issues($cat_id,$j_id,$year,$ids){
+		$this->db->select('a_id as article_id,title')->from('journal_article_in_press');		
+		$this->db->where('journal_id', $j_id);
+		$this->db->where('journal_cat_id', $cat_id);
+		$this->db->where('year_of_article', $year);
+		$this->db->where_not_in('a_id', $ids);
+		$this->db->where('status', 1);
+        return $this->db->get()->result_array();
+	}
 
 }

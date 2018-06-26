@@ -267,72 +267,36 @@
   </aside>
   
   <!--view modals-->
-  <div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-	<div class="modal-content">
-		<div class="modal-header bg-primary">
-			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-			<h3 class="modal-title" id="lineModalLabel">Profile View</h3>
-		</div>
-		<div class="modal-body">
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
 			
-           <div class="row">
-                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="https://image.flaticon.com/icons/svg/201/201811.svg" class="img-circle img-responsive"> </div>
-               
-                <div class=" col-md-9 col-lg-9 "> 
-                  <table class="table table-user-information">
-                    <tbody>
-                      <tr>
-                        <td>Department:</td>
-                        <td>Programming</td>
-                      </tr>
-                      <tr>
-                        <td>Hire date:</td>
-                        <td>06/23/2013</td>
-                      </tr>
-                      <tr>
-                        <td>Date of Birth</td>
-                        <td>01/24/1988</td>
-                      </tr>
-                   
-                         <tr>
-                             <tr>
-                        <td>Gender</td>
-                        <td>Female</td>
-                      </tr>
-                        <tr>
-                        <td>Home Address</td>
-                        <td>Kathmandu,Nepal</td>
-                      </tr>
-                      <tr>
-                        <td>Email</td>
-                        <td><a href="mailto:info@support.com">info@support.com</a></td>
-                      </tr>
-                        <td>Phone Number</td>
-                        <td>123-4567-890(Landline)<br><br>555-4567-890(Mobile)
-                        </td>
-                           
-                      </tr>
-                     
-                    </tbody>
-                  </table>
-                  
-                
-                </div>
-              </div>
-
-		</div>
-		<div class="modal-footer">
-			<div class="btn-group btn-group-justified" role="group" aria-label="group button">
-				<div class="btn-group" role="group">
-					<button type="button" class="btn btn-default" data-dismiss="modal"  role="button">Close</button>
-				</div>
-				
+			<div style="padding:10px">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<h4 style="pull-left" class="modal-title">Confirmation</h4>
 			</div>
-		</div>
-	</div>
+			<div class="modal-body">
+			<div class="alert alert-danger alert-dismissible" id="errormsg" style="display:none;"></div>
+			  <div class="row">
+				<div id="content1" class="col-xs-12 col-xl-12 form-group">
+				Are you sure ? 
+				</div>
+				</div>
+				<div class="row">
+				<div class="col-md-6 col-sm-6  col-sm-6 ">
+				  <button type="button" aria-label="Close" data-dismiss="modal" class="btn  blueBtn pull-left">Cancel</button>
+				</div>
+				<div class="col-md-6 col-sm-6  col-sm-6 ">
+                <a href="?id=value" class="btn  blueBtn popid pull-right" style="text-decoration:none;"> <span aria-hidden="true">Ok</span></a>
+				</div>
+			 </div>
+		  </div>
+      </div>
+      
+    </div>
   </div>
-</div>
 <?php if($this->session->flashdata('success')): ?>
 <div class="alert_msg1 animated slideInUp bg-succ">
    <?php echo $this->session->flashdata('success');?> &nbsp; <i class="fa fa-check text-success ico_bac" aria-hidden="true"></i>
@@ -344,6 +308,18 @@
 </div>
 <?php endif; ?>
 <script>
+function adminstatus(id){
+	if(id==1){
+			$('#content1').html('Are you sure you want to Deactivate?');
+		
+	}if(id==0){
+			$('#content1').html('Are you sure you want to activate?');
+	}
+}
+function admindedeletemsg(id){
+	$('#content1').html('Are you sure you want to delete?');
+	
+}
 function get_gournals(id){
 	
 		if(id!=''){

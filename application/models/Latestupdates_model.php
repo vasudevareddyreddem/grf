@@ -31,6 +31,15 @@ class Latestupdates_model extends CI_Model
 		$this->db->where('id', $id);
 		return $this->db->delete('updates');
 	}
+	public function get_scroll_data_list($id){
+		$this->db->select('*')->from('home_scroll');		
+		//$this->db->where('id',$id);
+        return $this->db->get()->row_array();	
+	}
+	public function update_scroll_data_list($id,$data){
+		$this->db->where('id',$id);
+    	return $this->db->update("home_scroll",$data);
+	}
 	
 
 }

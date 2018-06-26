@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Latestupdates extends CI_Controller {
+class Banners extends CI_Controller {
 
 	public function __construct() 
 	{
@@ -14,13 +14,13 @@ class Latestupdates extends CI_Controller {
 		$this->load->helper('directory');
 		$this->load->helper('security');
 		$this->load->model('Admin_model');
-		$this->load->model('Latestupdates_model');
+		$this->load->model('Banners_model');
 			if($this->session->userdata('userdetails'))
 			{
 				$admindetails=$this->session->userdata('userdetails');
 				$data['userdetails']=$this->Admin_model->get_admin_details($admindetails['id']);
 				//echo '<pre>';print_r($data);exit;
-				$data['u_url']=base_url('latestupdates');
+				$data['u_url']=base_url('banners');
 				$this->load->view('admin/header',$data);
 				$this->load->view('admin/sidebar',$data);
 			}
@@ -30,7 +30,7 @@ class Latestupdates extends CI_Controller {
 	{	
 		if($this->session->userdata('userdetails'))
 		{
-			$this->load->view('admin/updates/add');
+			$this->load->view('admin/home_banners/add');
 			$this->load->view('admin/footer');
 		}else{
 			$this->session->set_flashdata('error','Please login to continue');
@@ -43,10 +43,10 @@ class Latestupdates extends CI_Controller {
 		if($this->session->userdata('userdetails'))
 		{
 			$admindetails=$this->session->userdata('userdetails');
-			$data['updates_list']=$this->Latestupdates_model->get_updates_list($admindetails['id']);
+			$data['banners_list']=$this->Banners_model->get_banners_list($admindetails['id']);
 			
 			//echo '<pre>';print_r($data);exit; 
-			$this->load->view('admin/updates/list',$data);
+			$this->load->view('admin/home_banners/list',$data);
 			$this->load->view('admin/footer');
 		}else{
 			$this->session->set_flashdata('error','Please login to continue');
@@ -59,11 +59,11 @@ class Latestupdates extends CI_Controller {
 		if($this->session->userdata('userdetails'))
 		{
 			$admindetails=$this->session->userdata('userdetails');
-			$u_id=base64_decode($this->uri->segment(3));
-			$data['details']=$this->Latestupdates_model->get_updates_details($u_id);
+			$f_id=base64_decode($this->uri->segment(3));
+			$data['details']=$this->Banners_model->get_banners_details($f_id);
 			
 			//echo '<pre>';print_r($data);exit; 
-			$this->load->view('admin/updates/edit',$data);
+			$this->load->view('admin/home_banners/edit',$data);
 			$this->load->view('admin/footer');
 		}else{
 			$this->session->set_flashdata('error','Please login to continue');
@@ -78,21 +78,30 @@ class Latestupdates extends CI_Controller {
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
 			//echo '<pre>';print_r($post);exit;
+						if(isset($_FILES['image']['name']) && $_FILES['image']['name']!=''){
+								$temp = explode(".", $_FILES["image"]["name"]);
+								$image = round(microtime(true)) . '.' . end($temp);
+								move_uploaded_file($_FILES['image']['tmp_name'], "assets/home_banners/" . $image);
+							}else{
+								$image='';
+							}
 					$add_data=array(
 					'title'=>isset($post['title'])?$post['title']:'',
-					'updates'=>isset($post['updates'])?$post['updates']:'',
+					'image'=>$image,
+					'org_image'=>isset($_FILES['image']['name'])?$_FILES['image']['name']:'',
 					'status'=>1,
 					'create_at'=>date('Y-m-d H:i:s'),
+					'update_at'=>date('Y-m-d H:i:s'),
 					'create_by'=>$admindetails['id'],
 					);
-					$save=$this->Latestupdates_model->save_update($add_data);
+					$save=$this->Banners_model->save_banners($add_data);
 						if(count($save)>0){
-							$this->session->set_flashdata('success','Update successfully Added');
-							redirect('latestupdates/lists');
+							$this->session->set_flashdata('success','Home Banner successfully Added');
+							redirect('banners/lists');
 							
 						}else{
 							$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");
-							redirect('testimonial');
+							redirect('banners');
 						}
 		}else{
 			$this->session->set_flashdata('error','Please login to continue');
@@ -106,21 +115,32 @@ class Latestupdates extends CI_Controller {
 		{
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
-			$update_data=array(
-							'title'=>isset($post['title'])?$post['title']:'',
-							'updates'=>isset($post['updates'])?$post['updates']:'',
-							'status'=>1,
-							'create_at'=>date('Y-m-d H:i:s'),
-							'create_by'=>$admindetails['id'],
-							);
-						$update=$this->Latestupdates_model->update_updates_details($post['u_id'],$update_data);
+					$details=$this->Banners_model->get_banners_details($post['b_id']);
+					if(isset($_FILES['image']['name']) && $_FILES['image']['name']!=''){
+							unlink('assets/home_banners/'.$details['image']);
+
+								$temp = explode(".", $_FILES["image"]["name"]);
+								$image = round(microtime(true)) . '.' . end($temp);
+								move_uploaded_file($_FILES['image']['tmp_name'], "assets/home_banners/" . $image);
+								$org_name=$_FILES["image"]["name"];
+							}else{
+								$image=$details['image'];
+								$org_name=$details['org_image'];
+							}
+					$update_data=array(
+					'title'=>isset($post['title'])?$post['title']:'',
+					'image'=>$image,
+					'org_image'=>$org_name,
+					'update_at'=>date('Y-m-d H:i:s'),
+					);
+						$update=$this->Banners_model->update_banners_details($post['b_id'],$update_data);
 						if(count($update)>0){
-							$this->session->set_flashdata('success','Update successfully Updated');
-							redirect('latestupdates/lists');
+							$this->session->set_flashdata('success','Home Banner successfully Updated');
+							redirect('banners/lists');
 							
 						}else{
 							$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");
-							redirect('latestupdates/lists');
+							redirect('banners');
 						}
 		}else{
 			$this->session->set_flashdata('error','Please login to continue');
@@ -134,7 +154,7 @@ class Latestupdates extends CI_Controller {
 		{
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
-			$u_id=base64_decode($this->uri->segment(3));
+			$f_id=base64_decode($this->uri->segment(3));
 			$status=base64_decode($this->uri->segment(4));
 			if($status==1){
 				$stat=0;
@@ -145,18 +165,18 @@ class Latestupdates extends CI_Controller {
 					'status'=>$stat,
 					'update_at'=>date('Y-m-d H:i:s'),
 					);
-					$update=$this->Latestupdates_model->update_updates_details($u_id,$update_data);
+					$update=$this->Banners_model->update_banners_details($f_id,$update_data);
 						if(count($update)>0){
 							if($status==1){
-							$this->session->set_flashdata('success','Update successfully deactivated');
+							$this->session->set_flashdata('success','Home Banner successfully deactivated');
 							}else{
-							$this->session->set_flashdata('success','Update successfully activated');
+							$this->session->set_flashdata('success','Home Banner successfully activated');
 							}
-							redirect('latestupdates/lists');
+							redirect('banners/lists');
 							
 						}else{
 							$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");
-							redirect('latestupdates/lists');
+							redirect('banners/lists');
 						}
 		}else{
 			$this->session->set_flashdata('error','Please login to continue');
@@ -170,15 +190,17 @@ class Latestupdates extends CI_Controller {
 		{
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
-			$u_id=base64_decode($this->uri->segment(3));
+			$f_id=base64_decode($this->uri->segment(3));
+			$details=$this->Banners_model->get_banners_details($f_id);
 			
-					$delete=$this->Latestupdates_model->delete_updates($u_id);
+					$delete=$this->Banners_model->delete_banners($f_id);
 					if(count($delete)>0){
-						$this->session->set_flashdata('success','Update successfully deleted');
-						redirect('latestupdates/lists');
+						unlink('assets/home_banners/'.$details['image']);
+						$this->session->set_flashdata('success','Home Banner successfully deleted');
+						redirect('banners/lists');
 					}else{
 						$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");
-						redirect('latestupdates/lists');
+						redirect('banners/lists');
 					}
 		}else{
 			$this->session->set_flashdata('error','Please login to continue');
@@ -186,53 +208,7 @@ class Latestupdates extends CI_Controller {
 		}
 		
 	}
-	public function scroll()
-	{	
-		if($this->session->userdata('userdetails'))
-		{
-			$admindetails=$this->session->userdata('userdetails');
-			$data['details']=$this->Latestupdates_model->get_scroll_data_list($admindetails['id']);
-			
-			//echo '<pre>';print_r($data);exit; 
-			$this->load->view('admin/updates/scroll',$data);
-			$this->load->view('admin/footer');
-		}else{
-			$this->session->set_flashdata('error','Please login to continue');
-			redirect('admin');
-		}
-		
-	}
 	
-	public function scrollpost()
-	{	
-		if($this->session->userdata('userdetails'))
-		{
-			$admindetails=$this->session->userdata('userdetails');
-			$post=$this->input->post();
-			
-			//echo '<pre>';print_r($post);exit;
-			
-			$update_data=array(
-					'scroll_content'=>isset($post['updates'])?$post['updates']:'',
-					'update_at'=>date('Y-m-d H:i:s'),
-					);
-					$update=$this->Latestupdates_model->update_scroll_data_list($post['id'],$update_data);
-						
-						
-						//echo $this->db->last_query();exit;
-						if(count($update)>0){
-							$this->session->set_flashdata('success','Scroll data successfully Updated');
-							redirect('latestupdates/scroll');
-							
-						}else{
-							$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");
-							redirect('latestupdates/scroll');
-						}
-		}else{
-			$this->session->set_flashdata('error','Please login to continue');
-			redirect('admin');
-		}
-		
-	}
+	
 	
 }

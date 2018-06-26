@@ -48,10 +48,10 @@
 					<a href="<?php echo base_url('journal-details/banneredit/'.base64_encode($list['id'])); ?>"><i class="fa fa-edit"></i></a>
 										&nbsp;&nbsp;
 
-					<a href="<?php echo base_url('journal-details/bannerstatus/'.base64_encode($list['id']).'/'.base64_encode($list['status'])); ?>"><i class="fa fa-check-square-o"></i></a>
+					<a href="javascript;void(0);" onclick="admindeactive('<?php echo base64_encode(htmlentities($list['id'])).'/'.base64_encode(htmlentities($list['status']));?>');adminstatus('<?php echo $list['status'];?>')" href="javascript:void(0)" data-toggle="modal" data-target="#myModal"><i class="fa fa-check-square-o"></i></a>
 										&nbsp;&nbsp;
 
-					<a href="<?php echo base_url('journal-details/bannerdelete/'.base64_encode($list['id'])); ?>"><i class="fa fa-trash-o"></i></a>
+					<a href="javascript;void(0);" onclick="admindedelete('<?php echo base64_encode($list['id']) ?>');admindedeletemsg();" data-toggle="modal" data-target="#myModal" title="Delete"><i class="fa fa-trash-o"></i></a>
 				  
 				  </td>
                 </tr>
@@ -86,6 +86,14 @@
  
 
 <script>
+
+function admindeactive(id){
+	$(".popid").attr("href","<?php echo base_url('journal-details/bannerstatus'); ?>"+"/"+id);
+}
+
+function admindedelete(id){
+	$(".popid").attr("href","<?php echo base_url('journal-details/bannerdelete'); ?>"+"/"+id);
+}
   $(function () {
     $("#example1").DataTable({
 		 "order": [[0, "desc" ]]

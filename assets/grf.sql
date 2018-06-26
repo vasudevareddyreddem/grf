@@ -60,7 +60,7 @@ CREATE TABLE `article_in_process_fee` (
 
 /*Data for the table `article_in_process_fee` */
 
-insert  into `article_in_process_fee`(`id`,`journal_id`,`journal_cat_id`,`table`,`status`,`create_at`,`update_at`,`create_by`) values (1,13,22,'<p>test like  that</p>\r\n',1,'2018-06-23 21:23:24','2018-06-24 17:09:00',1),(2,11,21,'',1,'2018-06-23 21:29:47','2018-06-24 17:08:47',1),(3,5,20,'<p>cvcvzxcv</p>\r\n',1,'2018-06-24 17:07:17','2018-06-24 17:08:39',1);
+insert  into `article_in_process_fee`(`id`,`journal_id`,`journal_cat_id`,`table`,`status`,`create_at`,`update_at`,`create_by`) values (1,13,22,'<p>test like  that</p>\r\n',1,'2018-06-23 21:23:24','2018-06-24 17:09:00',1);
 
 /*Table structure for table `article_procedures` */
 
@@ -93,7 +93,7 @@ CREATE TABLE `article_procedures` (
 
 /*Data for the table `article_procedures` */
 
-insert  into `article_procedures`(`id`,`journal_id`,`journal_cat_id`,`year_of_article`,`procedures_category`,`conference_title`,`title`,`author_name`,`doi_url`,`seo_url`,`seo_title`,`seo_keyword`,`seo_description`,`abstract`,`biography`,`pdf_file`,`image`,`status`,`create_at`,`update_at`,`create_by`) values (3,3,22,'2016','Speaker Abstract','vbx','bxcvbx','cvbxcvb','cxvbxcv','vbxvb','vbxcvb','vcbvcb','vbxcvb','<p>vbxvb</p>\r\n','<p>vbxvb</p>\r\n',NULL,NULL,1,'2018-06-24 11:41:40','2018-06-24 11:51:24',1),(4,5,20,'2016','Speaker Abstract','Conference Title','Title','Author Name','DOI Url','vbvb','xcvbxcvb','vbxcvb','vbxcvb','<p>bvxcvb</p>\r\n','<p>vcbxcbv</p>\r\n',NULL,NULL,1,'2018-06-24 17:16:36','2018-06-24 17:17:57',1);
+insert  into `article_procedures`(`id`,`journal_id`,`journal_cat_id`,`year_of_article`,`procedures_category`,`conference_title`,`title`,`author_name`,`doi_url`,`seo_url`,`seo_title`,`seo_keyword`,`seo_description`,`abstract`,`biography`,`pdf_file`,`image`,`status`,`create_at`,`update_at`,`create_by`) values (3,3,22,'2016','Speaker Abstract','vbx','bxcvbx','cvbxcvb','cxvbxcv','vbxvb','vbxcvb','vcbvcb','vbxcvb','<p>vbxvb</p>\r\n','<p>vbxvb</p>\r\n',NULL,NULL,1,'2018-06-24 11:41:40','2018-06-24 11:51:24',1),(4,5,20,'2016','Speaker Abstract','Conference Title','Title','Author Name','DOI Url','vbvb','xcvbxcvb','vbxcvb','vbxcvb','<p>bvxcvb</p>\r\n','<p>vcbxcbv</p>\r\n',NULL,NULL,1,'2018-06-24 17:16:36','2018-06-26 08:11:19',1);
 
 /*Table structure for table `conference_process` */
 
@@ -115,7 +115,7 @@ CREATE TABLE `conference_process` (
 
 /*Data for the table `conference_process` */
 
-insert  into `conference_process`(`id`,`journal_id`,`journal_cat_id`,`title`,`url`,`venu_place`,`status`,`create_at`,`update_at`,`create_by`) values (2,12,22,'vbvbxvb','vbxvb','cxvbxcvb',1,'2018-06-23 22:15:43','2018-06-24 17:12:27',1),(3,11,21,'gfgfg','fgsfdg','kadapa',1,'2018-06-24 17:12:09','2018-06-24 17:12:09',1);
+insert  into `conference_process`(`id`,`journal_id`,`journal_cat_id`,`title`,`url`,`venu_place`,`status`,`create_at`,`update_at`,`create_by`) values (2,12,22,'vbvbxvb','vbxvb','cxvbxcvb',1,'2018-06-23 22:15:43','2018-06-24 17:12:27',1),(3,11,21,'gfgfg','fgsfdg','kadapa',1,'2018-06-24 17:12:09','2018-06-26 08:10:13',1);
 
 /*Table structure for table `contactus` */
 
@@ -149,11 +149,11 @@ CREATE TABLE `faqs` (
   `update_at` datetime DEFAULT NULL,
   `create_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 /*Data for the table `faqs` */
 
-insert  into `faqs`(`id`,`question`,`description`,`status`,`create_at`,`update_at`,`create_by`) values (9,'vbvb','redde','1','2018-06-19 22:57:15','2018-06-19 23:00:12',1);
+insert  into `faqs`(`id`,`question`,`description`,`status`,`create_at`,`update_at`,`create_by`) values (10,'gdfg','dfgdfgdf','1','2018-06-26 08:21:25',NULL,1);
 
 /*Table structure for table `grf_conference_flyers` */
 
@@ -174,7 +174,7 @@ CREATE TABLE `grf_conference_flyers` (
 
 /*Data for the table `grf_conference_flyers` */
 
-insert  into `grf_conference_flyers`(`f_id`,`title`,`title_color`,`fly_image`,`fly_org_image`,`status`,`create_at`,`create_by`,`update_at`) values (6,'ghdfghdgh','hdfghdfgh','1529223955.jpg','222.jpg',0,'2018-06-17 13:55:55',1,'2018-06-17 14:06:28'),(7,'ghdfghdgh','hdfghdfgh','1529224033.jpg','222.jpg',1,'2018-06-17 13:57:12',1,NULL),(8,'vcvcxv','cvzxcvzxcv','1529224879.jpg','555.jpg',1,'2018-06-17 14:11:19',1,NULL);
+insert  into `grf_conference_flyers`(`f_id`,`title`,`title_color`,`fly_image`,`fly_org_image`,`status`,`create_at`,`create_by`,`update_at`) values (6,'ghdfghdgh','hdfghdfgh','1529223955.jpg','222.jpg',0,'2018-06-17 13:55:55',1,'2018-06-17 14:06:28'),(7,'ghdfghdgh','hdfghdfgh','1529224033.jpg','222.jpg',1,'2018-06-17 13:57:12',1,NULL);
 
 /*Table structure for table `grf_conference_images` */
 
@@ -191,11 +191,11 @@ CREATE TABLE `grf_conference_images` (
   `create_by` int(11) DEFAULT NULL,
   `update_at` datetime DEFAULT NULL,
   PRIMARY KEY (`f_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 /*Data for the table `grf_conference_images` */
 
-insert  into `grf_conference_images`(`f_id`,`title`,`title_color`,`fly_image`,`fly_org_image`,`status`,`create_at`,`create_by`,`update_at`) values (8,'ghdfghdgh','cvzxcvzxc','1529225120.jpg','222.jpg',1,'2018-06-17 14:15:19',1,NULL);
+insert  into `grf_conference_images`(`f_id`,`title`,`title_color`,`fly_image`,`fly_org_image`,`status`,`create_at`,`create_by`,`update_at`) values (8,'ghdfghdgh','cvzxcvzxc','1529225120.jpg','222.jpg',0,'2018-06-17 14:15:19',1,'2018-06-26 07:54:57');
 
 /*Table structure for table `grf_flyers` */
 
@@ -212,11 +212,11 @@ CREATE TABLE `grf_flyers` (
   `create_by` int(11) DEFAULT NULL,
   `update_at` datetime DEFAULT NULL,
   PRIMARY KEY (`f_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 /*Data for the table `grf_flyers` */
 
-insert  into `grf_flyers`(`f_id`,`title`,`title_color`,`fly_image`,`fly_org_image`,`status`,`create_at`,`create_by`,`update_at`) values (5,'like that','ffff','1529223020.jpg','3333.jpg',1,'2018-06-17 13:26:31',1,'2018-06-17 13:57:58'),(6,'','','1529423004.jpg','222.jpg',1,'2018-06-19 21:13:24',1,NULL);
+insert  into `grf_flyers`(`f_id`,`title`,`title_color`,`fly_image`,`fly_org_image`,`status`,`create_at`,`create_by`,`update_at`) values (5,'like that','ffff','1529223020.jpg','3333.jpg',1,'2018-06-17 13:26:31',1,'2018-06-17 13:57:58'),(7,'ggfsfg','fgsfdg','1529943345.jpg','111.jpg',1,'2018-06-25 21:45:44',1,NULL);
 
 /*Table structure for table `grf_journal_category` */
 
@@ -234,7 +234,7 @@ CREATE TABLE `grf_journal_category` (
   `update_at` datetime DEFAULT NULL,
   `create_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`c_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 
 /*Data for the table `grf_journal_category` */
 
@@ -262,7 +262,45 @@ CREATE TABLE `guidelines` (
 
 /*Data for the table `guidelines` */
 
-insert  into `guidelines`(`id`,`pagename`,`title`,`description`,`seo_title`,`seo_url`,`seo_keyword`,`seo_description`,`status`,`create_at`,`update_at`,`create_by`) values (5,'reddy','gdg','<p>gfd</p>\r\n','fgdgf','df','dfdgf','dfd','1','2018-06-21 08:58:58','2018-06-21 09:08:05',1),(6,'fbghfhf','vasu','<p>gf</p>\r\n','ghfg','fghffg','fg','fgfgf','1','2018-06-21 08:59:14','2018-06-21 09:07:51',1),(7,'fgsdfgsdfg','fvbxvcb','<p>fgdfg</p>\r\n','fgsdfg','sdfgsdfg','sdfgsdfg','sdfgsdf','1','2018-06-21 22:20:05','2018-06-22 20:32:30',1),(8,'Page Name vasu','Title','<p>xcxc</p>\r\n','cvzxcv','cxvzxcv','cvzxc','cvzxcvzxcv','1','2018-06-22 20:33:17','2018-06-22 20:33:28',1);
+insert  into `guidelines`(`id`,`pagename`,`title`,`description`,`seo_title`,`seo_url`,`seo_keyword`,`seo_description`,`status`,`create_at`,`update_at`,`create_by`) values (5,'reddy','gdg','<p>gfd</p>\r\n','fgdgf','df','dfdgf','dfd','1','2018-06-21 08:58:58','2018-06-21 09:08:05',1),(6,'fbghfhf','vasu','<p>gf</p>\r\n','ghfg','fghffg','fg','fgfgf','1','2018-06-21 08:59:14','2018-06-21 09:07:51',1),(8,'Page Name vasu','Title','<p>xcxc</p>\r\n','cvzxcv','cxvzxcv','cvzxc','cvzxcvzxcv','1','2018-06-22 20:33:17','2018-06-26 08:24:37',1);
+
+/*Table structure for table `home_banners` */
+
+DROP TABLE IF EXISTS `home_banners`;
+
+CREATE TABLE `home_banners` (
+  `b_id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` text,
+  `image` varchar(250) DEFAULT NULL,
+  `org_image` varchar(250) DEFAULT NULL,
+  `status` int(11) DEFAULT '1',
+  `create_at` datetime DEFAULT NULL,
+  `update_at` datetime DEFAULT NULL,
+  `create_by` int(11) DEFAULT NULL,
+  PRIMARY KEY (`b_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+/*Data for the table `home_banners` */
+
+insert  into `home_banners`(`b_id`,`title`,`image`,`org_image`,`status`,`create_at`,`update_at`,`create_by`) values (4,'testing','1529982830.jpg','homeban1.jpg',1,'2018-06-26 08:43:49','2018-06-26 08:49:52',1),(5,'home banner 2','1529982847.jpg','homeban2.jpg',1,'2018-06-26 08:44:06','2018-06-26 08:49:43',1),(6,'Home banners 3','1529982862.jpg','homeban3.jpg',1,'2018-06-26 08:44:21','2018-06-26 08:49:48',1);
+
+/*Table structure for table `home_scroll` */
+
+DROP TABLE IF EXISTS `home_scroll`;
+
+CREATE TABLE `home_scroll` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `scroll_content` text,
+  `status` int(11) DEFAULT NULL,
+  `create_at` datetime DEFAULT NULL,
+  `update_at` datetime DEFAULT NULL,
+  `create_by` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+/*Data for the table `home_scroll` */
+
+insert  into `home_scroll`(`id`,`scroll_content`,`status`,`create_at`,`update_at`,`create_by`) values (1,'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\r\n\r\n',1,'2018-06-26 07:19:53','2018-06-26 08:36:50',1);
 
 /*Table structure for table `issue_wise_article_list` */
 
@@ -276,11 +314,11 @@ CREATE TABLE `issue_wise_article_list` (
   `create_at` datetime DEFAULT NULL,
   `create_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`issue_a_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=86 DEFAULT CHARSET=latin1;
 
 /*Data for the table `issue_wise_article_list` */
 
-insert  into `issue_wise_article_list`(`issue_a_id`,`i_a_id`,`article_id`,`status`,`create_at`,`create_by`) values (9,5,8,1,'2018-06-24 21:24:55',1),(10,5,9,1,'2018-06-24 21:24:55',1),(11,5,10,1,'2018-06-24 21:24:55',1),(12,5,11,1,'2018-06-24 21:24:55',1),(13,6,6,1,'2018-06-24 22:19:12',1),(14,6,7,1,'2018-06-24 22:19:12',1);
+insert  into `issue_wise_article_list`(`issue_a_id`,`i_a_id`,`article_id`,`status`,`create_at`,`create_by`) values (82,8,6,1,'2018-06-25 20:47:34',1),(83,8,7,1,'2018-06-25 20:47:34',1),(84,8,8,1,'2018-06-25 20:47:34',1),(85,8,9,1,'2018-06-25 20:47:34',1);
 
 /*Table structure for table `issues` */
 
@@ -298,11 +336,11 @@ CREATE TABLE `issues` (
   `update_at` datetime DEFAULT NULL,
   `create_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 /*Data for the table `issues` */
 
-insert  into `issues`(`id`,`number`,`image`,`journal_cat_id`,`journal_id`,`year`,`status`,`create_at`,`update_at`,`create_by`) values (5,'44','1529855695.jpg','21','11','2013',1,'2018-06-24 21:24:54',NULL,1),(6,'2','1529858952.jpg','21','11','2013',0,'2018-06-24 22:19:12','2018-06-24 22:19:33',1);
+insert  into `issues`(`id`,`number`,`image`,`journal_cat_id`,`journal_id`,`year`,`status`,`create_at`,`update_at`,`create_by`) values (8,'1','1529939854.jpg','21','11','2013',1,'2018-06-25 20:47:34','2018-06-26 08:13:07',1);
 
 /*Table structure for table `journal_article_in_press` */
 
@@ -340,7 +378,7 @@ CREATE TABLE `journal_article_in_press` (
 
 /*Data for the table `journal_article_in_press` */
 
-insert  into `journal_article_in_press`(`a_id`,`journal_id`,`journal_cat_id`,`year_of_article`,`title`,`author_name`,`article_type`,`url`,`seo_title`,`seo_keyword`,`seo_description`,`research_article`,`abstract`,`introduction`,`references`,`figures`,`suggested_citation`,`tables`,`pdf_file`,`image`,`video`,`video_article`,`status`,`create_at`,`update_at`,`create_by`) values (5,5,'20','2010','vbxcvb','vbxcvb','xcvbxcvb','vbxcvb','xcvbx','vcbxcvb','xcvb','<p>vbxcvb</p>\r\n','<p>vbxcvbxcvb</p>\r\n','<p>vbxcvbxc</p>\r\n','<p>vbxbvxvb</p>\r\n','<p>vbxvbxcvbcv</p>\r\n','<p>vbxcvbxcvb</p>\r\n','<p>vbxcvbxcv</p>\r\n','1529687924.pdf','1529687924.html','1529687924.mp4',1,1,'2018-06-22 22:48:43','2018-06-24 17:56:39',1),(6,11,'21','2013',' Lorem Ipsum has been the industrys standard dummy text ever since the 1500s','testing','Article Type','URL','SEO Title','SEO Keywords','SEO Description','<p>Research Article</p>\r\n','<p>Abstract</p>\r\n','<p>Introduction</p>\r\n','<p>References</p>\r\n','<p>Figures</p>\r\n','<p>Suggested citation</p>\r\n','<p>Tables</p>\r\n','1529839780.pdf','1529839780.docx','',0,1,'2018-06-24 16:59:39','2018-06-24 18:09:43',1),(7,11,'21','2013','Lorem Ipsum is simply dummy text of the printing and typesetting','Author Name','Article Type','url','seo title','seo keywords','SEO Description','<p>Research Article</p>\r\n','<p>Abstract</p>\r\n','<p>Introduction</p>\r\n','<p>References</p>\r\n','<p>Figures</p>\r\n','<p>Suggested citation</p>\r\n','<p>Tables</p>\r\n','1529843950.pdf','1529843950.jpg','',0,1,'2018-06-24 18:09:10',NULL,1),(8,11,'21','2013','Editors shall be honoured in position as chair/co-chair for any conferences organized','Author Name','Article Type','url','SEO Title','Annals of Medical & Surgical Case Reports(AMSC)','stes','<p>sddfds</p>\r\n','<p>dfasdfasdf</p>\r\n','','<p>asdfsdfsad</p>\r\n','<p>fasdfasd</p>\r\n','<p>fasdfasdfsd</p>\r\n','<p>dfsdfasdfsd</p>\r\n','1529853128.pdf','1529853128.jpg','',0,1,'2018-06-24 20:42:07',NULL,1),(9,11,'21','2013','We promote all the articles of the Editors that are published in our journals','vaas','Article Type','url','SEO Title','seo keywords','test','<p>dfasdfs</p>\r\n','<p>cvzxcvzxcv</p>\r\n','<p>cvzxcvzxcv</p>\r\n','<p>cvzcxvzxcv</p>\r\n','<p>cvzxcv dfdfadsf</p>\r\n','<p>dfdsf df asd</p>\r\n','<p>dfasdfasdfsd</p>\r\n','1529853190.pdf','1529853190.jpg','',0,1,'2018-06-24 20:43:09',NULL,1),(10,11,'21','2013','The review comments that are given by the editors','Author Name','Article Type','url','seo title','The review comments that are given by the editors','The review comments that are given by the editors','<p>The review comments that are given by the editors</p>\r\n','<p>The review comments that are given by the editors</p>\r\n','<p>The review comments that are given by the editors</p>\r\n','<p>The review comments that are given by the editors</p>\r\n','<p>The review comments that are given by the editors</p>\r\n','<p>The review comments that are given by the editors</p>\r\n','<p>cvzcv</p>\r\n','1529853247.pdf','1529853247.jpg','',0,1,'2018-06-24 20:44:06',NULL,1),(11,11,'21','2013','After one year of due course','After one year of due course','After one year of due course','After one year of due course','After one year of due course','After one year of due course','After one year of due course','<p>After one year of due course</p>\r\n','<p>After one year of due course</p>\r\n','<p>After one year of due course</p>\r\n','<p>After one year of due course</p>\r\n','<p>After one year of due course</p>\r\n','<p>After one year of due course</p>\r\n','<p>After one year of due course</p>\r\n','1529853304.pdf','1529853304.jpg','',0,1,'2018-06-24 20:45:03',NULL,1),(12,11,'21','2013','Editors can be promoted as senior editor and executive','Editors can be promoted as senior editor and executive','Editors can be promoted as senior editor and executive','Editors can be promoted as senior editor and executive','Editors can be promoted as senior editor and executive','Editors can be promoted as senior editor and executive','Editors can be promoted as senior editor and executive','<p>Editors can be promoted as senior editor and executive</p>\r\n','<p>Editors can be promoted as senior editor and executive</p>\r\n','<p>Editors can be promoted as senior editor and executive</p>\r\n','<p>Editors can be promoted as senior editor and executive</p>\r\n','<p>Editors can be promoted as senior editor and executive</p>\r\n','<p>Editors can be promoted as senior editor and executive</p>\r\n','<p>Editors can be promoted as senior editor and executive</p>\r\n','1529853353.pdf','1529853353.jpg','',0,1,'2018-06-24 20:45:52',NULL,1);
+insert  into `journal_article_in_press`(`a_id`,`journal_id`,`journal_cat_id`,`year_of_article`,`title`,`author_name`,`article_type`,`url`,`seo_title`,`seo_keyword`,`seo_description`,`research_article`,`abstract`,`introduction`,`references`,`figures`,`suggested_citation`,`tables`,`pdf_file`,`image`,`video`,`video_article`,`status`,`create_at`,`update_at`,`create_by`) values (5,5,'20','2010','vbxcvb','vbxcvb','xcvbxcvb','vbxcvb','xcvbx','vcbxcvb','xcvb','<p>vbxcvb</p>\r\n','<p>vbxcvbxcvb</p>\r\n','<p>vbxcvbxc</p>\r\n','<p>vbxbvxvb</p>\r\n','<p>vbxvbxcvbcv</p>\r\n','<p>vbxcvbxcvb</p>\r\n','<p>vbxcvbxcv</p>\r\n','1529687924.pdf','1529687924.html','1529687924.mp4',1,1,'2018-06-22 22:48:43','2018-06-24 17:56:39',1),(6,11,'21','2013',' Lorem Ipsum has been the industrys standard dummy text ever since the 1500s','testing','Article Type','URL','SEO Title','SEO Keywords','SEO Description','<p>Research Article</p>\r\n','<p>Abstract</p>\r\n','<p>Introduction</p>\r\n','<p>References</p>\r\n','<p>Figures</p>\r\n','<p>Suggested citation</p>\r\n','<p>Tables</p>\r\n','1529839780.pdf','1529839780.docx','',0,0,'2018-06-24 16:59:39','2018-06-26 08:03:41',1),(7,11,'21','2013','Lorem Ipsum is simply dummy text of the printing and typesetting','Author Name','Article Type','url','seo title','seo keywords','SEO Description','<p>Research Article</p>\r\n','<p>Abstract</p>\r\n','<p>Introduction</p>\r\n','<p>References</p>\r\n','<p>Figures</p>\r\n','<p>Suggested citation</p>\r\n','<p>Tables</p>\r\n','1529843950.pdf','1529843950.jpg','',0,0,'2018-06-24 18:09:10','2018-06-26 08:06:40',1),(8,11,'21','2013','Editors shall be honoured in position as chair/co-chair for any conferences organized','Author Name','Article Type','url','SEO Title','Annals of Medical & Surgical Case Reports(AMSC)','stes','<p>sddfds</p>\r\n','<p>dfasdfasdf</p>\r\n','','<p>asdfsdfsad</p>\r\n','<p>fasdfasd</p>\r\n','<p>fasdfasdfsd</p>\r\n','<p>dfsdfasdfsd</p>\r\n','1529853128.pdf','1529853128.jpg','',0,1,'2018-06-24 20:42:07',NULL,1),(9,11,'21','2013','We promote all the articles of the Editors that are published in our journals','vaas','Article Type','url','SEO Title','seo keywords','test','<p>dfasdfs</p>\r\n','<p>cvzxcvzxcv</p>\r\n','<p>cvzxcvzxcv</p>\r\n','<p>cvzcxvzxcv</p>\r\n','<p>cvzxcv dfdfadsf</p>\r\n','<p>dfdsf df asd</p>\r\n','<p>dfasdfasdfsd</p>\r\n','1529853190.pdf','1529853190.jpg','',0,1,'2018-06-24 20:43:09',NULL,1),(10,11,'21','2013','The review comments that are given by the editors','Author Name','Article Type','url','seo title','The review comments that are given by the editors','The review comments that are given by the editors','<p>The review comments that are given by the editors</p>\r\n','<p>The review comments that are given by the editors</p>\r\n','<p>The review comments that are given by the editors</p>\r\n','<p>The review comments that are given by the editors</p>\r\n','<p>The review comments that are given by the editors</p>\r\n','<p>The review comments that are given by the editors</p>\r\n','<p>cvzcv</p>\r\n','1529853247.pdf','1529853247.jpg','',0,1,'2018-06-24 20:44:06',NULL,1),(11,11,'21','2013','After one year of due course','After one year of due course','After one year of due course','After one year of due course','After one year of due course','After one year of due course','After one year of due course','<p>After one year of due course</p>\r\n','<p>After one year of due course</p>\r\n','<p>After one year of due course</p>\r\n','<p>After one year of due course</p>\r\n','<p>After one year of due course</p>\r\n','<p>After one year of due course</p>\r\n','<p>After one year of due course</p>\r\n','1529853304.pdf','1529853304.jpg','',0,1,'2018-06-24 20:45:03',NULL,1),(12,11,'21','2013','Editors can be promoted as senior editor and executive','Editors can be promoted as senior editor and executive','Editors can be promoted as senior editor and executive','Editors can be promoted as senior editor and executive','Editors can be promoted as senior editor and executive','Editors can be promoted as senior editor and executive','Editors can be promoted as senior editor and executive','<p>Editors can be promoted as senior editor and executive</p>\r\n','<p>Editors can be promoted as senior editor and executive</p>\r\n','<p>Editors can be promoted as senior editor and executive</p>\r\n','<p>Editors can be promoted as senior editor and executive</p>\r\n','<p>Editors can be promoted as senior editor and executive</p>\r\n','<p>Editors can be promoted as senior editor and executive</p>\r\n','<p>Editors can be promoted as senior editor and executive</p>\r\n','1529853353.pdf','1529853353.jpg','',0,1,'2018-06-24 20:45:52','2018-06-25 21:00:07',1);
 
 /*Table structure for table `journal_banners` */
 
@@ -357,11 +395,11 @@ CREATE TABLE `journal_banners` (
   `update_at` datetime DEFAULT NULL,
   `create_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `journal_banners` */
 
-insert  into `journal_banners`(`id`,`journal_id`,`baneer_image`,`title`,`alt_tags`,`status`,`create_at`,`update_at`,`create_by`) values (2,3,'1529253750.jpg','ghdfghdgh','bvbxcvb',1,'2018-06-17 21:59:39','2018-06-17 22:12:30',1);
+insert  into `journal_banners`(`id`,`journal_id`,`baneer_image`,`title`,`alt_tags`,`status`,`create_at`,`update_at`,`create_by`) values (2,5,'1529253750.jpg','ghdfghdgh','bvbxcvb',1,'2018-06-17 21:59:39','2018-06-25 20:58:39',1);
 
 /*Table structure for table `journal_editors` */
 
@@ -386,11 +424,11 @@ CREATE TABLE `journal_editors` (
   `update_at` datetime DEFAULT NULL,
   `create_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`j_e_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 /*Data for the table `journal_editors` */
 
-insert  into `journal_editors`(`j_e_id`,`journal_id`,`journal_cat_id`,`image`,`name`,`email`,`phone`,`designation`,`position`,`country`,`university`,`priority`,`biography`,`status`,`create_at`,`update_at`,`create_by`) values (2,12,22,'1529334192.jpg','vasudevareddy reddem','cvb@gmail.com','8500050944','des','Editor in cheif','Aruba','bxcvbxcvb','1','testing',1,'2018-06-18 20:33:11','2018-06-24 16:52:09',1),(3,12,22,'1529336187.jpg','bxcvbxcvb','vcbxcvb@gmail.com','8500050944','des','Editorial board member','Australia','cvzxcv','1','fgfgdfg',1,'2018-06-18 20:38:50','2018-06-24 16:51:46',1),(4,11,21,'1529838815.jpg','vaasudevareddy','vaasudevareddy@gmail.com','8500050944','Designation','Editor in cheif','United States','us','1','biography',1,'2018-06-24 16:43:34','2018-06-24 16:55:32',1);
+insert  into `journal_editors`(`j_e_id`,`journal_id`,`journal_cat_id`,`image`,`name`,`email`,`phone`,`designation`,`position`,`country`,`university`,`priority`,`biography`,`status`,`create_at`,`update_at`,`create_by`) values (2,12,22,'1529334192.jpg','vasudevareddy reddem','cvb@gmail.com','8500050944','des','Editor in cheif','Aruba','bxcvbxcvb','1','testing',1,'2018-06-18 20:33:11','2018-06-24 16:52:09',1),(3,12,22,'1529336187.jpg','bxcvbxcvb','vcbxcvb@gmail.com','8500050944','des','Editorial board member','Australia','cvzxcv','1','fgfgdfg',1,'2018-06-18 20:38:50','2018-06-24 16:51:46',1),(4,11,21,'1529838815.jpg','vaasudevareddy','vaasudevareddy@gmail.com','8500050944','Designation','Editor in cheif','United States','us','1','biography',1,'2018-06-24 16:43:34','2018-06-25 20:57:21',1);
 
 /*Table structure for table `journals` */
 
@@ -414,11 +452,11 @@ CREATE TABLE `journals` (
   `update_at` datetime DEFAULT NULL,
   `create_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`j_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 /*Data for the table `journals` */
 
-insert  into `journals`(`j_id`,`category`,`baneer_image`,`title`,`alt_tags`,`seo_title`,`seo_url`,`seo_keywords`,`seo_description`,`key_words`,`description`,`prices`,`status`,`create_at`,`update_at`,`create_by`) values (5,20,'1529837540.jpg','Advanced Research in Biosensor and Bioelectronics(ARBB)','Advanced Research in Biosensor and Bioelectronics(ARBB)','Advanced Research in Biosensor and Bioelectronics(ARBB)','Advanced Research in Biosensor and Bioelectronics(ARBB)','Advanced Research in Biosensor and Bioelectronics(ARBB)','Advanced Research in Biosensor and Bioelectronics(ARBB)','<p>Advanced Research in Biosensor and Bioelectronics(ARBB)</p>\r\n','<p>Advanced Research in Biosensor and Bioelectronics(ARBB)</p>\r\n','Advanced Research in Biosensor and Bioelectronics(ARBB)',1,'2018-06-24 16:22:20','2018-06-24 16:22:20',1),(6,20,'1529837589.jpg','Annals of Medical & Surgical Case Reports(AMSC)','Annals of Medical & Surgical Case Reports(AMSC)','Annals of Medical & Surgical Case Reports(AMSC)','Annals of Medical & Surgical Case Reports(AMSC)','Annals of Medical & Surgical Case Reports(AMSC)','Annals of Medical & Surgical Case Reports(AMSC)','<p>Annals of Medical & Surgical Case Reports(AMSC)</p>\r\n','<p>Annals of Medical & Surgical Case Reports(AMSC)</p>\r\n','Annals of Medical & Surgical Case Reports(AMSC)',1,'2018-06-24 16:23:09','2018-06-24 16:23:09',1),(7,20,'1529837614.jpg','Annals of Pediatrics and Child Care','Annals of Pediatrics and Child Care','Annals of Pediatrics and Child Care','Annals of Pediatrics and Child Care','Annals of Pediatrics and Child Care','Annals of Pediatrics and Child Care','<p>Annals of Pediatrics and Child Care</p>\r\n','<p>Annals of Pediatrics and Child Care</p>\r\n','Annals of Pediatrics and Child Care',1,'2018-06-24 16:23:34','2018-06-24 16:23:34',1),(8,20,'1529837638.jpg','Clinical Oncology Research Journal (CORJ)','Clinical Oncology Research Journal (CORJ)','Clinical Oncology Research Journal (CORJ)','Clinical Oncology Research Journal (CORJ)','Clinical Oncology Research Journal (CORJ)','Clinical Oncology Research Journal (CORJ)','<p>Clinical Oncology Research Journal (CORJ)</p>\r\n','<p>Clinical Oncology Research Journal (CORJ)</p>\r\n','Clinical Oncology Research Journal (CORJ)',1,'2018-06-24 16:23:58','2018-06-24 16:23:58',1),(9,20,'1529837664.jpg','Current Updates in Dermatological Problems (CUDP)','Current Updates in Dermatological Problems (CUDP)','Current Updates in Dermatological Problems (CUDP)','Current Updates in Dermatological Problems (CUDP)','Current Updates in Dermatological Problems (CUDP)','Current Updates in Dermatological Problems (CUDP)','<p>Current Updates in Dermatological Problems (CUDP)</p>\r\n','<p>Current Updates in Dermatological Problems (CUDP)</p>\r\n','Current Updates in Dermatological Problems (CUDP)',1,'2018-06-24 16:24:23','2018-06-24 16:24:23',1),(10,20,'1529837689.jpg','Dentistry and Dental Ailments Journal (DDAJ)','Dentistry and Dental Ailments Journal (DDAJ)','Dentistry and Dental Ailments Journal (DDAJ)','Dentistry and Dental Ailments Journal (DDAJ)','Dentistry and Dental Ailments Journal (DDAJ)','Dentistry and Dental Ailments Journal (DDAJ)','<p>Dentistry and Dental Ailments Journal (DDAJ)</p>\r\n','<p>Dentistry and Dental Ailments Journal (DDAJ)</p>\r\n','Dentistry and Dental Ailments Journal (DDAJ)',1,'2018-06-24 16:24:49','2018-06-24 16:24:49',1),(11,21,'1529837715.jpg','Insights of Cardiology: Open Access (ICOA)','Insights of Cardiology: Open Access (ICOA)','Insights of Cardiology: Open Access (ICOA)','Insights of Cardiology: Open Access (ICOA)','Insights of Cardiology: Open Access (ICOA)','Insights of Cardiology: Open Access (ICOA)','<p>Insights of Cardiology: Open Access (ICOA)</p>\r\n','<p>Insights of Cardiology: Open Access (ICOA)</p>\r\n','Insights of Cardiology: Open Access (ICOA)',1,'2018-06-24 16:25:14','2018-06-24 16:25:14',1),(12,22,'1529837744.jpg','International Journal of Education Advancement (IJEA)','International Journal of Education Advancement (IJEA)','International Journal of Education Advancement (IJEA)','International Journal of Education Advancement (IJEA)','International Journal of Education Advancement (IJEA)','International Journal of Education Advancement (IJEA)','<p>International Journal of Education Advancement (IJEA)</p>\r\n','<p>International Journal of Education Advancement (IJEA)</p>\r\n','International Journal of Education Advancement (IJEA)',1,'2018-06-24 16:25:43','2018-06-24 16:25:43',1),(13,22,'1529837768.jpg','Journal of Biomarker Research and Studies','Journal of Biomarker Research and Studies','Journal of Biomarker Research and Studies','Journal of Biomarker Research and Studies','Journal of Biomarker Research and Studies','Journal of Biomarker Research and Studies','<p>Journal of Biomarker Research and Studies</p>\r\n','<p>Journal of Biomarker Research and Studies</p>\r\n','Journal of Biomarker Research and Studies',1,'2018-06-24 16:26:07','2018-06-24 16:26:07',1);
+insert  into `journals`(`j_id`,`category`,`baneer_image`,`title`,`alt_tags`,`seo_title`,`seo_url`,`seo_keywords`,`seo_description`,`key_words`,`description`,`prices`,`status`,`create_at`,`update_at`,`create_by`) values (5,20,'1529837540.jpg','Advanced Research in Biosensor and Bioelectronics(ARBB)','Advanced Research in Biosensor and Bioelectronics(ARBB)','Advanced Research in Biosensor and Bioelectronics(ARBB)','Advanced Research in Biosensor and Bioelectronics(ARBB)','Advanced Research in Biosensor and Bioelectronics(ARBB)','Advanced Research in Biosensor and Bioelectronics(ARBB)','<p>Advanced Research in Biosensor and Bioelectronics(ARBB)</p>\r\n','<p>Advanced Research in Biosensor and Bioelectronics(ARBB)</p>\r\n','Advanced Research in Biosensor and Bioelectronics(ARBB)',1,'2018-06-24 16:22:20','2018-06-24 16:22:20',1),(6,20,'1529837589.jpg','Annals of Medical & Surgical Case Reports(AMSC)','Annals of Medical & Surgical Case Reports(AMSC)','Annals of Medical & Surgical Case Reports(AMSC)','Annals of Medical & Surgical Case Reports(AMSC)','Annals of Medical & Surgical Case Reports(AMSC)','Annals of Medical & Surgical Case Reports(AMSC)','<p>Annals of Medical & Surgical Case Reports(AMSC)</p>\r\n','<p>Annals of Medical & Surgical Case Reports(AMSC)</p>\r\n','Annals of Medical & Surgical Case Reports(AMSC)',1,'2018-06-24 16:23:09','2018-06-24 16:23:09',1),(7,20,'1529837614.jpg','Annals of Pediatrics and Child Care','Annals of Pediatrics and Child Care','Annals of Pediatrics and Child Care','Annals of Pediatrics and Child Care','Annals of Pediatrics and Child Care','Annals of Pediatrics and Child Care','<p>Annals of Pediatrics and Child Care</p>\r\n','<p>Annals of Pediatrics and Child Care</p>\r\n','Annals of Pediatrics and Child Care',1,'2018-06-24 16:23:34','2018-06-24 16:23:34',1),(8,20,'1529837638.jpg','Clinical Oncology Research Journal (CORJ)','Clinical Oncology Research Journal (CORJ)','Clinical Oncology Research Journal (CORJ)','Clinical Oncology Research Journal (CORJ)','Clinical Oncology Research Journal (CORJ)','Clinical Oncology Research Journal (CORJ)','<p>Clinical Oncology Research Journal (CORJ)</p>\r\n','<p>Clinical Oncology Research Journal (CORJ)</p>\r\n','Clinical Oncology Research Journal (CORJ)',1,'2018-06-24 16:23:58','2018-06-24 16:23:58',1),(9,20,'1529837664.jpg','Current Updates in Dermatological Problems (CUDP)','Current Updates in Dermatological Problems (CUDP)','Current Updates in Dermatological Problems (CUDP)','Current Updates in Dermatological Problems (CUDP)','Current Updates in Dermatological Problems (CUDP)','Current Updates in Dermatological Problems (CUDP)','<p>Current Updates in Dermatological Problems (CUDP)</p>\r\n','<p>Current Updates in Dermatological Problems (CUDP)</p>\r\n','Current Updates in Dermatological Problems (CUDP)',1,'2018-06-24 16:24:23','2018-06-24 16:24:23',1),(10,20,'1529837689.jpg','Dentistry and Dental Ailments Journal (DDAJ)','Dentistry and Dental Ailments Journal (DDAJ)','Dentistry and Dental Ailments Journal (DDAJ)','Dentistry and Dental Ailments Journal (DDAJ)','Dentistry and Dental Ailments Journal (DDAJ)','Dentistry and Dental Ailments Journal (DDAJ)','<p>Dentistry and Dental Ailments Journal (DDAJ)</p>\r\n','<p>Dentistry and Dental Ailments Journal (DDAJ)</p>\r\n','Dentistry and Dental Ailments Journal (DDAJ)',1,'2018-06-24 16:24:49','2018-06-24 16:24:49',1),(11,21,'1529837715.jpg','Insights of Cardiology: Open Access (ICOA)','Insights of Cardiology: Open Access (ICOA)','Insights of Cardiology: Open Access (ICOA)','Insights of Cardiology: Open Access (ICOA)','Insights of Cardiology: Open Access (ICOA)','Insights of Cardiology: Open Access (ICOA)','<p>Insights of Cardiology: Open Access (ICOA)</p>\r\n','<p>Insights of Cardiology: Open Access (ICOA)</p>\r\n','Insights of Cardiology: Open Access (ICOA)',1,'2018-06-24 16:25:14','2018-06-24 16:25:14',1),(12,22,'1529837744.jpg','International Journal of Education Advancement (IJEA)','International Journal of Education Advancement (IJEA)','International Journal of Education Advancement (IJEA)','International Journal of Education Advancement (IJEA)','International Journal of Education Advancement (IJEA)','International Journal of Education Advancement (IJEA)','<p>International Journal of Education Advancement (IJEA)</p>\r\n','<p>International Journal of Education Advancement (IJEA)</p>\r\n','International Journal of Education Advancement (IJEA)',1,'2018-06-24 16:25:43','2018-06-24 16:25:43',1),(13,22,'1529837768.jpg','Journal of Biomarker Research and Studies','Journal of Biomarker Research and Studies','Journal of Biomarker Research and Studies','Journal of Biomarker Research and Studies','Journal of Biomarker Research and Studies','Journal of Biomarker Research and Studies','<p>Journal of Biomarker Research and Studies</p>\r\n','<p>Journal of Biomarker Research and Studies</p>\r\n','Journal of Biomarker Research and Studies',1,'2018-06-24 16:26:07','2018-06-25 20:55:08',1);
 
 /*Table structure for table `media_partners` */
 
@@ -438,7 +476,7 @@ CREATE TABLE `media_partners` (
 
 /*Data for the table `media_partners` */
 
-insert  into `media_partners`(`id`,`title`,`image`,`alt_tags`,`status`,`create_at`,`update_at`,`create_by`) values (4,'vasu','1529678018.jpg','nhfg hgh fgsfgsf',1,'2018-06-22 20:03:37','2018-06-22 20:02:57',1);
+insert  into `media_partners`(`id`,`title`,`image`,`alt_tags`,`status`,`create_at`,`update_at`,`create_by`) values (4,'vasu','1529678018.jpg','nhfg hgh fgsfgsf',1,'2018-06-26 08:14:19','2018-06-22 20:02:57',1);
 
 /*Table structure for table `menuscript_list` */
 
@@ -485,7 +523,7 @@ CREATE TABLE `news_article` (
 
 /*Data for the table `news_article` */
 
-insert  into `news_article`(`id`,`title`,`description`,`link`,`status`,`create_at`,`update_at`,`create_by`) values (6,'dfgfgsfg','vasudevareddy','link',1,'2018-06-22 20:29:37','2018-06-22 20:26:44',1),(7,'title','sdfgsdf','gsdfgsdfg',1,'2018-06-22 20:29:12','2018-06-22 20:29:12',1);
+insert  into `news_article`(`id`,`title`,`description`,`link`,`status`,`create_at`,`update_at`,`create_by`) values (6,'dfgfgsfg','vasudevareddy','link',1,'2018-06-26 08:15:22','2018-06-22 20:26:44',1),(7,'title','sdfgsdf','gsdfgsdfg',1,'2018-06-26 08:15:30','2018-06-22 20:29:12',1);
 
 /*Table structure for table `newsletters` */
 
@@ -499,11 +537,11 @@ CREATE TABLE `newsletters` (
   `create_at` datetime DEFAULT NULL,
   `update_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `newsletters` */
 
-insert  into `newsletters`(`id`,`name`,`email`,`status`,`create_at`,`update_at`) values (1,'vasudevareddy reddem','vasu@gmail.com',1,'2018-06-22 23:15:03','2018-06-22 23:15:03'),(2,'ghghd','ghdgfhf@gmail.com',0,'2018-06-22 23:15:56','2018-06-22 23:30:56');
+insert  into `newsletters`(`id`,`name`,`email`,`status`,`create_at`,`update_at`) values (1,'vasudevareddy reddem','vasu@gmail.com',1,'2018-06-22 23:15:03','2018-06-26 08:26:44'),(2,'ghghd','ghdgfhf@gmail.com',0,'2018-06-22 23:15:56','2018-06-22 23:30:56');
 
 /*Table structure for table `published_gallery` */
 
@@ -522,7 +560,7 @@ CREATE TABLE `published_gallery` (
 
 /*Data for the table `published_gallery` */
 
-insert  into `published_gallery`(`id`,`image`,`alt_tags`,`status`,`create_at`,`update_at`,`create_by`) values (2,'1529603448.jpg','testing',1,'2018-06-21 23:20:51','2018-06-21 23:20:47',1);
+insert  into `published_gallery`(`id`,`image`,`alt_tags`,`status`,`create_at`,`update_at`,`create_by`) values (2,'1529603448.jpg','testing',1,'2018-06-26 08:16:34','2018-06-21 23:20:47',1);
 
 /*Table structure for table `reviewerboard` */
 
@@ -545,7 +583,7 @@ CREATE TABLE `reviewerboard` (
 
 /*Data for the table `reviewerboard` */
 
-insert  into `reviewerboard`(`id`,`category`,`journal`,`name`,`university`,`country`,`reviewer_board`,`status`,`craete_at`,`update_at`,`create_by`) values (2,'20','6','vasudeva','vasu','Armenia','fgsdfgsdf',1,'2018-06-24 17:22:40','0000-00-00 00:00:00',1),(3,'21','11','name','us','Afghanistan','tetsing',1,'2018-06-24 17:21:54','2018-06-24 17:21:54',1);
+insert  into `reviewerboard`(`id`,`category`,`journal`,`name`,`university`,`country`,`reviewer_board`,`status`,`craete_at`,`update_at`,`create_by`) values (2,'20','6','vasudeva','vasu','Armenia','fgsdfgsdf',1,'2018-06-24 17:22:40','0000-00-00 00:00:00',1),(3,'21','11','name','us','Afghanistan','tetsing',1,'2018-06-26 08:18:20','2018-06-24 17:21:54',1);
 
 /*Table structure for table `special_issue` */
 
@@ -566,7 +604,7 @@ CREATE TABLE `special_issue` (
 
 /*Data for the table `special_issue` */
 
-insert  into `special_issue`(`id`,`journal_id`,`journal_cat_id`,`title`,`details`,`status`,`create_at`,`update_at`,`create_by`) values (2,11,21,'ghdfgh','<p>ghgfhdgjdghjf   bhh</p>\r\n                                            \r\n        ',1,'2018-06-24 15:24:50','2018-06-24 17:27:04',1),(3,13,22,'ghdg','<p>vasu <strong>devareddy </strong></p>\r\n',1,'2018-06-24 15:25:11','2018-06-24 17:28:22',1),(4,11,21,'title','<p>testing  purpose</p>\r\n',1,'2018-06-24 17:26:52','2018-06-24 17:26:52',1),(5,11,21,'gfgfg','                                            \r\n        fgsfgsdfgdfg',1,'2018-06-24 17:28:01','2018-06-24 17:28:01',1);
+insert  into `special_issue`(`id`,`journal_id`,`journal_cat_id`,`title`,`details`,`status`,`create_at`,`update_at`,`create_by`) values (2,11,21,'ghdfgh','<p>ghgfhdgjdghjf   bhh</p>\r\n                                            \r\n        ',1,'2018-06-24 15:24:50','2018-06-24 17:27:04',1),(3,13,22,'ghdg','<p>vasu <strong>devareddy </strong></p>\r\n',1,'2018-06-24 15:25:11','2018-06-24 17:28:22',1),(4,11,21,'title','<p>testing  purpose</p>\r\n',1,'2018-06-24 17:26:52','2018-06-24 17:26:52',1);
 
 /*Table structure for table `testimonial` */
 
@@ -587,7 +625,7 @@ CREATE TABLE `testimonial` (
 
 /*Data for the table `testimonial` */
 
-insert  into `testimonial`(`id`,`name`,`professional`,`image`,`description`,`status`,`create_at`,`update_at`,`create_by`) values (2,'vasudevareddy reddem','profinal','1529423720.jpg','gdfgsfgdsf',1,'2018-06-19 21:25:19','0000-00-00 00:00:00',1),(3,'vasudevareddy reddem','profinal','1529424434.jpg','gdfgsfgdsf',1,'2018-06-19 21:35:03','0000-00-00 00:00:00',1);
+insert  into `testimonial`(`id`,`name`,`professional`,`image`,`description`,`status`,`create_at`,`update_at`,`create_by`) values (2,'vasudevareddy reddem','profinal','1529423720.jpg','gdfgsfgdsf',1,'2018-06-19 21:25:19','2018-06-26 08:19:15',1),(3,'vasudevareddy reddem','profinal','1529424434.jpg','gdfgsfgdsf',1,'2018-06-19 21:35:03','0000-00-00 00:00:00',1);
 
 /*Table structure for table `updates` */
 
@@ -606,7 +644,7 @@ CREATE TABLE `updates` (
 
 /*Data for the table `updates` */
 
-insert  into `updates`(`id`,`title`,`updates`,`status`,`create_at`,`update_at`,`create_by`) values (2,'gfdgdfg','reddem','1','2018-06-19 22:28:18',NULL,1),(3,'like that psoot','vasu','1','2018-06-19 22:28:10',NULL,1);
+insert  into `updates`(`id`,`title`,`updates`,`status`,`create_at`,`update_at`,`create_by`) values (2,'gfdgdfg','reddem','1','2018-06-19 22:28:18','2018-06-26 08:20:14',1),(3,'like that psoot','vasu','1','2018-06-19 22:28:10',NULL,1);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

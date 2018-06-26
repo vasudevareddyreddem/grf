@@ -13,11 +13,14 @@ class Manuscript_guidelines extends CI_Controller {
 		$this->load->library('user_agent');
 		$this->load->helper('directory');
 		$this->load->helper('security');
+		$this->load->model('Home_model');
+		
 		
 		}
 	public function index()
 	{	
 		$data['c_url']=base_url('manuscript-guidelines');
+		$data['scroll_data']=$this->Home_model->get_scrolling_content();
 		$this->load->view('html/header',$data);
 		$this->load->view('html/manuscript-guidelines');
 		$this->load->view('html/footer');

@@ -13,12 +13,14 @@ class Open_Access extends CI_Controller {
 		$this->load->library('user_agent');
 		$this->load->helper('directory');
 		$this->load->helper('security');
+		$this->load->model('Home_model');
 		
 		}
 	public function index()
 	{	
-		$data['c_url']=base_url('open-access');
-		$this->load->view('html/header',$data);
+		$header['c_url']=base_url('open-access');
+		$header['scroll_data']=$this->Home_model->get_scrolling_content();
+		$this->load->view('html/header',$header);
 		$this->load->view('html/open-access');
 		$this->load->view('html/footer');
 		

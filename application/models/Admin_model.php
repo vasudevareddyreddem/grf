@@ -8,6 +8,12 @@ class Admin_model extends CI_Model
 		parent::__construct();
 		$this->load->database("default");
 	}
+	
+	
+	public  function get_scrolling_content(){
+		$this->db->select('*')->from('home_scroll');		
+        return $this->db->get()->row_array();
+	}
 	public function get_journals_list(){
 		$this->db->select('*')->from('admin_journel');
 		return $this->db->get()->result_array();	

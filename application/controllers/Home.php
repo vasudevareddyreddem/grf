@@ -28,6 +28,19 @@ class Home extends CI_Controller {
 		$this->load->view('html/footer');
 		
 	}
+	//html
+	public function html()
+	{	
+		$header['c_url']=base_url('');
+		$header['scroll_data']=$this->Home_model->get_scrolling_content();
+		$this->load->view('html/header',$header);
+		$data['homapage_banners']=$this->Home_model->get_home_banners_list();
+
+		//echo '<pre>';print_r($data);exit;
+		$this->load->view('html/html',$data);
+		$this->load->view('html/footer');
+		
+	}
 	public function loginpost()
 	{
 		if(!$this->session->userdata('userdetails'))

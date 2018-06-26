@@ -6,8 +6,8 @@
                       <div class="typography-section">
 						  <div class="container label-sty">
 							  <span class="head-journ">Journals</span> &nbsp;&nbsp;
-							  <span><a class="label label-warning" href="#">All</a></span> 
-							  <span><a class="label label-primary" href="#">A</a></span>
+							  <!--  <span><a class="label label-warning" href="#">All</a></span> 
+							<span><a class="label label-primary" href="#">A</a></span>
 							  <span><a class="label label-primary" href="#">B</a></span>
 							  <span><a class="label label-primary" href="#">C</a></span>
 							  <span><a class="label label-primary" href="#">D</a></span>
@@ -32,7 +32,7 @@
 							  <span><a class="label label-primary" href="#">W</a></span>
 							  <span><a class="label label-primary" href="#">X</a></span>
 							  <span><a class="label label-primary" href="#">Y</a></span>
-							  <span><a class="label label-primary" href="#">Z</a></span>
+							  <span><a class="label label-primary" href="#">Z</a></span>-->
 							                
 							  
 						  </div>

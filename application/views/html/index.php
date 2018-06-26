@@ -172,7 +172,7 @@ group with the aim of disseminating information for the betterment of mankind.</
 					<a href="" target="_blank" class="btn btn-primary " style="font-size:12px;"> <i class="fa fa-unlock-alt"></i>&nbsp; PDF</a>
 					</li>
 					<li>
-					<a href="" target="_blank" class="btn btn-warning " style="font-size:12px;"> <i class="fa fa-code" aria-hidden="true"></i> HTML</a>
+					<a href="<?php echo base_url('Home/html'); ?>" target="_blank" class="btn btn-warning " style="font-size:12px;"> <i class="fa fa-code" aria-hidden="true"></i> HTML</a>
 					</li>
 					<li>
 					<a href="" target="_blank" class="btn btn-success " style="font-size:12px;">  <i class="fa fa-calendar" aria-hidden="true"></i> &nbsp; June 07, 2018</a>

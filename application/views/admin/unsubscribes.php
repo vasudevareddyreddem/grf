@@ -25,7 +25,8 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                   <th>#</th>
+                   <th style="display:none">id </th>
+				   <th>#</th>
 				  <th>Name</th>
                   <th>Email</th>
                   <th>Created date</th>
@@ -37,7 +38,8 @@
                 <?php if(isset($unsubscribes_list) && count($unsubscribes_list)>0){ ?>
 				<?php $cnt=1;foreach($unsubscribes_list as $list){ ?>
                 <tr>
-                  <td><?php echo $cnt; ?></td>
+                  <td style="display:none"><?php echo htmlentities($list['id']); ?></td>
+				  <td><?php echo $cnt; ?></td>
                   <td><?php echo htmlentities($list['name']); ?></td>
                   <td><?php echo htmlentities($list['email']); ?></td>
 				  <td><?php echo date("d-m-Y", strtotime($list['create_at']));?></td>
@@ -46,10 +48,10 @@
 					<a href="<?php echo base_url('unsubscribes/edit/'.base64_encode($list['id'])); ?>"><i class="fa fa-edit"></i></a>
 										&nbsp;&nbsp;
 
-					<a href="<?php echo base_url('unsubscribes/status/'.base64_encode($list['id']).'/'.base64_encode($list['status'])); ?>"><i class="fa fa-check-square-o"></i></a>
+					<a href="javascript;void(0);" onclick="admindeactive('<?php echo base64_encode(htmlentities($list['id'])).'/'.base64_encode(htmlentities($list['status']));?>');adminstatus('<?php echo $list['status'];?>')" href="javascript:void(0)" data-toggle="modal" data-target="#myModal"><i class="fa fa-check-square-o"></i></a>
 										&nbsp;&nbsp;
 
-					<a href="<?php echo base_url('unsubscribes/delete/'.base64_encode($list['id'])); ?>"><i class="fa fa-trash-o"></i></a>
+					<a href="javascript;void(0);" onclick="admindedelete('<?php echo base64_encode($list['id']) ?>');admindedeletemsg();" data-toggle="modal" data-target="#myModal" title="Delete"><i class="fa fa-trash-o"></i></a>
 				  
 				  </td>
                 </tr>
@@ -61,7 +63,8 @@
 				</tbody>
 				<tfoot>
                 <tr>
-                  <th>#</th>
+                  <th style="display:none">id </th>
+				  <th>#</th>
                   <th>Name</th>
                   <th>Email</th>
                   <th>Created date</th>
@@ -82,10 +85,18 @@
     <!-- /.content -->
   </div>
  
-
 <script>
+function admindeactive(id){
+	$(".popid").attr("href","<?php echo base_url('unsubscribes/status'); ?>"+"/"+id);
+}
+
+function admindedelete(id){
+	$(".popid").attr("href","<?php echo base_url('unsubscribes/delete'); ?>"+"/"+id);
+}
   $(function () {
-    $("#example1").DataTable();
+   $("#example1").DataTable({
+		 "order": [[0, "desc" ]]
+	});
     $('#example2').DataTable({
       "paging": true,
       "lengthChange": false,
@@ -95,4 +106,5 @@
       "autoWidth": false
     });
   });
+</script>
 </script>

@@ -1,4 +1,6 @@
-       <div class="ab_class">
+      
+	   <?php if(isset($homapage_banners) && count($homapage_banners)>0){ ?>
+	    <div class="ab_class">
         <div class="">
              <div class="">
                <div id="bootstrap-touch-slider" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="5000" >
@@ -84,7 +86,9 @@
         </div>
              </div>
          </div>
-       </div>
+		</div> 
+		 <?php } ?>
+       
        <div class="clear"></div>
         <!--revolution end-->
         <div class="search-filter">

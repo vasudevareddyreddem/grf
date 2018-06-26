@@ -36,5 +36,21 @@ class Home_model extends CI_Model
 	
 	/* out souce lab chating */
 	
+	
+	/* home  page  content  purpose*/
+	
+	public  function get_scrolling_content(){
+		$this->db->select('*')->from('home_scroll');		
+        return $this->db->get()->row_array();
+	}
+	public  function get_home_banners_list(){
+		$this->db->select('*')->from('home_banners');
+		$this->db->where('status',1);		
+        return $this->db->get()->result_array();
+	}
+	/* home  page  content  purpose*/
+	
+	
+	
 
 }

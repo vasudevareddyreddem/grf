@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>GRF Publishers</title>
         <meta name="description" content="MedDocs Publishers is a dedicated powerhouse for publishing informative journals in various areas of science, medicine. Peer-reviewed Journals| Medical Journals">
-    <meta name="keywords" content="peer reviewed medical journals, medical articles online, journal of medical informatics, latest medical journal articles, journal of medical research.">
+		<meta name="keywords" content="peer reviewed medical journals, medical articles online, journal of medical informatics, latest medical journal articles, journal of medical research.">
         <!-- Bootstrap -->
         <link href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		 <link href="<?php echo base_url(); ?>assets/vendor/css/bootstrapValidator.min.css" rel="stylesheet">
@@ -74,7 +74,7 @@
                     <div class="col-md-8 col-lg-8 hidden-xs ">
                         <div class="contact-info-blocks  hidden-xs ">
                            <marquee id='scroll_news' style="padding-top:50px" >
-										<div onMouseOver="document.getElementById('scroll_news').stop();" onMouseOut="document.getElementById('scroll_news').start();"><h4 class="text-primary">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </h4></div>
+										<div onMouseOver="document.getElementById('scroll_news').stop();" onMouseOut="document.getElementById('scroll_news').start();"><h4 class="text-primary"><?php echo isset($scroll_data['scroll_content'])?$scroll_data['scroll_content']:''; ?> </h4></div>
 									</marquee>
                           
                         </div>

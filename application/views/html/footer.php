@@ -17,11 +17,11 @@
                     <div class="col-md-3 col-sm-6 margin30">
                         <h3>QUICK LINKS</h3>
                         <ul class="list-unstyled">
-                             <li><a href="#">Journals</a></li>
-                             <li><a href="#">Guidelines</a></li>
-                             <li><a href="#">Conferences</a></li>
-                             <li><a href="#">Video Article</a></li>
-                             <li><a href="#">Submit Manuscript</a></li>
+                             <li><a href="<?php echo base_url('journals'); ?>">Journals</a></li>
+                             <li><a href="<?php echo base_url('contactus'); ?>">Contact Us</a></li>
+                             <li><a href="<?php echo base_url('conference'); ?>">Conferences</a></li>
+                             <li><a href="<?php echo base_url('video-article'); ?>">Video Article</a></li>
+                             <li><a href="<?php echo base_url('menuscript'); ?>">Submit Manuscript</a></li>
                            
                         </ul>
                     </div> 

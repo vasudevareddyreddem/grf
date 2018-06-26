@@ -6,39 +6,38 @@
                <div id="bootstrap-touch-slider" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="5000" >
 
             <!-- Indicators -->
-			
-			<?php $cnt=0;foreach($homapage_banners as $lists){ ?>
-            <ol class="carousel-indicators">
-			<?php if($cnt==0){ ?>
-                <li data-target="#bootstrap-touch-slider" data-slide-to="<?php echo $cnt; ?>" class="active"></li>
-				
-			<?php }else{ ?>
-                <li data-target="#bootstrap-touch-slider" data-slide-to="<?php echo $cnt; ?>"></li>
-			<?php } ?>
-            </ol>
-			<?php $cnt++;} ?>
-
+			 <ol class="carousel-indicators">
+					<?php $cnt=1;foreach($homapage_banners as $lists){ ?>
+				   
+					<?php if($cnt==1){ ?>
+						<li data-target="#bootstrap-touch-slider" data-slide-to="<?php echo $cnt; ?>" class="active"></li>
+						
+					<?php }else{ ?>
+						<li data-target="#bootstrap-touch-slider" data-slide-to="<?php echo $cnt; ?>"></li>
+					<?php } ?>
+				   
+					<?php $cnt++;} ?>
+			</ol>
             <!-- Wrapper For Slides -->
             <div class="carousel-inner" role="listbox">
 
                 <!-- Third Slide -->
 				<?php $count=0;foreach($homapage_banners as $list){ ?>
 				
+				<?php //echo '<pre>';print_r($list);exit; ?>
+				
 				<?php if($count==0){ ?>
 						<div class="item active">
 
 							<!-- Slide Background -->
-							<img src="<?php echo base_url(); ?>assets/vendor/img/homeban1.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
+							<img src="<?php echo base_url('assets/home_banners/'.$list['image']); ?>" alt="<?php echo isset($list['org_image'])?:''; ?>"  class="slide-image"/>
 							<div class="bs-slider-overlay"></div>
 
 							<div class="container">
 								<div class="row">
 									<!-- Slide Text Layer -->
 									<div class="slide-text slide_style_center">
-										<h1 data-animation="animated zoomInRight">Bootstrap Carousel</h1>
-										<p data-animation="animated fadeInLeft">Bootstrap carousel now touch enable slide.</p>
-										<a href="http://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">select one</a>
-										<a href="http://bootstrapthemes.co/" target="_blank"  class="btn btn-primary" data-animation="animated fadeInRight">select two</a>
+										<h1 data-animation="animated zoomInRight"><?php echo isset($list['title'])?$list['title']:''; ?></h1>
 									</div>
 								</div>
 							</div>
@@ -47,15 +46,14 @@
 						<div class="item">
 
 							<!-- Slide Background -->
-							<img src="<?php echo base_url(); ?>assets/vendor/img/homeban1.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
+							<img src="<?php echo base_url('assets/home_banners/'.$list['image']); ?>" alt="<?php echo isset($list['org_image'])?:''; ?>"  class="slide-image"/>
 							<div class="bs-slider-overlay"></div>
 
 							<div class="container">
 								<div class="row">
 									<!-- Slide Text Layer -->
 									<div class="slide-text slide_style_center">
-										<h1 data-animation="animated zoomInRight">Bootstrap Carousel</h1>
-										<p data-animation="animated fadeInLeft">Bootstrap carousel now touch enable slide.</p>
+										<h1 data-animation="animated zoomInRight"><?php echo isset($list['title'])?$list['title']:''; ?></h1>
 									</div>
 								</div>
 							</div>
@@ -99,9 +97,9 @@
 information on the latest technological and scientific researches among the core
 group with the aim of disseminating information for the betterment of mankind.</p>
                        </div>  
-                       <div class="col-md-2 col-xs-12 text-center padding_0">
+                       <!--<div class="col-md-2 col-xs-12 text-center padding_0">
                            <a href="#" class="btn btn-red btn-lg btn-block ">MORE INFO</a>
-                       </div>
+                       </div>-->
                        
                     </div>
                

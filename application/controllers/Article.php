@@ -17,7 +17,7 @@ class Article extends CI_Controller {
 		
 			
 	}
-	public function index()
+	public function view()
 	{	
 		$header['c_url']=base_url('');
 		$header['scroll_data']=$this->Home_model->get_scrolling_content();

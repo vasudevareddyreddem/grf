@@ -18,17 +18,7 @@
             <div class="row">
 				<div class="col-md-12">
 					<br>
-					<h3 class=""> Article   
-						<span class="text-success"> Mini Review </span> 
-					</h3>
-					<div class="text-primary h4">Lorem Ipsum is simply dummy text of the printing 
-					</div>
-					<div >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-					</div>
-					<div >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-					</div>
-					<div >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-					</div>
+					<?php echo isset($article_details['research_article'])?$article_details['research_article']:'';?>
 					
 				
 				</div>
@@ -51,22 +41,11 @@
 							<div class="tab-pane fade in active" id="tab1primary">
 							 <div class=" Welcome_txt fadeInLeft wow animated  " data-wow-duration="1000ms" data-wow-delay="1000ms">
                   
-					<br>
-					<h3 class="">1 .  Abstract </h3>
-					
-					<p >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-					</p>
-					<br>	
-					<h3 class="">2 .Keywords </h3>
-					
-					<p >Lorem Ipsum  ,Lorem Ipsum ,Lorem Ipsum ,Lorem Ipsum ,Lorem Ipsum ,Lorem Ipsum ,
-					</p>
-					<br>
+					<?php echo isset($article_details['abstract'])?$article_details['abstract']:'';?>
 					
 					
                    
-                </div>
+						</div>
 							
 							</div>
 							<div class="tab-pane fade" id="tab2primary">
@@ -74,52 +53,7 @@
 								<div class="row">
            
 										<br>
-					<h3 class="text-success">1 . Introduction </h3>
-					
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-					</p>
-					<br>	
-					<h3 class="">1.1.  Case Presentation </h3>
-					
-					<p >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-					</p>
-					<br>
-					<h3 class="">2.Discussion</h3>
-					
-					<p >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-					</p>
-					<p >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-					</p>
-					<p >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-					</p>
-					<p >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-					</p>
-					<br>
-					<h4>Non-pharmacological therapy conveyed to her were on the following:</h4>
-					<div>
-						<ul>
-							<li>Lorem Ipsum is simply dummy</li>
-							<li>Lorem Ipsum is simply dummy</li>
-							<li>Lorem Ipsum is simply dummy</li>
-							<li>Lorem Ipsum is simply dummy</li>
-							<li>Lorem Ipsum is simply dummy</li>
-							<li>Lorem Ipsum is simply dummy</li>
-							<li>Lorem Ipsum is simply dummy</li>
-							<li>Lorem Ipsum is simply dummy</li>
-							<li>Lorem Ipsum is simply dummy</li>
-							<li>Lorem Ipsum is simply dummy</li>
-							<li>Lorem Ipsum is simply dummy</li>
-						</ul>
-					</div>
-					<br>
-					<h3 class="">2.Conclusion</h3>
-					
-					<p >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-					</p>
-
-								</div>
+										<?php echo isset($article_details['introduction'])?$article_details['introduction']:'';?></div>
 							</div>
 							</div>
 							<div class="tab-pane fade" id="tab3primary">
@@ -131,17 +65,7 @@
 					
 					<div class="row">
 						
-						<div class="col-md-4">
-							<img  class="img-responsive" src="https://www.researchgate.net/profile/Masaki_Fujioka/publication/232743479/figure/fig3/AS:300504916742188@1448657364024/A-The-photograph-shows-a-necrotic-wound-of-toes-1-3-in-a-patient-receiving-HD-because_Q320.jpg" alt="images" >
-						</div>
-						<div class="col-md-4">
-							<img  class="img-responsive" src="https://www.researchgate.net/profile/Masaki_Fujioka/publication/232743479/figure/fig3/AS:300504916742188@1448657364024/A-The-photograph-shows-a-necrotic-wound-of-toes-1-3-in-a-patient-receiving-HD-because_Q320.jpg" alt="images" >
-						</div>
-						<div class="col-md-4">
-							<img  class="img-responsive" src="https://www.researchgate.net/profile/Masaki_Fujioka/publication/232743479/figure/fig3/AS:300504916742188@1448657364024/A-The-photograph-shows-a-necrotic-wound-of-toes-1-3-in-a-patient-receiving-HD-because_Q320.jpg" alt="images" >
-						</div>
-						<div class="clearfix"> &nbsp;</div>
-						<p class="text-center">text for images </p>
+						<?php echo htmlentities($article_details['figures']);?>
 					</div>
 				</div>
 				
@@ -149,71 +73,17 @@
 							</div>
 							<div class="tab-pane fade" id="tab4primary">
 							<br>
-										<h3 class="">Tables</h3>
-							
-							
-								<table class="table table-bordered">
-									<tr class="bg_color text-white">
-										<th class="text-center">Diagnostic parameters</th>
-										<th class="text-center">Patient value</th>
-										<th class="text-center">Normal values</th>
-										<th class="text-center">Inference</th>
-									</tr>
-									<tr>
-										<td>White Blood Cells</td>
-										<td>2230 mg/dl</td>
-										<td>4000-11000 mg/dl</td>
-										<td>Inference</td>
-									</tr>
-									<tr>
-										<td>White Blood Cells</td>
-										<td>2230 mg/dl</td>
-										<td>4000-11000 mg/dl</td>
-										<td>Inference</td>
-									</tr>
-									<tr>
-										<td>White Blood Cells</td>
-										<td>2230 mg/dl</td>
-										<td>4000-11000 mg/dl</td>
-										<td>Inference</td>
-									</tr>
-									<tr>
-										<td>White Blood Cells</td>
-										<td>2230 mg/dl</td>
-										<td>4000-11000 mg/dl</td>
-										<td>Inference</td>
-									</tr>
-									<tr>
-										<td>White Blood Cells</td>
-										<td>2230 mg/dl</td>
-										<td>4000-11000 mg/dl</td>
-										<td>Inference</td>
-									</tr>
-								</table>
+									<?php echo isset($article_details['tables'])?$article_details['tables']:'';?>
 							
 							</div>
 							<div class="tab-pane fade" id="tab5primary">
 								<div class="row">
 								<br>
-										<h3 class="">References</h3>
-										<ol>
-										<a href="" ><li class="my-20"> Lacci MK, Dardik A (2010) Platelet-rich plasma: Support for its use in wound healing. Yale J Biol Med 83: 1-9.</li></a>
-										<a href="" ><li class="my-20"> Lacci MK, Dardik A (2010) Platelet-rich plasma: Support for its use in wound healing. Yale J Biol Med 83: 1-9.</li></a>
-										<a href="" ><li class="my-20"> Lacci MK, Dardik A (2010) Platelet-rich plasma: Support for its use in wound healing. Yale J Biol Med 83: 1-9.</li></a>
-										<a href="" ><li class="my-20"> Lacci MK, Dardik A (2010) Platelet-rich plasma: Support for its use in wound healing. Yale J Biol Med 83: 1-9.</li></a>
-										<a href="" ><li class="my-20"> Lacci MK, Dardik A (2010) Platelet-rich plasma: Support for its use in wound healing. Yale J Biol Med 83: 1-9.</li></a>
-										<a href="" ><li class="my-20"> Lacci MK, Dardik A (2010) Platelet-rich plasma: Support for its use in wound healing. Yale J Biol Med 83: 1-9.</li></a>
-									</ol>
+									<?php echo isset($article_details['references'])?$article_details['references']:'';?>
 								</div>
 							</div>
 							<div class="tab-pane fade" id="tab6primary">
-								<br>
-								<h3 class="">Citation</h3>
-					
-					<p >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-					</p><br>
-							
-							</div>
+								<br><?php echo isset($article_details['suggested_citation'])?$article_details['suggested_citation']:'';?></div>
 							
 						</div>
 					</div>

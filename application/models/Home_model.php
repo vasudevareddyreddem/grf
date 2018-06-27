@@ -67,6 +67,17 @@ class Home_model extends CI_Model
 		$this->db->where('status',1);		
         return $this->db->get()->row_array();
 	}
+	
+	public  function get_latest_updates(){
+		$this->db->select('*')->from('updates');
+		$this->db->where('status',1);		
+        return $this->db->get()->result_array();
+	}
+	public  function get_browse_by_subjects(){
+		$this->db->select('journals.j_id,journals.subject,journals.seo_url')->from('journals');
+		$this->db->where('status',1);		
+        return $this->db->get()->result_array();
+	}
 	/*article*/
 	/* home  page  content  purpose*/
 	

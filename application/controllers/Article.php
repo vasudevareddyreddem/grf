@@ -28,7 +28,7 @@ class Article extends CI_Controller {
 		}
 		$data['article_details']=$this->Home_model->get_article_htnl_data($a_id);
 		//echo $this->db->last_query();
-		echo '<pre>';print_r($data);exit;
+		//echo '<pre>';print_r($data);exit;
 		
 		$this->load->view('html/html',$data);
 		$this->load->view('html/footer');

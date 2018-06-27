@@ -23,6 +23,9 @@ class Home extends CI_Controller {
 		$this->load->view('html/header',$header);
 		$data['homapage_banners']=$this->Home_model->get_home_banners_list();
 		$data['article_list']=$this->Home_model->get_article_list();
+		$data['lastest_updates_list']=$this->Home_model->get_latest_updates();
+		$data['browse_by_subjects']=$this->Home_model->get_browse_by_subjects();
+
 		//echo '<pre>';print_r($data);exit;
 		$this->load->view('html/index',$data);
 		$this->load->view('html/footer');

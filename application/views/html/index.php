@@ -204,66 +204,24 @@ group with the aim of disseminating information for the betterment of mankind.</
          <h3 class="side-title">Latest Updates Scrolling</h3>
          <div class="cp-newsletter-holder" id="pubmed">
             <marquee class="pubmed-articles" align="top" behavior="scroll" onmouseout="this.start();" onmouseover="this.stop();" direction="up" scrollamount="2" style="padding: 10px 0px 10px 0px;height: 200px;background: #f5f5f5;overflow:hidden;">
-               <ul>
-                  <li style="padding:0px 0px 0px 10px">
-                     <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
-                     <a href="" target="_blank" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </a><br>
-                  </li>
-               </ul>
-               <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
-                  <span style="color: #05658F; text-decoration: none; font-weight: bold;">PMID: <a href="#" target="_blank"> 29645007</a></span>
-               </p>
-               <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p>
-			   <ul>
-                  <li style="padding:0px 0px 0px 10px">
-                     <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
-                     <a href="" target="_blank" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </a><br>
-                  </li>
-               </ul>
-               <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
-                  <span style="color: #05658F; text-decoration: none; font-weight: bold;">PMID: <a href="#" target="_blank"> 29645007</a></span>
-               </p>
-               <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p><ul>
-                  <li style="padding:0px 0px 0px 10px">
-                     <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
-                     <a href="" target="_blank" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </a><br>
-                  </li>
-               </ul>
-               <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
-                  <span style="color: #05658F; text-decoration: none; font-weight: bold;">PMID: <a href="#" target="_blank"> 29645007</a></span>
-               </p>
-               <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p>
-			   <ul>
-                  <li style="padding:0px 0px 0px 10px">
-                     <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
-                     <a href="" target="_blank" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </a><br>
-                  </li>
-               </ul>
-               <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
-                  <span style="color: #05658F; text-decoration: none; font-weight: bold;">PMID: <a href="#" target="_blank"> 29645007</a></span>
-               </p>
-               <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p>
-			   <ul>
-                  <li style="padding:0px 0px 0px 10px">
-                     <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
-                     <a href="" target="_blank" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </a><br>
-                  </li>
-               </ul>
-               <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
-                  <span style="color: #05658F; text-decoration: none; font-weight: bold;">PMID: <a href="#" target="_blank"> 29645007</a></span>
-               </p>
-               <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p>
-			   <ul>
-                  <li style="padding:0px 0px 0px 10px">
-                     <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
-                     <a href="" target="_blank" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </a><br>
-                  </li>
-               </ul>
-               <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
-                  <span style="color: #05658F; text-decoration: none; font-weight: bold;">PMID: <a href="#" target="_blank"> 29645007</a></span>
-               </p>
-               <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p>
-               
+              <?php if(isset($lastest_updates_list)&& count($lastest_updates_list)>0){ ?>
+				
+					<?php foreach($lastest_updates_list as $list){ ?>
+						
+						<ul>
+						  <li style="padding:0px 0px 0px 10px">
+							 <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
+							 <a href="javascript:void(0);" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal"><?php echo isset($list['updates'])?$list['updates']:''; ?></a><br>
+						  </li>
+					   </ul>
+					   <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
+						  <span style="color: #05658F; text-decoration: none; font-weight: bold;"><a href="javascript:void(0);" > <?php echo isset($list['title'])?$list['title']:''; ?></a></span>
+					  
+						 <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p>					  
+					  
+					  
+					<?php } ?>
+				<?php } ?>
             </marquee>
             
          </div>
@@ -272,7 +230,7 @@ group with the aim of disseminating information for the betterment of mankind.</
       <div class="widget sidebar-newsletter">
          <h3 class="side-title">Submit Manuscript</h3>
          <div class="cp-newsletter-holder">
-           <a href="#"> <img src="https://gavinpublishers.com/assets/img/Medical-Journals.jpg" alt="submit Manuscript"></a>
+           <a href="<?php echo base_url('menuscript');?>"> <img src="<?php echo base_url(); ?>assets/vendor/img/Medical-Journals.jpg" alt="submit Manuscript"></a>
          </div>
       </div>
       <!-- Widget Start -->
@@ -301,7 +259,7 @@ group with the aim of disseminating information for the betterment of mankind.</
          
          <div class="cp-sidebar-content">
             <h3 class="side-title">Video Articles</h3>
-            <a href="video-articles.php"><img alt="Video Articles" src="<?php echo base_url(); ?>assets/vendor/img/Video-Articles.gif" width="100%" border="5"></a>
+            <a href="<?php echo base_url('video-article');?>"><img alt="Video Articles" src="<?php echo base_url(); ?>assets/vendor/img/Video-Articles.gif" width="100%" border="5"></a>
            
          </div>
         
@@ -330,99 +288,36 @@ group with the aim of disseminating information for the betterment of mankind.</
       <div class="widget tags-widget">
          <h3 class="side-title">Browse by Subject</h3>
          <div class="cp-sidebar-content">
-            <a href="ajpn/" target="_blank">Pediatrics</a>
-            <a href="ajpn/" target="_blank">Neonatology </a>
-            <a href="argh/" target="_blank">Gastroenterology</a>
-            <a href="argh/" target="_blank">Hepatology</a>
-            <a href="aibm/" target="_blank">Biotechnology</a>
-            <a href="aibm/" target="_blank">Microbiology</a>
-            <a href="adoh/" target="_blank">Dentistry</a>
-            <a href="adoh/" target="_blank">Oral Health</a>
-            <a href="aaij/" target="_blank">Aeronautics</a>
-            <a href="aaij/" target="_blank">Aerospace </a>
-            <a href="artoaj/" target="_blank">Agricultural</a>                                          
-            <a href="apbij/" target="_blank">Anatomy Physiology</a>
-            <a href="apbij/" target="_blank">Biochemistry</a>
-            <a href="ctoij/" target="_blank">Cancer Therapy</a>
-            <a href="ctoij/" target="_blank">Oncology </a>
-            <a href="crdoj/" target="_blank">Diabetes</a>
-            <a href="crdoj/" target="_blank">Obesity</a>
-            <a href="gjn/" target="_blank">Nanomedicine </a>
-            <a href="gjo/" target="_blank">Otolaryngology</a>
-            <a href="gjpps/" target="_blank">Pharmacy</a>
-            <a href="gjpps/" target="_blank">Pharmaceutical</a>
-            <a href="ijcsmb/" target="_blank">Cell Science</a>
-            <a href="ijcsmb/" target="_blank">Molecular Biology</a>
-            <a href="ijesnr/" target="_blank">Environmental</a>
-            <a href="ijesnr/" target="_blank">Natural Resources</a>
-            <a href="ijoprs/" target="_blank">Pulmonary </a>
+		 <?php //echo '<pre>';print_r($browse_by_subjects);exit; ?>
+		  <?php if(isset($browse_by_subjects)&& count($browse_by_subjects)>0){ ?>
+				
+					<?php foreach($browse_by_subjects as $list){ ?>
+						
+							<a href="<?php echo base_url('journals/view/'.base64_encode($list['j_id'])); ?>" ><?php echo isset($list['subject'])?$list['subject']:''; ?></a>
+					<?php } ?>
+					<?php } ?>
            
          </div>
       </div>
       <div class="widget sidebar-newsletter">
-         <h3 class="side-title">Upcomong Conference Scrolling</h3>
+         <h3 class="side-title">Upcomong Article Scrolling</h3>
          <div class="cp-newsletter-holder" id="pubmed">
             <marquee class="pubmed-articles" align="top" behavior="scroll" onmouseout="this.start();" onmouseover="this.stop();" direction="up" scrollamount="2" style="padding: 10px 0px 10px 0px;height: 200px;background: #f5f5f5;overflow:hidden;">
-               <ul>
-                  <li style="padding:0px 0px 0px 10px">
-                     <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
-                     <a href="" target="_blank" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </a><br>
-                  </li>
-               </ul>
-               <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
-                  <span style="color: #05658F; text-decoration: none; font-weight: bold;">PMID: <a href="#" target="_blank"> 29645007</a></span>
                </p>
-               <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p>
-			   <ul>
-                  <li style="padding:0px 0px 0px 10px">
-                     <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
-                     <a href="" target="_blank" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </a><br>
-                  </li>
-               </ul>
-               <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
-                  <span style="color: #05658F; text-decoration: none; font-weight: bold;">PMID: <a href="#" target="_blank"> 29645007</a></span>
-               </p>
-               <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p><ul>
-                  <li style="padding:0px 0px 0px 10px">
-                     <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
-                     <a href="" target="_blank" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </a><br>
-                  </li>
-               </ul>
-               <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
-                  <span style="color: #05658F; text-decoration: none; font-weight: bold;">PMID: <a href="#" target="_blank"> 29645007</a></span>
-               </p>
-               <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p>
-			   <ul>
-                  <li style="padding:0px 0px 0px 10px">
-                     <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
-                     <a href="" target="_blank" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </a><br>
-                  </li>
-               </ul>
-               <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
-                  <span style="color: #05658F; text-decoration: none; font-weight: bold;">PMID: <a href="#" target="_blank"> 29645007</a></span>
-               </p>
-               <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p>
-			   <ul>
-                  <li style="padding:0px 0px 0px 10px">
-                     <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
-                     <a href="" target="_blank" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </a><br>
-                  </li>
-               </ul>
-               <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
-                  <span style="color: #05658F; text-decoration: none; font-weight: bold;">PMID: <a href="#" target="_blank"> 29645007</a></span>
-               </p>
-               <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p>
-			   <ul>
-                  <li style="padding:0px 0px 0px 10px">
-                     <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
-                     <a href="" target="_blank" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </a><br>
-                  </li>
-               </ul>
-               <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
-                  <span style="color: #05658F; text-decoration: none; font-weight: bold;">PMID: <a href="#" target="_blank"> 29645007</a></span>
-               </p>
-               <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p>
-               
+					   <?php if(isset($article_list)&& count($article_list)>0){ ?>
+				
+					<?php foreach($article_list as $list){ ?>
+					   <ul>
+						  <li style="padding:0px 0px 0px 10px">
+							 <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
+							 <a href="<?php echo base_url('article/view/'.base64_encode($list['a_id']).'/'.$list['url']); ?>" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal"><?php echo isset($list['title'])?$list['title']:''; ?></a><br>
+						  </li>
+					   </ul>
+					   <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
+						  <span style="color: #05658F; text-decoration: none; font-weight: bold;">Author Name: <a href="<?php echo base_url('article/view/'.base64_encode($list['a_id']).'/'.$list['url']); ?>" > <?php echo isset($list['author_name'])?$list['author_name']:''; ?></a></span>
+					   <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p>
+					<?php } ?>
+				<?php } ?>
             </marquee>
             
          </div>

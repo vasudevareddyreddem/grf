@@ -122,6 +122,18 @@ class Home_model extends CI_Model
 		$this->db->where('status',1);		
         return $this->db->get()->result_array();
 	}
+	public  function get_journal_wise_boardmembers_list($j_id){
+		$this->db->select('j_e_id,image,name,email,phone,designation,position,university,biography')->from('journal_editors');
+		$this->db->where('journal_id',$j_id);		
+		$this->db->where('status',1);		
+        return $this->db->get()->result_array();
+	}
+	public  function get_latest_boardmembers_list(){
+		$this->db->select('j_e_id,image,name,email,phone,designation,position,university,biography')->from('journal_editors');
+		$this->db->where('status',1);		
+		$this->db->order_by('j_e_id','desc');		
+        return $this->db->get()->result_array();
+	}
 	
 	/* journals page*/
 	

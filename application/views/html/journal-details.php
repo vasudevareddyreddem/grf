@@ -111,149 +111,46 @@
 							<div class="tab-pane fade" id="tab2primary">
 								<div class="row">
            
+			
+            
 			<!-- Team member -->
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                    <div class="mainflip">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png" alt="card image"></p>
-                                    <h4 class="card-title">Sunlimetech</h4>
-                                    <p class="card-text">This is basic card with image on top, title, description and button.</p>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card">
-                                <div class="card-body text-center mt-4">
-                                    <h4 class="card-title">Sunlimetech</h4>
-                                    <p class="card-text">This is basic card with image on top, title, description and button.</p> 
-									<div class="text-left"><strong>Lorem Ipsum </strong> is simply dummy text of the printing and typesetting industry. </div><div class="text-left"><strong>Lorem Ipsum </strong> is simply dummy text of the printing and typesetting industry. </div>
-									
+			<?php if(isset($board_members) && count($board_members)>0){ ?>
+					<?php foreach($board_members as $list){ ?>
+					<div class="col-xs-12 col-sm-6 col-md-4">
+						<div class="image-flip" style="width:100%;" ontouchstart="this.classList.toggle('hover');">
+							<div class="mainflip">
+								<div class="frontside">
+									<div class="card">
+										<div class="card-body text-center">
+											<p><img class=" img-fluid" src="<?php echo base_url('assets/editors_pics/'.$list['image']); ?>" alt="<?php echo isset($list['name'])?$list['name']:''; ?>"></p>
+											<h4 class="card-title"><?php echo isset($list['name'])?$list['name']:''; ?></h4>
+											<p class="card-text"><?php echo substr($list['biography'],0,160); ?>...</p>
+											
+										</div>
+									</div>
+								</div>
+								<div class="backside" style="width:100%;">
+									<div class="card">
+										<div class="card-body text-center mt-4">
+											<h4 class="card-title text-left">Name:</h4>
+											<div class="text-left"><?php echo isset($list['name'])?$list['name']:''; ?> </div>
+											<h4 class="card-title text-left">Email:</h4>
+											<div class="text-left"><?php echo isset($list['email'])?$list['email']:''; ?> </div>
+											<h4 class="card-title text-left">Phone Number:</h4>
+											<div class="text-left"><?php echo isset($list['phone'])?$list['phone']:''; ?> </div>
+											<h4 class="card-title text-left">Designation:</h4>
+											<div class="text-left"><?php echo isset($list['designation'])?$list['designation']:''; ?> </div>
+											<a href="<?php echo base_url('journals/editors-profile/'.base64_encode($list['j_e_id'])); ?>" class="btn btn-default btn-sm text-center text-white">View More</a>
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ./Team member -->
-			<!-- Team member -->
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                    <div class="mainflip">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png" alt="card image"></p>
-                                    <h4 class="card-title">Sunlimetech</h4>
-                                    <p class="card-text">This is basic card with image on top, title, description and button.</p>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card">
-                                <div class="card-body text-center mt-4">
-                                    <h4 class="card-title">Sunlimetech</h4>
-                                    <p class="card-text">This is basic card with image on top, title, description and button.</p> 
-									<div class="text-left"><strong>Lorem Ipsum </strong> is simply dummy text of the printing and typesetting industry. </div><div class="text-left"><strong>Lorem Ipsum </strong> is simply dummy text of the printing and typesetting industry. </div>
-									
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ./Team member -->
-			<!-- Team member -->
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                    <div class="mainflip">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png" alt="card image"></p>
-                                    <h4 class="card-title">Sunlimetech</h4>
-                                    <p class="card-text">This is basic card with image on top, title, description and button.</p>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card">
-                                <div class="card-body text-center mt-4">
-                                    <h4 class="card-title">Sunlimetech</h4>
-                                    <p class="card-text">This is basic card with image on top, title, description and button.</p> 
-									<div class="text-left"><strong>Lorem Ipsum </strong> is simply dummy text of the printing and typesetting industry. </div><div class="text-left"><strong>Lorem Ipsum </strong> is simply dummy text of the printing and typesetting industry. </div>
-									
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ./Team member --><!-- Team member -->
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                    <div class="mainflip">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png" alt="card image"></p>
-                                    <h4 class="card-title">Sunlimetech</h4>
-                                    <p class="card-text">This is basic card with image on top, title, description and button.</p>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card">
-                                <div class="card-body text-center mt-4">
-                                    <h4 class="card-title">Sunlimetech</h4>
-                                    <p class="card-text">This is basic card with image on top, title, description and button.</p> 
-									<div class="text-left"><strong>Lorem Ipsum </strong> is simply dummy text of the printing and typesetting industry. </div><div class="text-left"><strong>Lorem Ipsum </strong> is simply dummy text of the printing and typesetting industry. </div>
-									
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- ./Team member -->
-			<!-- Team member -->
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                    <div class="mainflip">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png" alt="card image"></p>
-                                    <h4 class="card-title">Sunlimetech</h4>
-                                    <p class="card-text">This is basic card with image on top, title, description and button.</p>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card">
-                                <div class="card-body text-center mt-4">
-                                    <h4 class="card-title">Sunlimetech</h4>
-                                    <p class="card-text">This is basic card with image on top, title, description and button.</p> 
-									<div class="text-left"><strong>Lorem Ipsum </strong> is simply dummy text of the printing and typesetting industry. </div><div class="text-left"><strong>Lorem Ipsum </strong> is simply dummy text of the printing and typesetting industry. </div>
-									
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+			
+				<?php } ?>
+			<?php } ?>
             <!-- ./Team member -->
            
           
@@ -514,65 +411,21 @@
          <h3 class="side-title">Latest Board Members</h3>
          <div class="cp-newsletter-holder" id="pubmed">
             <marquee class="pubmed-articles" align="top" behavior="scroll" onmouseout="this.start();" onmouseover="this.stop();" direction="up" scrollamount="2" style="padding: 10px 0px 10px 0px;height: 200px;background: #f5f5f5;overflow:hidden;">
-               <ul>
-                  <li style="padding:0px 0px 0px 10px">
-                     <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
-                     <a href="" target="_blank" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </a><br>
-                  </li>
-               </ul>
-               <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
-                  <span style="color: #05658F; text-decoration: none; font-weight: bold;">PMID: <a href="#" target="_blank"> 29645007</a></span>
-               </p>
-               <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p>
-			   <ul>
-                  <li style="padding:0px 0px 0px 10px">
-                     <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
-                     <a href="" target="_blank" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </a><br>
-                  </li>
-               </ul>
-               <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
-                  <span style="color: #05658F; text-decoration: none; font-weight: bold;">PMID: <a href="#" target="_blank"> 29645007</a></span>
-               </p>
-               <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p><ul>
-                  <li style="padding:0px 0px 0px 10px">
-                     <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
-                     <a href="" target="_blank" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </a><br>
-                  </li>
-               </ul>
-               <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
-                  <span style="color: #05658F; text-decoration: none; font-weight: bold;">PMID: <a href="#" target="_blank"> 29645007</a></span>
-               </p>
-               <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p>
-			   <ul>
-                  <li style="padding:0px 0px 0px 10px">
-                     <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
-                     <a href="" target="_blank" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </a><br>
-                  </li>
-               </ul>
-               <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
-                  <span style="color: #05658F; text-decoration: none; font-weight: bold;">PMID: <a href="#" target="_blank"> 29645007</a></span>
-               </p>
-               <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p>
-			   <ul>
-                  <li style="padding:0px 0px 0px 10px">
-                     <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
-                     <a href="" target="_blank" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </a><br>
-                  </li>
-               </ul>
-               <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
-                  <span style="color: #05658F; text-decoration: none; font-weight: bold;">PMID: <a href="#" target="_blank"> 29645007</a></span>
-               </p>
-               <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p>
-			   <ul>
-                  <li style="padding:0px 0px 0px 10px">
-                     <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
-                     <a href="" target="_blank" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </a><br>
-                  </li>
-               </ul>
-               <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
-                  <span style="color: #05658F; text-decoration: none; font-weight: bold;">PMID: <a href="#" target="_blank"> 29645007</a></span>
-               </p>
-               <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p>
+               
+			   <?php if(isset($latest_boardmembers) && count($latest_boardmembers)>0){ ?>
+				<?php foreach($latest_boardmembers as $list){ ?>
+					   <ul>
+						  <li style="padding:0px 0px 0px 10px">
+							 <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
+							 <a href="" target="_blank" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal"><?php echo isset($list['phone'])?$list['phone']:''; ?> </a><br>
+						  </li>
+					   </ul>
+					   <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
+						  <span style="color: #05658F; text-decoration: none; font-weight: bold;">Name: <a href="#" target="_blank"> <?php echo isset($list['name'])?$list['name']:''; ?></a></span>
+					   </p>
+					   <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p>
+				   <?php } ?>
+			   <?php } ?>
                
             </marquee>
             

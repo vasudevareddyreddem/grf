@@ -36,6 +36,9 @@ class Journals extends CI_Controller {
 		$data['journals_details']=$this->Home_model->get_journals_details($j_id);
 		$data['article_list']=$this->Home_model->get_journal_wise_article_list($j_id);
 		$data['homapage_banners']=$this->Home_model->get_journal_wise_banners_list($j_id);
+		$data['board_members']=$this->Home_model->get_journal_wise_boardmembers_list($j_id);
+		$data['latest_boardmembers']=$this->Home_model->get_latest_boardmembers_list($j_id);
+		
 		//echo '<pre>';print_r($data);exit;
 		$this->load->view('html/journal-details',$data);
 		$this->load->view('html/footer');

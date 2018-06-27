@@ -116,6 +116,12 @@ class Home_model extends CI_Model
 		$this->db->order_by('journal_article_in_press.a_id',"DESC");
         return $this->db->get()->result_array();
 	}
+	public  function get_journal_wise_banners_list($j_id){
+		$this->db->select('baneer_image,title,alt_tags')->from('journal_banners');
+		$this->db->where('journal_id',$j_id);		
+		$this->db->where('status',1);		
+        return $this->db->get()->result_array();
+	}
 	
 	/* journals page*/
 	

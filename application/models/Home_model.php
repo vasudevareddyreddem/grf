@@ -81,6 +81,20 @@ class Home_model extends CI_Model
 	/*article*/
 	/* home  page  content  purpose*/
 	
+	/*peer-review-process*/
+	
+	public  function get_flyers_list(){
+		$this->db->select('f_id,title,title_color,fly_image,fly_org_image')->from('grf_flyers');
+		$this->db->where('status',1);		
+        return $this->db->get()->result_array();
+	}
+	public  function get_peer_review_process_journals_list(){
+		$this->db->select('j_id,title,seo_url')->from('journals');
+		$this->db->where('status',1);		
+        return $this->db->get()->result_array();
+	}
+	/*peer-review-process*/
+	
 	
 	
 

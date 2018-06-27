@@ -18,10 +18,13 @@ class Peer_review_process extends CI_Controller {
 		}
 	public function index()
 	{	
-		$data['c_url']=base_url('peer-review-process');
-		$data['scroll_data']=$this->Home_model->get_scrolling_content();
-		$this->load->view('html/header',$data);
-		$this->load->view('html/peer-review-process');
+		$header['c_url']=base_url('peer-review-process');
+		$header['scroll_data']=$this->Home_model->get_scrolling_content();
+		$this->load->view('html/header',$header);
+		$data['flyers_list']=$this->Home_model->get_flyers_list();
+		$data['journals_list']=$this->Home_model->get_peer_review_process_journals_list();
+		$this->load->view('html/peer-review-process',$data);
+		//echo '<pre>';print_r($data);exit;
 		$this->load->view('html/footer');
 		
 	}

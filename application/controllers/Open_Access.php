@@ -21,7 +21,10 @@ class Open_Access extends CI_Controller {
 		$header['c_url']=base_url('open-access');
 		$header['scroll_data']=$this->Home_model->get_scrolling_content();
 		$this->load->view('html/header',$header);
-		$this->load->view('html/open-access');
+		$data['article_list']=$this->Home_model->get_article_list();
+		$data['lastest_updates_list']=$this->Home_model->get_latest_updates();
+		$data['browse_by_subjects']=$this->Home_model->get_browse_by_subjects();
+		$this->load->view('html/open-access',$data);
 		$this->load->view('html/footer');
 		
 	}

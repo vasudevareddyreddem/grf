@@ -38,6 +38,9 @@ class Journals extends CI_Controller {
 		$data['homapage_banners']=$this->Home_model->get_journal_wise_banners_list($j_id);
 		$data['board_members']=$this->Home_model->get_journal_wise_boardmembers_list($j_id);
 		$data['latest_boardmembers']=$this->Home_model->get_latest_boardmembers_list($j_id);
+		$data['special_issue']=$this->Home_model->get_latest_special_list($j_id);
+		$data['article_process_fee']=$this->Home_model->get_article_process_fee($j_id);
+		$data['archive_list']=$this->Home_model->get_archive_list($j_id);
 		
 		//echo '<pre>';print_r($data);exit;
 		$this->load->view('html/journal-details',$data);

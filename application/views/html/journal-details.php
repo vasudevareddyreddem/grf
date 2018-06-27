@@ -374,34 +374,28 @@
 							</div>
 							<div class="tab-pane fade" id="tab5primary">
 								<div class="row">
-									<div class="col-md-4">
-										<img style ="" class= "img-responsive" src="<?php echo base_url(); ?>assets/vendor/img/archive_img.jpg" alt="archive 2018">
-										<div class="text-archive-img">
-											<h3 class="">About    
-						<span class="text-success"> 2016</span> 
-					</h3>
-										</div>
-									</div>
-									<div class="col-md-4">
-										<img style ="" class= "img-responsive" src="<?php echo base_url(); ?>assets/vendor/img/archive_img.jpg" alt="archive 2018">
-										<div class="text-archive-img">
-											<h3 class="">About    
-						<span class="text-success"> 2017</span> 
-					</h3>
-										</div>
-									</div>
-									<div class="col-md-4">
-										<img style ="" class= "img-responsive" src="<?php echo base_url(); ?>assets/vendor/img/archive_img.jpg" alt="archive 2018">
-										<div class="text-archive-img">
-											<h3 class="">About    
-						<span class="text-success"> 2018</span> 
-					</h3>
-										</div>
-									</div>
+								<?php if(isset($archive_list) && count($archive_list)>0){ ?>
+										<?php foreach($archive_list as $list){ ?>
+											<a href="<?php echo base_url('journals/archive/'.base64_encode($list['id'])); ?>">
+											<div class="col-md-4">
+												<img style ="" class= "img-responsive" src="<?php echo base_url('assets/issues/'.$list['image']); ?>" alt="<?php echo isset($list['year'])?$list['year']:''; ?>">
+												<div class="text-archive-img">
+													<h3 class=""><?php echo isset($list['number'])?$list['number']:''; ?>    
+														<span class="text-success"> <?php echo isset($list['year'])?$list['year']:''; ?></span> 
+													</h3>
+												</div>
+											</div></a>
+											
+											<?php } ?>
+									<?php } ?>
+									
+									
 								</div>
 							</div>
-							<div class="tab-pane fade" id="tab6primary">Primary 5</div>
-							<div class="tab-pane fade" id="tab7primary">Primary 5</div>
+							<div class="tab-pane fade" id="tab6primary"><?php echo isset($article_process_fee['table'])?$article_process_fee['table']:''; ?></div>
+							<div class="tab-pane fade" id="tab7primary">
+							<?php echo isset($special_issue['details'])?$special_issue['details']:''; ?>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -417,11 +411,11 @@
 					   <ul>
 						  <li style="padding:0px 0px 0px 10px">
 							 <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
-							 <a href="" target="_blank" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal"><?php echo isset($list['phone'])?$list['phone']:''; ?> </a><br>
+							 <a href="<?php echo base_url('journals/view/'.base64_encode($list['journal_id']).'/'.$list['seo_url']); ?>" target="_blank" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal"><?php echo isset($list['journaltitile'])?$list['journaltitile']:''; ?> </a><br>
 						  </li>
 					   </ul>
 					   <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
-						  <span style="color: #05658F; text-decoration: none; font-weight: bold;">Name: <a href="#" target="_blank"> <?php echo isset($list['name'])?$list['name']:''; ?></a></span>
+						  <span style="color: #05658F; text-decoration: none; font-weight: bold;">Name: <a href="<?php echo base_url('journals/editors-profile/'.base64_encode($list['j_e_id'])); ?>" target="_blank"> <?php echo isset($list['name'])?$list['name']:''; ?></a></span>
 					   </p>
 					   <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p>
 				   <?php } ?>

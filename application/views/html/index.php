@@ -293,7 +293,7 @@ group with the aim of disseminating information for the betterment of mankind.</
 				
 					<?php foreach($browse_by_subjects as $list){ ?>
 						
-							<a href="<?php echo base_url('journals/view/'.base64_encode($list['j_id'])); ?>" ><?php echo isset($list['subject'])?$list['subject']:''; ?></a>
+							<a href="<?php echo base_url('journals/view/'.base64_encode($list['j_id']).'/'.$list['seo_url']); ?>" ><?php echo isset($list['subject'])?$list['subject']:''; ?></a>
 					<?php } ?>
 					<?php } ?>
            

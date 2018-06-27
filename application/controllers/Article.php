@@ -35,6 +35,16 @@ class Article extends CI_Controller {
 		
 		
 	}
+	public function lists()
+	{	
+		$header['c_url']=base_url('');
+		$header['scroll_data']=$this->Home_model->get_scrolling_content();
+		$this->load->view('html/header',$header);
+		$data['article_list']=$this->Home_model->get_all_article_list();
+		//echo '<pre>';print_r($data);exit;
+		$this->load->view('html/view-all',$data);
+		$this->load->view('html/footer');
+	}
 	
 	
 	

@@ -127,7 +127,7 @@ group with the aim of disseminating information for the betterment of mankind.</
 				<div class="panel panel-primary">
 					  <div class="panel-heading clearfix">
 						<span class="pull-left"><h4 class="text-white">Latest Article</h4></span>
-						<a  href="<?php echo base_url('home/view_all'); ?>" class="pull-right"> <span style="color:#fff"> View all</span>&nbsp;&nbsp; </a>
+						<a  href="<?php echo base_url('Article/lists'); ?>" class="pull-right"> <span style="color:#fff"> View all</span>&nbsp;&nbsp; </a>
 					  </div>
 					 
 				</div>
@@ -157,7 +157,7 @@ group with the aim of disseminating information for the betterment of mankind.</
 								   </div>
 								   <div class="col-lg-10 col-md-9 col-sm-10 col-xs-8">
 									  <div class="article-details">
-										 <h4><a href="<?php echo base_url(); ?>" target="_blank" style="color:#0062C4;"><?php echo isset($list['title'])?$list['title']:''; ?></a></h4>
+										 <h4><a href="<?php echo base_url('journals'); ?>" target="_blank" style="color:#0062C4;"><?php echo isset($list['title'])?$list['title']:''; ?></a></h4>
 										 <!--<span class="name"><?php echo isset($list['author_name'])?$list['author_name']:''; ?></span>-->
 										 <h6><a href="#" target="_blank" style="color:#F60;"><?php echo isset($list['author_name'])?$list['author_name']:''; ?></a></h6>
 										 <p class="art-date"><a href="<?php echo base_url('journals'); ?>" ><?php echo isset($list['journaltitle'])?$list['journaltitle']:''; ?></a></p>

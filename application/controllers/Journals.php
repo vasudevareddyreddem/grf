@@ -46,8 +46,9 @@ class Journals extends CI_Controller {
 		$header['scroll_data']=$this->Home_model->get_scrolling_content();
 		$this->load->view('html/header',$header);
 		
-		$editor_id=base64_decode($this->uri->segment(3));
-		$data['editor_details']=$this->Home_model->get_editors_details($editor_id);
+		$issue_id=base64_decode($this->uri->segment(3));
+		$data['latest_boardmembers']=$this->Home_model->get_latest_boardmembers_list();
+		$data['article_list']=$this->Home_model->get_issue_wise_articles($issue_id);
 		$this->load->view('html/archive',$data);
 		$this->load->view('html/footer');
 		

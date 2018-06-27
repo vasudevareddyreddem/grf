@@ -34,6 +34,7 @@ class Journals extends CI_Controller {
 		$j_id=base64_decode($this->uri->segment(3));
 		$data['scroll_data']=$this->Home_model->get_scrolling_content();
 		$data['journals_details']=$this->Home_model->get_journals_details($j_id);
+		$data['article_list']=$this->Home_model->get_journal_wise_article_list($j_id);
 		//echo '<pre>';print_r($data);exit;
 		$this->load->view('html/journal-details',$data);
 		$this->load->view('html/footer');

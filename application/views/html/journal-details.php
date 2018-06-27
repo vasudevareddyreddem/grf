@@ -96,23 +96,8 @@
 					<div class="lis-sty-none">
 					<?php echo isset($journals_details['key_words'])?$journals_details['key_words']:''; ?>
 					</div>
-					<br>
-					<h3 class="">   Benefits
-						<span class="text-success"> </span>
-					</h3>
-					<div class="lis-sty-none">
-					<ul>
-						<li>Editors can be promoted as senior editor and executive editor in the concerned journal based on their active participation and also based on their experience.</li>
-						<li>Editors will be given highest priority in all the events that are organized by GRF Publishers.</li>
-						<li>Based on their kind contributions and their efficiency, there is a chance to serve as a prominent member of the advisory board.</li>
-						<li>After one year of due course, Editor-in-Chief will be announced for every journal based on their active participation, expertise in the field, contribution towards the Journal and also their scientific contributions.</li>
-						<li>The review comments that are given by the editors will be strictly followed after which the authors will be requested to modify their manuscript according to the editor’s suggestions.</li>
-						<li>We promote all the articles of the Editors that are published in our journals, in various social networking groups from our end, increasing visibility for their works.</li>
-						<li>GRF journals consider editorials as a note to the young researchers and scholars.</li>
-						<li>Editors shall be honoured in position as chair/co-chair for any conferences organized by us and also the fee will be waived.</li>
 					
-					</ul>
-					</div>
+					
 					
                    
                 </div>

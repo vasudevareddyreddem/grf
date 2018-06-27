@@ -159,6 +159,12 @@ class Home_model extends CI_Model
 		$this->db->order_by('id','desc');
         return $this->db->get()->result_array();
 	}
+	public  function get_editors_details($j_id){
+		$this->db->select('*')->from('journal_editors');
+		$this->db->where('j_e_id',$j_id);		
+		$this->db->where('status',1);
+        return $this->db->get()->row_array();
+	}
 	
 	/* journals page*/
 	

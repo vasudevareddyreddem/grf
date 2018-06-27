@@ -11,14 +11,14 @@
 					
 					<div class="col-md-4">
 						<img  class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png" alt="card image">
-						<h3>vasu deava</H3>
+						<h3><?php echo isset($editor_details['name'])?$editor_details['name']:''; ?></H3>
 					</div>
 					<div class="col-md-4">
 						<table class="table ">
 					
 						<tr>
 							<th>Name</th>
-							<td>test name</td>
+							<td><?php echo isset($editor_details['name'])?$editor_details['name']:''; ?></td>
 						</tr>
 						<tr>
 							<th>Name</th>

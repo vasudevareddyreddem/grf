@@ -26,6 +26,30 @@ class Journals extends CI_Controller {
 		$this->load->view('html/footer');
 		
 	}
+	public function editors_profile()
+	{	
+		$header['c_url']=base_url('journals');
+		$header['scroll_data']=$this->Home_model->get_scrolling_content();
+		$this->load->view('html/header',$header);
+		
+		$editor_id=base64_decode($this->uri->segment(3));
+		$data['editor_details']=$this->Home_model->get_editors_details($editor_id);
+		$this->load->view('html/profile',$data);
+		$this->load->view('html/footer');
+		
+	}
+	public function archive()
+	{	
+		$header['c_url']=base_url('journals');
+		$header['scroll_data']=$this->Home_model->get_scrolling_content();
+		$this->load->view('html/header',$header);
+		
+		$editor_id=base64_decode($this->uri->segment(3));
+		$data['editor_details']=$this->Home_model->get_editors_details($editor_id);
+		$this->load->view('html/archive',$data);
+		$this->load->view('html/footer');
+		
+	}
 	public function view()
 	{	
 		$header['c_url']=base_url('journals');

@@ -29,8 +29,8 @@ class Journals extends CI_Controller {
 	public function view()
 	{	
 		$header['c_url']=base_url('journals');
+		$header['scroll_data']=$this->Home_model->get_scrolling_content();
 		$this->load->view('html/header',$header);
-		
 		$j_id=base64_decode($this->uri->segment(3));
 		$data['scroll_data']=$this->Home_model->get_scrolling_content();
 		$data['journals_details']=$this->Home_model->get_journals_details($j_id);

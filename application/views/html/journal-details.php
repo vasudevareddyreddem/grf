@@ -92,59 +92,9 @@
 							 <div class=" Welcome_txt fadeInLeft wow animated  " data-wow-duration="1000ms" data-wow-delay="1000ms">
                   
 					<br>
-					<h3 class="">About    
-						<span class="text-success"> Journal</span> 
-					</h3>
-					
-					<p >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-					</p>
-					<br>
-					<h3 class="">Aim    
-						<span class="text-success">and </span>  Scope
-					</h3>
-					<p >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-					</p>
-					<p >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-					</p>
-					<p >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-					</p>
-					<br>
-					<h3 class="">Highlighted     
-						<span class="text-success">Topics </span>  
-					</h3>
+					<?php echo isset($journals_details['description'])?$journals_details['description']:''; ?>
 					<div class="lis-sty-none">
-					<ul>
-						<li> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
-						<li> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
-						<li> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
-						<li> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
-						<li> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
-						<li> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
-						<li> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
-						<li> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
-						<li> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
-						<li> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
-						<li> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
-						<li> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
-						<li> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
-						<li> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
-						<li> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
-						<li> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
-						<li> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
-						<li> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
-						<li> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
-						<li> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
-						<li> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
-						<li> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
-						<li> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
-						<li> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
-						<li> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
-						<li> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
-						
-					</ul>
+					<?php echo isset($journals_details['key_words'])?$journals_details['key_words']:''; ?>
 					</div>
 					<br>
 					<h3 class="">   Benefits

@@ -95,7 +95,19 @@ class Home_model extends CI_Model
 	}
 	/*peer-review-process*/
 	
-	
+	/* journals page*/
+	public  function get_all_journals_list(){
+		$this->db->select('title,j_id,subject,seo_url,baneer_image')->from('journals');
+		$this->db->where('status',1);		
+        return $this->db->get()->result_array();
+	}
+	public function get_journals_details($j_id){
+		$this->db->select('*')->from('journals');
+		$this->db->where('j_id',$j_id);		
+		$this->db->where('status',1);		
+        return $this->db->get()->row_array();
+	}
+	/* journals page*/
 	
 
 }

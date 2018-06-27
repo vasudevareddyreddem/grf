@@ -64,6 +64,14 @@
                         </div>
 						<div class="col-md-12">
 							<div class="form-group">
+								<label class=" control-label">Subject</label>
+								<div class="">
+									<input type="text" class="form-control" name="subject" value="<?php echo isset($details['subject'])?$details['subject']:''; ?>" id="subject" placeholder="Enter Subject" />
+								</div>
+							</div>
+                        </div>
+						<div class="col-md-12">
+							<div class="form-group">
 								<label class=" control-label">Alt Tags</label>
 								<div class="">
 									<input type="text" class="form-control" name="alt_tags" value="<?php echo isset($details['alt_tags'])?$details['alt_tags']:''; ?>" id="alt_tags" placeholder="Enter Alt Tags" />
@@ -192,7 +200,17 @@ $(document).ready(function() {
 					}
 				}
             },
-			alt_tags: {
+			subject: {
+                validators: {
+					notEmpty: {
+						message: 'Subject is required'
+					},
+					regexp: {
+					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
+					message:'Subject wont allow <> [] = % '
+					}
+				}
+            },alt_tags: {
                 validators: {
 					notEmpty: {
 						message: 'Alt tags is required'

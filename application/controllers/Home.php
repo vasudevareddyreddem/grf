@@ -31,7 +31,7 @@ class Home extends CI_Controller {
 		$this->load->view('html/footer');
 		
 	}
-	//html
+	//profile
 	public function profile()
 	{	
 		$header['c_url']=base_url('');

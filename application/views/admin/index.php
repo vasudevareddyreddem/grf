@@ -22,7 +22,7 @@
 
 </head>
 <body class="hold-transition login-page" style="background-image: url('<?php echo base_url(); ?>assets/vendor/admin/dist/img/bacimg.jpg');background-repeat: no-repeat;background-size: cover;">
-<div class="login-box" style="margin-top:30%">
+<div class="login-box" style="margin-top:10%">
   <div class="login-logo" style="color:#fff">
     <b>Grf</b> Admin
   </div>

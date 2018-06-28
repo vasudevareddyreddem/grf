@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Log in</title>
+  <title>Grf Admin Login</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -19,17 +19,12 @@
   <!-- iCheck -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/admin/plugins/iCheck/square/blue.css">
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
+
 </head>
-<body class="hold-transition login-page">
-<div class="login-box">
-  <div class="login-logo">
-    <a href="index2.html"><b>Grf</b> Admin</a>
+<body class="hold-transition login-page" style="background-image: url('<?php echo base_url(); ?>assets/vendor/admin/dist/img/bacimg.jpg');background-repeat: no-repeat;background-size: cover;">
+<div class="login-box" style="margin-top:30%">
+  <div class="login-logo" style="color:#fff">
+    <b>Grf</b> Admin
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
@@ -40,7 +35,7 @@
 								'name' => $this->security->get_csrf_token_name(),
 								'hash' => $this->security->get_csrf_hash()
 						); ?>
-										<input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+		<input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
 
       <div class="form-group has-feedback">
         <input type="email" class="form-control" id="email" name="email" value="<?php echo $this->input->cookie('username');?>"	placeholder="Email" required>

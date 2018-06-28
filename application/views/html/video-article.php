@@ -33,9 +33,9 @@ learning, saving their institutions time and money.</p>
       
         <div class="col-md-12 Welcome_txt ">
 			<video width="100%" height="460" controls="">
-				  <source src="<?php echo base_url(); ?>assets/vendor/video/videoplayback.mp4" type="video/mp4">
-				  <source src="<?php echo base_url(); ?>assets/vendor/video/videoplayback.ogv" type="video/ogg">
-				Your browser does not support the video tag.
+				  <source src="<?php echo base_url(); ?>assets/vendor/video/test.mp4" type="video/mp4">
+				  <source src="<?php echo base_url(); ?>assets/vendor/video/test.ogv" type="video/ogg">
+				
 				</video>
 				<br>
 				<br>

@@ -108,11 +108,6 @@
     </section> 
 </div>
   <script type="text/javascript">
-	CKEDITOR.replace('editor1', {
-		"extraPlugins": "imagebrowser",
-		"imageBrowser_listUrl": "/path/to/images_list.json"
-	});
-
   function checkvalidation(){
 	  var id=$('#journal').val();
 	  if(id==''){

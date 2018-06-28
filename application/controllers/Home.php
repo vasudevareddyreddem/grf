@@ -38,7 +38,8 @@ class Home extends CI_Controller {
 		$header['scroll_data']=$this->Home_model->get_scrolling_content();
 		$this->load->view('html/header',$header);
 		$data['homapage_banners']=$this->Home_model->get_home_banners_list();
-
+		$data['flyers_list']=$this->Home_model->get_flyers_list();
+		$data['journals_list']=$this->Home_model->get_peer_review_process_journals_list();
 		//echo '<pre>';print_r($data);exit;
 		$this->load->view('html/for-author',$data);
 		$this->load->view('html/footer');
@@ -50,7 +51,8 @@ class Home extends CI_Controller {
 		$header['scroll_data']=$this->Home_model->get_scrolling_content();
 		$this->load->view('html/header',$header);
 		$data['homapage_banners']=$this->Home_model->get_home_banners_list();
-
+		$data['flyers_list']=$this->Home_model->get_flyers_list();
+		$data['journals_list']=$this->Home_model->get_peer_review_process_journals_list();
 		//echo '<pre>';print_r($data);exit;
 		$this->load->view('html/quck-editors',$data);
 		$this->load->view('html/footer');
@@ -62,7 +64,8 @@ class Home extends CI_Controller {
 		$header['scroll_data']=$this->Home_model->get_scrolling_content();
 		$this->load->view('html/header',$header);
 		$data['homapage_banners']=$this->Home_model->get_home_banners_list();
-
+		$data['flyers_list']=$this->Home_model->get_flyers_list();
+		$data['journals_list']=$this->Home_model->get_peer_review_process_journals_list();
 		//echo '<pre>';print_r($data);exit;
 		$this->load->view('html/reviewers',$data);
 		$this->load->view('html/footer');

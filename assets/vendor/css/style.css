@@ -403,6 +403,9 @@ section .section-title {
     transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 
 }
+.qucik-link li{
+	list-style-type:none;
+}
 .slide-text > a.btn-primary{
     color: #ffffff;
     cursor: pointer;

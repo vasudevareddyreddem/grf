@@ -435,64 +435,40 @@
 			<div class="clearfix">&nbsp;</div>
 			
 			<div class="sidebar side-bar right-sidebar">
-      <div class="widget sidebar-newsletter">
-         <h3 class="side-title">Latest Board Members</h3>
-         <div class="cp-newsletter-holder" id="pubmed">
-            <marquee class="pubmed-articles" align="top" behavior="scroll" onmouseout="this.start();" onmouseover="this.stop();" direction="up" scrollamount="2" style="padding: 10px 0px 10px 0px;height: 200px;background: #f5f5f5;overflow:hidden;">
-              <div class="article">
-					<div class="row">
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<div class="article-head clearfix">
-								<span class="pull-left"><h4 class="text-white">Research Article</h4></span>
-
-							</div>
-						</div>
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-					<div class="article-body clearfix">
-					<div class="row">
-						<div class="col-md-12 ">
-								<div class="">
-									<img src="http://grfpublishers.com/public/journals/59/journalThumbnail_en_US.jpg" align="left" alt="Article Image">
-								</div>
-							</div>
-						</div>
-						<div class=" col-md-12 ">
-							<div class="">
-								<h4><a href="#" target="_blank" style="color:#0062C4;">An Exploration into the Acceptance of Male Rape Myths within the UK</a></h4>
-								<span class="name">Elizabeth Spruin* and Miss Laura Reilly</span>
-								<h6><a href="#" target="_blank" style="color:#F60;">Journal of Forensic Sciences &amp; Criminal Investigation </a></h6>
-									  <p class="art-date">DOI:<a href="http://dx.doi.org/10.19080/JFSCI.2018.09.555763" target="_blank">10.19080/JFSCI.2018.09.555763</a></p>
-							  </div>
-						</div>
+				<div class="widget sidebar-newsletter">
+				 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+					     <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingTwo" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" >
+                       Quick Links
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="panel-body">
+                   <div class="">
+					  <ul class="list-group">
+						<li class="list-group-item"><a href="<?php echo base_url('home/for_author'); ?>">For Authors</a></li>
+						<li class="list-group-item"><a href="">For Editors</a></li>
+						<li class="list-group-item"><a href="">For Reviewers</a></li>    
+						<li class="list-group-item"><a href="https://gavinpublishers.com/assets/img/links/Editorial.pdf">Editorial</a></li>
+						<li class="list-group-item"><a href="https://gavinpublishers.com/assets/img/links/Research-Article.pdf">Research Article</a></li>
+						<li class="list-group-item"><a href="https://gavinpublishers.com/assets/img/links/Case-Report.pdf">Case Report</a></li>
+						<li class="list-group-item"><a href="https://gavinpublishers.com/assets/img/links/Review-Article.pdf">Review Article</a></li>  
+						<li class="list-group-item"><a href="https://gavinpublishers.com/assets/img/links/Opinion.pdf">Opinion</a></li>
+						<li class="list-group-item"><a href="https://gavinpublishers.com/assets/img/links/Short-Communication.pdf">Short Communication</a></li>
+						<li class="list-group-item"><a href="https://gavinpublishers.com/assets/img/links/Mini-Review.pdf">Mini Review</a></li>
+						<li class="list-group-item"><a href="https://gavinpublishers.com/assets/img/links/Letter-to-Editor.pdf">Letter to Editor</a></li>
+						 
+						</li>
+					  </ul>
 					</div>
-					<div class="row">
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-					<div class="get-here">
-					<ul>
-					<li>
-					<a href="" target="_blank" class="btn btn-primary " style="font-size:12px;"> <i class="fa fa-unlock-alt"></i>&nbsp; PDF</a>
-					</li>
-					<li>
-					<a href="" target="_blank" class="btn btn-warning " style="font-size:12px;"> <i class="fa fa-code" aria-hidden="true"></i> HTML</a>
-					</li>
-					
-					<li>
-					
-					</li>
-					</ul>
-					</div>
-					</div>
-					</div>
-					</div>
-					</div>
-					</div>
+                </div>
+            </div>
+        </div>
 				</div>
-               <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p>
-			   
-               
-            </marquee>
-            
-         </div>
+				</div>
       </div>
 			</div>
 		</div>

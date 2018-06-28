@@ -259,7 +259,7 @@ group with the aim of disseminating information for the betterment of mankind.</
          
          <div class="cp-sidebar-content">
             <h3 class="side-title">Video Articles</h3>
-            <a href="<?php echo base_url('video-article');?>"><img alt="Video Articles" src="<?php echo base_url(); ?>assets/vendor/img/Video-Articles.gif" width="100%" border="5"></a>
+            <a href="<?php echo base_url('video-article');?>"><img alt="Video Articles" src="<?php echo base_url(); ?>assets/vendor/img/video-articles.png" width="100%" border="5"></a>
            
          </div>
         

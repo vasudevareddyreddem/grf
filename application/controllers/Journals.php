@@ -34,6 +34,8 @@ class Journals extends CI_Controller {
 		
 		$editor_id=base64_decode($this->uri->segment(3));
 		$data['editor_details']=$this->Home_model->get_editors_details($editor_id);
+		$data['flyers_list']=$this->Home_model->get_flyers_list();
+		$data['journals_list']=$this->Home_model->get_peer_review_process_journals_list();
 		$this->load->view('html/profile',$data);
 		$this->load->view('html/footer');
 		

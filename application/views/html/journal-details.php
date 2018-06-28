@@ -357,8 +357,8 @@
                    <div class="">
 					  <ul class="list-group">
 						<li class="list-group-item"><a href="<?php echo base_url('home/for_author'); ?>">For Authors</a></li>
-						<li class="list-group-item"><a href="">For Editors</a></li>
-						<li class="list-group-item"><a href="">For Reviewers</a></li>    
+						<li class="list-group-item"><a href="<?php echo base_url('home/quick_editors'); ?>">For Editors</a></li>
+						<li class="list-group-item"><a href="<?php echo base_url('home/reviewers'); ?>">For Reviewers</a></li>    
 						<li class="list-group-item"><a href="https://gavinpublishers.com/assets/img/links/Editorial.pdf">Editorial</a></li>
 						<li class="list-group-item"><a href="https://gavinpublishers.com/assets/img/links/Research-Article.pdf">Research Article</a></li>
 						<li class="list-group-item"><a href="https://gavinpublishers.com/assets/img/links/Case-Report.pdf">Case Report</a></li>

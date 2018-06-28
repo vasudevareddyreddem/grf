@@ -19,10 +19,14 @@ class Video_article extends CI_Controller {
 		}
 	public function index()
 	{	
-		$data['c_url']=base_url('video-article');
-		$data['scroll_data']=$this->Home_model->get_scrolling_content();
-		$this->load->view('html/header',$data);
-		$this->load->view('html/video-article');
+		$header['c_url']=base_url('video-article');
+		$header['scroll_data']=$this->Home_model->get_scrolling_content();
+		$this->load->view('html/header',$header);
+		
+		$data['confrence_flyer_list']=$this->Home_model->get_all_confrence_flyers();
+		$data['journals_list']=$this->Home_model->get_journal_list();
+		
+		$this->load->view('html/video-article',$data);
 		$this->load->view('html/footer');
 		
 	}

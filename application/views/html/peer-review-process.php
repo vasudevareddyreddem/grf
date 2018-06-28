@@ -187,7 +187,7 @@
 					   <ul>
 						  <li style="padding:0px 0px 0px 10px">
 							 <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
-							 <a href="" target="_blank" style=" color:#05658F; text-decoration:none; padding:0px; margin:0px; font-weight:normal"><?php echo isset($list['title'])?$list['title']:''; ?></a><br>
+							 <a href="<?php echo base_url('journals/view/'.base64_encode($list['j_id']).'/'.$list['seo_url']); ?>" target="_blank" style=" color:#05658F; text-decoration:none; padding:0px; margin:0px; font-weight:normal"><?php echo isset($list['title'])?$list['title']:''; ?></a><br>
 						  </li>
 					   </ul>
 					   <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">

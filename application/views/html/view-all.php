@@ -1,6 +1,9 @@
 <div class="container " >
 <br>
 	<div class="row">
+		<h3 class="">  Article
+						<span class="text-success">List</span> 
+					</h3>
 		<?php if(isset($article_list)&& count($article_list)>0){ ?>
 				
 				<?php foreach($article_list as $list){ ?>

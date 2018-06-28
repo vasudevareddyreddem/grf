@@ -20,10 +20,12 @@ class Membership extends CI_Controller {
 	{	
 		
 		//echo base_url();exit;
-		$data['c_url']=base_url('membership');
-		$data['scroll_data']=$this->Home_model->get_scrolling_content();
-		$this->load->view('html/header',$data);
-		$this->load->view('html/membership');
+		$header['c_url']=base_url('editors');
+		$header['scroll_data']=$this->Home_model->get_scrolling_content();
+		$this->load->view('html/header',$header);
+		$data['flyers_list']=$this->Home_model->get_flyers_list();
+		$data['journals_list']=$this->Home_model->get_peer_review_process_journals_list();
+		$this->load->view('html/membership',$data);
 		$this->load->view('html/footer');
 		
 	}

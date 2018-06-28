@@ -55,50 +55,54 @@
 					
 				</div>
 		   <div class="col-md-4 mt20">
-		    <div id="myCarousel" class="carousel slide " data-ride="carousel">
+		     <div id="myCarousel" class="carousel slide " data-ride="carousel">
                         
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                             
-                <div class="item active">
-                                
-                    <img src="img/journalThumbnail_en_US 2.jpg">
-                    <div class="carousel-caption">
-                    <p> 
-                    <a class="btn btn-primary" href="#" target="_blank">
-                    GRF Open Access Publishers </a></p>
-                                    
-                    </div>            
-                </div><!-- End Item -->
- 
-                <div class="item">
-                   <img src="img/journalThumbnail_en_US.jpg">
-                    <div class="carousel-caption">
-                    <p> 
-                    <a class="btn btn-primary" href="#" target="_blank">
-                   GRF Open Access Publishers</a></p>
-                                    
-                    </div>
-                </div><!-- End Item -->
+                 <?php if(isset($flyers_list)&& count($flyers_list)>0){ ?>
+				
+						<?php $count=1;foreach($flyers_list as $list){ ?>
+							<?php if($count==1){ ?>
+									<div class="item active">
+									   <img src="<?php echo base_url('assets/flyers_img/'.$list['fly_image']); ?>">
+										<div class="carousel-caption">
+										<p> 
+										<a class="btn btn-primary" href="javascript:void(0);">
+									   <?php echo isset($list['title'])?$list['title']:''; ?></a></p>
+														
+										</div>
+									</div>
+							<?php }else{ ?>
+									<div class="item">
+									   <img src="<?php echo base_url('assets/flyers_img/'.$list['fly_image']); ?>">
+										<div class="carousel-caption">
+										<p> 
+										<a class="btn btn-primary" href="javascript:void(0);">
+									   <?php echo isset($list['title'])?$list['title']:''; ?></a></p>
+														
+										</div>
+									</div>
+							<?php } ?>
+						
+						<?php $count++;} ?>
+					<?php } ?>
         
-                <div class="item">
-                            
-                  <img src="img/journalThumbnail_en_US 2.jpg">
-                    <div class="carousel-caption">
-                    <p> 
-                    <a class="btn btn-primary" href="#" target="_blank">
-                   GRF Open Access Publishers</a></p>
-                                    
-                    </div>
-                </div><!-- End Item -->
                 
    			</div><!-- End Carousel Inner -->
    						
    			<ul class="list-group col-md-3 carousel-indicators">
-               
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1" ></li>
-                    <li data-target="#myCarousel" data-slide-to="2" ></li> 
+                 <?php if(isset($flyers_list)&& count($flyers_list)>0){ ?>
+					<?php $cnt=1;foreach($flyers_list as $list){ ?>
+							<?php if($count=1){ ?>
+								<li data-target="#myCarousel" data-slide-to="<?php echo $count; ?>" class="active"></li>
+							<?php }else{ ?>
+							        <li data-target="#myCarousel" data-slide-to="<?php echo $count; ?>" ></li>
+
+							<?php } ?>
+					
+					<?php $cnt++;} ?>
+				<?php } ?>
                
     		</ul>
         </div><br>
@@ -107,46 +111,22 @@
          <h3 class="side-title">List  of journals</h3>
          <div class="cp-newsletter-holder" id="pubmed">
             <marquee class="pubmed-articles" align="top" behavior="scroll" onmouseout="this.start();" onmouseover="this.stop();" direction="up" scrollamount="2" style="padding: 10px 0px 10px 0px;height: 200px;background: #f5f5f5;overflow:hidden;">
-               <ul>
-                  <li style="padding:0px 0px 0px 10px">
-                     <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
-                     <a href="" target="_blank" style=" color:#05658F; text-decoration:none; padding:0px; margin:0px; font-weight:normal">Journal of Gastroenterology and Digestive Disorders </a><br>
-                  </li>
-               </ul>
-               <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
-                  <span class="" style="color: #05658F; text-decoration: none; font-weight: bold;"> <i class="fa fa-arrow-right" aria-hidden="true"></i> <a href="#" target="_blank"> view</a></span>
-               </p>
-               <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p>
-			   <ul>
-                  <li style="padding:0px 0px 0px 10px">
-                     <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
-                     <a href="" target="_blank" style=" color:#05658F; text-decoration:none; padding:0px; margin:0px; font-weight:normal">Journal of Gastroenterology and Digestive Disorders </a><br>
-                  </li>
-               </ul>
-               <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
-                  <span class="" style="color: #05658F; text-decoration: none; font-weight: bold;"> <i class="fa fa-arrow-right" aria-hidden="true"></i> <a href="#" target="_blank"> view</a></span>
-               </p>
-               <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p>
-			   <ul>
-                  <li style="padding:0px 0px 0px 10px">
-                     <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
-                     <a href="" target="_blank" style=" color:#05658F; text-decoration:none; padding:0px; margin:0px; font-weight:normal">Journal of Gastroenterology and Digestive Disorders </a><br>
-                  </li>
-               </ul>
-               <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
-                  <span class="" style="color: #05658F; text-decoration: none; font-weight: bold;"> <i class="fa fa-arrow-right" aria-hidden="true"></i> <a href="#" target="_blank"> view</a></span>
-               </p>
-               <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p><ul>
-                  <li style="padding:0px 0px 0px 10px">
-                     <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
-                     <a href="" target="_blank" style=" color:#05658F; text-decoration:none; padding:0px; margin:0px; font-weight:normal">Journal of Gastroenterology and Digestive Disorders </a><br>
-                  </li>
-               </ul>
-               <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
-                  <span class="" style="color: #05658F; text-decoration: none; font-weight: bold;"> <i class="fa fa-arrow-right" aria-hidden="true"></i> <a href="#" target="_blank"> view</a></span>
-               </p>
-               <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p>
-			   
+                  <?php if(isset($journals_list)&& count($journals_list)>0){ ?>
+					<?php foreach($journals_list as $list){ ?>
+							
+					   <ul>
+						  <li style="padding:0px 0px 0px 10px">
+							 <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
+							 <a href="<?php echo base_url('journals/view/'.base64_encode($list['j_id']).'/'.$list['seo_url']); ?>" target="_blank" style=" color:#05658F; text-decoration:none; padding:0px; margin:0px; font-weight:normal"><?php echo isset($list['title'])?$list['title']:''; ?></a><br>
+						  </li>
+					   </ul>
+					   <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
+						  <span class="" style="color: #05658F; text-decoration: none; font-weight: bold;"> <i class="fa fa-arrow-right" aria-hidden="true"></i> <a href="<?php echo base_url('journals/view/'.base64_encode($list['j_id']).'/'.$list['seo_url']); ?>"> view</a></span>
+					   </p>
+					   <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p>
+					   
+				<?php } ?>
+			<?php } ?>
                
             </marquee>
             

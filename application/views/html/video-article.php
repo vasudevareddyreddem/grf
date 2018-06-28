@@ -66,22 +66,35 @@ context and translators etc.
 <h4>Conference Flyers</h4>
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
+		<?php if(isset($confrence_flyer_list)&& count($confrence_flyer_list)>0){ ?>
+				  <ol class="carousel-indicators">
+						<?php $count=1;foreach($confrence_flyer_list as $list){ ?>
+							<?php if($count==1){ ?>
+								  <li data-target="#myCarousel" data-slide-to="<?php echo $count; ?>" class="active"></li>
+							  <?php }else{ ?>
+									<li data-target="#myCarousel" data-slide-to="<?php echo $count; ?>"></li>
+
+							  <?php } ?>
+						<?php $count++;} ?>
+						 </ol>
+		<?php } ?>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
-      <div class="item active"> <a href="#X"><img src="http://grfpublishers.com/public/journals/51/journalThumbnail_en_US.jpg" alt="Los Angeles" style="width:100%;"></a>
-      </div>
+	<?php $cnt=0;foreach($confrence_flyer_list as $list){ ?>
+				
+				<?php //echo '<pre>';print_r($list);exit; ?>
+				
+				<?php if($cnt==0){ ?>
+					  <div class="item active"> <a href="javascript:void(0);"><img src="<?php echo base_url('assets/conference_flyers_img/'.$list['fly_image']); ?>" alt="<?php echo isset($list['title'])?$list['title']:''; ?>" style="width:100%;"></a>
+					  </div>
+				<?php }else{ ?>
+				 <div class="item"> <a href="javascript:void(0);"><img src="<?php echo base_url('assets/conference_flyers_img/'.$list['fly_image']); ?>" alt="<?php echo isset($list['title'])?$list['title']:''; ?>" style="width:100%;"></a>
+				</div>
+				<?php } ?>
+	<?php $cnt++;} ?>
 
-      <div class="item"> <a href="#X"><img src="http://grfpublishers.com/public/journals/49/journalThumbnail_en_US.jpg" alt="Chicago" style="width:100%;"></a>
-      </div>
-    
-      <div class="item"> <a href="#X"><img src="http://grfpublishers.com/public/journals/47/journalThumbnail_en_US.jpg" alt="New york" style="width:100%;"></a>
-      </div>
+     
     </div>
 
     <!-- Left and right controls -->
@@ -95,7 +108,8 @@ context and translators etc.
     </a>
   </div>
                                             </div>
-	<div class="clearfix">&nbsp;</div>											
+	<div class="clearfix">&nbsp;</div>
+<?php if(isset($journals_list) && count($journals_list)>0){ ?>	
 	<div>
 	  <div class="">
 				<div class="artist-title col-md-12">
@@ -109,15 +123,11 @@ context and translators etc.
                   <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="track">
                         <ul>
-                            <li><a href="#">Annals of anesthesia and pain medicine</a> </li>
-                            <li><a href="#X">Journal of drug abuse & addiction</a></li>
-                          <!-- <li><a href="#X">Annals of medical case reports</a></li>
-                            <li><a href="#X">Journal of community medicine</a></li>
-                             <li><a href="#X">Annals of dentistry and oral health</a></li>-->
-                            <li><a href="#X">Journal of microbiology & immunology</a></li>
-                            <li><a href="#X">Annals of Otolaryngology</a></li>
-                            <li><a href="#X">Journal of Tuberculosis </a></li>
-                            <li style="font-size:14px; text-transform:uppercase; font-weight:bold;"><a href="journals.php">View all</a></li>
+                            <?php foreach($journals_list as $list){ ?>
+							<li><a href="<?php echo base_url('journals/view/'.base64_encode($list['j_id']).'/'.$list['seo_url']); ?>"><?php echo isset($list['title'])?$list['title']:'';?></a> </li>
+							<?php } ?>
+                        
+                            <li style="font-size:14px; text-transform:uppercase; font-weight:bold;"><a href="<?php echo base_url('journals'); ?>">View all</a></li>
                         </ul>
                         
                     </div>
@@ -127,6 +137,8 @@ context and translators etc.
         </div>
                                             	
                                             </div>
+											
+											<?php } ?>
                                             <div class="clearfix"></div>
 
                                             

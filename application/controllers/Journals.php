@@ -74,7 +74,7 @@ class Journals extends CI_Controller {
 			$data['current_issue_list']=array();
 		}
 		
-		//echo '<pre>';print_r($data['current_issue_list']);exit;
+		//echo '<pre>';print_r($data);exit;
 		$this->load->view('html/journal-details',$data);
 		$this->load->view('html/footer');
 		

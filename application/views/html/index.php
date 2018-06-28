@@ -36,9 +36,9 @@
 							<div class="container">
 								<div class="row">
 									<!-- Slide Text Layer -->
-									<div class="slide-text slide_style_center">
+									<!--<div class="slide-text slide_style_center">
 										<h1 data-animation="animated zoomInRight"><?php echo isset($list['title'])?$list['title']:''; ?></h1>
-									</div>
+									</div>-->
 								</div>
 							</div>
 						</div>
@@ -52,9 +52,9 @@
 							<div class="container">
 								<div class="row">
 									<!-- Slide Text Layer -->
-									<div class="slide-text slide_style_center">
+									<!--<div class="slide-text slide_style_center">
 										<h1 data-animation="animated zoomInRight"><?php echo isset($list['title'])?$list['title']:''; ?></h1>
-									</div>
+									</div>-->
 								</div>
 							</div>
 						</div>

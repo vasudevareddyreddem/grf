@@ -134,12 +134,12 @@
 										<div class="card-body text-center mt-4">
 											<h4 class="card-title text-left">Name:</h4>
 											<div class="text-left"><?php echo isset($list['name'])?$list['name']:''; ?> </div>
-											<h4 class="card-title text-left">Email:</h4>
-											<div class="text-left"><?php echo isset($list['email'])?$list['email']:''; ?> </div>
-											<h4 class="card-title text-left">Phone Number:</h4>
-											<div class="text-left"><?php echo isset($list['phone'])?$list['phone']:''; ?> </div>
-											<h4 class="card-title text-left">Designation:</h4>
-											<div class="text-left"><?php echo isset($list['designation'])?$list['designation']:''; ?> </div>
+											<h4 class="card-title text-left">University:</h4>
+											<div class="text-left"><?php echo isset($list['university'])?$list['university']:''; ?> </div>
+											<h4 class="card-title text-left">Country:</h4>
+											<div class="text-left"><?php echo isset($list['country'])?$list['country']:''; ?> </div>
+											<h4 class="card-title text-left">Position:</h4>
+											<div class="text-left"><?php echo isset($list['position'])?$list['position']:''; ?> </div>
 											<a href="<?php echo base_url('journals/editors-profile/'.base64_encode($list['j_e_id'])); ?>" class="btn btn-default btn-sm text-center text-white">View More</a>
 
 										</div>

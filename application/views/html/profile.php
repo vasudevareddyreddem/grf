@@ -20,16 +20,18 @@
 							<th>Name</th>
 							<td><?php echo isset($editor_details['name'])?$editor_details['name']:''; ?></td>
 						</tr>
-						<tr>
+						<!--<tr>
 							<th>Email</th>
 							<td><?php echo isset($editor_details['email'])?$editor_details['email']:''; ?></td>
-						</tr><tr>
+						</tr>
+						<tr>
 							<th>Phone Number</th>
 							<td><?php echo isset($editor_details['phone'])?$editor_details['phone']:''; ?></td>
-						</tr><tr>
+						</tr>
+						<tr>
 							<th>Designation</th>
 							<td><?php echo isset($editor_details['designation'])?$editor_details['designation']:''; ?></td>
-						</tr>
+						</tr>-->
 						<tr>
 							<th>University</th>
 							<td><?php echo isset($editor_details['university'])?$editor_details['university']:''; ?></td>

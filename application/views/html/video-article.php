@@ -15,9 +15,11 @@
 					<span class="text-success">Articles </span> 
 				</h3>
 				<br>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+				<p>GRF Publishers uniquely creates the opportunities for expanding its practical visual applicability of new electronic exposure through new technical methods approach in advanced research and science education by making and publishing videos of scientific experiments from the top laboratories, surgical operation treatments and clinical applications with innovative and recent developments at an international level.</p>
+				<p>By enabling scientists, educators and students to see the intricate details of cutting-edge experiments
+rather than read them in text articles, GRF Publishers increases research productivity and student
+learning, saving their institutions time and money.</p>
+				
 				
 				</div>
                                     
@@ -29,7 +31,7 @@
 		<div class="">
       <div class="">
       
-        <div class="col-md-12">
+        <div class="col-md-12 Welcome_txt ">
 			<video width="100%" height="460" controls="">
 				  <source src="<?php echo base_url(); ?>assets/vendor/video/videoplayback.mp4" type="video/mp4">
 				  <source src="<?php echo base_url(); ?>assets/vendor/video/videoplayback.ogv" type="video/ogg">
@@ -39,12 +41,11 @@
 				<br>
 				<br>
 				<p>
-					<strong>Lorem Ipsum </strong>
-					<br>
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-					<br>
-					<strong>Published : </strong>
-					June 10, 2018
+				Video articles are easy to submit and subject to a quick and transparent peer review process. Templates
+ensure that video articles are actively reviewed, curated and formatted. In addition, the articles will be
+online free open access and made available immediately upon publication. This format of presentation is
+unique for those parts of world where language remains as problem in written format with grammar
+context and translators etc.
 				</p>
        </div>
 	   

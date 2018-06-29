@@ -47,6 +47,11 @@
 
 <script src="<?php echo base_url(); ?>assets/vendor/admin/dist/js/bootstrapValidator.min.js"></script>
 </head>
+<style>
+.sidebar{
+	overflow-y: scroll !important;
+}
+</style>
 <body class="hold-transition skin-blue fixed sidebar-mini">
 <!-- Site wrapper -->
 <div class="wrapper">
@@ -121,7 +126,7 @@
   <!-- =============================================== -->
 
   <!-- Left side column. contains the sidebar -->
-  <aside class="main-sidebar">
+  <aside class="main-sidebar" style="overflow-y: scroll;">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
       <!-- Sidebar user panel -->

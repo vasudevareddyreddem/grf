@@ -84,8 +84,9 @@ class Home_model extends CI_Model
 	/*peer-review-process*/
 	
 	public  function get_flyers_list(){
-		$this->db->select('f_id,title,title_color,fly_image,fly_org_image')->from('grf_flyers');
-		$this->db->where('status',1);		
+		$this->db->select('journals.j_id,journals.seo_url,grf_flyers.f_id,grf_flyers.title,grf_flyers.title_color,grf_flyers.fly_image,grf_flyers.fly_org_image')->from('grf_flyers');
+		$this->db->join('journals ', 'journals.j_id = grf_flyers.journal_id', 'left');
+		$this->db->where('grf_flyers.status',1);		
         return $this->db->get()->result_array();
 	}
 	public  function get_peer_review_process_journals_list(){

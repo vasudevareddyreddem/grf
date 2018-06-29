@@ -21,16 +21,52 @@
             <!-- /.box-header -->
             <!-- form start -->
 			<div style="padding:20px;">
-            <form id="addflyer" method="post" class="" action="<?php echo base_url('flyers/editpost'); ?>" enctype="multipart/form-data">
+            <form id="addflyer" method="post"  onsubmit="return checkvalidation();"  class="" action="<?php echo base_url('flyers/editpost'); ?>" enctype="multipart/form-data">
 							<?php $csrf = array(
 								'name' => $this->security->get_csrf_token_name(),
 								'hash' => $this->security->get_csrf_hash()
 						); ?>
 					<input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
 					<input type="hidden" class="form-control" name="f_id" id="f_id" value="<?php echo isset($details['f_id'])?$details['f_id']:''; ?>" />
+<div class="col-md-6">
+							<div class="form-group">
+								<label class=" control-label">Category</label>
+								<div class="">
+									 <select class="form-control" id="category" onchange="get_gournals(this.value);" name="category">
+									  <option value="">Select</option>
+									 <?php foreach($journals_category_list as $list){ ?>
+										 <?php if($details['journal_cat_id']==$list['c_id']){ ?>
+											<option selected value="<?php echo $list['c_id']; ?>"><?php echo $list['category']; ?></option>
+										 <?php }else{ ?>
+									 		<option value="<?php echo $list['c_id']; ?>"><?php echo $list['category']; ?></option>
 
+											<?php } ?>
+									<?php } ?>
+									</select>
+								</div>
+							</div>
+                        </div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class=" control-label">Select Journal</label>
+								<div class="">
+									 <select class="form-control" id="journal" name="journal">
+									  <option value="">Select</option>
+									 <?php foreach($journals_list as $list){ ?>
+									 <?php if($details['journal_id']==$list['j_id']){ ?>
+										<option selected value="<?php echo $list['j_id']; ?>"><?php echo $list['title']; ?></option>
+									 <?php }else{ ?>
+									 		<option value="<?php echo $list['j_id']; ?>"><?php echo $list['title']; ?></option>
+
+									 <?php } ?>
+
+									<?php } ?>
+									</select>
+								</div>
+							</div>
+                        </div>
       
-						<div class="col-md-8">
+						<div class="col-md-6">
 							<div class="form-group">
 								<label class=" control-label">Title</label>
 								<div class="">
@@ -39,7 +75,7 @@
 							</div>
                         </div>
 						
-						<div class="col-md-8">
+						<div class="col-md-6">
 							<div class="form-group">
 								<label class=" control-label">Image</label>
 								<div class="">
@@ -47,7 +83,7 @@
 								</div>
 							</div>
                         </div>
-						<div class="col-md-8">
+						<div class="col-md-6">
 							<div class="form-group">
 								<label class=" control-label">Title Color Code</label>
 								<div class="">
@@ -83,6 +119,13 @@
     </section> 
 </div>
   <script type="text/javascript">
+   function checkvalidation(){
+	  var id=$('#journal').val();
+	  if(id==''){
+		  alert('Please select at least one Journal');
+		 return false; 
+	  }
+  }
 $(document).ready(function() {
     $('#addflyer').bootstrapValidator({
         

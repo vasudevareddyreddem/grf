@@ -1,3 +1,5 @@
+<!-- include libraries(jQuery, bootstrap) -->
+
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -25,6 +27,7 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
+                  <th>Journal</th>
                   <th>Title</th>
                   <th>Image</th>
                   <th>Title Color Code</th>
@@ -36,6 +39,8 @@
                 <?php if(isset($fly_list) && count($fly_list)>0){ ?>
 				<?php foreach($fly_list as $list){ ?>
                 <tr>
+                                       <td><?php echo htmlentities($list['journaltitle']); ?></td>
+
                   <td><?php echo htmlentities($list['title']); ?></td>
                   <td><img width="50px" height="50px" src="<?php echo base_url('assets/flyers_img/'.$list['fly_image']); ?>">
 				  </td>

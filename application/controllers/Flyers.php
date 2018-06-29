@@ -15,6 +15,7 @@ class Flyers extends CI_Controller {
 		$this->load->helper('security');
 		$this->load->model('Admin_model');
 		$this->load->model('Flyers_model');
+		$this->load->model('Journal_details_model');
 			if($this->session->userdata('userdetails'))
 			{
 				$admindetails=$this->session->userdata('userdetails');
@@ -30,7 +31,11 @@ class Flyers extends CI_Controller {
 	{	
 		if($this->session->userdata('userdetails'))
 		{
-			$this->load->view('admin/flyers/add');
+			$admindetails=$this->session->userdata('userdetails');
+
+			$data['journals_list']=$this->Journal_details_model->get_all_journal_list($admindetails['id']);
+			$data['journals_category_list']=$this->Journal_details_model->get_journal_category_list($admindetails['id']);
+			$this->load->view('admin/flyers/add',$data);
 			$this->load->view('admin/footer');
 		}else{
 			$this->session->set_flashdata('error','Please login to continue');
@@ -61,6 +66,8 @@ class Flyers extends CI_Controller {
 			$admindetails=$this->session->userdata('userdetails');
 			$f_id=base64_decode($this->uri->segment(3));
 			$data['details']=$this->Flyers_model->get_flyers_details($f_id);
+			$data['journals_list']=$this->Journal_details_model->get_all_journal_list($admindetails['id']);
+			$data['journals_category_list']=$this->Journal_details_model->get_journal_category_list($admindetails['id']);
 			
 			//echo '<pre>';print_r($data);exit; 
 			$this->load->view('admin/flyers/edit',$data);
@@ -86,6 +93,8 @@ class Flyers extends CI_Controller {
 								$image='';
 							}
 					$add_data=array(
+					'journal_id'=>isset($post['journal'])?$post['journal']:'',
+					'journal_cat_id'=>isset($post['category'])?$post['category']:'',
 					'title'=>isset($post['title'])?$post['title']:'',
 					'title_color'=>isset($post['title_color'])?$post['title_color']:'',
 					'fly_image'=>$image,
@@ -128,6 +137,8 @@ class Flyers extends CI_Controller {
 								$org_name=$details['fly_org_image'];
 							}
 					$update_data=array(
+					'journal_id'=>isset($post['journal'])?$post['journal']:'',
+					'journal_cat_id'=>isset($post['category'])?$post['category']:'',
 					'title'=>isset($post['title'])?$post['title']:'',
 					'title_color'=>isset($post['title_color'])?$post['title_color']:'',
 					'fly_image'=>$image,

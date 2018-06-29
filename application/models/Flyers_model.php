@@ -14,7 +14,9 @@ class Flyers_model extends CI_Model
 		return $insert_id = $this->db->insert_id();
 	}
 	public function get_flyers_list($id){
-		$this->db->select('*')->from('grf_flyers');		
+		$this->db->select('grf_flyers.*,journals.title as journaltitle,grf_journal_category.category')->from('grf_flyers');		
+		$this->db->join('journals ', 'journals.j_id = grf_flyers.journal_id', 'left');
+		$this->db->join('grf_journal_category ', 'grf_journal_category.c_id = grf_flyers.journal_cat_id', 'left');
 		$this->db->where('grf_flyers.create_by',$id);
         return $this->db->get()->result_array();	
 	}

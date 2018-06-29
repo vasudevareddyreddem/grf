@@ -1,3 +1,18 @@
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet"> 
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> 
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script> 
+
+<!-- include codemirror (codemirror.css, codemirror.js, xml.js, formatting.js) -->
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/codemirror.css">
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/theme/monokai.css">
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/codemirror.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/mode/xml/xml.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/codemirror/2.36.0/formatting.js"></script>
+
+<!-- include summernote css/js-->
+<link href="summernote.css">
+<script src="summernote.js"></script>
+
 <div class="content-wrapper">
 <section class="content-header">
       <h1>
@@ -28,7 +43,35 @@
 										<input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
 
       
-						<div class="col-md-8">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class=" control-label">Category</label>
+								<div class="">
+									 <select class="form-control" id="category" onchange="get_gournals(this.value);" name="category">
+									  <option value="">Select</option>
+									 <?php foreach($journals_category_list as $list){ ?>
+									<option value="<?php echo $list['c_id']; ?>"><?php echo $list['category']; ?></option>
+									<?php } ?>
+									</select>
+								</div>
+							</div>
+                        </div>
+					<div class="col-md-6">
+							<div class="form-group">
+								<label class=" control-label">Select Journal</label>
+								<div class="">
+									 <select class="form-control" id="journal" name="journal">
+									  <option value="">Select</option>
+									 <?php foreach($journals_list as $list){ ?>
+									 
+									 			<option value="<?php echo $list['j_id']; ?>"><?php echo $list['title']; ?></option>
+
+									<?php } ?>
+									</select>
+								</div>
+							</div>
+                        </div>
+						<div class="col-md-6">
 							<div class="form-group">
 								<label class=" control-label">Title</label>
 								<div class="">
@@ -37,7 +80,7 @@
 							</div>
                         </div>
 						
-						<div class="col-md-8">
+						<div class="col-md-6">
 							<div class="form-group">
 								<label class=" control-label">Image</label>
 								<div class="">
@@ -45,7 +88,7 @@
 								</div>
 							</div>
                         </div>
-						<div class="col-md-8">
+						<div class="col-md-6">
 							<div class="form-group">
 								<label class=" control-label">Title Color Code</label>
 								<div class="">
@@ -53,7 +96,8 @@
 								</div>
 							</div>
                         </div>
-					
+					<div class="summernote">summernote 1</div>
+<div class="summernote">summernote 2</div>
 						<div class="clearfix">&nbsp;</div>
 						  <div class="form-group">
                             <div class="col-lg-4 col-lg-offset-8">
@@ -81,6 +125,9 @@
     </section> 
 </div>
   <script type="text/javascript">
+  $(document).ready(function() {
+  $('.summernote').summernote();
+});
 $(document).ready(function() {
     $('#addflyer').bootstrapValidator({
         

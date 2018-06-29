@@ -33,7 +33,7 @@
 								<div class="row">
 									<!-- Slide Text Layer -->
 									<div class="slide-text slide_style_center">
-										<h1 data-animation="animated zoomInRight"><?php echo isset($list['title'])?$list['title']:''; ?></h1>
+										<h1 class="fadeInDown wow animated" data-wow-duration="1000ms" data-wow-delay="1000ms"><?php echo isset($list['title'])?$list['title']:''; ?></h1>
 									</div>
 								</div>
 							</div>

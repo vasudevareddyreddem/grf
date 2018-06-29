@@ -85,10 +85,18 @@ class Reviewerboard extends CI_Controller {
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
 			//echo '<pre>';print_r($post);exit;
+			if(isset($_FILES['image']['name']) && $_FILES['image']['name']!=''){
+								$temp = explode(".", $_FILES["image"]["name"]);
+								$image = round(microtime(true)) . '.' . end($temp);
+								move_uploaded_file($_FILES['image']['tmp_name'], "assets/reviewerboard/" . $image);
+							}else{
+								$image='';
+							}
 					$add_data=array(
 					'category'=>isset($post['category'])?$post['category']:'',
 					'journal'=>isset($post['journal'])?$post['journal']:'',
 					'name'=>isset($post['name'])?$post['name']:'',
+					'image'=>$image,
 					'university'=>isset($post['university'])?$post['university']:'',
 					'country'=>isset($post['country'])?$post['country']:'',
 					'reviewer_board'=>isset($post['reviewer_board'])?$post['reviewer_board']:'',
@@ -116,10 +124,24 @@ class Reviewerboard extends CI_Controller {
 		{
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
-			$update_data=array(
+			$details=$this->Reviewerboard_model->get_reviewer_details($post['r_id']);
+
+			if(isset($_FILES['image']['name']) && $_FILES['image']['name']!=''){
+								unlink('assets/reviewerboard/'.$details['image']);
+								$temp = explode(".", $_FILES["image"]["name"]);
+								$image = round(microtime(true)) . '.' . end($temp);
+								move_uploaded_file($_FILES['image']['tmp_name'], "assets/reviewerboard/" . $image);
+								$org_name=$_FILES["image"]["name"];
+							}else{
+								$image=$details['fly_image'];
+								$org_name=$details['fly_org_image'];
+							}
+						$update_data=array(
 							'category'=>isset($post['category'])?$post['category']:'',
 							'journal'=>isset($post['journal'])?$post['journal']:'',
 							'name'=>isset($post['name'])?$post['name']:'',
+							'image'=>$image,
+
 							'university'=>isset($post['university'])?$post['university']:'',
 							'country'=>isset($post['country'])?$post['country']:'',
 							'reviewer_board'=>isset($post['reviewer_board'])?$post['reviewer_board']:'',
@@ -181,9 +203,12 @@ class Reviewerboard extends CI_Controller {
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
 			$f_id=base64_decode($this->uri->segment(3));
-			
+						$details=$this->Reviewerboard_model->get_reviewer_details($f_id);
+
 					$delete=$this->Reviewerboard_model->delete_Reviewer($f_id);
 					if(count($delete)>0){
+						unlink('assets/reviewerboard/'.$details['image']);
+
 						$this->session->set_flashdata('success',"Reviewer board successfully deleted");
 						redirect('reviewerboard/lists');
 					}else{

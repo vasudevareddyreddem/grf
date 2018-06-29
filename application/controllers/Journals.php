@@ -40,6 +40,20 @@ class Journals extends CI_Controller {
 		$this->load->view('html/footer');
 		
 	}
+	public function board_profile()
+	{	
+		$header['c_url']=base_url('journals');
+		$header['scroll_data']=$this->Home_model->get_scrolling_content();
+		$this->load->view('html/header',$header);
+		
+		$editor_id=base64_decode($this->uri->segment(3));
+		$data['board_member_details']=$this->Home_model->get_board_member_details($editor_id);
+		$data['flyers_list']=$this->Home_model->get_flyers_list();
+		$data['journals_list']=$this->Home_model->get_peer_review_process_journals_list();
+		$this->load->view('html/boardprofile',$data);
+		$this->load->view('html/footer');
+		
+	}
 	public function archive()
 	{	
 		$header['c_url']=base_url('journals');
@@ -64,7 +78,8 @@ class Journals extends CI_Controller {
 		$data['article_list']=$this->Home_model->get_journal_wise_article_list($j_id);
 		$data['homapage_banners']=$this->Home_model->get_journal_wise_banners_list($j_id);
 		$data['board_members']=$this->Home_model->get_journal_wise_boardmembers_list($j_id);
-		$data['latest_boardmembers']=$this->Home_model->get_latest_boardmembers_list($j_id);
+		$data['latest_editors']=$this->Home_model->get_latest_boardmembers_list($j_id);
+		$data['reviewer_boardmembers']=$this->Home_model->get_reviewer_boardmembers_list($j_id);
 		$data['special_issue']=$this->Home_model->get_latest_special_list($j_id);
 		$data['article_process_fee']=$this->Home_model->get_article_process_fee($j_id);
 		$data['archive_list']=$this->Home_model->get_archive_list($j_id);

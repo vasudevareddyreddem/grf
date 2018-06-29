@@ -89,6 +89,14 @@
 								</div>
 							</div>
                         </div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class=" control-label">Image</label>
+								<div class="">
+									<input type="file" class="form-control" name="image" id="image"  />
+								</div>
+							</div>
+                        </div>
 						
 						<div class="col-md-12">
 							<div class="form-group">
@@ -176,6 +184,15 @@ $(document).ready(function() {
                 validators: {
 					notEmpty: {
 						message: 'Country is required'
+					}
+				}
+            },
+			image: {
+                validators: {
+					
+					regexp: {
+					regexp: "(.*?)\.(png|jpeg|jpg|gif)$",
+					message: 'Uploaded file is not a valid. Only png,jpg,jpeg,gif files are allowed'
 					}
 				}
             },

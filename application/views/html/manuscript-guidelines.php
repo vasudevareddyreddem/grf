@@ -125,7 +125,7 @@
 									   <img src="<?php echo base_url('assets/flyers_img/'.$list['fly_image']); ?>">
 										<div class="carousel-caption">
 										<p> 
-										<a class="btn btn-primary" href="javascript:void(0);">
+										<a class="btn btn-primary" href="<?php echo base_url('journals/view/'.base64_encode($list['j_id']).'/'.$list['seo_url']); ?>">
 									   <?php echo isset($list['title'])?$list['title']:''; ?></a></p>
 														
 										</div>
@@ -135,7 +135,7 @@
 									   <img src="<?php echo base_url('assets/flyers_img/'.$list['fly_image']); ?>">
 										<div class="carousel-caption">
 										<p> 
-										<a class="btn btn-primary" href="javascript:void(0);">
+										<a class="btn btn-primary" href="<?php echo base_url('journals/view/'.base64_encode($list['j_id']).'/'.$list['seo_url']); ?>">
 									   <?php echo isset($list['title'])?$list['title']:''; ?></a></p>
 														
 										</div>

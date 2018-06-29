@@ -62,6 +62,7 @@ class Journals extends CI_Controller {
 		
 		$issue_id=base64_decode($this->uri->segment(3));
 		$data['latest_boardmembers']=$this->Home_model->get_latest_boardmembers_list();
+		//echo '<pre>';print_r($data);exit;
 		$data['article_list']=$this->Home_model->get_issue_wise_articles($issue_id);
 		$this->load->view('html/archive',$data);
 		$this->load->view('html/footer');
@@ -78,11 +79,12 @@ class Journals extends CI_Controller {
 		$data['article_list']=$this->Home_model->get_journal_wise_article_list($j_id);
 		$data['homapage_banners']=$this->Home_model->get_journal_wise_banners_list($j_id);
 		$data['board_members']=$this->Home_model->get_journal_wise_boardmembers_list($j_id);
-		$data['latest_editors']=$this->Home_model->get_latest_boardmembers_list($j_id);
+		$data['latest_editors']=$this->Home_model->get_journal_latest_boardmembers_list($j_id);
 		$data['reviewer_boardmembers']=$this->Home_model->get_reviewer_boardmembers_list($j_id);
 		$data['special_issue']=$this->Home_model->get_latest_special_list($j_id);
 		$data['article_process_fee']=$this->Home_model->get_article_process_fee($j_id);
 		$data['archive_list']=$this->Home_model->get_archive_list($j_id);
+		$data['lastest_article']=$this->Home_model->get_lastest_article_list($j_id);
 		if(isset($data['archive_list'][0]['id']) && $data['archive_list'][0]['id']!=''){
 			$data['current_issue_list']=$this->Home_model->get_current_article_list($data['archive_list'][0]['id']);
 		}else{

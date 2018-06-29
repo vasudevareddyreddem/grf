@@ -9,6 +9,8 @@
 		
 				<?php if(isset($article_list)&& count($article_list)>0){ ?>
 				
+				<?php //echo '<pre>';print_r($article_list);exit; ?>
+				
 				<?php foreach($article_list as $list){ ?>
 				<div class="article">
 					   <div class="row">
@@ -31,10 +33,10 @@
 								   </div>
 								   <div class="col-lg-10 col-md-9 col-sm-10 col-xs-8">
 									  <div class="article-details">
-										 <h4><a href="<?php echo base_url('journals'); ?>" target="_blank" style="color:#0062C4;"><?php echo isset($list['title'])?$list['title']:''; ?></a></h4>
+										 <h4><a href="<?php echo base_url('article/view/'.base64_encode($list['a_id']).'/'.$list['url']); ?>" target="_blank" style="color:#0062C4;"><?php echo isset($list['title'])?$list['title']:''; ?></a></h4>
 										 <!--<span class="name"><?php echo isset($list['author_name'])?$list['author_name']:''; ?></span>-->
-										 <h6><a href="#" target="_blank" style="color:#F60;"><?php echo isset($list['author_name'])?$list['author_name']:''; ?></a></h6>
-										 <p class="art-date"><a href="<?php echo base_url('journals'); ?>" ><?php echo isset($list['journaltitle'])?$list['journaltitle']:''; ?></a></p>
+										 <h6><a href="javascript:void(0);"  style="color:#F60;"><?php echo isset($list['author_name'])?$list['author_name']:''; ?></a></h6>
+										 <p class="art-date"><a href="<?php echo base_url('journals/view/'.base64_encode($list['journal_id']).'/'.$list['url']); ?>" ><?php echo isset($list['journaltitle'])?$list['journaltitle']:''; ?></a></p>
 									  </div>
 								   </div>
 								</div>
@@ -76,17 +78,16 @@
                
 			      <?php if(isset($latest_boardmembers) && count($latest_boardmembers)>0){ ?>
 				<?php foreach($latest_boardmembers as $list){ ?>
-					   <ul>
+					<ul>
 						  <li style="padding:0px 0px 0px 10px">
 							 <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
-							 <a href="<?php echo base_url('journals/view/'.base64_encode($list['journal_id']).'/'.$list['seo_url']); ?>" target="_blank" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal"><?php echo isset($list['journaltitile'])?$list['journaltitile']:''; ?> </a><br>
+							 <a href="<?php echo base_url('journals/view/'.base64_encode($list['j_id']).'/'.$list['seo_url']); ?>" target="_blank" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal"><?php echo isset($list['reviewer_board'])?$list['reviewer_board']:''; ?> </a><br>
 						  </li>
 					   </ul>
 					   <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
-						  <span style="color: #05658F; text-decoration: none; font-weight: bold;">Name: <a href="<?php echo base_url('journals/editors-profile/'.base64_encode($list['j_e_id'])); ?>" target="_blank"> <?php echo isset($list['name'])?$list['name']:''; ?></a></span>
+						  <span style="color: #05658F; text-decoration: none; font-weight: bold;">Name: <a href="<?php echo base_url('journals/board-profile/'.base64_encode($list['id'])); ?>" target="_blank"> <?php echo isset($list['name'])?$list['name']:''; ?></a></span>
 					   </p>
-					   <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p>
-				   <?php } ?>
+					   <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p><?php } ?>
 			   <?php } ?>
                
             </marquee>

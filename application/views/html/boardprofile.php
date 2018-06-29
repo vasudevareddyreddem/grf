@@ -13,7 +13,7 @@
 					<?php if($board_member_details['image']!=''){ ?>
 						<img  class=" img-fluid thumbnail" style="width:150px;height:auto;" src="<?php echo base_url('assets/reviewerboard/'.$board_member_details['image']); ?>" alt="card image">
 					<?php }else{ ?>
-							<img  class=" img-fluid thumbnail" style="width:150px;height:auto;" src="<?php echo base_url('assets/vendor/imag/board.png'); ?>" alt="card image">
+							<img  class=" img-fluid thumbnail" style="width:150px;height:auto;" src="<?php echo base_url('assets/vendor/img/board.png'); ?>" alt="card image">
 
 					<?php } ?>
 						<h3><?php echo isset($board_member_details['name'])?$board_member_details['name']:''; ?></H3>

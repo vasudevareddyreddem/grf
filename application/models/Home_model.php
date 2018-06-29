@@ -129,16 +129,22 @@ class Home_model extends CI_Model
 		$this->db->where('status',1);		
         return $this->db->get()->result_array();
 	}
-	public  function get_latest_boardmembers_list($j_id){
+	public  function get_latest_boardmembers_list(){
+		$this->db->select('journals.j_id,journals.seo_url,reviewerboard.id,reviewerboard.image,reviewerboard.journal,reviewerboard.name,reviewerboard.designation,reviewerboard.country,reviewerboard.reviewer_board,reviewerboard.university,journals.title as journaltitile,journals.seo_url')->from('reviewerboard');
+		$this->db->join('journals ', 'journals.j_id = reviewerboard.journal', 'left');
+		$this->db->where('reviewerboard.status',1);		
+		$this->db->order_by('reviewerboard.id','desc');		
+        return $this->db->get()->result_array();
+	}
+	public  function get_journal_latest_boardmembers_list(){
 		$this->db->select('journal_editors.j_e_id,journal_editors.journal_id,journal_editors.image,journal_editors.name,journal_editors.email,journal_editors.phone,journal_editors.designation,journal_editors.position,journal_editors.university,journal_editors.biography,journals.title as journaltitile,journals.seo_url')->from('journal_editors');
 		$this->db->join('journals ', 'journals.j_id = journal_editors.journal_id', 'left');
 		$this->db->where('journal_editors.status',1);		
-		$this->db->where('journal_editors.journal_id',$j_id);		
 		$this->db->order_by('journal_editors.j_e_id','desc');		
         return $this->db->get()->result_array();
 	}
 	public  function get_reviewer_boardmembers_list($j_id){
-		$this->db->select('reviewerboard.id,reviewerboard.image,reviewerboard.journal,reviewerboard.name,reviewerboard.designation,reviewerboard.country,reviewerboard.reviewer_board,reviewerboard.university,journals.title as journaltitile,journals.seo_url')->from('reviewerboard');
+		$this->db->select('journals.j_id,journals.seo_url,reviewerboard.id,reviewerboard.image,reviewerboard.journal,reviewerboard.name,reviewerboard.designation,reviewerboard.country,reviewerboard.reviewer_board,reviewerboard.university,journals.title as journaltitile,journals.seo_url')->from('reviewerboard');
 		$this->db->join('journals ', 'journals.j_id = reviewerboard.journal', 'left');
 		$this->db->where('reviewerboard.status',1);		
 		$this->db->where('reviewerboard.journal',$j_id);		
@@ -202,11 +208,21 @@ class Home_model extends CI_Model
 		$this->db->order_by('journal_article_in_press.a_id',"DESC");
         return $this->db->get()->result_array();
 	}
-	public function get_board_member_details($j_id){
+		public function get_board_member_details($j_id){
 		$this->db->select('*')->from('reviewerboard');
 		$this->db->where('id',$j_id);		
 		$this->db->where('status',1);
         return $this->db->get()->row_array();
+		}
+		
+		public  function get_lastest_article_list($j_id){
+		$this->db->select('journal_article_in_press.a_id,journal_article_in_press.journal_id,journal_article_in_press.year_of_article,journal_article_in_press.title,journal_article_in_press.author_name,journal_article_in_press.article_type,url,journal_article_in_press.seo_title,journal_article_in_press.pdf_file,image,journal_article_in_press.create_at,journals.title as journaltitle')->from('journal_article_in_press');
+		$this->db->join('journals ', 'journals.j_id = journal_article_in_press.journal_id', 'left');
+		$this->db->where('journal_article_in_press.journal_id',$j_id);		
+		$this->db->where('journal_article_in_press.video_article',0);		
+		$this->db->where('journal_article_in_press.status',1);		
+		$this->db->order_by('journal_article_in_press.a_id',"DESC");
+		 return $this->db->get()->result_array();
 		}
 	/* journals page*/
 	

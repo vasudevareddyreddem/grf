@@ -81,13 +81,13 @@
 				<div class="col-md-9">
 					<div class="bg_color2">
 							<ul class="nav nav-tabs">
-								<li class="active"><a href="#tab1primary" data-toggle="tab">Home</a></li>
-								<li><a href="#tab2primary" data-toggle="tab"> Board Members</a></li>
-								<li><a href="#tab3primary" data-toggle="tab"> Article In Press</a></li>
-								<li><a href="#tab4primary" data-toggle="tab">Current Issue</a></li>
-								<li><a href="#tab5primary" data-toggle="tab">Archive</a></li>
-								<li><a href="#tab6primary" data-toggle="tab">Article Process Fee</a></li>
-								<li><a href="#tab7primary" data-toggle="tab">Special Issue</a></li>
+								<li class="active"><a onclick="show_boardmembers(1);" href="#tab1primary" data-toggle="tab">Home</a></li>
+								<li><a onclick="show_boardmembers(0);" href="#tab2primary" data-toggle="tab"> Board Members</a></li>
+								<li><a onclick="show_boardmembers(1);" href="#tab3primary" data-toggle="tab"> Article In Press</a></li>
+								<li><a onclick="show_boardmembers(1);" href="#tab4primary" data-toggle="tab">Current Issue</a></li>
+								<li><a onclick="show_boardmembers(1);" href="#tab5primary" data-toggle="tab">Archive</a></li>
+								<li><a onclick="show_boardmembers(1);" href="#tab6primary" data-toggle="tab">Article Process Fee</a></li>
+								<li><a onclick="show_boardmembers(1);" href="#tab7primary" data-toggle="tab">Special Issue</a></li>
 								
 							</ul>
 					</div>
@@ -318,22 +318,22 @@
 					</div>
 				</div>
 				<div class="col-md-3 mt20">
-   <div class="sidebar side-bar right-sidebar">
+   <div class="sidebar side-bar right-sidebar" id="board_member" style="display:none;">
       <div class="widget sidebar-newsletter">
          <h3 class="side-title">Review Board Members</h3>
          <div class="cp-newsletter-holder" id="pubmed">
             <marquee class="pubmed-articles" align="top" behavior="scroll" onmouseout="this.start();" onmouseover="this.stop();" direction="up" scrollamount="2" style="padding: 10px 0px 10px 0px;height: 200px;background: #f5f5f5;overflow:hidden;">
                
-			   <?php if(isset($latest_boardmembers) && count($latest_boardmembers)>0){ ?>
-				<?php foreach($latest_boardmembers as $list){ ?>
+			   <?php if(isset($reviewer_boardmembers) && count($reviewer_boardmembers)>0){ ?>
+				<?php foreach($reviewer_boardmembers as $list){ ?>
 					   <ul>
 						  <li style="padding:0px 0px 0px 10px">
 							 <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
-							 <a href="<?php echo base_url('journals/view/'.base64_encode($list['journal_id']).'/'.$list['seo_url']); ?>" target="_blank" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal"><?php echo isset($list['journaltitile'])?$list['journaltitile']:''; ?> </a><br>
+							 <a href="<?php echo base_url('journals/view/'.base64_encode($list['j_id']).'/'.$list['seo_url']); ?>" target="_blank" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal"><?php echo isset($list['reviewer_board'])?$list['reviewer_board']:''; ?> </a><br>
 						  </li>
 					   </ul>
 					   <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
-						  <span style="color: #05658F; text-decoration: none; font-weight: bold;">Name: <a href="<?php echo base_url('journals/editors-profile/'.base64_encode($list['j_e_id'])); ?>" target="_blank"> <?php echo isset($list['name'])?$list['name']:''; ?></a></span>
+						  <span style="color: #05658F; text-decoration: none; font-weight: bold;">Name: <a href="<?php echo base_url('journals/board-profile/'.base64_encode($list['id'])); ?>" target="_blank"> <?php echo isset($list['name'])?$list['name']:''; ?></a></span>
 					   </p>
 					   <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p>
 				   <?php } ?>
@@ -345,22 +345,22 @@
       </div>
 			</div>
 			<div class="clearfix">&nbsp;</div>
-			<div class="sidebar side-bar right-sidebar">
+			<div class="sidebar side-bar right-sidebar" id="article_latest">
       <div class="widget sidebar-newsletter">
-         <h3 class="side-title">Review Board Members</h3>
+         <h3 class="side-title">Latest Article</h3>
          <div class="cp-newsletter-holder" id="pubmed">
             <marquee class="pubmed-articles" align="top" behavior="scroll" onmouseout="this.start();" onmouseover="this.stop();" direction="up" scrollamount="2" style="padding: 10px 0px 10px 0px;height: 200px;background: #f5f5f5;overflow:hidden;">
                
-			   <?php if(isset($latest_boardmembers) && count($latest_boardmembers)>0){ ?>
-				<?php foreach($latest_boardmembers as $list){ ?>
+			   <?php if(isset($lastest_article) && count($lastest_article)>0){ ?>
+				<?php foreach($lastest_article as $list){ ?>
 					   <ul>
 						  <li style="padding:0px 0px 0px 10px">
 							 <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
-							 <a href="<?php echo base_url('journals/view/'.base64_encode($list['journal_id']).'/'.$list['seo_url']); ?>" target="_blank" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal"><?php echo isset($list['journaltitile'])?$list['journaltitile']:''; ?> </a><br>
+							 <a href="<?php echo base_url('article/view/'.base64_encode($list['a_id']).'/'.$list['url']); ?>" target="_blank" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal"><?php echo isset($list['title'])?$list['title']:''; ?> </a><br>
 						  </li>
 					   </ul>
 					   <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
-						  <span style="color: #05658F; text-decoration: none; font-weight: bold;">Name: <a href="<?php echo base_url('journals/editors-profile/'.base64_encode($list['j_e_id'])); ?>" target="_blank"> <?php echo isset($list['name'])?$list['name']:''; ?></a></span>
+						  <span style="color: #05658F; text-decoration: none; font-weight: bold;"><a href="<?php echo base_url('article/view/'.base64_encode($list['a_id']).'/'.$list['url']); ?>" target="_blank"> <?php echo isset($list['article_type'])?$list['article_type']:''; ?></a></span>
 					   </p>
 					   <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p>
 				   <?php } ?>
@@ -414,4 +414,15 @@
 				
 			</div>
 		</div>
-       
+       <script>
+	   function show_boardmembers(val){
+		   if(val==0){
+			  $('#board_member').show(); 
+			  $('#article_latest').hide(); 
+		   }else{
+			   $('#board_member').hide(); 
+			  $('#article_latest').show(); 
+		   }
+		   
+	   }
+       </script>

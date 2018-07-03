@@ -114,8 +114,8 @@
 			
             
 			<!-- Team member -->
-			<?php if(isset($reviewer_boardmembers) && count($reviewer_boardmembers)>0){ ?>
-					<?php foreach($reviewer_boardmembers as $list){ ?>
+			<?php if(isset($board_members) && count($board_members)>0){ ?>
+					<?php foreach($board_members as $list){ ?>
 					<div class="col-xs-12 col-sm-6 col-md-4">
 						<div class="image-flip" style="width:100%;" ontouchstart="this.classList.toggle('hover');">
 							<div class="mainflip">
@@ -124,13 +124,13 @@
 										<div class="card-body text-center">
 											<p>
 											<?php if($list['image']!=''){ ?>
-											<img class=" img-fluid" src="<?php echo base_url('assets/reviewerboard/'.$list['image']); ?>" alt="<?php echo isset($list['name'])?$list['name']:''; ?>">
+											<img class=" img-fluid" src="<?php echo base_url('assets/editors_pics/'.$list['image']); ?>" alt="<?php echo isset($list['name'])?$list['name']:''; ?>">
 											<?php }else{?>
 													<img class=" img-fluid" src="<?php echo base_url('assets/vendor/img/board.png'); ?>" alt="board member">
 												<?php } ?>
 											</p>
 											<h4 class="card-title"><?php echo isset($list['name'])?$list['name']:''; ?></h4>
-											<p class="card-text"><?php echo substr($list['reviewer_board'],0,160); ?>...</p>
+											<p class="card-text"><?php echo substr($list['biography'],0,160); ?>...</p>
 											
 										</div>
 									</div>
@@ -145,7 +145,7 @@
 											<h4 class="card-title ">Country</h4>
 											<div class=""><?php echo isset($list['country'])?$list['country']:''; ?> </div>
 										
-											<a href="<?php echo base_url('journals/board-profile/'.base64_encode($list['id'])); ?>" class="btn btn-default btn-sm text-center text-white">View More</a>
+											<a href="<?php echo base_url('journals/editors-profile/'.base64_encode($list['j_e_id'])); ?>" class="btn btn-default btn-sm text-center text-white">View More</a>
 
 										</div>
 									</div>
@@ -323,17 +323,17 @@
          <h3 class="side-title">Review Board Members</h3>
          <div class="cp-newsletter-holder" id="pubmed">
             <marquee class="pubmed-articles" align="top" behavior="scroll" onmouseout="this.start();" onmouseover="this.stop();" direction="up" scrollamount="2" style="padding: 10px 0px 10px 0px;height: 200px;background: #f5f5f5;overflow:hidden;">
-               
-			   <?php if(isset($reviewer_boardmembers) && count($reviewer_boardmembers)>0){ ?>
-				<?php foreach($reviewer_boardmembers as $list){ ?>
+               <?php //echo '<pre>';print_r($board_members);exit; ?>
+			   <?php if(isset($latest_editors) && count($latest_editors)>0){ ?>
+				<?php foreach($latest_editors as $list){ ?>
 					   <ul>
 						  <li style="padding:0px 0px 0px 10px">
 							 <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
-							 <a href="<?php echo base_url('journals/view/'.base64_encode($list['j_id']).'/'.$list['seo_url']); ?>" target="_blank" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal"><?php echo isset($list['reviewer_board'])?$list['reviewer_board']:''; ?> </a><br>
+							 <a href="<?php echo base_url('journals/view/'.base64_encode($list['journal_id']).'/'.$list['seo_url']); ?>" target="_blank" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal"><?php echo isset($list['journaltitile'])?$list['journaltitile']:''; ?> </a><br>
 						  </li>
 					   </ul>
 					   <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
-						  <span style="color: #05658F; text-decoration: none; font-weight: bold;">Name: <a href="<?php echo base_url('journals/board-profile/'.base64_encode($list['id'])); ?>" target="_blank"> <?php echo isset($list['name'])?$list['name']:''; ?></a></span>
+						  <span style="color: #05658F; text-decoration: none; font-weight: bold;">Name: <a href="<?php echo base_url('journals/editors_profile/'.base64_encode($list['j_e_id'])); ?>" target="_blank"> <?php echo isset($list['name'])?$list['name']:''; ?></a></span>
 					   </p>
 					   <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p>
 				   <?php } ?>

@@ -136,10 +136,11 @@ class Home_model extends CI_Model
 		$this->db->order_by('reviewerboard.id','desc');		
         return $this->db->get()->result_array();
 	}
-	public  function get_journal_latest_boardmembers_list(){
+	public  function get_journal_latest_boardmembers_list($j_id){
 		$this->db->select('journal_editors.j_e_id,journal_editors.journal_id,journal_editors.image,journal_editors.name,journal_editors.email,journal_editors.phone,journal_editors.designation,journal_editors.position,journal_editors.university,journal_editors.biography,journals.title as journaltitile,journals.seo_url')->from('journal_editors');
 		$this->db->join('journals ', 'journals.j_id = journal_editors.journal_id', 'left');
-		$this->db->where('journal_editors.status',1);		
+		$this->db->where('journal_editors.status',1);
+		$this->db->where('journal_editors.journal_id',$j_id);		
 		$this->db->order_by('journal_editors.j_e_id','desc');		
         return $this->db->get()->result_array();
 	}

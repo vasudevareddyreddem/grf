@@ -15,10 +15,12 @@ class Open_Access extends CI_Controller {
 		$this->load->helper('security');
 		$this->load->model('Home_model');
 		
-	}
+		}
 	public function index()
 	{	
-		$header['c_url']=base_url('open-access');
+		
+
+echo "dsdfdf";exit;$header['c_url']=base_url('open-access');
 		$header['scroll_data']=$this->Home_model->get_scrolling_content();
 		$this->load->view('html/header',$header);
 		$data['article_list']=$this->Home_model->get_article_list();

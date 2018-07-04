@@ -37,7 +37,7 @@
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/admin/plugins/datepicker/datepicker3.css">
   <!-- Daterange picker -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/admin/plugins/daterangepicker/daterangepicker.css">
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/admin/plugins/summernote/dist/summernote.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/admin/plugins/summernote/summernote.css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 	<!-- jQuery 2.2.3 -->

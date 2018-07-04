@@ -34,7 +34,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/vendor/admin/plugins/fullcalendar/fullcalendar.min.js"></script>
 <!--<script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>-->
-<script src="<?php echo base_url(); ?>assets/vendor/admin/plugins/summernote/dist/summernote.js"></script>
+<script src="<?php echo base_url(); ?>assets/vendor/admin/plugins/summernote/summernote.js"></script>
 <script src="<?php echo base_url(); ?>assets/vendor/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 
 

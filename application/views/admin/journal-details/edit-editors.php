@@ -337,10 +337,6 @@ $(document).ready(function() {
 					 validators: {
 					notEmpty: {
 						message: 'Biography is required'
-					},
-					regexp: {
-					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'Biography  wont allow <> [] = % '
 					}
 				}
 				}, 

@@ -243,9 +243,7 @@ $(document).ready(function() {
             },
 			image: {
                 validators: {
-					notEmpty: {
-						message: 'Image is required'
-					},
+					
 					regexp: {
 					regexp: "(.*?)\.(png|jpeg|jpg|gif)$",
 					message: 'Uploaded file is not a valid. Only png,jpg,jpeg,gif files are allowed'
@@ -291,10 +289,6 @@ $(document).ready(function() {
 					 validators: {
 					notEmpty: {
 						message: 'Biography is required'
-					},
-					regexp: {
-					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'Biography  wont allow <> [] = % '
 					}
 				}
 				}, 

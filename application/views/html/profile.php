@@ -10,7 +10,11 @@
 					<div class="row">
 					
 					<div class="col-md-4">
+					<?php if($editor_details['image']!=''){ ?>
 						<img  class=" img-fluid thumbnail" style="width:150px;height:auto;" src="<?php echo base_url('assets/editors_pics/'.$editor_details['image']); ?>" alt="card image">
+					<?php }else{ ?>
+						<img  class=" img-fluid thumbnail" style="width:150px;height:auto;" src="<?php echo base_url('assets/vendor/img/board.png'); ?>" alt="card image">
+					<?php } ?>
 						<h3><?php echo isset($editor_details['name'])?$editor_details['name']:''; ?></H3>
 					</div>
 					<div class="col-md-4">
@@ -47,10 +51,10 @@
 					</div>
 					</div>
 					<br>
-						<h3 class="">  
+					<h3 class="">  
 						<span class="text-success">Biogaphy</span> 
 					</h3>
-					<p ><?php echo isset($editor_details['biography'])?$editor_details['biography']:''; ?>
+					<p><?php echo isset($editor_details['biography'])?$editor_details['biography']:''; ?>
 					</p>
 				
                    

@@ -1,7 +1,7 @@
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>
+  
 </head>
 <div class="content-wrapper">
 <section class="content-header">
@@ -86,7 +86,7 @@
 								<label class=" control-label">Details</label>
 								<div class="">
 								 
-								 <textarea id="summernote" name="details" rows="2" cols="80" >
+								 <textarea class="summernote" name="details" rows="2" cols="80" >
                                             
 								</textarea>
  
@@ -125,15 +125,11 @@
     </section> 
 </div>
  <script>
-    $(document).ready(function() {
-        $('#summernote').summernote();
-    });
-  </script>
-  <script type="text/javascript">
-	CKEDITOR.replace('editor1', {
-		"extraPlugins": "imagebrowser",
-		"imageBrowser_listUrl": "/path/to/images_list.json"
-	});
+    $('.summernote').summernote({
+        placeholder: 'Hello stand alone ui',
+        tabsize: 2,
+        height: 100
+      });
 
   function checkvalidation(){
 	  var id=$('#journal').val();

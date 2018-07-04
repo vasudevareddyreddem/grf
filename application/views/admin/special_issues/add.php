@@ -86,7 +86,7 @@
 								<label class=" control-label">Details</label>
 								<div class="">
 								 
-								 <textarea id="summernote" name="details" rows="2" cols="80" >
+								 <textarea class="summernote" name="details" rows="2" cols="80" >
                                             
 								</textarea>
  
@@ -124,9 +124,11 @@
       <!-- /.row -->
     </section> 
 </div>
+
+<?php //echo '<pre>';print_r($_POST);exit; ?>
  <script>
     $(document).ready(function() {
-        $('#summernote').summernote();
+        $('.summernote').summernote();
     });
   </script>
   <script type="text/javascript">

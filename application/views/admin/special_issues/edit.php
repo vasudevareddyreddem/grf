@@ -79,7 +79,7 @@
 							<div class="form-group">
 								<label class=" control-label">Details</label>
 								<div class="">
-									<textarea id="editor1" name="details" rows="2" cols="80" ><?php echo isset($details['details'])?$details['details']:''; ?>
+									<textarea id="summernote" name="details" rows="2" cols="80" ><?php echo isset($details['details'])?$details['details']:''; ?>
                                             
 								</textarea>
 								</div>
@@ -117,6 +117,10 @@
     </section> 
 </div>
   <script type="text/javascript">
+    $(document).ready(function() {
+        $('#summernote').summernote();
+    });
+  
   function checkvalidation(){
 	  var id=$('#journal').val();
 	  if(id==''){

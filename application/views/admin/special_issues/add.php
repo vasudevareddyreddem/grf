@@ -1,3 +1,8 @@
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
 <div class="content-wrapper">
 <section class="content-header">
       <h1>
@@ -66,13 +71,25 @@
 							</div>
                         </div>
 						
-						<div class="col-md-12">
+						<!--<div class="col-md-12">
 							<div class="form-group">
 								<label class=" control-label">Details</label>
 								<div class="">
 									<textarea id="editor1" name="details" rows="2" cols="80" >
                                             
 								</textarea>
+								</div>
+							</div>
+                        </div>-->
+						<div class="col-md-12">
+							<div class="form-group">
+								<label class=" control-label">Details</label>
+								<div class="">
+								 
+								 <textarea id="summernote" name="details" rows="2" cols="80" >
+                                            
+								</textarea>
+ 
 								</div>
 							</div>
                         </div>
@@ -107,6 +124,11 @@
       <!-- /.row -->
     </section> 
 </div>
+ <script>
+    $(document).ready(function() {
+        $('#summernote').summernote();
+    });
+  </script>
   <script type="text/javascript">
 	CKEDITOR.replace('editor1', {
 		"extraPlugins": "imagebrowser",

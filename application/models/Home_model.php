@@ -172,6 +172,24 @@ class Home_model extends CI_Model
 		$this->db->select('year,number,image,id,journal_id')->from('issues');
 		$this->db->where('journal_id',$j_id);		
 		$this->db->where('status',1);
+		$this->db->group_by('issues.year',1);
+		$this->db->order_by('id','desc');
+        $return=$this->db->get()->result_array();
+		$cnt=0;foreach($return as $list){
+			$issues_list=$this->get_issues_list($list['year']);
+			$data[$cnt]=$list;
+			$data[$cnt]['issues_list']=$issues_list;
+		$cnt++;}
+		if(!empty($data)){
+			return $data;
+		}
+		//echo '<pre>';print_r($data);exit;
+	}
+	
+	public  function get_issues_list($year){
+		$this->db->select('year,number,image,id,journal_id')->from('issues');
+		$this->db->where('year',$year);		
+		$this->db->where('status',1);
 		$this->db->order_by('id','desc');
         return $this->db->get()->result_array();
 	}
@@ -195,7 +213,18 @@ class Home_model extends CI_Model
 		$this->db->join('journal_article_in_press ', 'journal_article_in_press.a_id = issue_wise_article_list.article_id', 'left');
 		$this->db->join('journals ', 'journals.j_id = journal_article_in_press.journal_id', 'left');
 		$this->db->where('journal_article_in_press.video_article',0);		
+		$this->db->where('issue_wise_article_list.i_a_id',$iss_id);		
 		$this->db->where('journal_article_in_press.status',1);		
+		$this->db->order_by('journal_article_in_press.a_id',"DESC");
+        return $this->db->get()->result_array();
+	}
+	public  function get_current_article_list_group_by_yearss($issue_id){
+		$this->db->select('journal_article_in_press.a_id,journal_article_in_press.journal_id,journal_article_in_press.year_of_article,journal_article_in_press.title,journal_article_in_press.author_name,journal_article_in_press.article_type,url,journal_article_in_press.seo_title,journal_article_in_press.pdf_file,image,journal_article_in_press.create_at,journals.title as journaltitle')->from('issue_wise_article_list');
+		$this->db->join('journal_article_in_press ', 'journal_article_in_press.a_id = issue_wise_article_list.article_id', 'left');
+		$this->db->join('journals ', 'journals.j_id = journal_article_in_press.journal_id', 'left');
+		$this->db->where('journal_article_in_press.video_article',0);		
+		$this->db->where('journal_article_in_press.status',1);		
+		$this->db->where('issue_wise_article_list.i_a_id',$issue_id);		
 		$this->db->order_by('journal_article_in_press.a_id',"DESC");
         return $this->db->get()->result_array();
 	}

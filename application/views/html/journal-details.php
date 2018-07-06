@@ -291,18 +291,45 @@
 							<div class="tab-pane fade" id="tab5primary">
 								<div class="row">
 								<?php if(isset($archive_list) && count($archive_list)>0){ ?>
-										<?php foreach($archive_list as $list){ ?>
-											<a href="<?php echo base_url('journals/archive/'.base64_encode($list['id'])); ?>">
-											<div class="col-md-4">
-												<img style ="" class= "img-responsive" src="<?php echo base_url('assets/issues/'.$list['image']); ?>" alt="<?php echo isset($list['year'])?$list['year']:''; ?>">
-												<div class="text-archive-img">
-													<h3 class=""><?php echo isset($list['number'])?$list['number']:''; ?>    
-														<span class="text-success"> <?php echo isset($list['year'])?$list['year']:''; ?></span> 
-													</h3>
+										<?php $cnt=1;foreach($archive_list as $list){ ?>
+										
+										<div class="sidebar side-bar right-sidebar">
+												<div class="widget sidebar-newsletter">
+												 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+														 <div class="panel panel-default">
+														<div class="panel-heading" role="tab" id="headingTwo" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo<?php echo $cnt; ?>" aria-expanded="false" aria-controls="collapseTwo">
+												<h4 class="panel-title">
+													<a class="collapsed" role="button" >
+													  <?php echo isset($list['year'])?$list['year']:''; ?>
+													</a>
+												</h4>
+											</div>
+											<div id="collapseTwo<?php echo $cnt; ?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+												<div class="panel-body">
+												   <div class="">
+													  <ul class="list-group">
+														<?php foreach($list['issues_list'] as $lis){ ?>
+														<a target="_blank" href="<?php echo base_url('journals/archive/'.base64_encode($lis['id'])); ?>">
+															<div class="col-md-4">
+																<img style ="" class= "img-responsive" src="<?php echo base_url('assets/issues/'.$lis['image']); ?>" alt="<?php echo isset($lis['year'])?$lis['year']:''; ?>">
+																<div class="text-archive-img">
+																	<h3 class=""><?php echo isset($lis['number'])?$lis['number']:''; ?>    
+																		<span class="text-success"> <?php echo isset($lis['year'])?$lis['year']:''; ?></span> 
+																	</h3>
+																</div>
+															</div></a>
+														<?php } ?>
+													  </ul>
+													</div>
 												</div>
-											</div></a>
+											</div>
+											</div>
+												</div>
+												</div>
+											</div>
 											
-											<?php } ?>
+											
+											<?php $cnt++;} ?>
 									<?php }else{ ?>
 									Coming Soon
 										<?php }?>

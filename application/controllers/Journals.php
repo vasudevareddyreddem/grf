@@ -64,6 +64,7 @@ class Journals extends CI_Controller {
 		$data['latest_boardmembers']=$this->Home_model->get_latest_boardmembers_list();
 		//echo '<pre>';print_r($data);exit;
 		$data['article_list']=$this->Home_model->get_issue_wise_articles($issue_id);
+		//echo '<pre>';print_r($data['article_list']);exit;
 		$this->load->view('html/archive',$data);
 		$this->load->view('html/footer');
 		
@@ -84,13 +85,18 @@ class Journals extends CI_Controller {
 		$data['special_issue']=$this->Home_model->get_latest_special_list($j_id);
 		$data['article_process_fee']=$this->Home_model->get_article_process_fee($j_id);
 		$data['archive_list']=$this->Home_model->get_archive_list($j_id);
+		
+		
 		$data['lastest_article']=$this->Home_model->get_lastest_article_list($j_id);
-		if(isset($data['archive_list'][0]['id']) && $data['archive_list'][0]['id']!=''){
-			$data['current_issue_list']=$this->Home_model->get_current_article_list($data['archive_list'][0]['id']);
+		//echo '<pre>';print_r($data['archive_list']);
+		//echo $data['archive_list'][0]['issues_list'][0]['id'];
+		
+		if(isset($data['archive_list'][0]['issues_list'][0]['id']) && $data['archive_list'][0]['issues_list'][0]['id']!=''){
+			$data['current_issue_list']=$this->Home_model->get_current_article_list_group_by_yearss($data['archive_list'][0]['issues_list'][0]['id']);
 		}else{
 			$data['current_issue_list']=array();
 		}
-		
+		//echo '<pre>';print_r($data['current_issue_list']);exit;
 		//echo '<pre>';print_r($data);exit;
 		$this->load->view('html/journal-details',$data);
 		$this->load->view('html/footer');

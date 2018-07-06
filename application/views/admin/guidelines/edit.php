@@ -48,7 +48,7 @@
 							<div class="form-group">
 								<label class=" control-label">Description</label>
 								<div class="">
-									<textarea id="editor1" name="description" rows="2" cols="80" ><?php echo isset($details['description'])?$details['description']:''; ?>
+									<textarea id="description" name="description" rows="2" cols="80" ><?php echo isset($details['description'])?$details['description']:''; ?>
                                             
 								</textarea>
 								</div>
@@ -116,6 +116,36 @@
     </section> 
 </div>
   <script type="text/javascript">
+  $(document).ready(function() {
+        $('#description').summernote({
+            height: ($(window).height() - 300),
+            callbacks: {
+                onImageUpload: function(image) {
+                    description(image[0]);
+                }
+            }
+        });
+    });
+	
+	function description(image) {
+            var data = new FormData();
+            data.append("image", image);
+            $.ajax({
+                url: '<?php echo base_url('home/sameimage'); ?>',
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: data,
+                type: "post",
+                success: function(url) {
+                    var image = $('<img>').attr('src',url);
+                    $('#description').summernote("insertNode", image[0]);
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
+        }
 $(document).ready(function() {
     $('#addflyer').bootstrapValidator({
         

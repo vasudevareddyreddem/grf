@@ -61,7 +61,7 @@
 							<div class="form-group">
 								<label class=" control-label">Tables</label>
 								<div class="">
-									<textarea id="editor1" name="tables" rows="2" cols="80" >
+									<textarea id="tables" name="tables" rows="2" cols="80" >
                                             
 								</textarea>
 								</div>
@@ -96,6 +96,36 @@
     </section> 
 </div>
   <script type="text/javascript">
+  $(document).ready(function() {
+        $('#tables').summernote({
+            height: ($(window).height() - 300),
+            callbacks: {
+                onImageUpload: function(image) {
+                    tables(image[0]);
+                }
+            }
+        });
+    });
+	
+	function tables(image) {
+            var data = new FormData();
+            data.append("image", image);
+            $.ajax({
+                url: '<?php echo base_url('home/sameimage'); ?>',
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: data,
+                type: "post",
+                success: function(url) {
+                    var image = $('<img>').attr('src',url);
+                    $('#tables').summernote("insertNode", image[0]);
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
+        }
   function checkvalidation(){
 	  var id=$('#journal').val();
 	  if(id==''){

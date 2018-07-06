@@ -86,7 +86,7 @@ class Special_issue extends CI_Controller {
 					'journal_id'=>isset($post['journal'])?$post['journal']:'',
 					'journal_cat_id'=>isset($post['category'])?$post['category']:'',
 					'title'=>isset($post['title'])?$post['title']:'',
-					'details'=>isset($_REQUEST['details'])?$_REQUEST['details']:'',
+					'details'=>isset($post['details'])?$post['details']:'',
 					'status'=>1,
 					'create_at'=>date('Y-m-d H:i:s'),
 					'update_at'=>date('Y-m-d H:i:s'),
@@ -119,7 +119,7 @@ class Special_issue extends CI_Controller {
 					'journal_id'=>isset($post['journal'])?$post['journal']:'',
 					'journal_cat_id'=>isset($post['category'])?$post['category']:'',
 					'title'=>isset($post['title'])?$post['title']:'',
-					'details'=>isset($_REQUEST['details'])?$_REQUEST['details']:'',
+					'details'=>isset($post['details'])?$post['details']:'',
 					'update_at'=>date('Y-m-d H:i:s'),
 					);
 						$update=$this->Special_issue_model->update_special_issue_details($post['issue_id'],$update_data);

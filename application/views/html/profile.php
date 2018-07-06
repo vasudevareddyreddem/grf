@@ -21,8 +21,8 @@
 						<table class="table ">
 					
 						<tr>
-							<th>Name</th>
-							<td><?php echo isset($editor_details['name'])?$editor_details['name']:''; ?></td>
+							<th style="border-top:none">Name</th>
+							<td style="border-top:none"><?php echo isset($editor_details['name'])?$editor_details['name']:''; ?></td>
 						</tr>
 						<!--<tr>
 							<th>Email</th>
@@ -54,7 +54,7 @@
 					<h3 class="">  
 						<span class="text-success">Biogaphy</span> 
 					</h3>
-					<p><?php echo isset($editor_details['biography'])?$editor_details['biography']:''; ?>
+					<p><i><?php echo isset($editor_details['biography'])?$editor_details['biography']:''; ?></i>
 					</p>
 				
                    

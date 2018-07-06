@@ -88,7 +88,7 @@ class Journals extends CI_Controller {
 		
 		
 		$data['lastest_article']=$this->Home_model->get_lastest_article_list($j_id);
-		//echo '<pre>';print_r($data['archive_list']);
+		//echo '<pre>';print_r($data['reviewer_boardmembers']);exit
 		//echo $data['archive_list'][0]['issues_list'][0]['id'];
 		
 		if(isset($data['archive_list'][0]['issues_list'][0]['id']) && $data['archive_list'][0]['issues_list'][0]['id']!=''){
@@ -96,7 +96,7 @@ class Journals extends CI_Controller {
 		}else{
 			$data['current_issue_list']=array();
 		}
-		//echo '<pre>';print_r($data['current_issue_list']);exit;
+		//echo '<pre>';print_r($data['reviewer_boardmembers']);exit;
 		//echo '<pre>';print_r($data);exit;
 		$this->load->view('html/journal-details',$data);
 		$this->load->view('html/footer');

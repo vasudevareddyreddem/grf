@@ -171,7 +171,7 @@
 							<div class="form-group">
 								<label class=" control-label">Abstract</label>
 								<div class="">
-									<textarea id="editor1" name="abstract" rows="2" cols="80" >
+									<textarea id="abstract" name="abstract" rows="2" cols="80" >
                                             
 								</textarea>
 								</div>
@@ -181,7 +181,7 @@
 							<div class="form-group">
 								<label class=" control-label">Biography</label>
 								<div class="">
-									<textarea id="editor2" name="biography" rows="2" cols="80" >
+									<textarea id="biography" name="biography" rows="2" cols="80" >
                                             
 								</textarea>
 								</div>
@@ -218,6 +218,66 @@
     </section> 
 </div>
   <script type="text/javascript">
+  $(document).ready(function() {
+        $('#biography').summernote({
+            height: ($(window).height() - 300),
+            callbacks: {
+                onImageUpload: function(image) {
+                    biography(image[0]);
+                }
+            }
+        });
+    });
+	
+	function biography(image) {
+            var data = new FormData();
+            data.append("image", image);
+            $.ajax({
+                url: '<?php echo base_url('home/sameimage'); ?>',
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: data,
+                type: "post",
+                success: function(url) {
+                    var image = $('<img>').attr('src',url);
+                    $('#biography').summernote("insertNode", image[0]);
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
+        }
+		$(document).ready(function() {
+        $('#abstract').summernote({
+            height: ($(window).height() - 300),
+            callbacks: {
+                onImageUpload: function(image) {
+                    abstracts(image[0]);
+                }
+            }
+        });
+    });
+	
+	function abstracts(image) {
+            var data = new FormData();
+            data.append("image", image);
+            $.ajax({
+                url: '<?php echo base_url('home/sameimage'); ?>',
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: data,
+                type: "post",
+                success: function(url) {
+                    var image = $('<img>').attr('src',url);
+                    $('#abstract').summernote("insertNode", image[0]);
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
+        }
   function checkvalidation(){
 	  var id=$('#journal').val();
 	  if(id==''){

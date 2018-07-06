@@ -179,6 +179,17 @@ class Home extends CI_Controller {
 		}
 	}
 	
+	public  function sameimage(){
+		//echo '<pre>';print_r($_FILES);exit;
+			$temp = explode(".", $_FILES["image"]["name"]);
+			$image = round(microtime(true)) . '.' . end($temp);
+			if(move_uploaded_file($_FILES['image']['tmp_name'], "assets/img/" . $image)){
+				$result=base_url('assets/img/'.$image); 
+			}
+							
+        echo $result;
+	}
+	
 	
 	
 }

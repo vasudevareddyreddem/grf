@@ -114,7 +114,7 @@
 							<div class="form-group">
 								<label class=" control-label">Key words</label>
 								<div class="">
-									<textarea id="editor1" name="key_words" rows="2" cols="80" >
+									<textarea id="key_words1"  name="key_words" rows="2" cols="80" >
                                             <?php echo isset($details['key_words'])?$details['key_words']:''; ?>
 								</textarea>
 								</div>
@@ -124,7 +124,7 @@
 							<div class="form-group">
 								<label class=" control-label">Description</label>
 								<div class="">
-									<textarea id="editor2" name="description" rows="2" cols="80" >
+									<textarea  id="description1"  name="description" rows="2" cols="80" >
                                           <?php echo isset($details['description'])?$details['description']:''; ?>  
 								</textarea>
 								</div>
@@ -134,7 +134,7 @@
 							<div class="form-group">
 								<label class=" control-label">Prices</label>
 								<div class="">
-									<textarea  class="form-control" name="prices" id="prices" >
+									<textarea name="prices" id="prices1" >
 									<?php echo isset($details['prices'])?$details['prices']:''; ?>
 									</textarea>
 								</div>
@@ -167,6 +167,99 @@
       <!-- /.row -->
     </section> 
 </div>
+<script>
+    $(document).ready(function() {
+        $('#description1').summernote({
+            height: ($(window).height() - 300),
+            callbacks: {
+                onImageUpload: function(image) {
+                    uploadImage3(image[0]);
+                }
+            }
+        });
+    });
+	
+	function uploadImage3(image) {
+            var data = new FormData();
+            data.append("image", image);
+            $.ajax({
+                url: '<?php echo base_url('home/sameimage'); ?>',
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: data,
+                type: "post",
+                success: function(url) {
+                    var image = $('<img>').attr('src',url);
+                    $('#description1').summernote("insertNode", image[0]);
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
+        }
+		$(document).ready(function() {
+        $('#key_words1').summernote({
+            height: ($(window).height() - 300),
+            callbacks: {
+                onImageUpload: function(image) {
+                    uploadImage2(image[0]);
+                }
+            }
+        });
+    });
+	
+	function uploadImage2(image) {
+            var data = new FormData();
+            data.append("image", image);
+            $.ajax({
+                url: '<?php echo base_url('home/sameimage'); ?>',
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: data,
+                type: "post",
+                success: function(url) {
+                    var image = $('<img>').attr('src',url);
+                    $('#key_words1').summernote("insertNode", image[0]);
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
+        }
+		$(document).ready(function() {
+        $('#prices1').summernote({
+            height: ($(window).height() - 300),
+            callbacks: {
+                onImageUpload: function(image) {
+                    uploadImage1(image[0]);
+                }
+            }
+        });
+    });
+	
+	function uploadImage1(image) {
+            var data = new FormData();
+            data.append("image", image);
+            $.ajax({
+                url: '<?php echo base_url('home/sameimage'); ?>',
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: data,
+                type: "post",
+                success: function(url) {
+                    var image = $('<img>').attr('src',url);
+                    $('#prices1').summernote("insertNode", image[0]);
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
+        }
+  </script>
+
   <script type="text/javascript">
 $(document).ready(function() {
     $('#addflyer').bootstrapValidator({

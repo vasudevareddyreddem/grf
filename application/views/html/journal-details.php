@@ -144,9 +144,10 @@
 											<div class=""><?php echo isset($list['university'])?$list['university']:''; ?> </div>
 											<h4 class="card-title ">Country</h4>
 											<div class=""><?php echo isset($list['country'])?$list['country']:''; ?> </div>
-										
-											<a href="<?php echo base_url('journals/editors-profile/'.base64_encode($list['j_e_id'])); ?>" class="btn btn-default btn-sm text-center text-white">View More</a>
-
+											
+											<div  style="padding-top:80px;">
+											<a href="<?php echo base_url('journals/editors-profile/'.base64_encode($list['j_e_id'])); ?>" class="btn btn-success btn-sm text-center text-white">View More</a>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -337,7 +338,8 @@
 									
 								</div>
 							</div>
-							<div class="tab-pane fade" id="tab6primary"><?php echo isset($article_process_fee['table'])?$article_process_fee['table']:'Coming Soon'; ?></div>
+							<div class="tab-pane fade" id="tab6primary"><?php echo isset($article_process_fee['table'])?$article_process_fee['table']:'Coming Soon'; ?>
+							</div>
 							<div class="tab-pane fade" id="tab7primary">
 							<?php echo isset($special_issue['details'])?$special_issue['details']:'Coming Soon'; ?>
 							</div>
@@ -351,19 +353,24 @@
          <div class="cp-newsletter-holder" id="pubmed">
             <marquee class="pubmed-articles" align="top" behavior="scroll" onmouseout="this.start();" onmouseover="this.stop();" direction="up" scrollamount="2" style="padding: 10px 0px 10px 0px;height: 200px;background: #f5f5f5;overflow:hidden;">
                <?php //echo '<pre>';print_r($board_members);exit; ?>
-			   <?php if(isset($latest_editors) && count($latest_editors)>0){ ?>
-				<?php foreach($latest_editors as $list){ ?>
+			   <?php if(isset($reviewer_boardmembers) && count($reviewer_boardmembers)>0){ ?>
+				<?php foreach($reviewer_boardmembers as $list){ ?>
 					   <ul>
 						  <li style="padding:0px 0px 0px 10px">
 							 <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
-							 <a href="<?php echo base_url('journals/view/'.base64_encode($list['journal_id']).'/'.$list['seo_url']); ?>" target="_blank" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal"><?php echo isset($list['journaltitile'])?$list['journaltitile']:''; ?> </a><br>
+							 <a href="<?php echo base_url('journals/view/'.base64_encode($list['j_id']).'/'.$list['seo_url']); ?>" target="_blank" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal"><?php echo isset($list['journaltitile'])?$list['journaltitile']:''; ?> </a><br>
 						  </li>
 					   </ul>
 					   <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
-						  <span style="color: #05658F; text-decoration: none; font-weight: bold;">Name: <a href="<?php echo base_url('journals/editors_profile/'.base64_encode($list['j_e_id'])); ?>" target="_blank"> <?php echo isset($list['name'])?$list['name']:''; ?></a></span>
+						  <span style="color: #05658F; text-decoration: none; font-weight: bold;">Name: <a href="<?php echo base_url('journals/board_profile/'.base64_encode($list['id'])); ?>" target="_blank"> <?php echo isset($list['name'])?$list['name']:''; ?></a></span>
 					   </p>
 					   <p style="border-bottom:1px thin #ff9933; padding-top:0px"></p>
 				   <?php } ?>
+			   <?php }else{ ?>
+			    <p style="border-bottom:none; color: #05658F; text-decoration: none; font-weight: bold;">
+						  <span style="color: #05658F; text-decoration: none; font-weight: bold;"> Comming Soon</a></span>
+					   </p>
+			  
 			   <?php } ?>
                
             </marquee>

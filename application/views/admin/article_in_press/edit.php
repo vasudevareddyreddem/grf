@@ -177,7 +177,7 @@
 							<div class="form-group">
 								<label class=" control-label">Research Article</label>
 								<div class="">
-									<textarea id="editor1" name="research_article" rows="2" cols="80" >
+									<textarea id="research_article" name="research_article" rows="2" cols="80" >
                                         <?php echo isset($details['research_article'])?$details['research_article']:''; ?>    
 								</textarea>
 								</div>
@@ -187,7 +187,7 @@
 							<div class="form-group">
 								<label class=" control-label">Abstract</label>
 								<div class="">
-									<textarea id="editor2" name="abstract" rows="2" cols="80" >
+									<textarea id="abstract" name="abstract" rows="2" cols="80" >
                                             <?php echo isset($details['abstract'])?$details['abstract']:''; ?>
 								</textarea>
 								</div>
@@ -197,7 +197,7 @@
 							<div class="form-group">
 								<label class=" control-label">Introduction</label>
 								<div class="">
-									<textarea id="editor3" name="introduction" rows="2" cols="80" >
+									<textarea id="introduction" name="introduction" rows="2" cols="80" >
                                             <?php echo isset($details['introduction'])?$details['introduction']:''; ?>
 								</textarea>
 								</div>
@@ -207,7 +207,7 @@
 							<div class="form-group">
 								<label class=" control-label">References</label>
 								<div class="">
-									<textarea id="editor4" name="references" rows="2" cols="80" >
+									<textarea id="references" name="references" rows="2" cols="80" >
                                             <?php echo isset($details['references'])?$details['references']:''; ?>
 								</textarea>
 								</div>
@@ -217,7 +217,7 @@
 							<div class="form-group">
 								<label class=" control-label">Figures</label>
 								<div class="">
-									<textarea id="editor5" name="figures" rows="2" cols="80" >
+									<textarea id="figures" name="figures" rows="2" cols="80" >
                                             <?php echo isset($details['figures'])?$details['figures']:''; ?>
 								</textarea>
 								</div>
@@ -227,7 +227,7 @@
 							<div class="form-group">
 								<label class=" control-label">Suggested citation</label>
 								<div class="">
-									<textarea id="editor6" name="suggested_citation" rows="2" cols="80" >
+									<textarea id="suggested_citation" name="suggested_citation" rows="2" cols="80" >
                                             <?php echo isset($details['suggested_citation'])?$details['suggested_citation']:''; ?>
 								</textarea>
 								</div>
@@ -237,7 +237,7 @@
 							<div class="form-group">
 								<label class=" control-label">Tables</label>
 								<div class="">
-									<textarea id="editor7" name="tables" rows="2" cols="80" >
+									<textarea id="tables" name="tables" rows="2" cols="80" >
                                             <?php echo isset($details['tables'])?$details['tables']:''; ?>
 								</textarea>
 								</div>
@@ -272,6 +272,241 @@
     </section> 
 </div>
   <script type="text/javascript">
+  $(document).ready(function() {
+        $('#research_article').summernote();
+    });
+	$(document).ready(function() {
+        $('#research_article').summernote({
+            height: ($(window).height() - 300),
+            callbacks: {
+                onImageUpload: function(image) {
+                    research_article(image[0]);
+                }
+            }
+        });
+    });
+	
+	function research_article(image) {
+            var data = new FormData();
+            data.append("image", image);
+            $.ajax({
+                url: '<?php echo base_url('home/sameimage'); ?>',
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: data,
+                type: "post",
+                success: function(url) {
+                    var image = $('<img>').attr('src',url);
+                    $('#research_article').summernote("insertNode", image[0]);
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
+        }
+		
+		$(document).ready(function() {
+        $('#abstract').summernote();
+    });
+	$(document).ready(function() {
+        $('#abstract').summernote({
+            height: ($(window).height() - 300),
+            callbacks: {
+                onImageUpload: function(image) {
+                    uploadImage55(image[0]);
+                }
+            }
+        });
+    });
+	
+	function uploadImage55(image) {
+            var data = new FormData();
+            data.append("image", image);
+            $.ajax({
+                url: '<?php echo base_url('home/sameimage'); ?>',
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: data,
+                type: "post",
+                success: function(url) {
+                    var image = $('<img>').attr('src',url);
+                    $('#abstract').summernote("insertNode", image[0]);
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
+        }
+		
+		$(document).ready(function() {
+        $('#introduction').summernote();
+    });
+	$(document).ready(function() {
+        $('#introduction').summernote({
+            height: ($(window).height() - 300),
+            callbacks: {
+                onImageUpload: function(image) {
+                    uploadImage44(image[0]);
+                }
+            }
+        });
+    });
+	
+	function uploadImage44(image) {
+            var data = new FormData();
+            data.append("image", image);
+            $.ajax({
+                url: '<?php echo base_url('home/sameimage'); ?>',
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: data,
+                type: "post",
+                success: function(url) {
+                    var image = $('<img>').attr('src',url);
+                    $('#introduction').summernote("insertNode", image[0]);
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
+        }
+		$(document).ready(function() {
+        $('#references').summernote();
+    });
+	$(document).ready(function() {
+        $('#references').summernote({
+            height: ($(window).height() - 300),
+            callbacks: {
+                onImageUpload: function(image) {
+                    uploadImage3(image[0]);
+                }
+            }
+        });
+    });
+	
+	function uploadImage3(image) {
+            var data = new FormData();
+            data.append("image", image);
+            $.ajax({
+                url: '<?php echo base_url('home/sameimage'); ?>',
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: data,
+                type: "post",
+                success: function(url) {
+                    var image = $('<img>').attr('src',url);
+                    $('#references').summernote("insertNode", image[0]);
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
+        }
+		
+		
+		$(document).ready(function() {
+        $('#figures').summernote();
+    });
+	$(document).ready(function() {
+        $('#figures').summernote({
+            height: ($(window).height() - 300),
+            callbacks: {
+                onImageUpload: function(image) {
+                    uploadImage333(image[0]);
+                }
+            }
+        });
+    });
+	
+	function uploadImage333(image) {
+            var data = new FormData();
+            data.append("image", image);
+            $.ajax({
+                url: '<?php echo base_url('home/sameimage'); ?>',
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: data,
+                type: "post",
+                success: function(url) {
+                    var image = $('<img>').attr('src',url);
+                    $('#figures').summernote("insertNode", image[0]);
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
+        }
+		$(document).ready(function() {
+        $('#tables').summernote();
+    });
+	$(document).ready(function() {
+        $('#tables').summernote({
+            height: ($(window).height() - 300),
+            callbacks: {
+                onImageUpload: function(image) {
+                    uploadImage33(image[0]);
+                }
+            }
+        });
+    });
+	
+	function uploadImage33(image) {
+            var data = new FormData();
+            data.append("image", image);
+            $.ajax({
+                url: '<?php echo base_url('home/sameimage'); ?>',
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: data,
+                type: "post",
+                success: function(url) {
+                    var image = $('<img>').attr('src',url);
+                    $('#tables').summernote("insertNode", image[0]);
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
+        }
+		$(document).ready(function() {
+        $('#suggested_citation').summernote();
+    });
+	$(document).ready(function() {
+        $('#suggested_citation').summernote({
+            height: ($(window).height() - 300),
+            callbacks: {
+                onImageUpload: function(image) {
+                    uploadImage3(image[0]);
+                }
+            }
+        });
+    });
+	
+	function uploadImage3(image) {
+            var data = new FormData();
+            data.append("image", image);
+            $.ajax({
+                url: '<?php echo base_url('home/sameimage'); ?>',
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: data,
+                type: "post",
+                success: function(url) {
+                    var image = $('<img>').attr('src',url);
+                    $('#suggested_citation').summernote("insertNode", image[0]);
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
+        }
   function checkvalidation(){
 	  var id=$('#journal').val();
 	  if(id==''){

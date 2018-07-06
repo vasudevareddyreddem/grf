@@ -6,6 +6,7 @@ class Special_issue_model extends CI_Model
 	function __construct() 
 	{
 		parent::__construct();
+		$this->db->reconnect();
 		$this->load->database("default");
 	}
 	

@@ -122,9 +122,7 @@
     });
   </script>
   <script type="text/javascript">
-    $(document).ready(function() {
-        $('#summernote').summernote();
-    });
+   
   
   function checkvalidation(){
 	  var id=$('#journal').val();

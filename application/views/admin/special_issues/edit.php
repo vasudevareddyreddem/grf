@@ -79,7 +79,7 @@
 							<div class="form-group">
 								<label class=" control-label">Details</label>
 								<div class="">
-									<textarea id="summernote" name="details" rows="2" cols="80" ><?php echo isset($details['details'])?$details['details']:''; ?>
+									<textarea class="summernote" name="details" rows="2" cols="80" ><?php echo isset($details['details'])?$details['details']:''; ?>
                                             
 								</textarea>
 								</div>
@@ -116,6 +116,11 @@
       <!-- /.row -->
     </section> 
 </div>
+ <script>
+    $(document).ready(function() {
+        $('.summernote').summernote();
+    });
+  </script>
   <script type="text/javascript">
     $(document).ready(function() {
         $('#summernote').summernote();

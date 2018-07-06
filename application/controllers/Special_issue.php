@@ -6,7 +6,7 @@ class Special_issue extends CI_Controller {
 	public function __construct() 
 	{
 		parent::__construct();	
-		$this->load->helper(array('form', 'url'));
+		$this->load->helper(array('form', 'url', 'file'));
 		$this->load->library('form_validation');
 		$this->load->library('session');
 		$this->load->library('email');
@@ -81,13 +81,12 @@ class Special_issue extends CI_Controller {
 		{
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
-			echo htmlentities($post['details']);
-			echo '<pre>';print_r($post);exit;
+			//echo '<pre>';print_r($_REQUEST);exit;
 					$add_data=array(
 					'journal_id'=>isset($post['journal'])?$post['journal']:'',
 					'journal_cat_id'=>isset($post['category'])?$post['category']:'',
 					'title'=>isset($post['title'])?$post['title']:'',
-					'details'=>isset($post['details'])?$post['details']:'',
+					'details'=>isset($_REQUEST['details'])?$_REQUEST['details']:'',
 					'status'=>1,
 					'create_at'=>date('Y-m-d H:i:s'),
 					'update_at'=>date('Y-m-d H:i:s'),
@@ -120,7 +119,7 @@ class Special_issue extends CI_Controller {
 					'journal_id'=>isset($post['journal'])?$post['journal']:'',
 					'journal_cat_id'=>isset($post['category'])?$post['category']:'',
 					'title'=>isset($post['title'])?$post['title']:'',
-					'details'=>isset($post['details'])?$post['details']:'',
+					'details'=>isset($_REQUEST['details'])?$_REQUEST['details']:'',
 					'update_at'=>date('Y-m-d H:i:s'),
 					);
 						$update=$this->Special_issue_model->update_special_issue_details($post['issue_id'],$update_data);

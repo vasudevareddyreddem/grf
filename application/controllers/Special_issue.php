@@ -81,7 +81,8 @@ class Special_issue extends CI_Controller {
 		{
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
-			//echo '<pre>';print_r($post);exit;
+			echo htmlentities($post['details']);
+			echo '<pre>';print_r($post);exit;
 					$add_data=array(
 					'journal_id'=>isset($post['journal'])?$post['journal']:'',
 					'journal_cat_id'=>isset($post['category'])?$post['category']:'',

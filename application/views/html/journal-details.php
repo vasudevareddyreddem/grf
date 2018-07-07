@@ -137,15 +137,33 @@
 								</div>
 								<div class="backside" style="width:100%;">
 									<div class="card">
-										<div class="card-body text-center mt-4">
-											<h4 class="card-title ">Name</h4>
+										<div class="card-body  mt-4">
+										<table class="table table-bordered">
+										<tr>
+											<th>Name</th>
+											<td class="text-left" ><?php echo isset($list['name'])?$list['name']:''; ?></td>
+										</tr>
+										<tr>
+											<th>University</th>
+											<td class="text-left"><?php echo isset($list['university'])?$list['university']:''; ?> </td>
+										</tr>
+										<tr>
+											<th>Country</th>
+											<td class="text-left"><?php echo isset($list['country'])?$list['country']:''; ?> </td>
+										</tr>
+										<tr>
+											<th>Position</th>
+											<td class="text-left"><?php echo isset($list['position'])?$list['position']:''; ?> </td>
+										</tr>
+										</table>
+											<!--<h4 class="card-title ">Name</h4>
 											<div class=""><?php echo isset($list['name'])?$list['name']:''; ?> </div>
 											<h4 class="card-title ">University</h4>
 											<div class=""><?php echo isset($list['university'])?$list['university']:''; ?> </div>
 											<h4 class="card-title ">Country</h4>
-											<div class=""><?php echo isset($list['country'])?$list['country']:''; ?> </div>
+											<div class=""><?php echo isset($list['country'])?$list['country']:''; ?> </div>-->
 											
-											<div  style="padding-top:80px;">
+											<div >
 											<a href="<?php echo base_url('journals/editors-profile/'.base64_encode($list['j_e_id'])); ?>" class="btn btn-success btn-sm text-center text-white">View More</a>
 											</div>
 										</div>

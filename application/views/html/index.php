@@ -230,7 +230,7 @@ group with the aim of disseminating information for the betterment of mankind.</
       <div class="widget sidebar-newsletter">
          <h3 class="side-title">Submit Manuscript</h3>
          <div class="cp-newsletter-holder">
-           <a href="<?php echo base_url('menuscript');?>"> <img src="<?php echo base_url(); ?>assets/vendor/img/Medical-Journals.jpg" alt="submit Manuscript"></a>
+           <a href="<?php echo base_url('menuscript');?>"> <img class="img-responsive" src="<?php echo base_url(); ?>assets/vendor/img/Medical-Journals.jpg" alt="submit Manuscript"></a>
          </div>
       </div>
       <!-- Widget Start -->

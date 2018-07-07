@@ -423,16 +423,16 @@
                    <div class="">
 					  <ul class="list-group">
 						<li class="list-group-item"><a target="_blank" href="<?php echo base_url('home/for_author'); ?> " >For Authors</a></li>
-						<li class="list-group-item"> <a target="_blank" href="<?php echo base_url('home/quick_editors'); ?>">For Editors</a></li>
+						<li class="list-group-item"><a target="_blank" href="<?php echo base_url('home/quick_editors'); ?>">For Editors</a></li>
 						<li class="list-group-item"><a target="_blank" href="<?php echo base_url('home/reviewers'); ?>">For Reviewers</a></li>    
-						<li class="list-group-item"><a target="_blank" href="https://gavinpublishers.com/assets/img/links/Editorial.pdf">Editorial</a></li>
-						<li class="list-group-item"><a target="_blank" href="https://gavinpublishers.com/assets/img/links/Research-Article.pdf">Research Article</a></li>
-						<li class="list-group-item"><a target="_blank" href="https://gavinpublishers.com/assets/img/links/Case-Report.pdf">Case Report</a></li>
-						<li class="list-group-item"><a target="_blank" href="https://gavinpublishers.com/assets/img/links/Review-Article.pdf">Review Article</a></li>  
-						<li class="list-group-item"><a target="_blank" href="https://gavinpublishers.com/assets/img/links/Opinion.pdf">Opinion</a></li>
-						<li class="list-group-item"><a href="https://gavinpublishers.com/assets/img/links/Short-Communication.pdf">Short Communication</a></li>
-						<li class="list-group-item"><a target="_blank" href="https://gavinpublishers.com/assets/img/links/Mini-Review.pdf">Mini Review</a></li>
-						<li class="list-group-item"><a  target="_blank" href="https://gavinpublishers.com/assets/img/links/Letter-to-Editor.pdf">Letter to Editor</a></li>
+						<li class="list-group-item"><a target="_blank" href="<?php echo base_url(); ?>assets/vendor/quick-links/editorial.pdf">Editorial</a></li>
+						<li class="list-group-item"><a target="_blank" href="<?php echo base_url(); ?>assets/vendor/quick-links/research-article.pdf">Research Article</a></li>
+						<li class="list-group-item"><a target="_blank" href="<?php echo base_url(); ?>assets/vendor/quick-links/case-report.pdf">Case Report</a></li>
+						<li class="list-group-item"><a target="_blank" href="<?php echo base_url(); ?>assets/vendor/quick-links/review-article.pdf">Review Article</a></li>  
+						<li class="list-group-item"><a target="_blank" href="<?php echo base_url(); ?>assets/vendor/quick-links/opinion.pdf">Opinion</a></li>
+						<li class="list-group-item"><a target="_blank" href="<?php echo base_url(); ?>assets/vendor/quick-links/short-communication.pdf">Short Communication</a></li>
+						<!--<li class="list-group-item"><a target="_blank" href="https://gavinpublishers.com/assets/img/links/Mini-Review.pdf">Mini Review</a></li>
+						<li class="list-group-item"><a  target="_blank" href="https://gavinpublishers.com/assets/img/links/Letter-to-Editor.pdf">Letter to Editor</a></li>-->
 						 
 						</li>
 					  </ul>

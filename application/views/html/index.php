@@ -240,7 +240,7 @@ group with the aim of disseminating information for the betterment of mankind.</
             <!-- Post Comments Form -->
             <div class="cp-comments-form">
                <form method="post" id="trackarticleform" class="material" action="#">
-                  <div class="material-input input"><input type="text" name="trackmanuscriptid" class="form-control" placeholder="Enter Maniscript ID" style="width:100%;" onkeypress="return checkspecial_menuscript(event);" required="" id="trackmanuscriptid"><span class="material-bar"></span></div>
+                  <div class="material-input input"><input type="text" name="trackmanuscriptid" class="form-control" placeholder="Enter Manuscript ID" style="width:100%;" onkeypress="return checkspecial_menuscript(event);" required="" id="trackmanuscriptid"><span class="material-bar"></span></div>
                   <span class="error_msg"></span>           
                   <div class="material-input input"><input type="email" name="trackemail" class="form-control" placeholder="Enter Email" style="width:100%;" onkeypress="return checkspecialname(event);" required="" id="trackemail"><span class="material-bar"></span></div>
                   <span class="error_msg"></span> 

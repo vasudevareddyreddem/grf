@@ -179,7 +179,7 @@
       <div class="widget sidebar-newsletter">
          <h3 class="side-title">Submit Manuscript</h3>
          <div class="cp-newsletter-holder">
-           <a href="<?php echo base_url('menuscript');?>"> <img src="<?php echo base_url(); ?>assets/vendor/img/Medical-Journals.jpg" alt="submit Manuscript"></a>
+           <a href="<?php echo base_url('menuscript');?>"> <img class="img-responsive" src="<?php echo base_url(); ?>assets/vendor/img/Medical-Journals.jpg" alt="submit Manuscript"></a>
           </div>
       </div>
       <!-- Widget Start -->
@@ -208,7 +208,7 @@
          
          <div class="cp-sidebar-content">
             <h3 class="side-title">Video Articles</h3>
-             <a href="<?php echo base_url('video-article');?>"><img alt="Video Articles" src="<?php echo base_url(); ?>assets/vendor/img/Video-Articles.gif" width="100%" border="5"></a>
+            <a href="<?php echo base_url('video-article');?>"><img alt="Video Articles" src="<?php echo base_url(); ?>assets/vendor/img/video-articles.png" width="100%" border="5"></a>
            
          </div>
         

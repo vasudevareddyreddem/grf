@@ -11,6 +11,7 @@
             <div class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                 <h4 class="panel-title">
                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+					<i class="more-less glyphicon glyphicon-minus"></i>
                        Peer review process
                     </a>
                 </h4>
@@ -41,6 +42,7 @@
             <div class="panel-heading" role="tab" id="headingTwo" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                 <h4 class="panel-title">
                     <a class="collapsed" role="button" >
+					<i class="more-less glyphicon glyphicon-plus"></i>
                         Importance
                     </a>
                 </h4>
@@ -62,6 +64,7 @@
             <div class="panel-heading" role="tab" id="headingThree" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                 <h4 class="panel-title">
                     <a class="collapsed" role="button" >
+					<i class="more-less glyphicon glyphicon-plus"></i>
 						Editorial rejection
                     </a>
                 </h4>
@@ -94,6 +97,7 @@
             <div class="panel-heading" role="tab" id="headingfour" data-toggle="collapse" data-parent="#accordion" href="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
                 <h4 class="panel-title">
                     <a class="collapsed" role="button" >
+					<i class="more-less glyphicon glyphicon-plus"></i>
                         Revising
                     </a>
                 </h4>
@@ -247,4 +251,14 @@
 			$("#readexp").toggle();
 		});
 	});
+</script>
+<script>
+	function toggleIcon(e) {
+    $(e.target)
+        .prev('.panel-heading')
+        .find(".more-less")
+        .toggleClass('glyphicon-plus glyphicon-minus');
+}
+$('.panel-group').on('hidden.bs.collapse', toggleIcon);
+$('.panel-group').on('shown.bs.collapse', toggleIcon);
 </script>

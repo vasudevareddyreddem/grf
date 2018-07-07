@@ -21,7 +21,7 @@
                             <i class="fa fa-phone"></i>   Phone
                         </div>
                         <div class="col-sm-9">
-                            9951033345
+                            **********
                         </div>
                     </div>
                     
@@ -30,7 +30,8 @@
                             <i class="fa fa-envelope"></i>   Email
                         </div>
                         <div class="col-sm-9">
-                        <a href="mailto:support@meddocsonline.org">contact@grfpublishers.org</a> 
+                        <a href="mailto:support@meddocsonline.org">Contact@grfpublishers.org</a> 
+                        <a href="mailto:support@meddocsonline.org">Support@grfpublishers.org</a> 
                         </div>
                     </div><br>
                     

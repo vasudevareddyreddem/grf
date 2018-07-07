@@ -50,8 +50,8 @@
                     </div>
                     <div class="col-sm-6 hidden-xs">
                         <ul class="small_menu">
-                        <li><a ><i class="fa fa-volume-control-phone font-18" aria-hidden="true"></i> &nbsp; 99510*******</a></li>                 
-                        <li><a ><i class="fa fa-envelope font-18" aria-hidden="true"></i> &nbsp; contact@grf.com</a></li>                 
+                        <!--<li><a ><i class="fa fa-volume-control-phone font-18" aria-hidden="true"></i> &nbsp; 99510*******</a></li>                 
+                        --><li><a ><i class="fa fa-envelope font-18" aria-hidden="true"></i> &nbsp; Contact@grfpublishers.org</a></li>                 
                       
                        </ul>
                         <div class="top-social hidden-xs">

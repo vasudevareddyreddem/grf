@@ -35,10 +35,10 @@
 					<div class="col-md-3 col-sm-6 margin30">
                         <h3>Contact Information	</h3>
                         <ul class="list-unstyled">
-                             <li><a ><i class="fa fa-volume-control-phone" aria-hidden="true"></i>&nbsp; 9951033345</a></li>
-                             <li><a ><i class="fa fa-fax" aria-hidden="true"></i>&nbsp; **********</a></li>
-                             <li><a ><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp; Contact@grf****</a></li>
-                             <li><a >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Support@grf**</a></li>
+                             <!--<li><a ><i class="fa fa-volume-control-phone" aria-hidden="true"></i>&nbsp; 9951033345</a></li>
+                             <li><a ><i class="fa fa-fax" aria-hidden="true"></i>&nbsp; **********</a></li>-->
+                             <li><a ><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp; Contact@grfpublishers.org</a></li>
+                             <li><a >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Support@grfpublishers.org</a></li>
 							   <li><a ><i class="fa fa-globe" aria-hidden="true"></i></i>&nbsp; www.grfpublishers.com</a></li>
                            
                            

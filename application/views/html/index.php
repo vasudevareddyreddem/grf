@@ -300,7 +300,7 @@ group with the aim of disseminating information for the betterment of mankind.</
          </div>
       </div>
       <div class="widget sidebar-newsletter">
-         <h3 class="side-title">Upcomong Article Scrolling</h3>
+         <h3 class="side-title">Latest Article Scrolling</h3>
          <div class="cp-newsletter-holder" id="pubmed">
             <marquee class="pubmed-articles" align="top" behavior="scroll" onmouseout="this.start();" onmouseover="this.stop();" direction="up" scrollamount="2" style="padding: 10px 0px 10px 0px;height: 200px;background: #f5f5f5;overflow:hidden;">
                </p>

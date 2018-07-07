@@ -152,10 +152,10 @@
 											<th>Country</th>
 											<td class="text-left"><?php echo isset($list['country'])?$list['country']:''; ?> </td>
 										</tr>
-										<tr>
+										<!--<tr>
 											<th>Position</th>
 											<td class="text-left"><?php echo isset($list['position'])?$list['position']:''; ?> </td>
-										</tr>
+										</tr>-->
 										</table>
 											<!--<h4 class="card-title ">Name</h4>
 											<div class=""><?php echo isset($list['name'])?$list['name']:''; ?> </div>

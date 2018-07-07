@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Open_Access extends CI_Controller {
+class Open_access extends CI_Controller {
 
 	public function __construct() 
 	{
@@ -15,10 +15,12 @@ class Open_Access extends CI_Controller {
 		$this->load->helper('security');
 		$this->load->model('Home_model');
 		
-	}
+		}
 	public function index()
 	{	
-		$header['c_url']=base_url('open-access');
+		
+
+               $header['c_url']=base_url('open-access');
 		$header['scroll_data']=$this->Home_model->get_scrolling_content();
 		$this->load->view('html/header',$header);
 		$data['article_list']=$this->Home_model->get_article_list();

@@ -20,9 +20,11 @@ class Conference extends CI_Controller {
 	{	
 		$data['c_url']=base_url('conference');
 		$data['scroll_data']=$this->Home_model->get_scrolling_content();
+		$con['confrence_flyer_list']=$this->Home_model->get_all_confrence_flyers();
+		$con['journals_list']=$this->Home_model->get_journal_list();
 
 		$this->load->view('html/header',$data);
-		$this->load->view('html/conference');
+		$this->load->view('html/conference',$con);
 		$this->load->view('html/footer');
 		
 	}

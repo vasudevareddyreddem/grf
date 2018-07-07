@@ -1,3 +1,4 @@
+
         <div class="conainer-fulid">
             <div class="container">
 			
@@ -20,14 +21,25 @@ rather than read them in text articles, GRF Publishers increases research produc
 learning, saving their institutions time and money.</p>
 				
 				
-			<!--<video width="100%" height="460" controls="">
+				</div>
+                                    
+                            
+
+                    </div>
+		<div class="row">
+		
+		<div class="">
+      <div class="">
+      
+        <div class="col-md-12 Welcome_txt ">
+			<video width="100%" height="460" controls="">
 				  <source src="<?php echo base_url(); ?>assets/vendor/video/test.mp4" type="video/mp4">
 				  <source src="<?php echo base_url(); ?>assets/vendor/video/test.ogv" type="video/ogg">
 				
 				</video>
 				<br>
 				<br>
-				<br>-->
+				<br>
 				<p>
 				Video articles are easy to submit and subject to a quick and transparent peer review process. Templates
 ensure that video articles are actively reviewed, curated and formatted. In addition, the articles will be
@@ -38,7 +50,8 @@ context and translators etc.
        </div>
 	   
        
-    
+    </div>
+  </div>
 
 
   
@@ -49,12 +62,11 @@ context and translators etc.
                             </div>
                             <div class="col-md-4">
                             	<div class="rightside-box">
-<?php if(isset($confrence_flyer_list)&& count($confrence_flyer_list)>0){ ?>
 								<div class="box-bottom">
 <h4>Conference Flyers</h4>
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
-	
+		<?php if(isset($confrence_flyer_list)&& count($confrence_flyer_list)>0){ ?>
 				  <ol class="carousel-indicators">
 						<?php $count=1;foreach($confrence_flyer_list as $list){ ?>
 							<?php if($count==1){ ?>
@@ -65,7 +77,7 @@ context and translators etc.
 							  <?php } ?>
 						<?php $count++;} ?>
 						 </ol>
-		
+		<?php } ?>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
@@ -96,7 +108,6 @@ context and translators etc.
     </a>
   </div>
                                             </div>
-<?php } ?>
 	<div class="clearfix">&nbsp;</div>
 <?php if(isset($journals_list) && count($journals_list)>0){ ?>	
 	<div>

@@ -134,7 +134,7 @@ section .section-title {
 .backside .card a {
     font-size: 16px;
     position:absolute;
-	bottom:50%;
+	bottom:20px;
 	left: 50%;
 transform: translateX(-50%);
 }

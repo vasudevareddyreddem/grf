@@ -5,6 +5,9 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="-1" />
         <title>GRF Publishers</title>
         <meta name="description" content="MedDocs Publishers is a dedicated powerhouse for publishing informative journals in various areas of science, medicine. Peer-reviewed Journals| Medical Journals">
 		<meta name="keywords" content="peer reviewed medical journals, medical articles online, journal of medical informatics, latest medical journal articles, journal of medical research.">

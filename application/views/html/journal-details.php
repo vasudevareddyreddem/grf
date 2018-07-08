@@ -175,6 +175,8 @@
 					</div>
 			
 				<?php } ?>
+			<?php }else{ ?>
+			Coming Soon
 			<?php } ?>
             <!-- ./Team member -->
            
@@ -241,6 +243,8 @@
 
 				
 				<?php } ?>
+				<?php }else{ ?>
+				Coming Soon
 				<?php } ?>
 				
 				
@@ -433,7 +437,7 @@
             <div class="panel-heading" role="tab" id="headingTwo" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                 <h4 class="panel-title">
                     <a class="collapsed" role="button" >
-                       Quick Links
+                       <i class="more-less glyphicon glyphicon-plus"></i> Quick Links
                     </a>
                 </h4>
             </div>
@@ -479,3 +483,13 @@
 		   
 	   }
        </script>
+<script>
+	function toggleIcon(e) {
+    $(e.target)
+        .prev('.panel-heading')
+        .find(".more-less")
+        .toggleClass('glyphicon-plus glyphicon-minus');
+}
+$('.panel-group').on('hidden.bs.collapse', toggleIcon);
+$('.panel-group').on('shown.bs.collapse', toggleIcon);
+</script>

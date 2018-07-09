@@ -33,5 +33,10 @@ class Unsubscribes_model extends CI_Model
 		return $this->db->delete('newsletters');
 	}
 	
+	public function update_unsubscribes_details_with_email($data){
+		$this->db->insert('newsletters', $data);
+		return $insert_id = $this->db->insert_id();
+	}
+	
 
 }

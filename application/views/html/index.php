@@ -127,7 +127,10 @@ group with the aim of disseminating information for the betterment of mankind.</
 				<div class="panel panel-primary">
 					  <div class="panel-heading clearfix">
 						<span class="pull-left"><h4 class="text-white">Latest Article</h4></span>
+						
+						<?php if(isset($article_list)&& count($article_list)>0){ ?>
 						<a  href="<?php echo base_url('Article/lists'); ?>" class="pull-right"> <span style="color:#fff"> View all</span>&nbsp;&nbsp; </a>
+						<?php } ?>
 					  </div>
 					 
 				</div>

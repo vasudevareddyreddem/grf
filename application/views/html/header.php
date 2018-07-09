@@ -31,7 +31,7 @@
         <link href="<?php echo base_url(); ?>assets/vendor/rs-plugin/css/settings.css" rel="stylesheet" type="text/css" media="screen">
         <link href="<?php echo base_url(); ?>assets/vendor/css/rev-style.css" rel="stylesheet" type="text/css" media="screen">
         <link href="<?php echo base_url(); ?>assets/vendor/css/animate.css" rel="stylesheet" type="text/css" media="screen"> 
-       <!-- <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">-->
+       <link rel="icon" type="image/png" sizes="96x96" href="<?php echo base_url(); ?>assets/vendor/img/favicon.ico">
 	      <script src="<?php echo base_url(); ?>assets/vendor/js/jquery.min.js"></script>
         <script src="<?php echo base_url(); ?>assets/vendor/js/jquery-migrate.min.js"></script>
          <!--on scroll animation-->

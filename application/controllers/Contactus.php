@@ -46,15 +46,21 @@ class Contactus extends CI_Controller {
 		if(count($save)>0){
 				$data['details']=$post;
 				$this->load->library('email');
-				$this->email->set_newline("\r\n");
-				$this->email->set_mailtype("html");
+				$this->load->library('email');
+					$this->email->set_newline("\r\n");
+					$this->email->set_mailtype("html");
 				$this->email->from($post['email']);
 				$this->email->to('contact@grfpublishers.org');
 				$this->email->subject('Contact us - Request');
-				$body = $this->load->view('email/contactus',$data,TRUE);
-				$this->email->message($body);
+				//$body = $this->load->view('email/contactus.php',$data,true);
+				//$html = $this->load->view('email/orderconfirmation.php', $data, true); 
+
+				$msg='Name:'.$post['firstName'].' '.$post['lastName'].'<br> Email :'.$post['email'].'<br> Phone  number :'.$post['phone'].'<br> Message :'.$post['message'];
+				$this->email->message($msg);
 				//echo $body;exit;
 				$this->email->send();
+				
+				//echo "test";exit;
 				$this->session->set_flashdata('success',"Your message was successfully sent.");
 				redirect('home');
 			}else{
@@ -62,6 +68,23 @@ class Contactus extends CI_Controller {
 				redirect('home');
 			}
 		//echo '<pre>';print_r($post);exit;
+		
+	}
+	public  function testmail(){
+		
+				$this->load->library('email');
+				$this->email->set_newline("\r\n");
+				$this->email->set_mailtype("html");
+				$this->email->from('vasudevareddy549@gmail.com');
+				$this->email->to('vasudevareddy549@gmail.com');
+				$this->email->subject('Contact us - Request');
+				$body = "hello hiii";
+				$this->email->message($body);
+				//echo $body;exit;
+				if($this->email->send()){
+					echo "fff";
+				}
+		
 		
 	}
 	

@@ -85,7 +85,7 @@ class Menuscript extends CI_Controller {
 				'<br> Message :'.$post['message'].
 				'<br> Journel :'.$post['journel'].
 				'<br> abstract :'.$post['abstract'];
-				$this->email->attach($pdfFilePath);
+				//$this->email->attach($pdfFilePath);
 				$this->email->message($msg);
 				//echo $msg;exit;
 				$this->email->send();	

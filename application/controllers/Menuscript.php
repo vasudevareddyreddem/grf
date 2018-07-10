@@ -72,6 +72,8 @@ class Menuscript extends CI_Controller {
 				}else{
 					$pdfFilePath='';
 				}
+				
+				
 				$msg='Title :'.$post['title'].
 				'<br> Name:'.$post['firstName'].' '.$post['lastName'].
 				'<br> University :'.$post['university'].

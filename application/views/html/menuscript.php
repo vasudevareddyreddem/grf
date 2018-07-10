@@ -9,7 +9,7 @@
                       <div class="col-md-12">
                       	<div class="col-md-12">
                             <div class="row ">            
-                             <form id="defaultForm" method="post" class="" action="<?php echo base_url('menuscript/post'); ?>">
+                             <form id="defaultForm" method="post" class="" action="<?php echo base_url('menuscript/post'); ?>" enctype="multipart/form-data">
 						<div class="col-md-6">
 							<div class="form-group">
 								<label class=" control-label">Title</label>
@@ -248,10 +248,6 @@ $(document).ready(function() {
                  validators: {
 					notEmpty: {
 						message: 'Phone  Number is required'
-					},
-					regexp: {
-					regexp:  /^[0-9]{10,14}$/,
-					message:'Phone  Number must be 10 to 14 digits'
 					}
 				
 				}

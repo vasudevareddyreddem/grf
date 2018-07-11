@@ -1,7 +1,7 @@
 <footer class="footer">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3 col-sm-6 margin30">
+                    <div class="col-md-2 col-sm-6 margin30">
                      <h3 class="">FOLLOW US</h3>
                         <ul class="list-unstyled">
                             
@@ -14,7 +14,7 @@
                         </ul>
                     </div>
                    
-                    <div class="col-md-3 col-sm-6 margin30">
+                    <div class="col-md-2 col-sm-6 margin30">
                         <h3>QUICK LINKS</h3>
                         <ul class="list-unstyled">
                              <li><a href="<?php echo base_url('journals'); ?>">Journals</a></li>
@@ -25,6 +25,7 @@
                            
                         </ul>
                     </div> 
+					
 					<div class="col-md-3 col-sm-6 margin30">
                         <h3>Contact Address	</h3>
 						<ul class="list-unstyled">
@@ -42,6 +43,12 @@
 							   <li><a ><i class="fa fa-globe" aria-hidden="true"></i></i>&nbsp; www.grfpublishers.com</a></li>
                            
                            
+                        </ul>
+                    </div> 
+					<div class="col-md-2 col-sm-6 margin30">
+                        <h3>Open Access Licence</h3>
+                        <ul class="list-unstyled">
+                           <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license"  target="_blank" style="color:#bbb ;" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
                         </ul>
                     </div> 
                 </div>

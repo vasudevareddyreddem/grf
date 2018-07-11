@@ -127,6 +127,7 @@ class Home_model extends CI_Model
 		$this->db->select('j_e_id,image,name,email,country,phone,designation,position,university,biography')->from('journal_editors');
 		$this->db->where('journal_id',$j_id);		
 		$this->db->where('status',1);		
+		$this->db->order_by('priority',"asc");		
         return $this->db->get()->result_array();
 	}
 	public  function get_latest_boardmembers_list(){

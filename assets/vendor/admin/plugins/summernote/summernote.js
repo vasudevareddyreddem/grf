@@ -7077,7 +7077,8 @@ $$1.summernote = $$1.extend($$1.summernote, {
         // toolbar
         toolbar: [
             ['style', ['style']],
-            ['font', ['bold', 'underline', 'clear']],
+			['fontsize', ['fontsize']],
+            ['font', ['bold', 'italic', 'underline', 'clear']],
             ['fontname', ['fontname']],
             ['color', ['color']],
             ['para', ['ul', 'ol', 'paragraph']],

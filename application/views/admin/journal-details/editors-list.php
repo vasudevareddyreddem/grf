@@ -30,6 +30,7 @@
                   <th>Journal </th>
                   <th>Name</th>
                   <th>Email</th>
+                  <th>Priority</th>
                   <th>Position</th>
                   <th>Image</th>
                   <th>Status</th>
@@ -44,6 +45,7 @@
                   <td><?php echo htmlentities($list['journaltitle']); ?></td>
                   <td><?php echo htmlentities($list['name']); ?></td>
                   <td><?php echo htmlentities($list['email']); ?></td>
+                  <td><?php echo htmlentities($list['priority']); ?></td>
                   <td><?php echo htmlentities($list['position']); ?></td>
                   <td><img width="50px" height="50px" src="<?php echo base_url('assets/editors_pics/'.$list['image']); ?>">
 				  </td>
@@ -71,6 +73,7 @@
                   <th>Journal </th>
                   <th>Name</th>
                   <th>Email</th>
+                  <th>Priority</th>
                   <th>Position</th>
                   <th>Image</th>
                   <th>Status</th>

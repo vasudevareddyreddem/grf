@@ -64,6 +64,10 @@ section .section-title {
     -o-transform: rotateY(180deg);
     transform: rotateY(180deg);
 }
+u{
+	
+	border-bottom:1px solid #333;
+	}
 
 .mainflip {
     -webkit-transition: 1s;

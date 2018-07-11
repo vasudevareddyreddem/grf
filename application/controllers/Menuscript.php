@@ -65,13 +65,29 @@ class Menuscript extends CI_Controller {
 				$this->email->from($post['email']);
 				$this->email->to('contact@grfpublishers.org');
 				$this->email->subject('Menuscript - Request');
-				$body = $this->load->view('email/menuscript',$data,TRUE);
+				//$body = $this->load->view('email/menuscript',$data,TRUE);
 				if(isset($_FILES['image']['name']) && $_FILES['image']['name']!=''){
 					$pdfFilePath=base_url('assets/menuscript/'.$image);
 					$this->email->attach($pdfFilePath);
+				}else{
+					$pdfFilePath='';
 				}
-				$this->email->message($body);
-				//echo $body;exit;
+				
+				
+				$msg='Title :'.$post['title'].
+				'<br> Name:'.$post['firstName'].' '.$post['lastName'].
+				'<br> University :'.$post['university'].
+				'<br> Country :'.$post['country'].
+				'<br> Email :'.$post['email'].
+				'<br> Phone  number :'.$post['phone'].
+				'<br> Menuscript Title :'.$post['menuscript_title'].
+				'<br> Address :'.$post['address'].
+				'<br> Message :'.$post['message'].
+				'<br> Journel :'.$post['journel'].
+				'<br> abstract :'.$post['abstract'];
+				//$this->email->attach($pdfFilePath);
+				$this->email->message($msg);
+				//echo $msg;exit;
 				$this->email->send();	
 			
 				$this->session->set_flashdata('success',"Your message was successfully sent.");

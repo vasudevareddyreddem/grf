@@ -113,10 +113,8 @@
                     <div class="row">
                        
                        <div class="col-md-10 col-xs-12">
-                           <h3>MedDocs Publishers</h3>
-                           <p>We always work towards offering the best to you. For any queries, please feel free to get in
-touch with us. Also you may post your valuable feedback after reading our journals, ebooks
-and after visiting our conferences.</p>
+                           <h3>GRF PUBLISHERS </h3>
+                           <p>Global Research Federation is an emerging scientific online open access publisher keeping a goal to serve professional and academic communities in latest research discoveries and developments.</p>
                        </div>  
                        <div class="col-md-2 col-xs-12 text-center padding_0">
                            <a href="<?php echo base_url('contactus'); ?>" class="btn btn-red btn-lg btn-block ">CONTACT US</a>

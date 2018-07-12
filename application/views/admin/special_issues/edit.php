@@ -117,9 +117,11 @@
     </section> 
 </div>
  <script>
-    $(document).ready(function() {
-        $('.summernote').summernote();
-    });
+    
+ $(function () {
+    CKEDITOR.replace('details');
+    $(".textarea").wysihtml5();
+  });
   </script>
   <script type="text/javascript">
    

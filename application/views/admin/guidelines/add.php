@@ -113,37 +113,12 @@
       <!-- /.row -->
     </section> 
 </div>
+
   <script type="text/javascript">
-  $(document).ready(function() {
-        $('#description').summernote({
-            height: ($(window).height() - 300),
-            callbacks: {
-                onImageUpload: function(image) {
-                    description(image[0]);
-                }
-            }
-        });
-    });
-	
-	function description(image) {
-            var data = new FormData();
-            data.append("image", image);
-            $.ajax({
-                url: '<?php echo base_url('home/sameimage'); ?>',
-                cache: false,
-                contentType: false,
-                processData: false,
-                data: data,
-                type: "post",
-                success: function(url) {
-                    var image = $('<img>').attr('src',url);
-                    $('#description').summernote("insertNode", image[0]);
-                },
-                error: function(data) {
-                    console.log(data);
-                }
-            });
-        }
+   $(function () {
+    CKEDITOR.replace('description');
+    $(".textarea").wysihtml5();
+  });
 $(document).ready(function() {
     $('#addflyer').bootstrapValidator({
         

@@ -27,7 +27,7 @@ $info = pathinfo($_FILES["upload"]["name"]);
 $ext = $info['extension'];
 $target_dir = $useruploadpath;
 // $url = base_url();
-$ckpath = "http://ocimumpublishers.com/asset/ckeditor/plugins/imageuploader/uploads/";
+$ckpath = "http://localhost/grf_backup/assets/ckeditor/plugins/imageuploader/uploads/";
 // $ckpath = base_url()."asset/ckeditor/plugins/imageuploader/uploads/";
 $randomLetters = $rand = substr(md5(microtime()),rand(0,26),6);
 $imgnumber = count(scandir($target_dir));

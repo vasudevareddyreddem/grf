@@ -18,13 +18,20 @@
 					<p>The Membership plans give access to the author for publishing an endless number of manuscripts in the time period of membership. If you are the author or the co-author of a paper, then you will be sanctioned a good waiver on the articles.</p>
 					<br>
 					<h4>Annual membership</h4>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					<p>A member can submit a spontaneous number of articles to any of our journals. Member will get a waiver on registration for the events that are organized by our Publisher.
+					Member will get a prestigious certificate of Annual membership from our Publisher.
+					</p>
 					<br>
 					<h4>Three-year membership</h4>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					<p>Member can submit unsolicited number of articles to any of the GRF Publishers 
+Member will get waiver on registration for any two.GRF Publishers
+Member will get a prestigious certificate of Three-year membership from GRF Publishers.
+</p>
 					<br>
 					<h4> Five-year membership</h4>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					<p>Member can submit unsolicited number of articles to any of the GRF Publishers
+Member will get a prestigious certificate of Five-year membership from GRF Publishers.
+</p>
 					
 				<table align="left" cellspacing="0" cellpadding="0" border="0" class="table ">
 					<tbody>

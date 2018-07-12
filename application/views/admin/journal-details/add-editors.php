@@ -175,37 +175,10 @@
     </section> 
 </div>
   <script type="text/javascript">
-  
-	$(document).ready(function() {
-        $('#biography').summernote({
-            height: ($(window).height() - 300),
-            callbacks: {
-                onImageUpload: function(image) {
-                    uploadImage33(image[0]);
-                }
-            }
-        });
-    });
-	
-	function uploadImage33(image) {
-            var data = new FormData();
-            data.append("image", image);
-            $.ajax({
-                url: '<?php echo base_url('home/sameimage'); ?>',
-                cache: false,
-                contentType: false,
-                processData: false,
-                data: data,
-                type: "post",
-                success: function(url) {
-                    var image = $('<img>').attr('src',url);
-                    $('#biography').summernote("insertNode", image[0]);
-                },
-                error: function(data) {
-                    console.log(data);
-                }
-            });
-        }
+    $(function () {
+    CKEDITOR.replace('biography');
+    $(".textarea").wysihtml5();
+  });
   function get_gournals(id){
 	
 		if(id!=''){
@@ -285,8 +258,8 @@ $(document).ready(function() {
                  validators: {
 					
 					regexp: {
-					regexp:  /^[0-9]{10,14}$/,
-					message:'Phone  Number must be 10 to 14 digits'
+					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
+					message:'Phone  Numbern  wont allow <> [] = % '
 					}
 				
 				}

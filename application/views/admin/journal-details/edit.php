@@ -168,96 +168,17 @@
     </section> 
 </div>
 <script>
-    $(document).ready(function() {
-        $('#description1').summernote({
-            height: ($(window).height() - 300),
-            callbacks: {
-                onImageUpload: function(image) {
-                    uploadImage3(image[0]);
-                }
-            }
-        });
-    });
-	
-	function uploadImage3(image) {
-            var data = new FormData();
-            data.append("image", image);
-            $.ajax({
-                url: '<?php echo base_url('home/sameimage'); ?>',
-                cache: false,
-                contentType: false,
-                processData: false,
-                data: data,
-                type: "post",
-                success: function(url) {
-                    var image = $('<img>').attr('src',url);
-                    $('#description1').summernote("insertNode", image[0]);
-                },
-                error: function(data) {
-                    console.log(data);
-                }
-            });
-        }
-		$(document).ready(function() {
-        $('#key_words1').summernote({
-            height: ($(window).height() - 300),
-            callbacks: {
-                onImageUpload: function(image) {
-                    uploadImage2(image[0]);
-                }
-            }
-        });
-    });
-	
-	function uploadImage2(image) {
-            var data = new FormData();
-            data.append("image", image);
-            $.ajax({
-                url: '<?php echo base_url('home/sameimage'); ?>',
-                cache: false,
-                contentType: false,
-                processData: false,
-                data: data,
-                type: "post",
-                success: function(url) {
-                    var image = $('<img>').attr('src',url);
-                    $('#key_words1').summernote("insertNode", image[0]);
-                },
-                error: function(data) {
-                    console.log(data);
-                }
-            });
-        }
-		$(document).ready(function() {
-        $('#prices1').summernote({
-            height: ($(window).height() - 300),
-            callbacks: {
-                onImageUpload: function(image) {
-                    uploadImage1(image[0]);
-                }
-            }
-        });
-    });
-	
-	function uploadImage1(image) {
-            var data = new FormData();
-            data.append("image", image);
-            $.ajax({
-                url: '<?php echo base_url('home/sameimage'); ?>',
-                cache: false,
-                contentType: false,
-                processData: false,
-                data: data,
-                type: "post",
-                success: function(url) {
-                    var image = $('<img>').attr('src',url);
-                    $('#prices1').summernote("insertNode", image[0]);
-                },
-                error: function(data) {
-                    console.log(data);
-                }
-            });
-        }
+      $(function () {
+    CKEDITOR.replace('key_words');
+    $(".textarea").wysihtml5();
+  });$(function () {
+    CKEDITOR.replace('description');
+    $(".textarea").wysihtml5();
+  });
+  $(function () {
+    CKEDITOR.replace('prices');
+    $(".textarea").wysihtml5();
+  });
   </script>
 
   <script type="text/javascript">

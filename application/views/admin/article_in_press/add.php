@@ -259,227 +259,31 @@
     </section> 
 </div>
   <script type="text/javascript">
- 
-	$(document).ready(function() {
-        $('#research_article').summernote({
-            height: ($(window).height() - 300),
-            callbacks: {
-                onImageUpload: function(image) {
-                    research_article(image[0]);
-                }
-            }
-        });
-    });
-	
-	function research_article(image) {
-            var data = new FormData();
-            data.append("image", image);
-            $.ajax({
-                url: '<?php echo base_url('home/sameimage'); ?>',
-                cache: false,
-                contentType: false,
-                processData: false,
-                data: data,
-                type: "post",
-                success: function(url) {
-                    var image = $('<img>').attr('src',url);
-                    $('#research_article').summernote("insertNode", image[0]);
-                },
-                error: function(data) {
-                    console.log(data);
-                }
-            });
-        }
-		
-		
-	$(document).ready(function() {
-        $('#abstract').summernote({
-            height: ($(window).height() - 300),
-            callbacks: {
-                onImageUpload: function(image) {
-                    uploadImage55(image[0]);
-                }
-            }
-        });
-    });
-	
-	function uploadImage55(image) {
-            var data = new FormData();
-            data.append("image", image);
-            $.ajax({
-                url: '<?php echo base_url('home/sameimage'); ?>',
-                cache: false,
-                contentType: false,
-                processData: false,
-                data: data,
-                type: "post",
-                success: function(url) {
-                    var image = $('<img>').attr('src',url);
-                    $('#abstract').summernote("insertNode", image[0]);
-                },
-                error: function(data) {
-                    console.log(data);
-                }
-            });
-        }
-		
-		
-	$(document).ready(function() {
-        $('#introduction').summernote({
-            height: ($(window).height() - 300),
-            callbacks: {
-                onImageUpload: function(image) {
-                    uploadImage44(image[0]);
-                }
-            }
-        });
-    });
-	
-	function uploadImage44(image) {
-            var data = new FormData();
-            data.append("image", image);
-            $.ajax({
-                url: '<?php echo base_url('home/sameimage'); ?>',
-                cache: false,
-                contentType: false,
-                processData: false,
-                data: data,
-                type: "post",
-                success: function(url) {
-                    var image = $('<img>').attr('src',url);
-                    $('#introduction').summernote("insertNode", image[0]);
-                },
-                error: function(data) {
-                    console.log(data);
-                }
-            });
-        }
-		
-	$(document).ready(function() {
-        $('#references').summernote({
-            height: ($(window).height() - 300),
-            callbacks: {
-                onImageUpload: function(image) {
-                    uploadImage3(image[0]);
-                }
-            }
-        });
-    });
-	
-	function uploadImage3(image) {
-            var data = new FormData();
-            data.append("image", image);
-            $.ajax({
-                url: '<?php echo base_url('home/sameimage'); ?>',
-                cache: false,
-                contentType: false,
-                processData: false,
-                data: data,
-                type: "post",
-                success: function(url) {
-                    var image = $('<img>').attr('src',url);
-                    $('#references').summernote("insertNode", image[0]);
-                },
-                error: function(data) {
-                    console.log(data);
-                }
-            });
-        }
-		
-		
-		
-	$(document).ready(function() {
-        $('#figures').summernote({
-            height: ($(window).height() - 300),
-            callbacks: {
-                onImageUpload: function(image) {
-                    uploadImage333(image[0]);
-                }
-            }
-        });
-    });
-	
-	function uploadImage333(image) {
-            var data = new FormData();
-            data.append("image", image);
-            $.ajax({
-                url: '<?php echo base_url('home/sameimage'); ?>',
-                cache: false,
-                contentType: false,
-                processData: false,
-                data: data,
-                type: "post",
-                success: function(url) {
-                    var image = $('<img>').attr('src',url);
-                    $('#figures').summernote("insertNode", image[0]);
-                },
-                error: function(data) {
-                    console.log(data);
-                }
-            });
-        }
-		
-	$(document).ready(function() {
-        $('#tables').summernote({
-            height: ($(window).height() - 300),
-            callbacks: {
-                onImageUpload: function(image) {
-                    uploadImage33(image[0]);
-                }
-            }
-        });
-    });
-	
-	function uploadImage33(image) {
-            var data = new FormData();
-            data.append("image", image);
-            $.ajax({
-                url: '<?php echo base_url('home/sameimage'); ?>',
-                cache: false,
-                contentType: false,
-                processData: false,
-                data: data,
-                type: "post",
-                success: function(url) {
-                    var image = $('<img>').attr('src',url);
-                    $('#tables').summernote("insertNode", image[0]);
-                },
-                error: function(data) {
-                    console.log(data);
-                }
-            });
-        }
-		
-	$(document).ready(function() {
-        $('#suggested_citation').summernote({
-            height: ($(window).height() - 300),
-            callbacks: {
-                onImageUpload: function(image) {
-                    uploadImage3(image[0]);
-                }
-            }
-        });
-    });
-	
-	function uploadImage3(image) {
-            var data = new FormData();
-            data.append("image", image);
-            $.ajax({
-                url: '<?php echo base_url('home/sameimage'); ?>',
-                cache: false,
-                contentType: false,
-                processData: false,
-                data: data,
-                type: "post",
-                success: function(url) {
-                    var image = $('<img>').attr('src',url);
-                    $('#suggested_citation').summernote("insertNode", image[0]);
-                },
-                error: function(data) {
-                    console.log(data);
-                }
-            });
-        }
+  $(function () {
+    CKEDITOR.replace('research_article');
+    $(".textarea").wysihtml5();
+  });  $(function () {
+    CKEDITOR.replace('abstract');
+    $(".textarea").wysihtml5();
+  });  $(function () {
+    CKEDITOR.replace('introduction');
+    $(".textarea").wysihtml5();
+  }); $(function () {
+    CKEDITOR.replace('references');
+    $(".textarea").wysihtml5();
+  }); $(function () {
+    CKEDITOR.replace('figures');
+    $(".textarea").wysihtml5();
+  });
+    $(function () {
+    CKEDITOR.replace('suggested_citation');
+    $(".textarea").wysihtml5();
+  });
+    $(function () {
+    CKEDITOR.replace('tables');
+    $(".textarea").wysihtml5();
+  });
+  
 $(document).ready(function() {
     $('#addflyer').bootstrapValidator({
         

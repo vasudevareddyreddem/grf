@@ -218,66 +218,14 @@
     </section> 
 </div>
   <script type="text/javascript">
-  $(document).ready(function() {
-        $('#biography').summernote({
-            height: ($(window).height() - 300),
-            callbacks: {
-                onImageUpload: function(image) {
-                    biography(image[0]);
-                }
-            }
-        });
-    });
-	
-	function biography(image) {
-            var data = new FormData();
-            data.append("image", image);
-            $.ajax({
-                url: '<?php echo base_url('home/sameimage'); ?>',
-                cache: false,
-                contentType: false,
-                processData: false,
-                data: data,
-                type: "post",
-                success: function(url) {
-                    var image = $('<img>').attr('src',url);
-                    $('#biography').summernote("insertNode", image[0]);
-                },
-                error: function(data) {
-                    console.log(data);
-                }
-            });
-        }
-		$(document).ready(function() {
-        $('#abstract').summernote({
-            height: ($(window).height() - 300),
-            callbacks: {
-                onImageUpload: function(image) {
-                    abstracts(image[0]);
-                }
-            }
-        });
-    });
-	
-	function abstracts(image) {
-            var data = new FormData();
-            data.append("image", image);
-            $.ajax({
-                url: '<?php echo base_url('home/sameimage'); ?>',
-                cache: false,
-                contentType: false,
-                processData: false,
-                data: data,
-                type: "post",
-                success: function(url) {
-                    var image = $('<img>').attr('src',url);
-                    $('#abstract').summernote("insertNode", image[0]);
-                },
-                error: function(data) {
-                    console.log(data);
-                }
-            });
-        }
+ $(function () {
+    CKEDITOR.replace('biography');
+    $(".textarea").wysihtml5();
+  }); 
+  $(function () {
+    CKEDITOR.replace('abstract');
+    $(".textarea").wysihtml5();
+  }); 
   function checkvalidation(){
 	  var id=$('#journal').val();
 	  if(id==''){

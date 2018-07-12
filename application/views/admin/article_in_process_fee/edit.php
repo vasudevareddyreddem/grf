@@ -104,36 +104,10 @@
     </section> 
 </div>
   <script type="text/javascript">
-   $(document).ready(function() {
-        $('#table').summernote({
-            height: ($(window).height() - 300),
-            callbacks: {
-                onImageUpload: function(image) {
-                    tables(image[0]);
-                }
-            }
-        });
-    });
-	
-	function tables(image) {
-            var data = new FormData();
-            data.append("image", image);
-            $.ajax({
-                url: '<?php echo base_url('home/sameimage'); ?>',
-                cache: false,
-                contentType: false,
-                processData: false,
-                data: data,
-                type: "post",
-                success: function(url) {
-                    var image = $('<img>').attr('src',url);
-                    $('#table').summernote("insertNode", image[0]);
-                },
-                error: function(data) {
-                    console.log(data);
-                }
-            });
-        }
+    $(function () {
+    CKEDITOR.replace('table');
+    $(".textarea").wysihtml5();
+  }); 
   function checkvalidation(){
 	  var id=$('#journal').val();
 	  if(id==''){

@@ -88,7 +88,7 @@ class Article_in_process_fee extends CI_Controller {
 					$add_data=array(
 					'journal_id'=>isset($post['journal'])?$post['journal']:'',
 					'journal_cat_id'=>isset($post['category'])?$post['category']:'',
-					'table'=>isset($post['tables'])?$post['tables']:'',
+					'table'=>isset($_REQUEST['tables'])?$_REQUEST['tables']:'',
 					'status'=>1,
 					'create_at'=>date('Y-m-d H:i:s'),
 					'update_at'=>date('Y-m-d H:i:s'),
@@ -118,7 +118,7 @@ class Article_in_process_fee extends CI_Controller {
 							$update_data=array(
 								'journal_id'=>isset($post['journal'])?$post['journal']:'',
 								'journal_cat_id'=>isset($post['category'])?$post['category']:'',
-								'table'=>isset($post['table'])?$post['table']:'',
+								'table'=>isset($_REQUEST['table'])?$_REQUEST['table']:'',
 								'update_at'=>date('Y-m-d H:i:s'),
 								);
 								

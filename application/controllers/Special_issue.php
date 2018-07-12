@@ -114,14 +114,15 @@ class Special_issue extends CI_Controller {
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
 			
-			//echo '<pre>';print_r($post);exit;
+			//echo '<pre>';print_r($_REQUEST);exit;
 			$update_data=array(
 					'journal_id'=>isset($post['journal'])?$post['journal']:'',
 					'journal_cat_id'=>isset($post['category'])?$post['category']:'',
 					'title'=>isset($post['title'])?$post['title']:'',
-					'details'=>isset($post['details'])?$post['details']:'',
+					'details'=>isset($_REQUEST['details'])?$_REQUEST['details']:'',
 					'update_at'=>date('Y-m-d H:i:s'),
 					);
+					//echo '<pre>';print_r($update_data);exit;
 						$update=$this->Special_issue_model->update_special_issue_details($post['issue_id'],$update_data);
 						if(count($update)>0){
 							$this->session->set_flashdata('success',"Special Issue successfully Updated");

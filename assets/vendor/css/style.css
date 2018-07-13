@@ -5,6 +5,9 @@
 
 
 /**variables**/
+u{
+border-bottom:1px solid #000 !important;
+}
 body {
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
@@ -64,10 +67,7 @@ section .section-title {
     -o-transform: rotateY(180deg);
     transform: rotateY(180deg);
 }
-u{
-	
-	border-bottom:1px solid #333;
-	}
+
 
 .mainflip {
     -webkit-transition: 1s;

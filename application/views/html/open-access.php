@@ -52,7 +52,7 @@
             </div>
         </div>
 
-        <div class="panel panel-default">
+       <!-- <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingTwo" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 			
 			
@@ -72,9 +72,9 @@
 					<p >By paying open access fees as part of a membership model </p>
                 </div>
             </div>
-        </div>
+        </div>-->
 
-        <div class="panel panel-default">
+       <!-- <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingThree" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
 			
                 <h4 class="panel-title">
@@ -98,7 +98,7 @@
 					</p>
                 </div>
             </div>
-        </div>
+        </div>-->
 		<div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingfour" data-toggle="collapse" data-parent="#accordion" href="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
 			

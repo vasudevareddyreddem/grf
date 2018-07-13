@@ -30,8 +30,8 @@
                             <i class="fa fa-envelope"></i>   Email
                         </div>
                         <div class="col-sm-9">
-                        <a href="mailto:support@meddocsonline.org">Contact@grfpublishers.org</a> 
-                        <a href="mailto:support@meddocsonline.org">Support@grfpublishers.org</a> 
+                        <a href="mailto:Contact@grfpublishers.org">Contact@grfpublishers.org</a> 
+                        <a href="mailto:Support@grfpublishers.org">Support@grfpublishers.org</a> 
                         </div>
                     </div><br>
                     

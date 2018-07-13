@@ -9,7 +9,7 @@
 		<meta http-equiv="Pragma" content="no-cache" />
 		<meta http-equiv="Expires" content="-1" />
         <title>GRF Publishers</title>
-        <meta name="description" content="MedDocs Publishers is a dedicated powerhouse for publishing informative journals in various areas of science, medicine. Peer-reviewed Journals| Medical Journals">
+        <meta name="description" content="GRF Publishers is a dedicated powerhouse for publishing informative journals in various areas of science, medicine. Peer-reviewed Journals| Medical Journals">
 		<meta name="keywords" content="peer reviewed medical journals, medical articles online, journal of medical informatics, latest medical journal articles, journal of medical research.">
         <!-- Bootstrap -->
         <link href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -119,7 +119,7 @@
 							<li><a href="<?php echo base_url('editors'); ?>">Editors</a></li>
 							<li><a href="<?php echo base_url('author-guidelines'); ?>">Authors</a></li>
 							<li><a href="<?php echo base_url('manuscript-guidelines'); ?>">Manuscript Guidelines</a></li>
-							<li><a href="<?php echo base_url('membership'); ?>">Member ship</a></li>
+							<li><a href="<?php echo base_url('membership'); ?>">Membership</a></li>
 							
 						  </ul>
 						</li>

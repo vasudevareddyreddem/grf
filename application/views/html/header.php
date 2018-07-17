@@ -126,7 +126,7 @@
                        
                         <li ><a href="<?php echo base_url('conference'); ?>" class="<?php if($c_url==base_url('conference')){ echo "current"; } ?>">Conferences</a></li>
 						<li ><a href="<?php echo base_url('video-article'); ?>" class="<?php if($c_url==base_url('video-article')){ echo "current"; } ?>">Video Articles</a></li>
-						<li ><a href="<?php echo base_url('menuscript'); ?>" class="<?php if($c_url==base_url('menuscript')){ echo "current"; } ?>">Submit Manuscript</a></li>
+						<li ><a href="<?php echo base_url('manuscript'); ?>" class="<?php if($c_url==base_url('manuscript')){ echo "current"; } ?>">Submit Manuscript</a></li>
 						<li ><a href="<?php echo base_url('contactus'); ?>" class="<?php if($c_url==base_url('contactus')){ echo "current"; } ?>"> Contact Us</a></li>
 
 

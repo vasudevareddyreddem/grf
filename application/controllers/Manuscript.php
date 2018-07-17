@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Menuscript extends CI_Controller {
+class Manuscript extends CI_Controller {
 
 	public function __construct() 
 	{
@@ -19,7 +19,7 @@ class Menuscript extends CI_Controller {
 		}
 	public function index()
 	{	
-		$data['c_url']=base_url('menuscript');
+		$data['c_url']=base_url('Manuscript');
 		$data['scroll_data']=$this->Home_model->get_scrolling_content();
 		$this->load->view('html/header',$data);
 		$data['journals_list']=$this->Home_model->get_journals_list();

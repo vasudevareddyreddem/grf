@@ -21,7 +21,7 @@
                             <i class="fa fa-phone"></i>   Phone
                         </div>
                         <div class="col-sm-9">
-                            **********
+                            +61 385184040
                         </div>
                     </div>
                     

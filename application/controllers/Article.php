@@ -21,7 +21,6 @@ class Article extends CI_Controller {
 	{	
 		$header['c_url']=base_url('');
 		$header['scroll_data']=$this->Home_model->get_scrolling_content();
-		$this->load->view('html/header',$header);
 		$a_id=base64_decode($this->uri->segment(3));
 		if($a_id==''){
 			redirect('');
@@ -29,7 +28,11 @@ class Article extends CI_Controller {
 		$data['article_details']=$this->Home_model->get_article_htnl_data($a_id);
 		//echo $this->db->last_query();
 		//echo '<pre>';print_r($data);exit;
-		
+		$header['meta_title']=isset($data['article_details']['seo_title'])?$data['article_details']['seo_title']:'';
+		$header['meta_keywords']=isset($data['article_details']['seo_keyword'])?$data['article_details']['seo_keyword']:'';
+		$header['meta_description']=isset($data['article_details']['seo_description'])?$data['article_details']['seo_description']:'';
+		$this->load->view('html/header',$header);
+
 		$this->load->view('html/html',$data);
 		$this->load->view('html/footer');
 		

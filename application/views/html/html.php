@@ -65,7 +65,7 @@
 					
 					<div class="row">
 						
-						<?php echo htmlentities($article_details['figures']);?>
+						<?php echo $article_details['figures'];?>
 					</div>
 				</div>
 				

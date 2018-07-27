@@ -192,7 +192,7 @@ body {
 
 .greenBtn {
     background-color: #DFF0D8;
-    color: #3C763D;
+    color: #00bcd4;
 }
 
 .headerBtn:hover {
@@ -211,7 +211,7 @@ body {
 }
 
 .greenBtn:hover {
-    background-color: #3C763D;
+    background-color: #00bcd4;
     color: #fff;
 }
 

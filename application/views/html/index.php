@@ -92,7 +92,7 @@
                     <div class="row">
                        
                        <div class="col-md-10 col-xs-12">
-                           <h3>GRF Publishers</h3>
+                           <h3>Bibliotics Journals</h3>
                            <p>The journals, e-books and conferences are being published and organized in order to spread the
 information on the latest technological and scientific researches among the core
 group with the aim of disseminating information for the betterment of mankind.</p>
@@ -112,14 +112,16 @@ group with the aim of disseminating information for the betterment of mankind.</
                 <div class=" Welcome_txt fadeInLeft wow animated  " data-wow-duration="1000ms" data-wow-delay="1000ms">
                   
                     <h3>ABOUT US </h3>
-                    <p> Global Research Federation is an emerging scientific online open access publisher keeping a goal to serve professional and academic communities in latest research discoveries and developments. GRF follows open access policy where enabling permanently archived contents on our journal website allowing readers to download, share and read at free of cost.</p>
+                    <p> Bibliotics publishes international, peer-reviewed science, medicine, and engineering journals. It is an Open Access platform to support scientific innovation and advancement in the research community by increasing access to peer-reviewed quality research articles.
+
+We host internationally-recognized, peer-reviewed journals to serve the scientific and medical community with validated and quality content across the broad range of disciplines, including medicine, clinical science, chemistry, and engineering. The Bibliotics Member Journals Editorial Board and Review Board ensures Bibliotics maintain the highest standards in scientific rigor. Additionally, all of the articles published with Bibliotics Central are permanently archived, providing unrestricted use and dissemination of the scientific information. All content is published under the Creative Commons Attribution License.</p>
                    
                 </div>
 				<br>
 				<div class=" Welcome_txt fadeInUp wow animated  " data-wow-duration="1000ms" data-wow-delay="1000ms">
                   
                     <h3>Our Vision</h3>
-                    <p>GRF consider research work for publication from any part of the world and ensure that all submissions are gone through peer review process. All our reviewers undertake to keep submitted manuscripts and associated data confidential.The quick and efficient review and publication process makes your papers available in online to all the readers once uploaded in our website. We are honoured to welcome authors to visit our webpage and submit their scientific papers to our journal. In short, our goal is to expand the boundaries of knowledge for the benefit of humanity.</p>
+                    <p>Bibliotics encourages the advancement of high-quality research on the international stage by supporting the science and technology publishing and the unrestricted flow of scientific information through the Open Access platform.</p>
                    
                 </div>
 				<br>
@@ -257,17 +259,7 @@ group with the aim of disseminating information for the betterment of mankind.</
       <!-- Widget Start -->
       <!-- Widget End --> 
       <!--Featured Post Widget Start -->
-      <div class="widget sidebar-featured-post">
-         
-         
-         <div class="cp-sidebar-content">
-            <h3 class="side-title">Video Articles</h3>
-            <a href="<?php echo base_url('video-article');?>"><img alt="Video Articles" src="<?php echo base_url(); ?>assets/vendor/img/video-articles.png" width="100%" border="5"></a>
-           
-         </div>
-        
-         
-      </div>
+     
      
       <!-- Widget Start -->
       <div class="widget sidebar-newsletter">
@@ -348,8 +340,8 @@ group with the aim of disseminating information for the betterment of mankind.</
                     <div class="row">
                        
                        <div class="col-md-10 col-xs-12">
-                           <h3>GRF Publishers</h3>
-                           <p>Global Research Federation is an emerging scientific online open access publisher keeping a goal to serve professional and academic communities in latest research discoveries and developments.</p>
+                           <h3>Bibliotics Journals</h3>
+                           <p>Bibliotics Journals is an emerging scientific online open access publisher keeping a goal to serve professional and academic communities in latest research discoveries and developments.</p>
                        </div>  
                        <div class="col-md-2 col-xs-12 text-center padding_0">
                            <a href="<?php echo base_url('contactus'); ?>" class="btn btn-red btn-lg btn-block ">CONTACT US</a>

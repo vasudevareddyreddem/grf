@@ -162,7 +162,7 @@ group with the aim of disseminating information for the betterment of mankind.</
 									  <div class="article-details">
 										 <h4><a href="<?php echo base_url('article/view/'.base64_encode($list['a_id']).'/'.$list['url']); ?>" target="_blank" style="color:#0062C4;"><?php echo isset($list['title'])?$list['title']:''; ?></a></h4>
 										 <!--<span class="name"><?php echo isset($list['author_name'])?$list['author_name']:''; ?></span>-->
-										 <h6><a href="#" target="_blank" style="color:#F60;"><?php echo isset($list['author_name'])?$list['author_name']:''; ?></a></h6>
+										 <h6><a href="#" style="color:#F60;"><?php echo isset($list['author_name'])?$list['author_name']:''; ?></a></h6>
 										 <p class="art-date"><a href="<?php echo base_url('article/view/'.base64_encode($list['a_id']).'/'.$list['url']); ?><?php echo base_url('journals'); ?>" ><?php echo isset($list['journaltitle'])?$list['journaltitle']:''; ?></a></p>
 									  </div>
 								   </div>

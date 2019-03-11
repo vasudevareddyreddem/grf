@@ -19,7 +19,7 @@ class Manuscript extends CI_Controller {
 		}
 	public function index()
 	{	
-		$data['c_url']=base_url('Manuscript');
+		$data['c_url']=base_url('manuscript');
 		$data['meta_title']='Manuscript';
 		$data['meta_description']='Manuscript';
 		$data['meta_keywords']='Manuscript';

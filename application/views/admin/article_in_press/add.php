@@ -321,10 +321,6 @@ $(document).ready(function() {
                 validators: {
 					notEmpty: {
 						message: 'Author Name is required'
-					},
-					regexp: {
-					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'Author Name wont allow <> [] = % '
 					}
 				}
             },article_type: {

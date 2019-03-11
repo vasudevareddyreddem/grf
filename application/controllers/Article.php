@@ -19,7 +19,7 @@ class Article extends CI_Controller {
 	}
 	public function view()
 	{	
-		$header['c_url']=base_url('');
+		$header['c_url']=base_url('journals');
 		$header['scroll_data']=$this->Home_model->get_scrolling_content();
 		$a_id=base64_decode($this->uri->segment(3));
 		if($a_id==''){

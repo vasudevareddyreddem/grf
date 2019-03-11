@@ -21,7 +21,7 @@
                              <li><a href="<?php echo base_url('contactus'); ?>">Contact Us</a></li>
                              <li><a href="<?php echo base_url('conference'); ?>">Conferences</a></li>
                              <li><a href="<?php echo base_url('video-article'); ?>">Video Article</a></li>
-                             <li><a href="<?php echo base_url('menuscript'); ?>">Submit Manuscript</a></li>
+                             <li><a href="<?php echo base_url('manuscript'); ?>">Submit Manuscript</a></li>
                            
                         </ul>
                     </div> 
@@ -85,6 +85,14 @@
         <script src="<?php echo base_url(); ?>assets/vendor/js/jssor.slider-24.1.5.min.js" type="text/javascript"></script>
         <script type="<?php echo base_url(); ?>assets/vendor/text/javascript" src="js/banner.js"></script>
 		<script type="<?php echo base_url(); ?>assets/vendor/text/javascript" src="js/hover-effect.js"></script>
+		
+		
+		
+
+<script src="<?php echo base_url(); ?>assets/vendor/js/cust.js" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>assets/vendor/js/slick.js" type="text/javascript"></script>
+
+		
 
         <script type="text/javascript">
            /* $(function(){
@@ -224,7 +232,52 @@ $('#return-to-top').click(function() {      // When arrow is clicked
     }, 500);
 });
          </script>
+         
+         
+        <script>
+        $('.carousel[data-type="multi"] .item').each(function(){
+  var next = $(this).next();
+  if (!next.length) {
+    next = $(this).siblings(':first');
+  }
+  next.children(':first-child').clone().appendTo($(this));
 
+  for (var i=0;i<4;i++) {
+    next=next.next();
+    if (!next.length) {
+    	next = $(this).siblings(':first');
+  	}
+    
+    next.children(':first-child').clone().appendTo($(this));
+  }
+});
+        </script> 
+        
+        <script type="text/javascript">
+        $(document).ready(function(){
+    $('.customer-logos').slick({
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        arrows: false,
+        dots: false,
+        pauseOnHover: false,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 4
+            }
+        }, {
+            breakpoint: 520,
+            settings: {
+                slidesToShow: 3
+            }
+        }]
+    });
+});
+</script>
+   
     </body>
 
 </html>

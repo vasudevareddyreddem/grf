@@ -113,13 +113,21 @@
                         </div>
 						<div class="col-md-6">
 							<div class="form-group">
+								<label class=" control-label">Select Excel File</label>
+								<div class="">
+									<input type="file" class="form-control" name="excel_file" id="excel_file" />
+								</div>
+							</div>
+                        </div>
+						<div class="col-md-6">
+							<div class="form-group">
 								<label class=" control-label">Select Image</label>
 								<div class="">
 									<input type="file" class="form-control" name="image" id="image" />
 								</div>
 							</div>
                         </div>
-						<div class="col-md-12">
+						<div class="col-md-6">
 							<div class="form-group">
 								<label class=" control-label">Article Video</label>
 								<div class="">
@@ -338,6 +346,13 @@ $(document).ready(function() {
 					regexp: {
 					regexp: "(.*?)\.(pdf)$",
 					message: 'Uploaded file is not a valid. Only pdf file are allowed'
+					}
+				}
+            },excel_file: {
+                validators: {
+					regexp: {
+					regexp: "(.*?)\.(xlsx|xls|xlsb|xlsm)$",
+					message: 'Uploaded file is not a valid. Only Excel file are allowed'
 					}
 				}
             },

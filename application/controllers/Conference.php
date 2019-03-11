@@ -19,6 +19,9 @@ class Conference extends CI_Controller {
 	public function index()
 	{	
 		$data['c_url']=base_url('conference');
+		$data['meta_title']='conferences';
+		$data['meta_description']='conferences';
+		$data['meta_keywords']='conferences';
 		$data['scroll_data']=$this->Home_model->get_scrolling_content();
 		$con['confrence_flyer_list']=$this->Home_model->get_all_confrence_flyers();
 		$con['journals_list']=$this->Home_model->get_journal_list();

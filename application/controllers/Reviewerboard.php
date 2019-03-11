@@ -34,6 +34,7 @@ class Reviewerboard extends CI_Controller {
 			$admindetails=$this->session->userdata('userdetails');
 			$data['journals_list']=$this->Journal_details_model->get_all_journal_list($admindetails['id']);
 			$data['journals_category_list']=$this->Journal_details_model->get_journal_category_list($admindetails['id']);
+			$data['country_list']=$this->Admin_model->get_countries_list($admindetails['id']);
 
 			$this->load->view('admin/reviewerboard/add',$data);
 			$this->load->view('admin/footer');
@@ -68,6 +69,7 @@ class Reviewerboard extends CI_Controller {
 			$data['details']=$this->Reviewerboard_model->get_reviewer_details($f_id);
 			$data['journals_list']=$this->Journal_details_model->get_all_category_journal_list($admindetails['id'],$data['details']['category']);
 			$data['journals_category_list']=$this->Journal_details_model->get_journal_category_list($admindetails['id']);
+			$data['country_list']=$this->Admin_model->get_countries_list($admindetails['id']);
 
 			//echo '<pre>';print_r($data);exit; 
 			$this->load->view('admin/reviewerboard/edit',$data);

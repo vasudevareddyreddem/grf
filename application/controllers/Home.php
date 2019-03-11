@@ -35,6 +35,9 @@ class Home extends CI_Controller {
 	public function for_author()
 	{	
 		$header['c_url']=base_url('');
+		$header['meta_title']='for-author';
+		$header['meta_description']='for-author';
+		$header['meta_keywords']='for-author';
 		$header['scroll_data']=$this->Home_model->get_scrolling_content();
 		$this->load->view('html/header',$header);
 		$data['homapage_banners']=$this->Home_model->get_home_banners_list();
@@ -48,6 +51,9 @@ class Home extends CI_Controller {
 	public function quick_editors()
 	{	
 		$header['c_url']=base_url('');
+		$header['meta_title']='quick-editors';
+		$header['meta_description']='quick-editors';
+		$header['meta_keywords']='quick-editors';
 		$header['scroll_data']=$this->Home_model->get_scrolling_content();
 		$this->load->view('html/header',$header);
 		$data['homapage_banners']=$this->Home_model->get_home_banners_list();
@@ -61,6 +67,9 @@ class Home extends CI_Controller {
 	public function reviewers()
 	{	
 		$header['c_url']=base_url('');
+		$header['meta_title']='reviewers';
+		$header['meta_description']='reviewers';
+		$header['meta_keywords']='reviewers';
 		$header['scroll_data']=$this->Home_model->get_scrolling_content();
 		$this->load->view('html/header',$header);
 		$data['homapage_banners']=$this->Home_model->get_home_banners_list();
@@ -188,6 +197,35 @@ class Home extends CI_Controller {
 			}
 							
         echo $result;
+	}
+	public  function sendmessage(){
+		$post=$this->input->post();
+		$add=array(
+		'uname'=>isset($post['uname'])?$post['uname']:'',
+		'uemail'=>isset($post['uemail'])?$post['uemail']:'',
+		'msg'=>isset($post['msg'])?$post['msg']:'',
+		'date'=>date('Y-m-d H:i:s')
+		);
+		$save=$this->Home_model->sent_message($add);
+					
+					if(count($save)>0){
+						$this->load->library('email');
+				$this->load->library('email');
+					$this->email->set_newline("\r\n");
+					$this->email->set_mailtype("html");
+				$this->email->from($post['uemail']);
+				$this->email->to('contact@grfpublishers.org');
+				$this->email->subject('Message - Request');
+				$msg='Name:'.$post['uname'].' '.'<br> Email :'.$post['uemail'].'<br> Message :'.$post['msg'];
+				$this->email->message($msg);
+				$this->email->send();
+					$this->session->set_flashdata('success',"Message successfully sent.");
+						redirect('home');
+					}else{
+						$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");
+						redirect('home');
+					}
+		
 	}
 	
 	

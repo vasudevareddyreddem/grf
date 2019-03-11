@@ -224,6 +224,11 @@
 											<li>
 											   <a href="<?php echo base_url('assets/article_in_press/'.$list['pdf_file']); ?>" target="_blank" class="btn btn-primary " style="font-size:12px;" download> <i class="fa fa-unlock-alt"></i>&nbsp; PDF</a>
 											</li>
+											<?Php if(isset($list['excel_file']) && $list['excel_file']!=''){ ?>
+											<li>
+											   <a href="<?php echo base_url('assets/article_in_press/'.$list['excel_file']); ?>" target="_blank" class="btn btn-danger " style="font-size:12px;" download><i class="fa fa-file-excel-o" aria-hidden="true"></i>&nbsp; Excel</a>
+											</li>
+											<?php } ?>
 											<li>
 											   <a target="_blank" href="<?php echo base_url('article/view/'.base64_encode($list['a_id']).'/'.$list['url']); ?>" target="_blank" class="btn btn-warning " style="font-size:12px;"> <i class="fa fa-code" aria-hidden="true"></i> HTML</a>
 											</li>
@@ -289,6 +294,11 @@
 																	<li>
 																	   <a href="<?php echo base_url('assets/article_in_press/'.$list['pdf_file']); ?>" target="_blank" class="btn btn-primary " style="font-size:12px;" download> <i class="fa fa-unlock-alt"></i>&nbsp; PDF</a>
 																	</li>
+																	<?Php if(isset($list['excel_file']) && $list['excel_file']!=''){ ?>
+																	<li>
+																	   <a href="<?php echo base_url('assets/article_in_press/'.$list['excel_file']); ?>" target="_blank" class="btn btn-danger " style="font-size:12px;" download><i class="fa fa-file-excel-o" aria-hidden="true"></i>&nbsp; Excel</a>
+																	</li>
+																	<?php } ?>
 																	<li>
 																	   <a target="_blank" href="<?php echo base_url('article/view/'.base64_encode($list['a_id']).'/'.$list['url']); ?>" target="_blank" class="btn btn-warning " style="font-size:12px;"> <i class="fa fa-code" aria-hidden="true"></i> HTML</a>
 																	</li>
@@ -336,12 +346,13 @@
 														<a target="_blank" href="<?php echo base_url('journals/archive/'.base64_encode($lis['id'])); ?>">
 															<div class="col-md-4">
 																<img style ="" class= "img-responsive" src="<?php echo base_url('assets/issues/'.$lis['image']); ?>" alt="<?php echo isset($lis['year'])?$lis['year']:''; ?>">
-																<div class="text-archive-img">
-																	<h3 class=""><?php echo isset($lis['number'])?$lis['number']:''; ?>    
+																<div class="text-center">
+																	<h3 class="">Issue : <?php echo isset($lis['number'])?$lis['number']:''; ?> -   
 																		<span class="text-success"> <?php echo isset($lis['year'])?$lis['year']:''; ?></span> 
 																	</h3>
 																</div>
-															</div></a>
+															</div>
+															</a>
 														<?php } ?>
 													  </ul>
 													</div>

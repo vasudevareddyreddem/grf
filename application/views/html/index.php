@@ -92,7 +92,7 @@
                     <div class="row">
                        
                        <div class="col-md-10 col-xs-12">
-                           <h3>Bibliotics Journals</h3>
+                           <h3>GRF Publishers</h3>
                            <p>The journals, e-books and conferences are being published and organized in order to spread the
 information on the latest technological and scientific researches among the core
 group with the aim of disseminating information for the betterment of mankind.</p>
@@ -112,16 +112,14 @@ group with the aim of disseminating information for the betterment of mankind.</
                 <div class=" Welcome_txt fadeInLeft wow animated  " data-wow-duration="1000ms" data-wow-delay="1000ms">
                   
                     <h3>ABOUT US </h3>
-                    <p> Bibliotics publishes international, peer-reviewed science, medicine, and engineering journals. It is an Open Access platform to support scientific innovation and advancement in the research community by increasing access to peer-reviewed quality research articles.
-
-We host internationally-recognized, peer-reviewed journals to serve the scientific and medical community with validated and quality content across the broad range of disciplines, including medicine, clinical science, chemistry, and engineering. The Bibliotics Member Journals Editorial Board and Review Board ensures Bibliotics maintain the highest standards in scientific rigor. Additionally, all of the articles published with Bibliotics Central are permanently archived, providing unrestricted use and dissemination of the scientific information. All content is published under the Creative Commons Attribution License.</p>
+                    <p> Global Research Federation is an emerging scientific online open access publisher keeping a goal to serve professional and academic communities in latest research discoveries and developments. GRF follows open access policy where enabling permanently archived contents on our journal website allowing readers to download, share and read at free of cost.</p>
                    
                 </div>
 				<br>
 				<div class=" Welcome_txt fadeInUp wow animated  " data-wow-duration="1000ms" data-wow-delay="1000ms">
                   
                     <h3>Our Vision</h3>
-                    <p>Bibliotics encourages the advancement of high-quality research on the international stage by supporting the science and technology publishing and the unrestricted flow of scientific information through the Open Access platform.</p>
+                    <p>GRF consider research work for publication from any part of the world and ensure that all submissions are gone through peer review process. All our reviewers undertake to keep submitted manuscripts and associated data confidential.The quick and efficient review and publication process makes your papers available in online to all the readers once uploaded in our website. We are honoured to welcome authors to visit our webpage and submit their scientific papers to our journal. In short, our goal is to expand the boundaries of knowledge for the benefit of humanity.</p>
                    
                 </div>
 				<br>
@@ -162,10 +160,10 @@ We host internationally-recognized, peer-reviewed journals to serve the scientif
 								   </div>
 								   <div class="col-lg-10 col-md-9 col-sm-10 col-xs-8">
 									  <div class="article-details">
-										 <h4><a href="<?php echo base_url('journals'); ?>" target="_blank" style="color:#0062C4;"><?php echo isset($list['title'])?$list['title']:''; ?></a></h4>
+										 <h4><a href="<?php echo base_url('article/view/'.base64_encode($list['a_id']).'/'.$list['url']); ?>" target="_blank" style="color:#0062C4;"><?php echo isset($list['title'])?$list['title']:''; ?></a></h4>
 										 <!--<span class="name"><?php echo isset($list['author_name'])?$list['author_name']:''; ?></span>-->
 										 <h6><a href="#" target="_blank" style="color:#F60;"><?php echo isset($list['author_name'])?$list['author_name']:''; ?></a></h6>
-										 <p class="art-date"><a href="<?php echo base_url('journals'); ?>" ><?php echo isset($list['journaltitle'])?$list['journaltitle']:''; ?></a></p>
+										 <p class="art-date"><a href="<?php echo base_url('article/view/'.base64_encode($list['a_id']).'/'.$list['url']); ?><?php echo base_url('journals'); ?>" ><?php echo isset($list['journaltitle'])?$list['journaltitle']:''; ?></a></p>
 									  </div>
 								   </div>
 								</div>
@@ -176,6 +174,11 @@ We host internationally-recognized, peer-reviewed journals to serve the scientif
 											<li>
 											   <a href="<?php echo base_url('assets/article_in_press/'.$list['pdf_file']); ?>" target="_blank" class="btn btn-primary " style="font-size:12px;" download> <i class="fa fa-unlock-alt"></i>&nbsp; PDF</a>
 											</li>
+											<?Php if(isset($list['excel_file']) && $list['excel_file']!=''){ ?>
+											<li>
+											   <a href="<?php echo base_url('assets/article_in_press/'.$list['excel_file']); ?>" target="_blank" class="btn btn-danger " style="font-size:12px;" download><i class="fa fa-file-excel-o" aria-hidden="true"></i>&nbsp; Excel</a>
+											</li>
+											<?php } ?>
 											<li>
 											   <a href="<?php echo base_url('article/view/'.base64_encode($list['a_id']).'/'.$list['url']); ?>" target="_blank" class="btn btn-warning " style="font-size:12px;"> <i class="fa fa-code" aria-hidden="true"></i> HTML</a>
 											</li>
@@ -259,7 +262,17 @@ We host internationally-recognized, peer-reviewed journals to serve the scientif
       <!-- Widget Start -->
       <!-- Widget End --> 
       <!--Featured Post Widget Start -->
-     
+      <div class="widget sidebar-featured-post">
+         
+         
+         <div class="cp-sidebar-content">
+            <h3 class="side-title">Video Articles</h3>
+            <a href="<?php echo base_url('video-article');?>"><img alt="Video Articles" src="<?php echo base_url(); ?>assets/vendor/img/video-articles.png" width="100%" border="5"></a>
+           
+         </div>
+        
+         
+      </div>
      
       <!-- Widget Start -->
       <div class="widget sidebar-newsletter">
@@ -325,12 +338,18 @@ We host internationally-recognized, peer-reviewed journals to serve the scientif
             </div>
           
         </div><!--property container-->
-        <div class="divide40"></div>
+
 
        
        
         
-         <div class="divide40"></div>
+         <div class="divide40">
+
+
+
+</div>
+
+</div>
         
          
          
@@ -340,8 +359,8 @@ We host internationally-recognized, peer-reviewed journals to serve the scientif
                     <div class="row">
                        
                        <div class="col-md-10 col-xs-12">
-                           <h3>Bibliotics Journals</h3>
-                           <p>Bibliotics Journals is an emerging scientific online open access publisher keeping a goal to serve professional and academic communities in latest research discoveries and developments.</p>
+                           <h3>GRF Publishers</h3>
+                           <p>Global Research Federation is an emerging scientific online open access publisher keeping a goal to serve professional and academic communities in latest research discoveries and developments.</p>
                        </div>  
                        <div class="col-md-2 col-xs-12 text-center padding_0">
                            <a href="<?php echo base_url('contactus'); ?>" class="btn btn-red btn-lg btn-block ">CONTACT US</a>
@@ -353,4 +372,22 @@ We host internationally-recognized, peer-reviewed journals to serve the scientif
                
             </div>
         </div>
-		
+        
+        <div class="container pd">
+        <h4>Indexed in:</h4>
+         <div class="divide10"></div>
+        <section class="customer-logos slider">
+      <div class="slide"><img src="https://grfpublishers.com/assets/img/1.jpg"></div>
+      <div class="slide"><img src="https://grfpublishers.com/assets/img/2.jpg"></div>
+      <div class="slide"><img src="https://grfpublishers.com/assets/img/3.jpg"></div>
+      <div class="slide"><img src="https://grfpublishers.com/assets/img/4.jpg"></div>
+      <div class="slide"><img src="https://grfpublishers.com/assets/img/5.jpg"></div>
+      <div class="slide"><img src="https://grfpublishers.com/assets/img/6.jpg"></div>
+      <div class="slide"><img src="https://grfpublishers.com/assets/img/7.jpg"></div>
+      <div class="slide"><img src="https://grfpublishers.com/assets/img/8.jpg"></div>
+        <div class="slide"><img src="https://grfpublishers.com/assets/img/BusinessCardLogo.png"></div>
+    
+ 
+   </section>
+    	
+</div>

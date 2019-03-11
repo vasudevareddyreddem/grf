@@ -20,6 +20,9 @@ class Manuscript_guidelines extends CI_Controller {
 	public function index()
 	{	
 		$header['c_url']=base_url('editors');
+		$header['meta_title']='Manuscript Guidelines ';
+		$header['meta_description']='Manuscript Guidelines ';
+		$header['meta_keywords']='Manuscript Guidelines ';
 		$header['scroll_data']=$this->Home_model->get_scrolling_content();
 		$this->load->view('html/header',$header);
 		$data['flyers_list']=$this->Home_model->get_flyers_list();

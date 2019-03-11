@@ -91,6 +91,10 @@ class Admin_model extends CI_Model
 	}
 	/* dashboad purpose*/
 	
-	
+	public function get_countries_list($id){
+		$this->db->select('country_list.country_name')->from('country_list');		
+		$this->db->where('create_by', $id);
+        return $this->db->get()->result_array();
+	}
 
 }

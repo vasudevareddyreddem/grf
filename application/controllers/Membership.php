@@ -21,6 +21,9 @@ class Membership extends CI_Controller {
 		
 		//echo base_url();exit;
 		$header['c_url']=base_url('editors');
+		$header['meta_title']='	Membership';
+		$header['meta_description']='Membership';
+		$header['meta_keywords']='Membership';
 		$header['scroll_data']=$this->Home_model->get_scrolling_content();
 		$this->load->view('html/header',$header);
 		$data['flyers_list']=$this->Home_model->get_flyers_list();

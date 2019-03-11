@@ -37,6 +37,9 @@ class Unsubscribes_model extends CI_Model
 		$this->db->insert('newsletters', $data);
 		return $insert_id = $this->db->insert_id();
 	}
-	
+	public function get_msg_lists(){
+		$this->db->select('*')->from('msg_list');		
+        return $this->db->get()->result_array();	
+	}
 
 }

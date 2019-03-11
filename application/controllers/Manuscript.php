@@ -19,10 +19,14 @@ class Manuscript extends CI_Controller {
 		}
 	public function index()
 	{	
-		$data['c_url']=base_url('manuscript');
+		$data['c_url']=base_url('Manuscript');
+		$data['meta_title']='Manuscript';
+		$data['meta_description']='Manuscript';
+		$data['meta_keywords']='Manuscript';
 		$data['scroll_data']=$this->Home_model->get_scrolling_content();
 		$this->load->view('html/header',$data);
 		$data['journals_list']=$this->Home_model->get_journals_list();
+		$data['country_list']=$this->Home_model->get_countries_list();
 		$this->load->view('html/menuscript',$data);
 		$this->load->view('html/footer');
 		

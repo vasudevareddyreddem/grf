@@ -424,6 +424,7 @@ class Journal_details extends CI_Controller {
 			$admindetails=$this->session->userdata('userdetails');
 			$data['journals_list']=$this->Journal_details_model->get_all_journal_list($admindetails['id']);
 			$data['journals_category_list']=$this->Journal_details_model->get_journal_category_list($admindetails['id']);
+			$data['country_list']=$this->Admin_model->get_countries_list($admindetails['id']);
 
 			
 			//echo '<pre>';print_r($data);exit;
@@ -569,6 +570,8 @@ class Journal_details extends CI_Controller {
 			$data['details']=$this->Journal_details_model->get_journal_editor_details($j_e_id);
 			$data['journals_category_list']=$this->Journal_details_model->get_journal_category_list($admindetails['id']);
 			$data['journals_list']=$this->Journal_details_model->get_all_category_journal_list($admindetails['id'],$data['details']['journal_cat_id']);
+			$data['country_list']=$this->Admin_model->get_countries_list($admindetails['id']);
+
 			//echo '<pre>';print_r($data);exit; 
 			$this->load->view('admin/journal-details/edit-editors',$data);
 			$this->load->view('admin/footer');

@@ -108,7 +108,14 @@ class Article_in_press extends CI_Controller {
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
 			//echo '<pre>';print_r($post);exit;
-						if(isset($_FILES['pdf_file']['name']) && $_FILES['pdf_file']['name']!=''){
+						if(isset($_FILES['excel_file']['name']) && $_FILES['excel_file']['name']!=''){
+								$temp = explode(".", $_FILES["excel_file"]["name"]);
+								$excel_file = round(microtime(true)) . '.' . end($temp);
+								move_uploaded_file($_FILES['excel_file']['tmp_name'], "assets/article_in_press/" . $excel_file);
+							}else{
+								$excel_file='';
+							}
+							if(isset($_FILES['pdf_file']['name']) && $_FILES['pdf_file']['name']!=''){
 								$temp = explode(".", $_FILES["pdf_file"]["name"]);
 								$pdf = round(microtime(true)) . '.' . end($temp);
 								move_uploaded_file($_FILES['pdf_file']['tmp_name'], "assets/article_in_press/" . $pdf);
@@ -150,6 +157,7 @@ class Article_in_press extends CI_Controller {
 					'suggested_citation'=>isset($_REQUEST['suggested_citation'])?$_REQUEST['suggested_citation']:'',
 					'tables'=>isset($_REQUEST['tables'])?$_REQUEST['tables']:'',
 					'pdf_file'=>$pdf,
+					'excel_file'=>$excel_file,
 					'image'=>$img,
 					'video'=>$video,
 					'video_article'=>$video_article,
@@ -178,8 +186,18 @@ class Article_in_press extends CI_Controller {
 		{
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
+			
+			//echo '<pre>';print_r($post);
 			$details=$this->Journal_details_model->get_article_in_press_details($post['a_id']);
 											
+							if(isset($_FILES['excel_file']['name']) && $_FILES['excel_file']['name']!=''){
+								unlink('assets/article_in_press/'.$details['excel_file']);
+								$temp = explode(".", $_FILES["excel_file"]["name"]);
+								$excel_file = round(microtime(true)) . '.' . end($temp);
+								move_uploaded_file($_FILES['excel_file']['tmp_name'], "assets/article_in_press/" . $excel_file);
+							}else{
+								$excel_file=$details['excel_file'];
+							}
 							if(isset($_FILES['pdf_file']['name']) && $_FILES['pdf_file']['name']!=''){
 								unlink('assets/article_in_press/'.$details['pdf_file']);
 								$temp = explode(".", $_FILES["pdf_file"]["name"]);
@@ -223,13 +241,16 @@ class Article_in_press extends CI_Controller {
 								'references'=>isset($_REQUEST['references'])?$_REQUEST['references']:'',
 								'figures'=>isset($_REQUEST['figures'])?$_REQUEST['figures']:'',
 								'suggested_citation'=>isset($_REQUEST['suggested_citation'])?$_REQUEST['suggested_citation']:'',
-								'tables'=>isset($_REQUEST['tables'])?$_REQUEST['tables']:'',
+								'tables'=>isset($_REQUEST['table'])?$_REQUEST['table']:'',
 								'pdf_file'=>$pdf,
+								'excel_file'=>$excel_file,
 								'image'=>$img,
 								'video'=>$video,
 								'video_article'=>$video_article,
 								'update_at'=>date('Y-m-d H:i:s'),
 								);
+								
+								//echo '<pre>';print_r($update_data);exit;
 						$update=$this->Journal_details_model->update_Article_in_press_details($post['a_id'],$update_data);
 						if(count($update)>0){
 							$this->session->set_flashdata('success','Article in press successfully Updated');

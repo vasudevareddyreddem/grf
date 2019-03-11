@@ -20,7 +20,10 @@ class Open_access extends CI_Controller {
 	{	
 		
 
-               $header['c_url']=base_url('open-access');
+         $header['c_url']=base_url('open-access');
+		 	$header['meta_title']='Open Access';
+		$header['meta_description']='Open Access';
+		$header['meta_keywords']='Open Access';
 		$header['scroll_data']=$this->Home_model->get_scrolling_content();
 		$this->load->view('html/header',$header);
 		$data['article_list']=$this->Home_model->get_article_list();

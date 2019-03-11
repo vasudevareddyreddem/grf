@@ -51,7 +51,7 @@ class Home_model extends CI_Model
 	
 	/*article*/
 	public  function get_article_list(){
-		$this->db->select('journal_article_in_press.a_id,journal_article_in_press.journal_id,journal_article_in_press.year_of_article,journal_article_in_press.title,journal_article_in_press.author_name,journal_article_in_press.article_type,url,journal_article_in_press.seo_title,journal_article_in_press.pdf_file,image,journal_article_in_press.create_at,journals.title as journaltitle')->from('journal_article_in_press');
+		$this->db->select('journal_article_in_press.a_id,journal_article_in_press.journal_id,journal_article_in_press.year_of_article,journal_article_in_press.title,journal_article_in_press.author_name,journal_article_in_press.article_type,url,journal_article_in_press.seo_title,journal_article_in_press.pdf_file,image,journal_article_in_press.create_at,journal_article_in_press.excel_file,journals.title as journaltitle')->from('journal_article_in_press');
 		$this->db->join('journals ', 'journals.j_id = journal_article_in_press.journal_id', 'left');
 
 		$this->db->where('journal_article_in_press.video_article',0);		
@@ -109,7 +109,7 @@ class Home_model extends CI_Model
         return $this->db->get()->row_array();
 	}
 	public function get_journal_wise_article_list($j_id){
-		$this->db->select('journal_article_in_press.a_id,journal_article_in_press.journal_id,journal_article_in_press.year_of_article,journal_article_in_press.title,journal_article_in_press.author_name,journal_article_in_press.article_type,url,journal_article_in_press.seo_title,journal_article_in_press.pdf_file,image,journal_article_in_press.create_at,journals.title as journaltitle')->from('journal_article_in_press');
+		$this->db->select('journal_article_in_press.a_id,journal_article_in_press.journal_id,journal_article_in_press.excel_file,journal_article_in_press.year_of_article,journal_article_in_press.title,journal_article_in_press.author_name,journal_article_in_press.article_type,url,journal_article_in_press.seo_title,journal_article_in_press.pdf_file,image,journal_article_in_press.create_at,journals.title as journaltitle')->from('journal_article_in_press');
 		$this->db->join('journals ', 'journals.j_id = journal_article_in_press.journal_id', 'left');
 		$this->db->where('journal_article_in_press.video_article',0);		
 		$this->db->where('journal_article_in_press.status',1);		
@@ -177,7 +177,7 @@ class Home_model extends CI_Model
 		$this->db->order_by('id','desc');
         $return=$this->db->get()->result_array();
 		$cnt=0;foreach($return as $list){
-			$issues_list=$this->get_issues_list($list['year']);
+			$issues_list=$this->get_issues_list($list['year'],$j_id);
 			$data[$cnt]=$list;
 			$data[$cnt]['issues_list']=$issues_list;
 		$cnt++;}
@@ -187,9 +187,10 @@ class Home_model extends CI_Model
 		//echo '<pre>';print_r($data);exit;
 	}
 	
-	public  function get_issues_list($year){
+	public  function get_issues_list($year,$j_id){
 		$this->db->select('year,number,image,id,journal_id')->from('issues');
 		$this->db->where('year',$year);		
+		$this->db->where('journal_id',$j_id);		
 		$this->db->where('status',1);
 		$this->db->order_by('id','desc');
         return $this->db->get()->result_array();
@@ -201,7 +202,7 @@ class Home_model extends CI_Model
         return $this->db->get()->row_array();
 	}
 	public  function get_all_article_list(){
-		$this->db->select('journal_article_in_press.a_id,journal_article_in_press.journal_id,journal_article_in_press.year_of_article,journal_article_in_press.title,journal_article_in_press.author_name,journal_article_in_press.article_type,url,journal_article_in_press.seo_title,journal_article_in_press.pdf_file,image,journal_article_in_press.create_at,journals.title as journaltitle')->from('journal_article_in_press');
+		$this->db->select('journal_article_in_press.a_id,journal_article_in_press.journal_id,journal_article_in_press.year_of_article,journal_article_in_press.title,journal_article_in_press.author_name,journal_article_in_press.article_type,url,journal_article_in_press.seo_title,journal_article_in_press.pdf_file,image,journal_article_in_press.excel_file,journal_article_in_press.create_at,journals.title as journaltitle')->from('journal_article_in_press');
 		$this->db->join('journals ', 'journals.j_id = journal_article_in_press.journal_id', 'left');
 		$this->db->where('journal_article_in_press.video_article',0);		
 		$this->db->where('journal_article_in_press.status',1);		
@@ -210,7 +211,7 @@ class Home_model extends CI_Model
 	}
 	
 	public  function get_issue_wise_articles($iss_id){
-		$this->db->select('journal_article_in_press.a_id,journal_article_in_press.journal_id,journal_article_in_press.year_of_article,journal_article_in_press.title,journal_article_in_press.author_name,journal_article_in_press.article_type,url,journal_article_in_press.seo_title,journal_article_in_press.pdf_file,image,journal_article_in_press.create_at,journals.title as journaltitle')->from('issue_wise_article_list');
+		$this->db->select('journal_article_in_press.a_id,journal_article_in_press.journal_id,journal_article_in_press.year_of_article,journal_article_in_press.title,journal_article_in_press.author_name,journal_article_in_press.article_type,url,journal_article_in_press.seo_title,journal_article_in_press.pdf_file,image,journal_article_in_press.excel_file,journal_article_in_press.create_at,journals.title as journaltitle')->from('issue_wise_article_list');
 		$this->db->join('journal_article_in_press ', 'journal_article_in_press.a_id = issue_wise_article_list.article_id', 'left');
 		$this->db->join('journals ', 'journals.j_id = journal_article_in_press.journal_id', 'left');
 		$this->db->where('journal_article_in_press.video_article',0);		
@@ -220,7 +221,7 @@ class Home_model extends CI_Model
         return $this->db->get()->result_array();
 	}
 	public  function get_current_article_list_group_by_yearss($issue_id){
-		$this->db->select('journal_article_in_press.a_id,journal_article_in_press.journal_id,journal_article_in_press.year_of_article,journal_article_in_press.title,journal_article_in_press.author_name,journal_article_in_press.article_type,url,journal_article_in_press.seo_title,journal_article_in_press.pdf_file,image,journal_article_in_press.create_at,journals.title as journaltitle')->from('issue_wise_article_list');
+		$this->db->select('journal_article_in_press.a_id,journal_article_in_press.journal_id,journal_article_in_press.excel_file,journal_article_in_press.year_of_article,journal_article_in_press.title,journal_article_in_press.author_name,journal_article_in_press.article_type,url,journal_article_in_press.seo_title,journal_article_in_press.pdf_file,image,journal_article_in_press.create_at,journals.title as journaltitle')->from('issue_wise_article_list');
 		$this->db->join('journal_article_in_press ', 'journal_article_in_press.a_id = issue_wise_article_list.article_id', 'left');
 		$this->db->join('journals ', 'journals.j_id = journal_article_in_press.journal_id', 'left');
 		$this->db->where('journal_article_in_press.video_article',0);		
@@ -230,7 +231,7 @@ class Home_model extends CI_Model
         return $this->db->get()->result_array();
 	}
 	public  function get_current_article_list($issue_id){
-		$this->db->select('journal_article_in_press.a_id,journal_article_in_press.journal_id,journal_article_in_press.year_of_article,journal_article_in_press.title,journal_article_in_press.author_name,journal_article_in_press.article_type,url,journal_article_in_press.seo_title,journal_article_in_press.pdf_file,image,journal_article_in_press.create_at,journals.title as journaltitle')->from('issue_wise_article_list');
+		$this->db->select('journal_article_in_press.a_id,journal_article_in_press.journal_id,journal_article_in_press.excel_file,journal_article_in_press.year_of_article,journal_article_in_press.title,journal_article_in_press.author_name,journal_article_in_press.article_type,url,journal_article_in_press.seo_title,journal_article_in_press.pdf_file,image,journal_article_in_press.create_at,journals.title as journaltitle')->from('issue_wise_article_list');
 		$this->db->join('journal_article_in_press ', 'journal_article_in_press.a_id = issue_wise_article_list.article_id', 'left');
 		$this->db->join('journals ', 'journals.j_id = journal_article_in_press.journal_id', 'left');
 		$this->db->where('journal_article_in_press.video_article',0);		
@@ -272,5 +273,13 @@ class Home_model extends CI_Model
 	}
 	/* video artcile list*/
 	
-
+public function get_countries_list(){
+		$this->db->select('country_list.country_name')->from('country_list');		
+        return $this->db->get()->result_array();
+	}
+	
+	public  function sent_message($data){
+		$this->db->insert('msg_list', $data);
+		return $insert_id = $this->db->insert_id();
+	}
 }

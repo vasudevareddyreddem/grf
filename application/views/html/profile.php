@@ -52,7 +52,7 @@
 					</div>
 					<br>
 					<h3 class="">  
-						<span class="text-success">Biogaphy</span> 
+						<span class="text-success">Biography</span> 
 					</h3>
 					<p><i><?php echo isset($editor_details['biography'])?$editor_details['biography']:''; ?></i>
 					</p>

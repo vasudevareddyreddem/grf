@@ -20,6 +20,9 @@ class Contactus extends CI_Controller {
 	public function index()
 	{	
 		$data['c_url']=base_url('contactus');
+		$data['meta_title']='contactus';
+		$data['meta_description']='contactus';
+		$data['meta_keywords']='contactus';
 		$data['scroll_data']=$this->Home_model->get_scrolling_content();
 		$this->load->view('html/header',$data);
 		$this->load->view('html/contactus');

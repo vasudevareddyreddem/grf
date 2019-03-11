@@ -50,7 +50,7 @@ class Issues extends CI_Controller {
 			$data['issues_list']=$this->Issues_model->get_get_all_isseus_list($admindetails['id']);
 			
 			//echo '<pre>';print_r($data);exit; 
-			$this->load->view('admin/Issues/list',$data);
+			$this->load->view('admin/issues/list',$data);
 			$this->load->view('admin/footer');
 		}else{
 			$this->session->set_flashdata('error','Please login to continue');
@@ -75,7 +75,7 @@ class Issues extends CI_Controller {
 
 			//$rr=implode(',',$data['details']['articles_list']);
 			//echo '<pre>';print_r($data);exit; 
-			$this->load->view('admin/Issues/edit',$data);
+			$this->load->view('admin/issues/edit',$data);
 			$this->load->view('admin/footer');
 		}else{
 			$this->session->set_flashdata('error','Please login to continue');

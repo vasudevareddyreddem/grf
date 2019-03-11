@@ -21,6 +21,9 @@ class Video_article extends CI_Controller {
 	{	
 		$header['c_url']=base_url('video-article');
 		$header['scroll_data']=$this->Home_model->get_scrolling_content();
+		$header['meta_title']='Video Articles ';
+		$header['meta_description']='Video Articles ';
+		$header['meta_keywords']='Video Articles ';
 		$this->load->view('html/header',$header);
 		
 		$data['confrence_flyer_list']=$this->Home_model->get_all_confrence_flyers();

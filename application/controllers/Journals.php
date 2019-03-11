@@ -19,6 +19,9 @@ class Journals extends CI_Controller {
 	public function index()
 	{	
 		$data['c_url']=base_url('journals');
+		$data['meta_title']='journals';
+		$data['meta_description']='journals';
+		$data['meta_keywords']='journals';
 		$data['scroll_data']=$this->Home_model->get_scrolling_content();
 		$data['journals_list']=$this->Home_model->get_all_journals_list();
 		$this->load->view('html/header',$data);
@@ -30,10 +33,17 @@ class Journals extends CI_Controller {
 	{	
 		$header['c_url']=base_url('journals');
 		$header['scroll_data']=$this->Home_model->get_scrolling_content();
-		$this->load->view('html/header',$header);
-		
 		$editor_id=base64_decode($this->uri->segment(3));
 		$data['editor_details']=$this->Home_model->get_editors_details($editor_id);
+		//echo '<pre>';print_r($data['editor_details']);exit;
+
+		$header['meta_title']='board member profile';
+		$header['meta_description']='board member profile';
+		$header['meta_keywords']='board member profile';
+		
+		$this->load->view('html/header',$header);
+		
+		
 		$data['flyers_list']=$this->Home_model->get_flyers_list();
 		$data['journals_list']=$this->Home_model->get_peer_review_process_journals_list();
 		$this->load->view('html/profile',$data);
@@ -58,6 +68,9 @@ class Journals extends CI_Controller {
 	{	
 		$header['c_url']=base_url('journals');
 		$header['scroll_data']=$this->Home_model->get_scrolling_content();
+		$header['meta_title']='archive';
+		$header['meta_description']='archive';
+		$header['meta_keywords']='archive';
 		$this->load->view('html/header',$header);
 		
 		$issue_id=base64_decode($this->uri->segment(3));
@@ -71,12 +84,17 @@ class Journals extends CI_Controller {
 	}
 	public function view()
 	{	
+		$j_id=base64_decode($this->uri->segment(3));
+		$data['journals_details']=$this->Home_model->get_journals_details($j_id);
+//echo '<pre>';print_r($data['journals_details']);exit;
 		$header['c_url']=base_url('journals');
+		$header['meta_title']=isset($data['journals_details']['seo_title'])?$data['journals_details']['seo_title']:'';
+		$header['meta_description']=isset($data['journals_details']['seo_description'])?$data['journals_details']['seo_description']:'';
+		$header['meta_keywords']=isset($data['journals_details']['seo_keywords'])?$data['journals_details']['seo_keywords']:'';
 		$header['scroll_data']=$this->Home_model->get_scrolling_content();
 		$this->load->view('html/header',$header);
-		$j_id=base64_decode($this->uri->segment(3));
+		
 		$data['scroll_data']=$this->Home_model->get_scrolling_content();
-		$data['journals_details']=$this->Home_model->get_journals_details($j_id);
 		$data['article_list']=$this->Home_model->get_journal_wise_article_list($j_id);
 		$data['homapage_banners']=$this->Home_model->get_journal_wise_banners_list($j_id);
 		$data['board_members']=$this->Home_model->get_journal_wise_boardmembers_list($j_id);

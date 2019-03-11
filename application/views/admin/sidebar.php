@@ -37,7 +37,20 @@
             <li><a href="<?php echo base_url('banners/lists'); ?>"><i class="fa fa-circle-o"></i> List</a></li>
           </ul>
         </li>
+        
 		
+		<li class="<?php if(isset($u_url) && $u_url==base_url('country')){ echo "active"; } ?> treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>country</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="active"><a href="<?php echo base_url('country'); ?>"><i class="fa fa-circle-o"></i> Add</a></li>
+            <li><a href="<?php echo base_url('country/lists'); ?>"><i class="fa fa-circle-o"></i> List</a></li>
+          </ul>
+        </li>
 		<li class="<?php if(isset($u_url) && $u_url==base_url('conference-flyers')){ echo "active"; } ?> treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>conference-flyers</span>
@@ -265,6 +278,14 @@
 		<li class="<?php if(isset($u_url) && $u_url==base_url('unsubscribes')){ echo "active"; } ?> treeview">
           <a href="<?php echo base_url('unsubscribes'); ?>">
             <i class="fa fa-dashboard"></i> <span>Unsubscribes</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          
+        </li><li class="<?php if(isset($u_url) && $u_url==base_url('messages')){ echo "active"; } ?> treeview">
+          <a href="<?php echo base_url('messages/lists'); ?>">
+            <i class="fa fa-dashboard"></i> <span>Messages list</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>

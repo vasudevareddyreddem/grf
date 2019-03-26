@@ -25,6 +25,7 @@ class Home extends CI_Controller {
 		$data['article_list']=$this->Home_model->get_article_list();
 		$data['lastest_updates_list']=$this->Home_model->get_latest_updates();
 		$data['browse_by_subjects']=$this->Home_model->get_browse_by_subjects();
+		$data['indexing_list']=$this->Home_model->get_indexing_list();
 
 		//echo '<pre>';print_r($data);exit;
 		$this->load->view('html/index',$data);

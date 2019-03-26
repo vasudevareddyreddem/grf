@@ -372,22 +372,22 @@ group with the aim of disseminating information for the betterment of mankind.</
                
             </div>
         </div>
-        
+        <?php if(isset($indexing_list) && count($indexing_list)>0){ ?>
         <div class="container pd">
         <h4>Indexed in:</h4>
          <div class="divide10"></div>
         <section class="customer-logos slider">
-      <div class="slide"><img src="https://grfpublishers.com/assets/img/1.jpg"></div>
-      <div class="slide"><img src="https://grfpublishers.com/assets/img/2.jpg"></div>
-      <div class="slide"><img src="https://grfpublishers.com/assets/img/3.jpg"></div>
-      <div class="slide"><img src="https://grfpublishers.com/assets/img/4.jpg"></div>
-      <div class="slide"><img src="https://grfpublishers.com/assets/img/5.jpg"></div>
-      <div class="slide"><img src="https://grfpublishers.com/assets/img/6.jpg"></div>
-      <div class="slide"><img src="https://grfpublishers.com/assets/img/7.jpg"></div>
-      <div class="slide"><img src="https://grfpublishers.com/assets/img/8.jpg"></div>
-        <div class="slide"><img src="https://grfpublishers.com/assets/img/BusinessCardLogo.png"></div>
+		<?php foreach($indexing_list as $lis){ ?>
+		<?php if($lis['img_url']!=''){ ?>
+		<a target="_blank" href="http://<?php echo isset($lis['img_url'])?$lis['img_url']:''; ?>"><div class="slide"><img src="<?php echo base_url('assets/indexing/'.$lis['image']); ?>" alt="<?php echo isset($lis['org_img_name'])?$lis['org_img_name']:''; ?>"></div></a>
+		<?php }else{ ?>
+		<div class="slide"><img src="<?php echo base_url('assets/indexing/'.$lis['image']); ?>" alt="<?php echo isset($lis['org_img_name'])?$lis['org_img_name']:''; ?>"></div>
+		<?php } ?>
+				
+		<?php } ?>
     
  
    </section>
     	
 </div>
+<?php } ?>

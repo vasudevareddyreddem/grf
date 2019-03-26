@@ -282,4 +282,11 @@ public function get_countries_list(){
 		$this->db->insert('msg_list', $data);
 		return $insert_id = $this->db->insert_id();
 	}
+	
+	// get indexing list 
+	public function get_indexing_list(){
+		$this->db->select('image,img_url,org_img_name')->from('indexing');
+		$this->db->where('status',1);		
+        return $this->db->get()->result_array();	
+	}
 }

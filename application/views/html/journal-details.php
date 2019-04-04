@@ -1,4 +1,7 @@
-     <?php if(isset($homapage_banners) && count($homapage_banners)>0){ ?>
+     
+	 		<?php //echo '<pre>';print_r($board_members);exit; ?>
+
+	 <?php if(isset($homapage_banners) && count($homapage_banners)>0){ ?>
 	<div id="bootstrap-touch-slider" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="5000" >
 
             <!-- Indicators -->
@@ -382,30 +385,52 @@
 				</div>
 				<div class="col-md-3 mt20">
    <div class="sidebar side-bar right-sidebar" id="board_member" style="display:none;">
+      <?php if(isset($reviewer_boardmembers) && count($reviewer_boardmembers)>0){ ?>
       <div class="widget sidebar-newsletter">
          <h3 class="side-title">Review Board Members</h3>
-         <div class="cp-newsletter-holder" id="pubmed">
-		  <div id="myCarousel" class="carousel slide " data-ride="carousel">
+         <div class="cp-newsletter-holder" id="">
+		  <div id="myCarousel" class="carousel  " data-ride="carousel"  data-interval="2000">
                         
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
+			<?php $cnt=1;foreach($reviewer_boardmembers as $list){ ?>
+				
+				<?php if($cnt==1){ ?>
 				<div class="item active">
-				   <div class="col-md-4">
-				   <img class="img-responsive" src="https://grfpublishers.com/assets/flyers_img/1540273339.jpg">
-				   </div> 
-				   	<div class="col-md-8">
-				   <div>sdfsdfsdfsdfsd</div>
+					<?php if($list['image']!=''){ ?>
+					<img style="width:100%" class="img-responsive" src="<?php echo base_url('assets/reviewerboard/'.$list['image']); ?>" alt="<?php echo isset($list['name'])?$list['name']:''; ?>">
+					<?php }else{?>
+					<img  style="width:100%;" class="img-responsive" src="<?php echo base_url('assets/vendor/img/board.png'); ?>" alt="board member">
+					<?php } ?>
+				  
+				   	<div class="text-center">
+										<p > 
+
+					<a  class="text-center card-title" href="<?php echo base_url('journals/board_profile/'.base64_encode($list['id'])); ?>" target="_blank"><div><h4> <?php echo isset($list['name'])?$list['name']:''; ?></h4></div></a>
+					</p>
 				   </div>
 				</div>
-								
+				<?php }else{ ?>
+				
 				<div class="item ">
-				<div class="col-md-4">
-				   <img class="img-responsive" src="https://grfpublishers.com/assets/flyers_img/1540273377.jpg">
-				   </div>
-					<div class="col-md-8">
-					<div>sdfsdfsdfsdfsd</div>
-				   </div>
+			
+				   <?php if($list['image']!=''){ ?>
+					<img  style="width:100%" class="img-responsive" src="<?php echo base_url('assets/reviewerboard/'.$list['image']); ?>" alt="<?php echo isset($list['name'])?$list['name']:''; ?>">
+					<?php }else{?>
+					<img  style="width:100%;" class="img-responsive" src="<?php echo base_url('assets/vendor/img/board.png'); ?>" alt="board member">
+					<?php } ?>
+				 
+				<div class="text-center">
+										<p class="text-center"> 
+					<a class="text-center card-title" href="<?php echo base_url('journals/board_profile/'.base64_encode($list['id'])); ?>" target="_blank"><div><h4> <?php echo isset($list['name'])?$list['name']:''; ?></h4></div></a>
+						</p>
+				  </div>
 				</div>
+				<?php } ?>
+				
+			<?php $cnt++;} ?>
+								
+				
 								
 				
    			</div>
@@ -438,6 +463,7 @@
             
          </div>
       </div>
+	  <?php } ?>
 			</div>
 			<div class="clearfix">&nbsp;</div>
 			<div class="sidebar side-bar right-sidebar" id="article_latest">

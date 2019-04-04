@@ -385,13 +385,40 @@
       <div class="widget sidebar-newsletter">
          <h3 class="side-title">Review Board Members</h3>
          <div class="cp-newsletter-holder" id="pubmed">
-            <marquee class="pubmed-articles" align="top" behavior="scroll" onmouseout="this.start();" onmouseover="this.stop();" direction="up" scrollamount="2" style="padding: 10px 0px 10px 0px;height: 200px;background: #f5f5f5;overflow:hidden;">
+		  <div id="myCarousel" class="carousel slide " data-ride="carousel">
+                        
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+				<div class="item active">
+				   <div class="col-md-4">
+				   <img class="img-responsive" src="https://grfpublishers.com/assets/flyers_img/1540273339.jpg">
+				   </div> 
+				   	<div class="col-md-8">
+				   <div>sdfsdfsdfsdfsd</div>
+				   </div>
+				</div>
+								
+				<div class="item ">
+				<div class="col-md-4">
+				   <img class="img-responsive" src="https://grfpublishers.com/assets/flyers_img/1540273377.jpg">
+				   </div>
+					<div class="col-md-8">
+					<div>sdfsdfsdfsdfsd</div>
+				   </div>
+				</div>
+								
+				
+   			</div>
+   						
+   			
+        </div>
+          <!--  <marquee class="pubmed-articles" align="top" behavior="scroll" onmouseout="this.start();" onmouseover="this.stop();" direction="up" scrollamount="2" style="padding: 10px 0px 10px 0px;height: 200px;background: #f5f5f5;overflow:hidden;">
                <?php //echo '<pre>';print_r($board_members);exit; ?>
 			   <?php if(isset($reviewer_boardmembers) && count($reviewer_boardmembers)>0){ ?>
 				<?php foreach($reviewer_boardmembers as $list){ ?>
 					   <ul>
 						  <li style="padding:0px 0px 0px 10px">
-							 <!--<span style="font-size:15px; font-weight:bold">Global Journal of Addiction & Rehabilitation Medicine</span><br>-->
+							
 							 <a href="<?php echo base_url('journals/view/'.base64_encode($list['j_id']).'/'.$list['seo_url']); ?>" target="_blank" style=" color:#000; text-decoration:none; padding:0px; margin:0px; font-weight:normal"><?php echo isset($list['journaltitile'])?$list['journaltitile']:''; ?> </a><br>
 						  </li>
 					   </ul>
@@ -407,7 +434,7 @@
 			  
 			   <?php } ?>
                
-            </marquee>
+            </marquee>-->
             
          </div>
       </div>

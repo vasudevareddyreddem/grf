@@ -28,7 +28,8 @@ class Video_article extends CI_Controller {
 		
 		$data['confrence_flyer_list']=$this->Home_model->get_all_confrence_flyers();
 		$data['journals_list']=$this->Home_model->get_journal_list();
-		
+		$data['video_list']=$this->Home_model->get_video_article_list();
+		//echo '<pre>';print_r($data);exit;
 		$this->load->view('html/video-article',$data);
 		$this->load->view('html/footer');
 		

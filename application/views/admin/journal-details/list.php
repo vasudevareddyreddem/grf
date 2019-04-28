@@ -30,6 +30,7 @@
                   <th>Category </th>
                   <th>Title</th>
                   <th>Image</th>
+                  <th>priority</th>
                   <th>Status</th>
                   <th>Action</th>
                 </tr>
@@ -43,6 +44,7 @@
                   <td><?php echo htmlentities($list['title']); ?></td>
                   <td><img width="50px" height="50px" src="<?php echo base_url('assets/banner_pics/'.$list['baneer_image']); ?>">
 				  </td>
+				  <td><input type="text" name="priority" onkeyup="update_priority('<?php echo $list['j_id']; ?>',this.value);" value="<?php echo isset($list['priority'])?$list['priority']:''; ?>"></td>
                   <td><?php if($list['status']==1){ echo "Active"; }else{ echo "deactive";} ?></td>
                   <td>
 					<a href="<?php echo base_url('journal-details/edit/'.base64_encode($list['j_id'])); ?>"><i class="fa fa-edit"></i></a>
@@ -62,11 +64,12 @@
 				<?php } ?>
 				</tbody>
 				<tfoot>
-                <tr>
+                 <tr>
                   <th style="display:none">id </th>
                   <th>Category </th>
                   <th>Title</th>
                   <th>Image</th>
+                  <th>priority</th>
                   <th>Status</th>
                   <th>Action</th>
                 </tr>
@@ -86,7 +89,24 @@
  
 
 <script>
-
+function update_priority(id,val){
+			jQuery.ajax({
+					url: "<?php echo base_url('Journal_details/update_priority');?>",
+					data: {
+						j_id: id,
+						priority:val,
+					},
+					dataType: 'json',
+					type: 'POST',
+					success: function (data) {
+						if(data.msg==1){
+							alert('Priority added successfully');
+						}else if(data.msg==0){
+							alert('Priority already exist');
+						}
+					}
+			});
+}
 function admindeactive(id){
 	$(".popid").attr("href","<?php echo base_url('journal-details/status'); ?>"+"/"+id);
 }

@@ -105,7 +105,28 @@ group with the aim of disseminating information for the betterment of mankind.</
                
             </div>
         </div>
-        <div class="divide60"></div>
+       <div class="" style="width: 100%;height: 10px;"></div>
+		<?php if(isset($indexing_list) && count($indexing_list)>0){ ?>
+		
+        <div class="container">
+        <h4>Indexed in:</h4>
+         <div class="divide10"></div>
+        <section class="customer-logos slider">
+		<?php foreach($indexing_list as $lis){ ?>
+		<?php if($lis['img_url']!=''){ ?>
+		<a target="_blank" href="http://<?php echo isset($lis['img_url'])?$lis['img_url']:''; ?>"><div class="slide"><img src="<?php echo base_url('assets/indexing/'.$lis['image']); ?>" alt="<?php echo isset($lis['org_img_name'])?$lis['org_img_name']:''; ?>"></div></a>
+		<?php }else{ ?>
+		<div class="slide"><img src="<?php echo base_url('assets/indexing/'.$lis['image']); ?>" alt="<?php echo isset($lis['org_img_name'])?$lis['org_img_name']:''; ?>"></div>
+		<?php } ?>
+				
+		<?php } ?>
+    
+ 
+   </section>
+    	
+</div>
+ <hr>
+<?php } ?>
         <div class="container " >
             <div class="row">
            <div class="col-md-8">
@@ -208,6 +229,8 @@ group with the aim of disseminating information for the betterment of mankind.</
            </div>
 		   <div class="col-md-4 mt20">
    <div class="sidebar side-bar right-sidebar">
+   
+   
       <div class="widget sidebar-newsletter">
          <h3 class="side-title">Latest Updates Scrolling</h3>
          <div class="cp-newsletter-holder" id="pubmed">
@@ -265,11 +288,37 @@ group with the aim of disseminating information for the betterment of mankind.</
       <div class="widget sidebar-featured-post">
          
          
-         <div class="cp-sidebar-content">
-            <h3 class="side-title">Video Articles</h3>
-            <a href="<?php echo base_url('video-article');?>"><img alt="Video Articles" src="<?php echo base_url(); ?>assets/vendor/img/video-articles.png" width="100%" border="5"></a>
-           
+          <?php if(isset($video_list) && count($video_list)>0){ ?>
+      <div class="widget sidebar-newsletter">
+         <h3 class="side-title">Video Articles</h3>
+         <div class="cp-newsletter-holder" id="">
+		  <div id="myCarousel" class="carousel  " data-ride="carousel"  data-interval="2000">
+                        
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+			<?php $cnt=1;foreach($video_list as $list){ ?>
+				
+				<?php if($cnt==1){ ?>
+				<div class="item active">
+					<video width="100%" height="200" controls="">
+					<source src="<?php echo base_url('assets/videoarticle/'.$list['video']); ?>" type="video/mp4">
+					</video>
+				</div>
+				<?php }else{ ?>
+				
+				<div class="item ">			
+				   <video width="100%" height="200" controls="">
+					<source src="<?php echo base_url('assets/videoarticle/'.$list['video']); ?>" type="video/mp4">
+					</video>
+				</div>
+				<?php } ?>				
+			<?php $cnt++;} ?>
+			</div>
+   		</div>
+            
          </div>
+      </div>
+	  <?php } ?>
         
          
       </div>
@@ -330,6 +379,7 @@ group with the aim of disseminating information for the betterment of mankind.</
             
          </div>
       </div>
+	
       <!-- Facebook End --> 
    </div>
 </div>
@@ -350,7 +400,19 @@ group with the aim of disseminating information for the betterment of mankind.</
 </div>
 
 </div>
-        
+		 <hr>
+        <div class="container pd">
+        <h4>Top Reviewers:</h4>
+         <div class="divide10"></div>
+        <section class="customer-logos slider">
+		<?php foreach($reviewer_boardmembers as $list){ ?>
+		<div class="slide"><img class="img-responsive" src="<?php echo base_url('assets/reviewerboard/'.$list['image']); ?>"></div>
+		<?php } ?>
+		</section>
+    	
+		</div>
+
+
          
          
          
@@ -372,22 +434,4 @@ group with the aim of disseminating information for the betterment of mankind.</
                
             </div>
         </div>
-        <?php if(isset($indexing_list) && count($indexing_list)>0){ ?>
-        <div class="container pd">
-        <h4>Indexed in:</h4>
-         <div class="divide10"></div>
-        <section class="customer-logos slider">
-		<?php foreach($indexing_list as $lis){ ?>
-		<?php if($lis['img_url']!=''){ ?>
-		<a target="_blank" href="http://<?php echo isset($lis['img_url'])?$lis['img_url']:''; ?>"><div class="slide"><img src="<?php echo base_url('assets/indexing/'.$lis['image']); ?>" alt="<?php echo isset($lis['org_img_name'])?$lis['org_img_name']:''; ?>"></div></a>
-		<?php }else{ ?>
-		<div class="slide"><img src="<?php echo base_url('assets/indexing/'.$lis['image']); ?>" alt="<?php echo isset($lis['org_img_name'])?$lis['org_img_name']:''; ?>"></div>
-		<?php } ?>
-				
-		<?php } ?>
-    
- 
-   </section>
-    	
-</div>
-<?php } ?>
+        

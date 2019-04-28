@@ -157,6 +157,16 @@ class Journal_details_model extends CI_Model
 		$this->db->where('journal_article_in_press.year_of_article', $year);
 		$this->db->where('journal_article_in_press.status', 1);
         return $this->db->get()->result_array();
+	}
+
+	public function check_priority_already_exit($priority){
+		$this->db->select('j_id,title')->from('journals');		
+		$this->db->where('priority', $priority);
+        return $this->db->get()->row_array();
+	}
+	public function update_priority($j_id,$data){
+		$this->db->where('j_id',$j_id);
+    	return $this->db->update("journals",$data);
 	}	
 	
 

@@ -24,6 +24,7 @@ class Journals extends CI_Controller {
 		$data['meta_keywords']='journals';
 		$data['scroll_data']=$this->Home_model->get_scrolling_content();
 		$data['journals_list']=$this->Home_model->get_all_journals_list();
+		//echo '<pre>';print_r($data);exit;
 		$this->load->view('html/header',$data);
 		$this->load->view('html/journals');
 		$this->load->view('html/footer');

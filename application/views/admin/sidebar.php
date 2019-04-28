@@ -152,6 +152,18 @@
 						<li><a href="<?php echo base_url('issues/lists'); ?>"><i class="fa fa-circle-o"></i> List</a></li>
 					  </ul>
 				</li>
+				<li class="<?php if(isset($u_url) && $u_url==base_url('video')){ echo "active"; } ?> treeview">
+					  <a href="#">
+						<i class="fa fa-dashboard"></i> <span>Video article</span>
+						<span class="pull-right-container">
+						  <i class="fa fa-angle-left pull-right"></i>
+						</span>
+					  </a>
+					  <ul class="treeview-menu">
+						<li class="active"><a href="<?php echo base_url('video'); ?>"><i class="fa fa-circle-o"></i> Add</a></li>
+						<li><a href="<?php echo base_url('video/lists'); ?>"><i class="fa fa-circle-o"></i> List</a></li>
+					  </ul>
+				</li>
           </ul>
         </li>
 		<li class="<?php if(isset($u_url) && $u_url==base_url('flyers')){ echo "active"; } ?> treeview">

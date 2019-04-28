@@ -57,7 +57,7 @@ class Home_model extends CI_Model
 		$this->db->where('journal_article_in_press.video_article',0);		
 		$this->db->where('journal_article_in_press.status',1);		
 		$this->db->order_by('journal_article_in_press.a_id',"DESC");
-		$this->db->limit(7);		
+		$this->db->limit(9);		
         return $this->db->get()->result_array();
 	}
 	
@@ -98,8 +98,9 @@ class Home_model extends CI_Model
 	
 	/* journals page*/
 	public  function get_all_journals_list(){
-		$this->db->select('title,j_id,subject,seo_url,baneer_image')->from('journals');
+		$this->db->select('title,j_id,subject,seo_url,baneer_image,priority')->from('journals');
 		$this->db->where('status',1);		
+		$this->db->order_by('priority','asc');		
         return $this->db->get()->result_array();
 	}
 	public function get_journals_details($j_id){
@@ -128,6 +129,13 @@ class Home_model extends CI_Model
 		$this->db->where('journal_id',$j_id);		
 		$this->db->where('status',1);		
 		$this->db->order_by('priority',"asc");		
+        return $this->db->get()->result_array();
+	}
+	public  function get_journal_reviewerboard_list(){
+		$this->db->select('journals.j_id,journals.seo_url,reviewerboard.id,reviewerboard.image,reviewerboard.journal,reviewerboard.name,reviewerboard.designation,reviewerboard.country,reviewerboard.reviewer_board,reviewerboard.university,journals.title as journaltitile,journals.seo_url')->from('reviewerboard');
+		$this->db->join('journals ', 'journals.j_id = reviewerboard.journal', 'left');
+		$this->db->where('reviewerboard.status',1);		
+		$this->db->order_by('reviewerboard.id','desc');		
         return $this->db->get()->result_array();
 	}
 	public  function get_latest_boardmembers_list(){
@@ -288,5 +296,13 @@ public function get_countries_list(){
 		$this->db->select('image,img_url,org_img_name')->from('indexing');
 		$this->db->where('status',1);		
         return $this->db->get()->result_array();	
+	}
+	
+	// get video article list
+	public function get_video_article_list(){
+		$this->db->select('videoarticle.*,journals.title as journaltitle')->from('videoarticle');
+		$this->db->join('journals ', 'journals.j_id = videoarticle.journal_id', 'left');
+		$this->db->where('videoarticle.status',1);		
+        return $this->db->get()->result_array();
 	}
 }

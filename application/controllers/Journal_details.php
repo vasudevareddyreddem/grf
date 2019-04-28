@@ -637,17 +637,13 @@ class Journal_details extends CI_Controller {
 				$admindetails=$this->session->userdata('userdetails');
 				$u_data=array('priority'=>isset($post['priority'])?$post['priority']:'','update_at'=>date('Y-m-d H:i:s'));
 				$check=$this->Journal_details_model->check_priority_already_exit($post['priority']);
-				if(count($check)>0){
-						$data['msg']=0;
-						echo json_encode($data);exit;	
-				}else{
-					$details=$this->Journal_details_model->update_priority($post['j_id'],$u_data);
+				$details=$this->Journal_details_model->update_priority($post['j_id'],$u_data);
 					if(count($details) > 0)
 					{
 						$data['msg']=1;
 						echo json_encode($data);exit;	
 					}
-				}
+				
 				
 		}else{
 			$this->session->set_flashdata('error','Please login to continue');

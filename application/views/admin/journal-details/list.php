@@ -100,9 +100,9 @@ function update_priority(id,val){
 					type: 'POST',
 					success: function (data) {
 						if(data.msg==1){
-							alert('Priority added successfully');
+							//alert('Priority added successfully');
 						}else if(data.msg==0){
-							alert('Priority already exist');
+							//alert('Priority already exist');
 						}
 					}
 			});

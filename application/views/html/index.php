@@ -402,11 +402,15 @@ group with the aim of disseminating information for the betterment of mankind.</
 </div>
 		 <hr>
         <div class="container pd">
-        <h4>Top Reviewers:</h4>
+        <h4 style=" margin: 0 0 20px;padding-left: 10px;border-left: 5px solid #4caf50">Top Reviewers:</h4>
          <div class="divide10"></div>
         <section class="customer-logos slider">
 		<?php foreach($reviewer_boardmembers as $list){ ?>
-		<div class="slide"><img class="img-responsive" src="<?php echo base_url('assets/reviewerboard/'.$list['image']); ?>"></div>
+		<div class="slide"><img style="height:150px;width:auto;" class="img-responsive thumbnail" src="<?php echo base_url('assets/reviewerboard/'.$list['image']); ?>">
+		<div>
+			<h5  class="text-center"> Reviewer 1</h5>
+		</div>
+		</div>
 		<?php } ?>
 		</section>
     	

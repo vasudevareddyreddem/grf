@@ -422,116 +422,62 @@ group with the aim of disseminating information for the betterment of mankind.</
     	
 		</div>   
 		<?php } ?>
-         <!-- Section: Testimonials v.2 -->
-<section class="text-center my-5">
-
-  <!-- Section heading -->
-  <h2 class="h1-responsive font-weight-bold my-5">Testimonials v.2</h2>
-
-  <div class="wrapper-carousel-fix">
-    <!-- Carousel Wrapper -->
-    <div id="carousel-example-1" class="carousel no-flex testimonial-carousel slide carousel-fade" data-ride="carousel"
-      data-interval="false">
-      <!--Slides-->
-      <div class="carousel-inner" role="listbox">
-        <!--First slide-->
-        <div class="carousel-item active">
-          <div class="testimonial">
-            <!--Avatar-->
-            <div class="avatar mx-auto mb-4">
-              <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" class="rounded-circle img-fluid"
-                alt="First sample avatar image">
-            </div>
-            <!--Content-->
-            <p>
-              <i class="fas fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
-              eos
-              id officiis hic tenetur quae quaerat ad velit ab. Lorem ipsum dolor sit amet, consectetur
-              adipisicing elit. Dolore cum accusamus eveniet molestias voluptatum inventore laboriosam labore
-              sit, aspernatur praesentium iste impedit quidem dolor veniam.
-            </p>
-            <h4 class="font-weight-bold">Anna Deynah</h4>
-            <h6 class="font-weight-bold my-3">Founder at ET Company</h6>
-            <!--Review-->
-            <i class="fas fa-star blue-text"> </i>
-            <i class="fas fa-star blue-text"> </i>
-            <i class="fas fa-star blue-text"> </i>
-            <i class="fas fa-star blue-text"> </i>
-            <i class="fas fa-star-half-alt blue-text"> </i>
-          </div>
+<section class="testimonial-section2">
+ <div class="row text-center">
+           <div class="col-12">
+              <div class="h2">Testimonial</div>
+           </div>
         </div>
-        <!--First slide-->
-        <!--Second slide-->
-        <div class="carousel-item">
-          <div class="testimonial">
-            <!--Avatar-->
-            <div class="avatar mx-auto mb-4">
-              <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(31).jpg" class="rounded-circle img-fluid"
-                alt="Second sample avatar image">
-            </div>
-            <!--Content-->
-            <p>
-              <i class="fas fa-quote-left"></i> Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
-              odit
-              aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque
-              porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia
-              non numquam eius modi tempora incidunt ut labore. </p>
-            <h4 class="font-weight-bold">Maria Kate</h4>
-            <h6 class="font-weight-bold my-3">Photographer at Studio LA</h6>
-            <!--Review-->
-            <i class="fas fa-star blue-text"> </i>
-            <i class="fas fa-star blue-text"> </i>
-            <i class="fas fa-star blue-text"> </i>
-            <i class="fas fa-star blue-text"> </i>
-            <i class="fas fa-star blue-text"> </i>
-          </div>
-        </div>
-        <!--Second slide-->
-        <!--Third slide-->
-        <div class="carousel-item">
-          <div class="testimonial">
-            <!--Avatar-->
-            <div class="avatar mx-auto mb-4">
-              <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(3).jpg" class="rounded-circle img-fluid"
-                alt="Third sample avatar image">
-            </div>
-            <!--Content-->
-            <p>
-              <i class="fas fa-quote-left"></i> Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus
-              error sit voluptatem accusantium doloremque laudantium.</p>
-            <h4 class="font-weight-bold">John Doe</h4>
-            <h6 class="font-weight-bold my-3">Front-end Developer in NY</h6>
-            <!--Review-->
-            <i class="fas fa-star blue-text"> </i>
-            <i class="fas fa-star blue-text"> </i>
-            <i class="fas fa-star blue-text"> </i>
-            <i class="fas fa-star blue-text"> </i>
-            <i class="far fa-star blue-text"> </i>
-          </div>
-        </div>
-        <!--Third slide-->
-      </div>
-      <!--Slides-->
-      <!--Controls-->
-      <a class="carousel-control-prev left carousel-control" href="#carousel-example-1" role="button"
-        data-slide="prev">
-        <span class="icon-prev" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next right carousel-control" href="#carousel-example-1" role="button"
-        data-slide="next">
-        <span class="icon-next" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-      <!--Controls-->
-    </div>
-    <!-- Carousel Wrapper -->
-  </div>
+       <div id="testim" class="testim">
 
-</section>
-<!-- Section: Testimonials v.2 -->
+<!--         <div class="testim-cover"> -->
+            <div class="wrap">
+
+                <span id="right-arrow" class="arrow right fa fa-chevron-right"></span>
+                <span id="left-arrow" class="arrow left fa fa-chevron-left "></span>
+                <ul id="testim-dots" class="dots">
+                    <li class="dot active"></li><!--
+                    --><li class="dot"></li><!--
+                    --><li class="dot"></li><!--
+                    --><li class="dot"></li><!--
+                    --><li class="dot"></li>
+                </ul>
+                <div id="testim-content" class="cont">                    
+                    <div class="active">
+                        <div class="img"><img src="https://image.ibb.co/hgy1M7/5a6f718346a28820008b4611_750_562.jpg" alt=""></div>
+                        <div class="h4">Kellie</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>                    
+                    </div>
+
+                    <div>
+                        <div class="img"><img src="https://image.ibb.co/cNP817/pexels_photo_220453.jpg" alt=""></div>
+                        <div class="h4">Jessica</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>                    
+                    </div>
+
+                    <div>
+                        <div class="img"><img src="https://image.ibb.co/iN3qES/pexels_photo_324658.jpg" alt=""></div>
+                         <div class="h4">Kellie</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>                    
+                    </div>
+
+                    <div>
+                        <div class="img"><img src="https://image.ibb.co/kL6AES/Top_SA_Nicky_Oppenheimer.jpg" alt=""></div>
+                        <div class="h4">Jessica</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>                    
+                    </div>
+
+                    <div>
+                        <div class="img"><img src="https://image.ibb.co/gUPag7/image.jpg" alt=""></div>
+                        <div class="h4">Kellie</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>                    
+                    </div>
+
+                </div>
+                 </div>
+            </div>
+<!--         </div> -->
+    </section>
          
          <div class="search-filter">
             <div class="container">
@@ -551,4 +497,117 @@ group with the aim of disseminating information for the betterment of mankind.</
                
             </div>
         </div>
-        
+     <script> 
+
+// vars
+'use strict'
+var	testim = document.getElementById("testim"),
+		testimDots = Array.prototype.slice.call(document.getElementById("testim-dots").children),
+    testimContent = Array.prototype.slice.call(document.getElementById("testim-content").children),
+    testimLeftArrow = document.getElementById("left-arrow"),
+    testimRightArrow = document.getElementById("right-arrow"),
+    testimSpeed = 4500,
+    currentSlide = 0,
+    currentActive = 0,
+    testimTimer,
+		touchStartPos,
+		touchEndPos,
+		touchPosDiff,
+		ignoreTouch = 30;
+;
+
+window.onload = function() {
+
+    // Testim Script
+    function playSlide(slide) {
+        for (var k = 0; k < testimDots.length; k++) {
+            testimContent[k].classList.remove("active");
+            testimContent[k].classList.remove("inactive");
+            testimDots[k].classList.remove("active");
+        }
+
+        if (slide < 0) {
+            slide = currentSlide = testimContent.length-1;
+        }
+
+        if (slide > testimContent.length - 1) {
+            slide = currentSlide = 0;
+        }
+
+        if (currentActive != currentSlide) {
+            testimContent[currentActive].classList.add("inactive");            
+        }
+        testimContent[slide].classList.add("active");
+        testimDots[slide].classList.add("active");
+
+        currentActive = currentSlide;
+    
+        clearTimeout(testimTimer);
+        testimTimer = setTimeout(function() {
+            playSlide(currentSlide += 1);
+        }, testimSpeed)
+    }
+
+    testimLeftArrow.addEventListener("click", function() {
+        playSlide(currentSlide -= 1);
+    })
+
+    testimRightArrow.addEventListener("click", function() {
+        playSlide(currentSlide += 1);
+    })    
+
+    for (var l = 0; l < testimDots.length; l++) {
+        testimDots[l].addEventListener("click", function() {
+            playSlide(currentSlide = testimDots.indexOf(this));
+        })
+    }
+
+    playSlide(currentSlide);
+
+    // keyboard shortcuts
+    document.addEventListener("keyup", function(e) {
+        switch (e.keyCode) {
+            case 37:
+                testimLeftArrow.click();
+                break;
+                
+            case 39:
+                testimRightArrow.click();
+                break;
+
+            case 39:
+                testimRightArrow.click();
+                break;
+
+            default:
+                break;
+        }
+    })
+		
+		testim.addEventListener("touchstart", function(e) {
+				touchStartPos = e.changedTouches[0].clientX;
+		})
+	
+		testim.addEventListener("touchend", function(e) {
+				touchEndPos = e.changedTouches[0].clientX;
+			
+				touchPosDiff = touchStartPos - touchEndPos;
+			
+				console.log(touchPosDiff);
+				console.log(touchStartPos);	
+				console.log(touchEndPos);	
+
+			
+				if (touchPosDiff > 0 + ignoreTouch) {
+						testimLeftArrow.click();
+				} else if (touchPosDiff < 0 - ignoreTouch) {
+						testimRightArrow.click();
+				} else {
+					return;
+				}
+			
+		})
+}
+
+	 
+     </script>   

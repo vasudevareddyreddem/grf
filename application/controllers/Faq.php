@@ -111,8 +111,8 @@ class Faq extends CI_Controller {
 							'description'=>isset($post['description'])?$post['description']:'',
 							'update_at'=>date('Y-m-d H:i:s'),
 							);
-						$update=$this->Faq_model->update_faq_details($post['f_id'],$update_data);
-						if(count($update)>0){
+							$update=$this->Faq_model->update_faq_details($post['f_id'],$update_data);
+							if(count($update)>0){
 							$this->session->set_flashdata('success',"Faq's successfully Updated");
 							redirect('faq/lists');
 							

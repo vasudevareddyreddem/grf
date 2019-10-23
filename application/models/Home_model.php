@@ -109,6 +109,12 @@ class Home_model extends CI_Model
 		$this->db->where('status',1);		
         return $this->db->get()->row_array();
 	}
+	public function get_journals_details_wit_url($j_id){
+		$this->db->select('*')->from('journals');
+		$this->db->where('seo_url',$j_id);		
+		$this->db->where('status',1);		
+        return $this->db->get()->row_array();
+	}
 	public function get_journal_wise_article_list($j_id){
 		$this->db->select('journal_article_in_press.a_id,journal_article_in_press.journal_id,journal_article_in_press.excel_file,journal_article_in_press.year_of_article,journal_article_in_press.title,journal_article_in_press.author_name,journal_article_in_press.article_type,url,journal_article_in_press.seo_title,journal_article_in_press.pdf_file,image,journal_article_in_press.create_at,journals.title as journaltitle')->from('journal_article_in_press');
 		$this->db->join('journals ', 'journals.j_id = journal_article_in_press.journal_id', 'left');

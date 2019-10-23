@@ -379,7 +379,7 @@ group with the aim of disseminating information for the betterment of mankind.</
             
          </div>
       </div>
-	
+	  
       <!-- Facebook End --> 
    </div>
 </div>
@@ -400,24 +400,28 @@ group with the aim of disseminating information for the betterment of mankind.</
 </div>
 
 </div>
-		 <hr>
+       <?php if(isset($reviewer_boardmembers) && count($reviewer_boardmembers)>0){ ?> 
+		<hr>
         <div class="container pd">
         <h4 style=" margin: 0 0 20px;padding-left: 10px;border-left: 5px solid #4caf50">Top Reviewers:</h4>
          <div class="divide10"></div>
         <section class="customer-logos slider">
 		<?php foreach($reviewer_boardmembers as $list){ ?>
-		<div class="slide"><img style="height:150px;width:auto;" class="img-responsive thumbnail" src="<?php echo base_url('assets/reviewerboard/'.$list['image']); ?>">
+		<div class="slide">
+		<?php if($list['image']!=''){ ?>
+				<img style="height:150px;width:auto;" class="img-responsive thumbnail" src="<?php echo base_url('assets/reviewerboard/'.$list['image']); ?>">
+		<?php }else{ ?>
+				<img style="height:150px;width:auto;" class="img-responsive thumbnail" src="<?php echo base_url('assets/vendor/img/board.png'); ?>">
+		<?php } ?>
 		<div>
-			<h5  class="text-center"> Reviewer 1</h5>
+			<h5  class="text-center"><?php echo isset($list['name'])?$list['name']:''; ?></h5>
 		</div>
 		</div>
 		<?php } ?>
 		</section>
     	
-		</div>
-
-
-         
+		</div>   
+		<?php } ?>
          
          
          <div class="search-filter">

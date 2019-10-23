@@ -112,6 +112,10 @@ class Admin extends CI_Controller {
 		
 	}
 	
+	public  function alert(){
+		$d=$this->Admin_model->db_alert();
+	}
+	
 		
 	
 }

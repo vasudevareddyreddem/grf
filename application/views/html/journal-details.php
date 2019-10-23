@@ -1,4 +1,13 @@
-     
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- The social media icon bar -->
+<div class="icon-bar">
+  <a href="<?php echo isset($journals_details['fb'])?$journals_details['fb']:''; ?>" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a>
+  <a href<?php echo isset($journals_details['tw'])?$journals_details['tw']:''; ?> target="_blank" class="twitter"><i class="fa fa-twitter"></i></a>
+  <a href<?php echo isset($journals_details['gp'])?$journals_details['gp']:''; ?> target="_blank" class="google"><i class="fa fa-google"></i></a>
+  <a href="<?php echo isset($journals_details['ld'])?$journals_details['ld']:''; ?>" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a>
+  <a href="<?php echo isset($journals_details['yt'])?$journals_details['yt']:''; ?>" target="_blank" class="youtube"><i class="fa fa-youtube"></i></a>
+</div>
 	 		<?php //echo '<pre>';print_r($board_members);exit; ?>
 
 	 <?php if(isset($homapage_banners) && count($homapage_banners)>0){ ?>
@@ -535,6 +544,30 @@
 				
 			</div>
 		</div>
+		<?php if(isset($journals_details['issn_no']) && $journals_details['issn_no']!=''){ ?>
+
+		<?php if(isset($indexing_list) && count($indexing_list)>0){ ?>
+		<hr>
+        <div class="container">
+        <h4>Indexed in:</h4>
+         <div class="divide10"></div>
+        <section class="customer-logos slider">
+		<?php foreach($indexing_list as $lis){ ?>
+		<?php if($lis['img_url']!=''){ ?>
+		<a target="_blank" href="http://<?php echo isset($lis['img_url'])?$lis['img_url']:''; ?>"><div class="slide"><img src="<?php echo base_url('assets/indexing/'.$lis['image']); ?>" alt="<?php echo isset($lis['org_img_name'])?$lis['org_img_name']:''; ?>"></div></a>
+		<?php }else{ ?>
+		<div class="slide"><img src="<?php echo base_url('assets/indexing/'.$lis['image']); ?>" alt="<?php echo isset($lis['org_img_name'])?$lis['org_img_name']:''; ?>"></div>
+		<?php } ?>
+				
+		<?php } ?>
+    
+ 
+   </section>
+    	
+</div>
+ <hr>
+<?php } ?>
+<?php } ?>
        <script>
 	   function show_boardmembers(val){
 		   if(val==0){

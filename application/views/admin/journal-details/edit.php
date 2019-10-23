@@ -110,6 +110,54 @@
 								</div>
 							</div>
                         </div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class=" control-label">Facebook Link</label>
+								<div class="">
+									<input type="text" class="form-control" name="fb" value="<?php echo isset($details['fb'])?$details['fb']:''; ?>" id="fb" placeholder="Enter Facebook link" />
+								</div>
+							</div>
+                        </div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class=" control-label">Twitter Link</label>
+								<div class="">
+									<input type="text" class="form-control" name="tw" value="<?php echo isset($details['tw'])?$details['tw']:''; ?>" id="tw" placeholder="Enter Twitter link" />
+								</div>
+							</div>
+                        </div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class=" control-label">Google Plus Link</label>
+								<div class="">
+									<input type="text" class="form-control" name="gp" value="<?php echo isset($details['gp'])?$details['gp']:''; ?>" id="gp" placeholder="Enter Google Plus link" />
+								</div>
+							</div>
+                        </div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class=" control-label">Youtube Link</label>
+								<div class="">
+									<input type="text" class="form-control" name="yt" value="<?php echo isset($details['yt'])?$details['yt']:''; ?>" id="yt" placeholder="Enter Youtube link" />
+								</div>
+							</div>
+                        </div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class=" control-label">linkedin Link</label>
+								<div class="">
+									<input type="text" class="form-control" name="ld" value="<?php echo isset($details['ld'])?$details['ld']:''; ?>" id="ld" placeholder="Enter linkedin link" />
+								</div>
+							</div>
+                        </div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class=" control-label">ISSN Number</label>
+								<div class="">
+									<input type="text" class="form-control" name="issn_no" value="<?php echo isset($details['issn_no'])?$details['issn_no']:''; ?>" id="issn_no" placeholder="Enter ISSN Number" />
+								</div>
+							</div>
+                        </div>
 						<div class="col-md-12">
 							<div class="form-group">
 								<label class=" control-label">Key words</label>
@@ -207,10 +255,6 @@ $(document).ready(function() {
                 validators: {
 					notEmpty: {
 						message: 'Title is required'
-					},
-					regexp: {
-					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'Title wont allow <> [] = % '
 					}
 				}
             },

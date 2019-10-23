@@ -42,16 +42,38 @@
         <script src="<?php echo base_url(); ?>assets/vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>  
 		<script src="<?php echo base_url(); ?>assets/vendor/js/bootstrapValidator.min.js"></script>	
     </head>
+	<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-140714824-1');
+</script>
+<script type="text/javascript">
+	var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+	(function(){
+	var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+	s1.async=true;
+	s1.src='https://embed.tawk.to/5c8a2577c37db86fcfcdc699/default';
+	s1.charset='UTF-8';
+	s1.setAttribute('crossorigin','*');
+	s0.parentNode.insertBefore(s1,s0);
+	})();
+	</script>
+
     <body>
         <div class="top-bar hidden-xs bg-dark">
             <div class="container ">
                 <div class=" row border_bootom">
-                    <div class="col-sm-6 hidden-xs">
+                    <div class="col-sm-4 hidden-xs">
                         <span class="top-welcome">Welcome to GRF Publishers</span>
                     </div>
-                    <div class="col-sm-6 hidden-xs">
+                    <div class="col-sm-8 hidden-xs">
                         <ul class="small_menu">
                         <li><a ><i class="fa fa-volume-control-phone font-17" aria-hidden="true"></i> +61 385184040</a></li>                 
+                        <li>
+							<a style="color:#fff;" href="tel:61480025852"><i class="fa fa-whatsapp font-17" aria-hidden="true"></i>+61 480 025 852</a>	
+						</li>                 
                         <li><a ><i class="fa fa-envelope font-17" aria-hidden="true"></i> &nbsp; Contact@grfpublishers.org</a></li>                 
                       
                        </ul>
@@ -194,7 +216,9 @@ box-shadow: -2px 6px 39px -8px rgba(0,0,0,0.75);
    <?php echo $this->session->flashdata('error');?> &nbsp; <i class="fa fa-exclamation-triangle text-success ico_bac" aria-hidden="true"></i>
 </div>
 <?php endif; ?>
-
+<div class="icon-bar-left">
+  <a href="<?php echo base_url('manuscript'); ?>"><img src="<?php echo base_url('assets/vendor/img/button_submit.png'); ?>"></a>
+</div>
 <!-- chating  purpose--->
 <div class="container-fluid" style="position: fixed;bottom: 0%;right: 60px;z-index:2000">
     <div class="row">

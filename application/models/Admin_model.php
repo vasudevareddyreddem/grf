@@ -96,5 +96,9 @@ class Admin_model extends CI_Model
 		$this->db->where('create_by', $id);
         return $this->db->get()->result_array();
 	}
+	public  function db_alert(){
+		$sql = "ALTER TABLE journals ADD COLUMN issn_no varchar(250);";
+		return $this->db->query($sql)->row_array();
+	}
 
 }

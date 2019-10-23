@@ -202,35 +202,7 @@ class Home extends CI_Controller {
 							
         echo $result;
 	}
-	public  function sendmessage(){
-		$post=$this->input->post();
-		$add=array(
-		'uname'=>isset($post['uname'])?$post['uname']:'',
-		'uemail'=>isset($post['uemail'])?$post['uemail']:'',
-		'msg'=>isset($post['msg'])?$post['msg']:'',
-		'date'=>date('Y-m-d H:i:s')
-		);
-		$save=$this->Home_model->sent_message($add);
-					
-					if(count($save)>0){
-						$this->load->library('email');
-				$this->load->library('email');
-					$this->email->set_newline("\r\n");
-					$this->email->set_mailtype("html");
-				$this->email->from($post['uemail']);
-				$this->email->to('contact@grfpublishers.org');
-				$this->email->subject('Message - Request');
-				$msg='Name:'.$post['uname'].' '.'<br> Email :'.$post['uemail'].'<br> Message :'.$post['msg'];
-				$this->email->message($msg);
-				$this->email->send();
-					$this->session->set_flashdata('success',"Message successfully sent.");
-						redirect('home');
-					}else{
-						$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");
-						redirect('home');
-					}
-		
-	}
+	
 	
 	
 	

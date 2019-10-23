@@ -346,10 +346,6 @@ $(document).ready(function() {
                 validators: {
 					notEmpty: {
 						message: 'Article Type is required'
-					},
-					regexp: {
-					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'Article Type wont allow <> [] = % '
 					}
 				}
             },
@@ -390,10 +386,6 @@ $(document).ready(function() {
                 validators: {
 					notEmpty: {
 						message: 'Title is required'
-					},
-					regexp: {
-					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'Title wont allow <> [] = % '
 					}
 				}
             },
@@ -401,20 +393,12 @@ $(document).ready(function() {
                 validators: {
 					notEmpty: {
 						message: 'Url is required'
-					},
-					regexp: {
-					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'Url wont allow <> [] = % '
 					}
 				}
             },seo_title: {
                 validators: {
 					notEmpty: {
 						message: 'SEO Title is required'
-					},
-					regexp: {
-					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'SEO Title wont allow <> [] = % '
 					}
 				}
             },
@@ -422,10 +406,6 @@ $(document).ready(function() {
                 validators: {
 					notEmpty: {
 						message: 'SEO Url is required'
-					},
-					regexp: {
-					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'SEO Url wont allow <> [] = % '
 					}
 				}
             },seo_keyword: {

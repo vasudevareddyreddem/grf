@@ -85,16 +85,20 @@ class Journals extends CI_Controller {
 	}
 	public function view()
 	{	
-		$j_id=base64_decode($this->uri->segment(3));
-		$data['journals_details']=$this->Home_model->get_journals_details($j_id);
-//echo '<pre>';print_r($data['journals_details']);exit;
+		$j_u_t=$this->uri->segment(3);
+		$data['journals_details']=$this->Home_model->get_journals_details_wit_url($j_u_t);
+		if(count($data['journals_details'])==0){
+			$this->session->set_flashdata('error',"technical problem will occurred. Please try again.");
+			redirect('journals');
+		}
+		$j_id=$data['journals_details']['j_id'];
 		$header['c_url']=base_url('journals');
 		$header['meta_title']=isset($data['journals_details']['seo_title'])?$data['journals_details']['seo_title']:'';
 		$header['meta_description']=isset($data['journals_details']['seo_description'])?$data['journals_details']['seo_description']:'';
 		$header['meta_keywords']=isset($data['journals_details']['seo_keywords'])?$data['journals_details']['seo_keywords']:'';
 		$header['scroll_data']=$this->Home_model->get_scrolling_content();
 		$this->load->view('html/header',$header);
-		
+		$data['indexing_list']=$this->Home_model->get_indexing_list();
 		$data['scroll_data']=$this->Home_model->get_scrolling_content();
 		$data['article_list']=$this->Home_model->get_journal_wise_article_list($j_id);
 		$data['homapage_banners']=$this->Home_model->get_journal_wise_banners_list($j_id);
@@ -103,9 +107,7 @@ class Journals extends CI_Controller {
 		$data['reviewer_boardmembers']=$this->Home_model->get_reviewer_boardmembers_list($j_id);
 		$data['special_issue']=$this->Home_model->get_latest_special_list($j_id);
 		$data['article_process_fee']=$this->Home_model->get_article_process_fee($j_id);
-		$data['archive_list']=$this->Home_model->get_archive_list($j_id);
-		
-		
+		$data['archive_list']=$this->Home_model->get_archive_list($j_id);	
 		$data['lastest_article']=$this->Home_model->get_lastest_article_list($j_id);
 		//echo '<pre>';print_r($data['reviewer_boardmembers']);exit
 		//echo $data['archive_list'][0]['issues_list'][0]['id'];

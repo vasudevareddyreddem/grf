@@ -199,10 +199,6 @@ $(document).ready(function() {
                validators: {
 					notEmpty: {
 						message: 'First Name is required'
-					},
-					regexp: {
-					regexp: /^[a-zA-Z0-9. ]+$/,
-					message: 'First Name can only consist of alphanumeric, space and dot'
 					}
 				}
             },
@@ -210,10 +206,6 @@ $(document).ready(function() {
                 validators: {
 					notEmpty: {
 						message: 'Last Name is required'
-					},
-					regexp: {
-					regexp: /^[a-zA-Z0-9. ]+$/,
-					message: 'Last Name can only consist of alphanumeric, space and dot'
 					}
 				}
             },
@@ -221,10 +213,6 @@ $(document).ready(function() {
                 validators: {
 					notEmpty: {
 						message: 'University is required'
-					},
-					regexp: {
-					regexp: /^[a-zA-Z0-9. ]+$/,
-					message: 'University can only consist of alphanumeric, space and dot'
 					}
 				}
             },
@@ -259,10 +247,6 @@ $(document).ready(function() {
                 validators: {
 					notEmpty: {
 						message: 'Manuscript Tittle is required'
-					},
-					regexp: {
-					regexp: /^[a-zA-Z0-9. ]+$/,
-					message: 'Manuscript Tittle can only consist of alphanumeric, space and dot'
 					}
 				}
             },
@@ -271,10 +255,6 @@ $(document).ready(function() {
                  validators: {
 					notEmpty: {
 						message: 'Address is required'
-					},
-					regexp: {
-					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'Address wont allow <> [] = % '
 					}
 				
 				}
@@ -283,10 +263,6 @@ $(document).ready(function() {
                  validators: {
 					notEmpty: {
 						message: 'Message is required'
-					},
-					regexp: {
-					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'Message wont allow <> [] = % '
 					}
 				
 				}
@@ -303,10 +279,6 @@ $(document).ready(function() {
                  validators: {
 					notEmpty: {
 						message: 'Abstract is required'
-					},
-					regexp: {
-					regexp:/^[ A-Za-z0-9_@.,/!;:}{@#&`~"\\|^?$*)(_+-]*$/,
-					message:'Abstract wont allow <> [] = % '
 					}
 				
 				}

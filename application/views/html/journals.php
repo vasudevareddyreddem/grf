@@ -63,7 +63,7 @@
 				                        <div class="common-doctor animated fadeInUp clearfix ae-animation-fadeInUp">
 
 					                        <ul class="list-inline social-lists animate">
-												<li><a href="<?php echo base_url('journals/view/'.base64_encode($list['j_id']).'/'.$list['seo_url']); ?>"><i class="fa fa-link" aria-hidden="true"></i> VIEW MORE</a></li>
+												<li><a href="<?php echo base_url('journals/view/'.$list['seo_url']); ?>"><i class="fa fa-link" aria-hidden="true"></i> VIEW MORE</a></li>
 											</ul>
 
 	                                        <figure>

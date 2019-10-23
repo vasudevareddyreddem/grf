@@ -142,8 +142,8 @@
                 numChecked = numChecked + 1;
             }
         }
-		if(numChecked > 5 || numChecked==0){
-			alert('Please select maximum 5 or lessthan 5');
+		if(numChecked > 20 || numChecked==0){
+			alert('Please select maximum 20 or lessthan 20');
 			 document.getElementById("test").disabled = false; 
 			return false;
 			

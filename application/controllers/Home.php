@@ -28,6 +28,7 @@ class Home extends CI_Controller {
 		$data['indexing_list']=$this->Home_model->get_indexing_list();
 		$data['reviewer_boardmembers']=$this->Home_model->get_journal_reviewerboard_list();
 		$data['video_list']=$this->Home_model->get_video_article_list();
+		$data['testimonial_list']=$this->Home_model->get_testimonial_list();
 
 
 		//echo '<pre>';print_r($data);exit;

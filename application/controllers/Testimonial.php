@@ -77,7 +77,7 @@ class Testimonial extends CI_Controller {
 		{
 			$admindetails=$this->session->userdata('userdetails');
 			$post=$this->input->post();
-			//echo '<pre>';print_r($post);exit;
+				//echo '<pre>';print_r($post);exit;
 						if(isset($_FILES['image']['name']) && $_FILES['image']['name']!=''){
 								$temp = explode(".", $_FILES["image"]["name"]);
 								$image = round(microtime(true)) . '.' . end($temp);

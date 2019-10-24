@@ -8,7 +8,6 @@
 		<meta http-equiv="cache-control" content="no-cache" />
 		<meta http-equiv="Pragma" content="no-cache" />
 		<meta http-equiv="Expires" content="-1" />
-<meta name="google-site-verification" content="lqtOTfpdfFRbtDfQHV83_9Z-kC6TCs3y4eXBZkqMdfc" />
         <title><?php echo isset($meta_title)?$meta_title:'GRF Publishers'; ?></title>
         <meta name="description" content="<?php echo isset($meta_description)?$meta_description:"GRF Publishers is a dedicated powerhouse for publishing informative journals in various areas of science, medicine. Peer-reviewed Journals| Medical Journals"; ?>">
 		<meta name="keywords" content="<?php echo isset($meta_keywords)?$meta_keywords:"peer reviewed medical journals, medical articles online, journal of medical informatics, latest medical journal articles, journal of medical research"; ?>">
@@ -18,7 +17,6 @@
         <!-- custom css  -->
         <link href="<?php echo base_url(); ?>assets/vendor/css/style.css" rel="stylesheet" type="text/css" media="screen">
         <link href="<?php echo base_url(); ?>assets/vendor/css/custom.css" rel="stylesheet" type="text/css" media="screen">
-        <link href="<?php echo base_url(); ?>assets/vendor/css/custom1.css" rel="stylesheet" type="text/css" media="screen">
         <!-- font awesome for icons -->
         <link href="<?php echo base_url(); ?>assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
         <link href="<?php echo base_url(); ?>assets/vendor/css/atoz.css" rel="stylesheet" type="text/css">
@@ -42,54 +40,25 @@
 
         <script src="<?php echo base_url(); ?>assets/vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>  
 		<script src="<?php echo base_url(); ?>assets/vendor/js/bootstrapValidator.min.js"></script>	
-	
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140714824-1"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142373704-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-142373704-1');
-</script>
-
-<script type="text/javascript">
-	var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-	(function(){
-	var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-	s1.async=true;
-	s1.src='https://embed.tawk.to/5c8a2577c37db86fcfcdc699/default';
-	s1.charset='UTF-8';
-	s1.setAttribute('crossorigin','*');
-	s0.parentNode.insertBefore(s1,s0);
-	})();
-	</script>
-
-<!--End of Tawk.to Script-->
     </head>
     <body>
         <div class="top-bar hidden-xs bg-dark">
             <div class="container ">
                 <div class=" row border_bootom">
-                    <div class="col-sm-4 hidden-xs">
+                    <div class="col-sm-6 hidden-xs">
                         <span class="top-welcome">Welcome to GRF Publishers</span>
                     </div>
-                    <div class="col-sm-8 hidden-xs">
+                    <div class="col-sm-6 hidden-xs">
                         <ul class="small_menu">
                         <li><a ><i class="fa fa-volume-control-phone font-17" aria-hidden="true"></i> +61 385184040</a></li>                 
-							<li>
-							<a style="color:#fff;" href="tel:61480025852"><i class="fa fa-whatsapp font-17" aria-hidden="true"></i>+61 480 025 852</a>	
-						</li>                       
-					   <li><a ><i class="fa fa-envelope font-17" aria-hidden="true"></i> &nbsp; Contact@grfpublishers.org</a></li>                 
+                        <li><a ><i class="fa fa-envelope font-17" aria-hidden="true"></i> &nbsp; Contact@grfpublishers.org</a></li>                 
                       
                        </ul>
                         <div class="top-social hidden-xs">
                             <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-                            <a href="https://twitter.com/GrfPublishers" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
                             <a href="#" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                            <a href="https://www.linkedin.com/in/grf-publishers-61663b172/"  target="_blank"> <i class="fa fa-linkedin" aria-hidden="true"></i> </a>
+                            <a href="#"> <i class="fa fa-linkedin" aria-hidden="true"></i> </a>
 
                         </div>
                     </div>
@@ -224,74 +193,3 @@ box-shadow: -2px 6px 39px -8px rgba(0,0,0,0.75);
    <?php echo $this->session->flashdata('error');?> &nbsp; <i class="fa fa-exclamation-triangle text-success ico_bac" aria-hidden="true"></i>
 </div>
 <?php endif; ?>
-<div class="icon-bar-left">
-  <a href="<?php echo base_url('manuscript'); ?>"><img src="<?php echo base_url('assets/vendor/img/button_submit.png'); ?>"></a>
-
-</div>
-
-
-<!-- chating  purpose--->
-<div class="container-fluid" style="position: fixed;bottom: 0%;right: 60px;z-index:2000">
-    <div class="row">
-        <div class="pull-right col-md-3">
-            <div class="chat-div" style="z-index:2000;">
-                <div>
-                    <div style="display:none;" class="chat-box" >
-
-                        <div class="direct-chat box  direct-chat-primary" style="z-index: 999;padding:0px; ">
-                        <div  >
-                            <div class=" with-border bg-primary" style="padding:8px 10px;border-radius:5px 5px 0px 0px;">
-                                <strong class="box-title">Leave a message</strong>
-                                <a style="position:absolute;right:15px;top:5px;color:#fff;border:none;font-size:20px"> <i class="fa fa-times-circle pull-right btn-chat-box" aria-hidden="true"></i></a>
-                            </div>
-                            <div style="border:1px solid #337ab7;background:#f9f9f9;">
-                            <div >
-							<div class="text-center img-chat" >
-								<img src="<?php echo base_url(); ?>assets/vendor/img/chat_img_1.jpg">
-							</div>
-
-                            </div>
-							<div style="padding:0px 10px">
-							<span class="">There are no agents available right now to take your call. Please leave a message and we will reply by email.</span>
-
-                            </div>
-                            <div class="box-body">
-								<form id="add_message" name="add_message" action="<?php echo base_url('home/sendmessage'); ?>" method="POST">
-                                <div class="direct-chat-messages">
-
-                                    <div class="form-group mb-0">
-                                        <input type="text" class="form-control mb-0 pb-0" id="uname" name="uname" placeholder="Enter Your Name" required>
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <input type="email" class="form-control pb-0" id="uemail" name="uemail" placeholder="Enter Email Id" required>
-                                    </div>
-									<div class="form-group">
-                                        <textarea type="email" class="form-control pb-0" id="msg" name="msg" placeholder="Enter Message" required></textarea>
-                                    </div>
-									<div class="form-group">
-                                       <div class="col-lg-6 ">
-											<button type="submit" class="btn btn-primary btn-lg" name="signup" value="Sign up">Submit</button>
-										</div>
-                                    </div>
-							</div>
-							</form>
-						</div>
-
-
-                        </div>
-                        </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-   
-
-</div>
-
-	

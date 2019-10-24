@@ -201,6 +201,7 @@
 				<?php if(isset($article_list)&& count($article_list)>0){ ?>
 				
 				<?php foreach($article_list as $list){ ?>
+				<?php if (!in_array($list['a_id'], $artical_issue_list)){ ?>
 				<div class="article">
 					   <div class="row">
 						  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -234,11 +235,11 @@
 									  <div class="get-here">
 										 <ul>
 											<li>
-											   <a href="<?php echo base_url('assets/article_in_press/'.$list['pdf_file']); ?>" target="_blank" class="btn btn-primary " style="font-size:12px;" download> <i class="fa fa-unlock-alt"></i>&nbsp; PDF</a>
+											   <a href="<?php echo base_url('assets/article_in_press/'.$list['pdf_file']); ?>" target="_blank" class="btn btn-primary " style="font-size:12px;"> <i class="fa fa-unlock-alt"></i>&nbsp; PDF</a>
 											</li>
 											<?Php if(isset($list['excel_file']) && $list['excel_file']!=''){ ?>
 											<li>
-											   <a href="<?php echo base_url('assets/article_in_press/'.$list['excel_file']); ?>" target="_blank" class="btn btn-danger " style="font-size:12px;" download><i class="fa fa-file-excel-o" aria-hidden="true"></i>&nbsp; Excel</a>
+											   <a href="<?php echo base_url('assets/article_in_press/'.$list['excel_file']); ?>" target="_blank" class="btn btn-danger " style="font-size:12px;"><i class="fa fa-file-excel-o" aria-hidden="true"></i>&nbsp; Excel</a>
 											</li>
 											<?php } ?>
 											<li>
@@ -257,6 +258,7 @@
 						  </div>
 					   </div>
 					</div>
+				<?php } ?>
 
 				
 				<?php } ?>
@@ -304,11 +306,11 @@
 															  <div class="get-here">
 																 <ul>
 																	<li>
-																	   <a href="<?php echo base_url('assets/article_in_press/'.$list['pdf_file']); ?>" target="_blank" class="btn btn-primary " style="font-size:12px;" download> <i class="fa fa-unlock-alt"></i>&nbsp; PDF</a>
+																	   <a href="<?php echo base_url('assets/article_in_press/'.$list['pdf_file']); ?>" target="_blank" class="btn btn-primary " style="font-size:12px;"> <i class="fa fa-unlock-alt"></i>&nbsp; PDF</a>
 																	</li>
 																	<?Php if(isset($list['excel_file']) && $list['excel_file']!=''){ ?>
 																	<li>
-																	   <a href="<?php echo base_url('assets/article_in_press/'.$list['excel_file']); ?>" target="_blank" class="btn btn-danger " style="font-size:12px;" download><i class="fa fa-file-excel-o" aria-hidden="true"></i>&nbsp; Excel</a>
+																	   <a href="<?php echo base_url('assets/article_in_press/'.$list['excel_file']); ?>" target="_blank" class="btn btn-danger " style="font-size:12px;"><i class="fa fa-file-excel-o" aria-hidden="true"></i>&nbsp; Excel</a>
 																	</li>
 																	<?php } ?>
 																	<li>

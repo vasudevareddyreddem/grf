@@ -311,4 +311,10 @@ public function get_countries_list(){
 		$this->db->where('videoarticle.status',1);		
         return $this->db->get()->result_array();
 	}
+	
+	public  function get_testimonial_list(){
+		$this->db->select('name,professional,image,description')->from('testimonial');
+		$this->db->where('status',1);		
+        return $this->db->get()->result_array();	
+	}
 }

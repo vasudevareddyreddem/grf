@@ -38,7 +38,7 @@
 				<?php foreach($testimonial_list as $list){ ?>
                 <tr>
                   <td><?php echo htmlentities($list['name']); ?></td>
-                  <td><?php echo htmlentities($list['professional']); ?></td>
+                  <td><?php echo ($list['professional']); ?></td>
                   <td><img width="50px" height="50px" src="<?php echo base_url('assets/testimonial/'.$list['image']); ?>">
 				  </td>
 					<td><?php echo date("d-m-Y", strtotime($list['create_at']));?></td>

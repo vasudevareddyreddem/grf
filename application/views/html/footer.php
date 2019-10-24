@@ -29,7 +29,7 @@
 					<div class="col-md-3 col-sm-6 margin30">
                         <h3>Contact Address	</h3>
 						<ul class="list-unstyled">
-						<li><a href="#">GRF Publishers Level 13/114 William Street, Melbourne VIC 3000 Australia</a></li>
+						<li><a href="#">GRF Publishers Level 805/220 Collins Street, Melbourne VIC 3000 Australia</a></li>
 						</ul>
                       
                     </div>

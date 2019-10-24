@@ -40,7 +40,7 @@
 							<div class="form-group">
 								<label class=" control-label">Professional</label>
 								<div class="">
-									<input type="text" class="form-control" name="professional" id="professional" value="<?php echo isset($details['professional'])?$details['professional']:''; ?>" placeholder="Enter Professional" />
+									<textarea  class="form-control" name="professional" id="professional" ><?php echo isset($details['professional'])?$details['professional']:''; ?></textarea>
 								</div>
 							</div>
                         </div>
@@ -91,6 +91,10 @@
   <script type="text/javascript">
    $(function () {
     CKEDITOR.replace('description');
+    $(".textarea").wysihtml5();
+  });
+   $(function () {
+    CKEDITOR.replace('professional');
     $(".textarea").wysihtml5();
   });
 $(document).ready(function() {

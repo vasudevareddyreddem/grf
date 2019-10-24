@@ -45,11 +45,11 @@
 									  <div class="get-here">
 										 <ul>
 											<li>
-											   <a href="<?php echo base_url('assets/article_in_press/'.$list['pdf_file']); ?>" target="_blank" class="btn btn-primary " style="font-size:12px;" download> <i class="fa fa-unlock-alt"></i>&nbsp; PDF</a>
+											   <a href="<?php echo base_url('assets/article_in_press/'.$list['pdf_file']); ?>" target="_blank" class="btn btn-primary " style="font-size:12px;" > <i class="fa fa-unlock-alt"></i>&nbsp; PDF</a>
 											</li>
 											<?Php if(isset($list['excel_file']) && $list['excel_file']!=''){ ?>
 											<li>
-											   <a href="<?php echo base_url('assets/article_in_press/'.$list['excel_file']); ?>" target="_blank" class="btn btn-danger " style="font-size:12px;" download><i class="fa fa-file-excel-o" aria-hidden="true"></i>&nbsp; Excel</a>
+											   <a href="<?php echo base_url('assets/article_in_press/'.$list['excel_file']); ?>" target="_blank" class="btn btn-danger " style="font-size:12px;" ><i class="fa fa-file-excel-o" aria-hidden="true"></i>&nbsp; Excel</a>
 											</li>
 											<?php } ?>
 											<li>

@@ -105,28 +105,7 @@ group with the aim of disseminating information for the betterment of mankind.</
                
             </div>
         </div>
-       <div class="" style="width: 100%;height: 10px;"></div>
-		<?php if(isset($indexing_list) && count($indexing_list)>0){ ?>
-		
-        <div class="container">
-        <h4>Indexed in:</h4>
-         <div class="divide10"></div>
-        <section class="customer-logos slider">
-		<?php foreach($indexing_list as $lis){ ?>
-		<?php if($lis['img_url']!=''){ ?>
-		<a target="_blank" href="http://<?php echo isset($lis['img_url'])?$lis['img_url']:''; ?>"><div class="slide"><img src="<?php echo base_url('assets/indexing/'.$lis['image']); ?>" alt="<?php echo isset($lis['org_img_name'])?$lis['org_img_name']:''; ?>"></div></a>
-		<?php }else{ ?>
-		<div class="slide"><img src="<?php echo base_url('assets/indexing/'.$lis['image']); ?>" alt="<?php echo isset($lis['org_img_name'])?$lis['org_img_name']:''; ?>"></div>
-		<?php } ?>
-				
-		<?php } ?>
-    
- 
-   </section>
-    	
-</div>
- <hr>
-<?php } ?>
+        <div class="divide60"></div>
         <div class="container " >
             <div class="row">
            <div class="col-md-8">
@@ -193,11 +172,11 @@ group with the aim of disseminating information for the betterment of mankind.</
 									  <div class="get-here">
 										 <ul>
 											<li>
-											   <a href="<?php echo base_url('assets/article_in_press/'.$list['pdf_file']); ?>" target="_blank" class="btn btn-primary " style="font-size:12px;" > <i class="fa fa-unlock-alt"></i>&nbsp; PDF</a>
+											   <a href="<?php echo base_url('assets/article_in_press/'.$list['pdf_file']); ?>" target="_blank" class="btn btn-primary " style="font-size:12px;" download> <i class="fa fa-unlock-alt"></i>&nbsp; PDF</a>
 											</li>
 											<?Php if(isset($list['excel_file']) && $list['excel_file']!=''){ ?>
 											<li>
-											   <a href="<?php echo base_url('assets/article_in_press/'.$list['excel_file']); ?>" target="_blank" class="btn btn-danger " style="font-size:12px;"><i class="fa fa-file-excel-o" aria-hidden="true"></i>&nbsp; Excel</a>
+											   <a href="<?php echo base_url('assets/article_in_press/'.$list['excel_file']); ?>" target="_blank" class="btn btn-danger " style="font-size:12px;" download><i class="fa fa-file-excel-o" aria-hidden="true"></i>&nbsp; Excel</a>
 											</li>
 											<?php } ?>
 											<li>
@@ -229,8 +208,6 @@ group with the aim of disseminating information for the betterment of mankind.</
            </div>
 		   <div class="col-md-4 mt20">
    <div class="sidebar side-bar right-sidebar">
-   
-   
       <div class="widget sidebar-newsletter">
          <h3 class="side-title">Latest Updates Scrolling</h3>
          <div class="cp-newsletter-holder" id="pubmed">
@@ -288,37 +265,11 @@ group with the aim of disseminating information for the betterment of mankind.</
       <div class="widget sidebar-featured-post">
          
          
-          <?php if(isset($video_list) && count($video_list)>0){ ?>
-      <div class="widget sidebar-newsletter">
-         <h3 class="side-title">Video Articles</h3>
-         <div class="cp-newsletter-holder" id="">
-		  <div id="myCarousel" class="carousel  " data-ride="carousel"  data-interval="2000">
-                        
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner">
-			<?php $cnt=1;foreach($video_list as $list){ ?>
-				
-				<?php if($cnt==1){ ?>
-				<div class="item active">
-					<video width="100%" height="200" controls="">
-					<source src="<?php echo base_url('assets/videoarticle/'.$list['video']); ?>" type="video/mp4">
-					</video>
-				</div>
-				<?php }else{ ?>
-				
-				<div class="item ">			
-				   <video width="100%" height="200" controls="">
-					<source src="<?php echo base_url('assets/videoarticle/'.$list['video']); ?>" type="video/mp4">
-					</video>
-				</div>
-				<?php } ?>				
-			<?php $cnt++;} ?>
-			</div>
-   		</div>
-            
+         <div class="cp-sidebar-content">
+            <h3 class="side-title">Video Articles</h3>
+            <a href="<?php echo base_url('video-article');?>"><img alt="Video Articles" src="<?php echo base_url(); ?>assets/vendor/img/video-articles.png" width="100%" border="5"></a>
+           
          </div>
-      </div>
-	  <?php } ?>
         
          
       </div>
@@ -379,7 +330,6 @@ group with the aim of disseminating information for the betterment of mankind.</
             
          </div>
       </div>
-	  
       <!-- Facebook End --> 
    </div>
 </div>
@@ -400,108 +350,10 @@ group with the aim of disseminating information for the betterment of mankind.</
 </div>
 
 </div>
-       <?php if(isset($reviewer_boardmembers) && count($reviewer_boardmembers)>0){ ?> 
-		<hr>
-        <div class="container pd">
-        <h4 style=" margin: 0 0 20px;padding-left: 10px;border-left: 5px solid #4caf50">Top Reviewers:</h4>
-         <div class="divide10"></div>
-        <section class="customer-logos slider">
-		<?php foreach($reviewer_boardmembers as $list){ ?>
-		<div class="slide">
-		<?php if($list['image']!=''){ ?>
-				<img style="height:150px;width:auto;" class="img-responsive thumbnail" src="<?php echo base_url('assets/reviewerboard/'.$list['image']); ?>">
-		<?php }else{ ?>
-				<img style="height:150px;width:auto;" class="img-responsive thumbnail" src="<?php echo base_url('assets/vendor/img/board.png'); ?>">
-		<?php } ?>
-		<div>
-			<h5  class="text-center"><?php echo isset($list['name'])?$list['name']:''; ?></h5>
-		</div>
-		</div>
-		<?php } ?>
-		</section>
-    	
-		</div>   
-		<?php } ?>
-         <?php if(isset($testimonial_list) && count($testimonial_list)>0){ ?>
-		 <hr>
-         <section class="testimonial-section2">
-		<div class="row">
-           <div class="container pd">
-			  <h4 style=" margin: 0 0 20px;padding-left: 10px;border-left: 5px solid #4caf50">Testimonial :</h4>
-           </div>
-        </div>
-       <div id="testim" class="testim">
-
-            <div class="wrap">
-
-                <span id="right-arrow" class="arrow right fa fa-chevron-right"></span>
-                <span id="left-arrow" class="arrow left fa fa-chevron-left "></span>
-                <ul id="testim-dots" class="dots">
-				<?php  $cnt=1;foreach($testimonial_list as $li){ ?>
-					<?php if($cnt=1){ ?>
-                    <li class="dot active"></li>
-					<?php }else{ ?>
-                    <li class="dot"></li>
-					<?php } ?>
-				<?php $cnt++;} ?>
-                </ul>
-               <div id="testim-content" class="cont">  
-					<?php  $cnt=1;foreach($testimonial_list as $li){ ?>
-							<?php if($cnt=1){ ?>
-								<div class="active">
-								<div class="row">
-								<?php if($li['image']!=''){ ?>
-									<div class="img col-md-4 text-center" style="text-align:center;padding-left:50px;"><img src="<?php echo base_url('assets/testimonial/'.$li['image']); ?>" alt="">
-									 <div class="h4"><?php echo isset($li['name'])?$li['name']:''; ?></div>
-									 <div style="text-align:center"><?php echo isset($li['professional'])?$li['professional']:''; ?></div>
-									</div>
-								<?php }else{ ?>
-										<div class="img col-md-4 text-center" style="text-align:center;padding-left:50px;"><img  src="<?php echo base_url('assets/vendor/img/board.png'); ?>">
-									 <div class="h4"><?php echo isset($li['name'])?$li['name']:''; ?></div>
-									 <div style="text-align:center"><?php echo isset($li['professional'])?$li['professional']:''; ?></div>
-									</div>
-								<?php } ?>
-									
-									
-									<div class="col-md-8">
-								   
-									<p><?php echo isset($li['description'])?$li['description']:''; ?></p>                    
-									</div>
-								</div>
-								</div>
-							<?php }else{ ?>
-							 <div>
-								<div class="row">
-								<?php if($li['image']!=''){ ?>
-										<div class="img col-md-4 text-center" style="text-align:center;padding-left:50px;"><img src="<?php echo base_url('assets/testimonial/'.$li['image']); ?>" alt="">
-									 <div class="h4"><?php echo isset($li['name'])?$li['name']:''; ?></div>
-									  <div style="text-align:center"><?php echo isset($li['professional'])?$li['professional']:''; ?></div>
-									</div>
-								<?php }else{ ?>
-										<div class="img col-md-4 text-center" style="text-align:center;padding-left:50px;"><img  src="<?php echo base_url('assets/vendor/img/board.png'); ?>">
-									 <div class="h4"><?php echo isset($li['name'])?$li['name']:''; ?></div>
-									  <div style="text-align:center"><?php echo isset($li['professional'])?$li['professional']:''; ?></div>
-									</div>
-								<?php } ?>
-									
-									
-									<div class="col-md-8">
-								   
-									<p><?php echo isset($li['description'])?$li['description']:''; ?></p>                    
-									</div>
-								</div>
-							</div>
-							<?php } ?>
-					
-					<?php $cnt++;} ?>
-   
-
-                </div>
-                 </div>
-            </div>
-<!--         </div> -->
-    </section>
-	<?php } ?>
+        
+         
+         
+         
          <div class="search-filter">
             <div class="container">
                     <div class="row">
@@ -520,117 +372,22 @@ group with the aim of disseminating information for the betterment of mankind.</
                
             </div>
         </div>
-		
-		<script> 
-
-var	testim = document.getElementById("testim"),
-		testimDots = Array.prototype.slice.call(document.getElementById("testim-dots").children),
-    testimContent = Array.prototype.slice.call(document.getElementById("testim-content").children),
-    testimLeftArrow = document.getElementById("left-arrow"),
-    testimRightArrow = document.getElementById("right-arrow"),
-    testimSpeed = 4500,
-    currentSlide = 0,
-    currentActive = 0,
-    testimTimer,
-		touchStartPos,
-		touchEndPos,
-		touchPosDiff,
-		ignoreTouch = 30;
-;
-
-window.onload = function() {
-
-    // Testim Script
-    function playSlide(slide) {
-        for (var k = 0; k < testimDots.length; k++) {
-            testimContent[k].classList.remove("active");
-            testimContent[k].classList.remove("inactive");
-            testimDots[k].classList.remove("active");
-        }
-
-        if (slide < 0) {
-            slide = currentSlide = testimContent.length-1;
-        }
-
-        if (slide > testimContent.length - 1) {
-            slide = currentSlide = 0;
-        }
-
-        if (currentActive != currentSlide) {
-            testimContent[currentActive].classList.add("inactive");            
-        }
-        testimContent[slide].classList.add("active");
-        testimDots[slide].classList.add("active");
-
-        currentActive = currentSlide;
+        <?php if(isset($indexing_list) && count($indexing_list)>0){ ?>
+        <div class="container pd">
+        <h4>Indexed in:</h4>
+         <div class="divide10"></div>
+        <section class="customer-logos slider">
+		<?php foreach($indexing_list as $lis){ ?>
+		<?php if($lis['img_url']!=''){ ?>
+		<a target="_blank" href="http://<?php echo isset($lis['img_url'])?$lis['img_url']:''; ?>"><div class="slide"><img src="<?php echo base_url('assets/indexing/'.$lis['image']); ?>" alt="<?php echo isset($lis['org_img_name'])?$lis['org_img_name']:''; ?>"></div></a>
+		<?php }else{ ?>
+		<div class="slide"><img src="<?php echo base_url('assets/indexing/'.$lis['image']); ?>" alt="<?php echo isset($lis['org_img_name'])?$lis['org_img_name']:''; ?>"></div>
+		<?php } ?>
+				
+		<?php } ?>
     
-        clearTimeout(testimTimer);
-        testimTimer = setTimeout(function() {
-            playSlide(currentSlide += 1);
-        }, testimSpeed)
-    }
-
-    testimLeftArrow.addEventListener("click", function() {
-        playSlide(currentSlide -= 1);
-    })
-
-    testimRightArrow.addEventListener("click", function() {
-        playSlide(currentSlide += 1);
-    })    
-
-    for (var l = 0; l < testimDots.length; l++) {
-        testimDots[l].addEventListener("click", function() {
-            playSlide(currentSlide = testimDots.indexOf(this));
-        })
-    }
-
-    playSlide(currentSlide);
-
-    // keyboard shortcuts
-    document.addEventListener("keyup", function(e) {
-        switch (e.keyCode) {
-            case 37:
-                testimLeftArrow.click();
-                break;
-                
-            case 39:
-                testimRightArrow.click();
-                break;
-
-            case 39:
-                testimRightArrow.click();
-                break;
-
-            default:
-                break;
-        }
-    })
-		
-		testim.addEventListener("touchstart", function(e) {
-				touchStartPos = e.changedTouches[0].clientX;
-		})
-	
-		testim.addEventListener("touchend", function(e) {
-				touchEndPos = e.changedTouches[0].clientX;
-			
-				touchPosDiff = touchStartPos - touchEndPos;
-			
-				console.log(touchPosDiff);
-				console.log(touchStartPos);	
-				console.log(touchEndPos);	
-
-			
-				if (touchPosDiff > 0 + ignoreTouch) {
-						testimLeftArrow.click();
-				} else if (touchPosDiff < 0 - ignoreTouch) {
-						testimRightArrow.click();
-				} else {
-					return;
-				}
-			
-		})
-}
-
-	 
-     </script>   
-        
+ 
+   </section>
+    	
+</div>
+<?php } ?>

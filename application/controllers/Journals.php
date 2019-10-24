@@ -117,7 +117,15 @@ class Journals extends CI_Controller {
 		}else{
 			$data['current_issue_list']=array();
 		}
-		//echo '<pre>';print_r($data['reviewer_boardmembers']);exit;
+		if(isset($data['current_issue_list']) && count($data['current_issue_list'])>0){
+			foreach($data['current_issue_list'] as $is_a_list){
+				$artical_issue_l[]=$is_a_list['a_id'];
+			}
+			$data['artical_issue_list']=$artical_issue_l;
+		}else{
+			$data['artical_issue_list']=array();
+		}
+		//echo '<pre>';print_r($data);exit;
 		//echo '<pre>';print_r($data);exit;
 		$this->load->view('html/journal-details',$data);
 		$this->load->view('html/footer');

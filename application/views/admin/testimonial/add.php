@@ -40,7 +40,7 @@
 							<div class="form-group">
 								<label class=" control-label">Professional</label>
 								<div class="">
-									<input type="text" class="form-control" name="professional" id="professional" value="" placeholder="Enter Professional" />
+									<textarea  class="form-control" name="professional" id="professional" value="" placeholder="Enter Professional" ></textarea>
 								</div>
 							</div>
                         </div>
@@ -92,6 +92,10 @@
    $(function () {
     CKEDITOR.replace('description');
     $(".textarea").wysihtml5();
+  }); 
+  $(function () {
+    CKEDITOR.replace('professional');
+    $(".textarea").wysihtml5();
   });
 $(document).ready(function() {
     $('#addflyer').bootstrapValidator({
@@ -119,9 +123,7 @@ $(document).ready(function() {
 				}
             },image: {
                 validators: {
-					notEmpty: {
-						message: 'image is required'
-					},
+					
 					regexp: {
 					regexp: "(.*?)\.(png|jpeg|jpg|gif)$",
 					message: 'Uploaded file is not a valid. Only png,jpg,jpeg,gif files are allowed'

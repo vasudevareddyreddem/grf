@@ -504,7 +504,19 @@
       </div>
 			</div>
 			<div class="clearfix">&nbsp;</div>
-			
+			<div class="sidebar side-bar right-sidebar" id="article_latest">
+      <div class="widget sidebar-newsletter">
+         <h3 class="side-title">Submit Manuscript</h3>
+         <div class="cp-newsletter-holder" id="pubmed">
+          <p class="card-text" style="text-align:left;border-bottom: none">
+<strong>Journal Impact Factor 1.56<sup>*</sup></strong><br> Submit manuscript at <a href="#" title="Click here"> www.grf.com/submissions/gynecology-obstetrics.html </a> or send as an e-mail attachment to the Editorial Office at <a href="" title="Click here"> obsgyne@emedicinejournals.com </a>
+</p>
+            
+         </div>
+      </div>
+			</div>
+	
+			<div class="clearfix">&nbsp;</div>
 			<div class="sidebar side-bar right-sidebar">
 				<div class="widget sidebar-newsletter">
 				 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">

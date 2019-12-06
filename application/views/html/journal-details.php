@@ -504,17 +504,23 @@
       </div>
 			</div>
 			<div class="clearfix">&nbsp;</div>
+			<?php if(isset($manu_d['m_l_id']) && $manu_d['m_l_id']!=''){ ?>
 			<div class="sidebar side-bar right-sidebar" id="article_latest">
-      <div class="widget sidebar-newsletter" >
-         <h3 class="side-title">Submit Manuscript</h3>
-         <div class="cp-newsletter-holder" id="pubmed" style="background: #4caf50;color:#fff">
-          <p class="card-text" style="text-align:left;border-bottom: none;color:#fff;">
-<strong>Journal Impact Factor 1.56<sup>*</sup></strong><br> Submit manuscript at <a style="color:#ffd658" href="#" title="Click here"> www.grf.com/submissions/gynecology-obstetrics.html </a> or send as an e-mail attachment to the Editorial Office at <a style="color:#ffd658" href="" title="Click here"> obsgyne@emedicinejournals.com </a>
-</p>
-            
-         </div>
-      </div>
+			  <div class="widget sidebar-newsletter" >
+				 <h3 class="side-title">Submit Manuscript</h3>
+				 <div class="cp-newsletter-holder" id="pubmed" style="background: #4caf50;color:#fff">
+				  <p class="card-text" style="text-align:left;border-bottom: none;color:#fff;">
+					<strong><?php echo isset($manu_d['title'])?$manu_d['title']:''; ?><sup>*</sup></strong>
+					<br> <?php echo isset($manu_d['subtitle'])?$manu_d['subtitle']:''; ?>
+					<a style="color:#ffd658" href="<?php echo isset($manu_d['link'])?$manu_d['link']:''; ?>" title="Click here"><?php echo isset($manu_d['link'])?$manu_d['link']:''; ?></a>
+					<?php echo isset($manu_d['text'])?$manu_d['text']:''; ?>
+					<a style="color:#ffd658" href="mail:<?php echo isset($manu_d['email'])?$manu_d['email']:''; ?>" title="Click here"> <?php echo isset($manu_d['email'])?$manu_d['email']:''; ?></a>
+					</p>
+					
+				 </div>
+			  </div>
 			</div>
+			<?php } ?>
 	
 			<div class="clearfix">&nbsp;</div>
 			<div class="sidebar side-bar right-sidebar">

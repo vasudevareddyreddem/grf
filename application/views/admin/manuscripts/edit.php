@@ -3,11 +3,11 @@
 <div class="content-wrapper">
 <section class="content-header">
       <h1>
-        Edit Issue 
+        Edit Manuscript 
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?php echo base_url('dashboard'); ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li class="active">Edit Issue</li>
+        <li class="active">Edit Manuscript</li>
       </ol>
     </section>
    <section class="content">
@@ -17,36 +17,19 @@
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title"> Edit Issue</h3>
+              <h3 class="box-title"> Edit Manuscript</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
 			<div style="padding:20px;">
-            <form id="addflyer" method="post" onsubmit="return checkvalidation();" class="" action="<?php echo base_url('issues/editpost'); ?>" enctype="multipart/form-data">
+            <form id="addflyer" method="post" class="" action="<?php echo base_url('manuscripts/editpost'); ?>" enctype="multipart/form-data">
 					<?php $csrf = array(
 								'name' => $this->security->get_csrf_token_name(),
 								'hash' => $this->security->get_csrf_hash()
 						); ?>
 					<input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
-					<input type="hidden" id="issue_id" name="issue_id" value="<?php echo isset($details['id'])?$details['id']:''; ?>">
+					<input type="hidden" id="m_l_id" name="m_l_id" value="<?php echo isset($details['m_l_id'])?$details['m_l_id']:''; ?>">
 
-					<div class="col-md-6">
-							<div class="form-group">
-								<label class=" control-label">Issue Number</label>
-								<div class="">
-									<input type="text" class="form-control" name="issue_number" value="<?php echo isset($details['number'])?$details['number']:''; ?>" id="issue_number" placeholder="Enter Issue Number" />
-								</div>
-							</div>
-                        </div>
-						
-						<div class="col-md-6">
-							<div class="form-group">
-								<label class=" control-label">Select Image</label>
-								<div class="">
-									<input type="file" class="form-control" name="image" id="image" />
-								</div>
-							</div>
-                        </div>
 						<div class="col-md-6">
 							<div class="form-group">
 								<label class=" control-label">Category</label>
@@ -54,7 +37,7 @@
 									 <select class="form-control" id="category" onchange="get_gournals(this.value);" name="category">
 									  <option value="">Select</option>
 									 <?php foreach($journals_category_list as $list){ ?>
-										 <?php if($details['journal_cat_id']==$list['c_id']){ ?>
+										 <?php if($details['category']==$list['c_id']){ ?>
 											<option selected value="<?php echo $list['c_id']; ?>"><?php echo $list['category']; ?></option>
 										 <?php }else{ ?>
 									 		<option value="<?php echo $list['c_id']; ?>"><?php echo $list['category']; ?></option>
@@ -72,7 +55,7 @@
 									 <select class="form-control" id="journal" name="journal">
 									  <option value="">Select</option>
 									 <?php foreach($journals_list as $list){ ?>
-									 <?php if($details['journal_id']==$list['j_id']){ ?>
+									 <?php if($details['journal']==$list['j_id']){ ?>
 										<option selected value="<?php echo $list['j_id']; ?>"><?php echo $list['title']; ?></option>
 									 <?php }else{ ?>
 									 		<option value="<?php echo $list['j_id']; ?>"><?php echo $list['title']; ?></option>
@@ -84,58 +67,46 @@
 								</div>
 							</div>
                         </div>
-						<div class="col-md-12">
+						<div class="col-md-6">
 							<div class="form-group">
-								<label class=" control-label">Years of article </label>
+								<label class=" control-label">Title</label>
 								<div class="">
-									 <select class="form-control" id="year_of_article" onchange="get_article_list(this.value);" name="year_of_article">
-									  <option value="">Select</option>
-									  <?php
-								  $currently_selected = date('Y'); 
-								  $earliest_year = 1950; 
-								  $latest_year = date('Y');  ?>
-
-									<?php foreach ( range( $latest_year, $earliest_year ) as $i ) { ?>
-									 <?php if($details['year']==$i){ ?>
-											<option selected value="<?php echo $i; ?>"><?php echo $i; ?></option>
-									 <?php }else{ ?>
-										<option value="<?php echo $i; ?>"><?php echo $i; ?></option>
-									 <?php } ?>
-									<?php } ?>
-									</select>
-									
-								
-																	
+									<input type="text" class="form-control" name="title" value="<?php echo isset($details['title'])?$details['title']:''; ?>" id="title" placeholder="Enter Title" />
 								</div>
 							</div>
                         </div>
-					
-						<div class="col-md-6" id="" style="">
+						<div class="col-md-6">
 							<div class="form-group">
-								<label class=" control-label">Archieve List</label>
+								<label class=" control-label">Sub Title</label>
 								<div class="">
-								<span id="" >
-								<?php foreach($details['articles_list'] as $list){ ?>
-								<input  type="checkbox" name="article_ids[]" checked value="<?php echo $list['article_id']; ?>">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $list['title']; ?><br>
-								
-								<?php } ?>
-								</span>
-								<span id="archieve_show">
-								<span id="archieve_list">
-								<?php foreach($remaing_journals as $list){ ?>
-								<input  type="checkbox" name="article_ids[]" value="<?php echo $list['article_id']; ?>">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $list['title']; ?><br>
-								
-								<?php } ?>
-								
-								</span>
-								</span>
+									<input type="text" class="form-control" name="subtitle" value="<?php echo isset($details['subtitle'])?$details['subtitle']:''; ?>" id="subtitle" placeholder="Enter Subtitle" />
 								</div>
 							</div>
                         </div>
-						
-						
-						
-					
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class=" control-label">Link</label>
+								<div class="">
+									<input type="text" class="form-control" name="link" value="<?php echo isset($details['link'])?$details['link']:''; ?>" id="link" placeholder="Enter Link" />
+								</div>
+							</div>
+                        </div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class=" control-label">Text</label>
+								<div class="">
+									<input type="text" class="form-control" name="text"  id="text" value="<?php echo isset($details['text'])?$details['text']:''; ?>" placeholder="Enter Text" />
+								</div>
+							</div>
+                        </div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class=" control-label">Email</label>
+								<div class="">
+									<input type="text" class="form-control" name="email"  id="email" value="<?php echo isset($details['email'])?$details['email']:''; ?>" placeholder="Enter Email" />
+								</div>
+							</div>
+                        </div>
 						<div class="clearfix">&nbsp;</div>
 						  <div class="form-group">
                             <div class="col-lg-4 col-lg-offset-8">

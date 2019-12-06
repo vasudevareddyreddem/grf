@@ -317,4 +317,24 @@ public function get_countries_list(){
 		$this->db->where('status',1);		
         return $this->db->get()->result_array();	
 	}
+	
+	public function get_issues_ids($jid){
+		$this->db->select('id,journal_id')->from('issues');
+		$this->db->where('journal_id',$jid);		
+		$this->db->where('status',1);		
+        return $this->db->get()->result_array();
+	}
+	public function get_issue_article_list($issue_id){
+		$this->db->select('article_id,i_a_id')->from('issue_wise_article_list');
+		$this->db->where_in('i_a_id',$issue_id);		
+		$this->db->where('status',1);		
+        return $this->db->get()->result_array();
+	}
+	
+	public  function get_manuscripts($id){
+		$this->db->select('*')->from('manuscripts_list');
+		$this->db->where('journal',$id);
+		$this->db->where('status',1);
+        return $this->db->get()->row_array();
+	}
 }

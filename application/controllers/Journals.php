@@ -117,16 +117,27 @@ class Journals extends CI_Controller {
 		}else{
 			$data['current_issue_list']=array();
 		}
-		if(isset($data['current_issue_list']) && count($data['current_issue_list'])>0){
-			foreach($data['current_issue_list'] as $is_a_list){
-				$artical_issue_l[]=$is_a_list['a_id'];
+		$issue_ids=$this->Home_model->get_issues_ids($j_id);
+		if(isset($issue_ids) && count($issue_ids)>0){
+			foreach($issue_ids as $is_a_list){
+					$issue_id[]=$is_a_list['id'];
+			}
+			$all_iss_id=$issue_id;
+		}else{
+			$all_iss_id=0;
+		}
+		$issue_article_list=$this->Home_model->get_issue_article_list($all_iss_id);
+		
+		if(isset($issue_article_list) && count($issue_article_list)>0){
+			foreach($issue_article_list as $ali){
+				$artical_issue_l[]=$ali['article_id'];
 			}
 			$data['artical_issue_list']=$artical_issue_l;
 		}else{
 			$data['artical_issue_list']=array();
 		}
-		//echo '<pre>';print_r($data);exit;
-		//echo '<pre>';print_r($data);exit;
+		$data['manu_d']=$this->Home_model->get_manuscripts($j_id);
+		//echo '<pre>';print_r($data['manu_d']);exit;
 		$this->load->view('html/journal-details',$data);
 		$this->load->view('html/footer');
 		

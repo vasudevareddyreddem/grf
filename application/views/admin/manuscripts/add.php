@@ -1,13 +1,11 @@
-
-<?php //echo '<pre>';print_r($remaing_journals);exit; ?>
 <div class="content-wrapper">
 <section class="content-header">
       <h1>
-        Edit Issue 
+        Add Manuscript 
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?php echo base_url('dashboard'); ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li class="active">Edit Issue</li>
+        <li class="active">Add Manuscript</li>
       </ol>
     </section>
    <section class="content">
@@ -17,49 +15,25 @@
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title"> Edit Issue</h3>
+              <h3 class="box-title"> Add Manuscript</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
 			<div style="padding:20px;">
-            <form id="addflyer" method="post" onsubmit="return checkvalidation();" class="" action="<?php echo base_url('issues/editpost'); ?>" enctype="multipart/form-data">
+            <form id="addflyer" method="post"  class="" action="<?php echo base_url('manuscripts/addpost'); ?>" enctype="multipart/form-data">
 					<?php $csrf = array(
 								'name' => $this->security->get_csrf_token_name(),
 								'hash' => $this->security->get_csrf_hash()
 						); ?>
 					<input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
-					<input type="hidden" id="issue_id" name="issue_id" value="<?php echo isset($details['id'])?$details['id']:''; ?>">
-
 					<div class="col-md-6">
-							<div class="form-group">
-								<label class=" control-label">Issue Number</label>
-								<div class="">
-									<input type="text" class="form-control" name="issue_number" value="<?php echo isset($details['number'])?$details['number']:''; ?>" id="issue_number" placeholder="Enter Issue Number" />
-								</div>
-							</div>
-                        </div>
-						
-						<div class="col-md-6">
-							<div class="form-group">
-								<label class=" control-label">Select Image</label>
-								<div class="">
-									<input type="file" class="form-control" name="image" id="image" />
-								</div>
-							</div>
-                        </div>
-						<div class="col-md-6">
 							<div class="form-group">
 								<label class=" control-label">Category</label>
 								<div class="">
 									 <select class="form-control" id="category" onchange="get_gournals(this.value);" name="category">
 									  <option value="">Select</option>
 									 <?php foreach($journals_category_list as $list){ ?>
-										 <?php if($details['journal_cat_id']==$list['c_id']){ ?>
-											<option selected value="<?php echo $list['c_id']; ?>"><?php echo $list['category']; ?></option>
-										 <?php }else{ ?>
-									 		<option value="<?php echo $list['c_id']; ?>"><?php echo $list['category']; ?></option>
-
-											<?php } ?>
+									<option value="<?php echo $list['c_id']; ?>"><?php echo $list['category']; ?></option>
 									<?php } ?>
 									</select>
 								</div>
@@ -72,83 +46,64 @@
 									 <select class="form-control" id="journal" name="journal">
 									  <option value="">Select</option>
 									 <?php foreach($journals_list as $list){ ?>
-									 <?php if($details['journal_id']==$list['j_id']){ ?>
-										<option selected value="<?php echo $list['j_id']; ?>"><?php echo $list['title']; ?></option>
-									 <?php }else{ ?>
-									 		<option value="<?php echo $list['j_id']; ?>"><?php echo $list['title']; ?></option>
-
-									 <?php } ?>
+									 
+									 			<option value="<?php echo $list['j_id']; ?>"><?php echo $list['title']; ?></option>
 
 									<?php } ?>
 									</select>
 								</div>
 							</div>
                         </div>
-						<div class="col-md-12">
+						<div class="col-md-6">
 							<div class="form-group">
-								<label class=" control-label">Years of article </label>
+								<label class=" control-label">Title</label>
 								<div class="">
-									 <select class="form-control" id="year_of_article" onchange="get_article_list(this.value);" name="year_of_article">
-									  <option value="">Select</option>
-									  <?php
-								  $currently_selected = date('Y'); 
-								  $earliest_year = 1950; 
-								  $latest_year = date('Y');  ?>
-
-									<?php foreach ( range( $latest_year, $earliest_year ) as $i ) { ?>
-									 <?php if($details['year']==$i){ ?>
-											<option selected value="<?php echo $i; ?>"><?php echo $i; ?></option>
-									 <?php }else{ ?>
-										<option value="<?php echo $i; ?>"><?php echo $i; ?></option>
-									 <?php } ?>
-									<?php } ?>
-									</select>
-									
-								
-																	
+									<input type="text" class="form-control" name="title" value="" id="title" placeholder="Enter Title" />
 								</div>
 							</div>
                         </div>
-					
-						<div class="col-md-6" id="" style="">
+						<div class="col-md-6">
 							<div class="form-group">
-								<label class=" control-label">Archieve List</label>
+								<label class=" control-label">Sub Title</label>
 								<div class="">
-								<span id="" >
-								<?php foreach($details['articles_list'] as $list){ ?>
-								<input  type="checkbox" name="article_ids[]" checked value="<?php echo $list['article_id']; ?>">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $list['title']; ?><br>
-								
-								<?php } ?>
-								</span>
-								<span id="archieve_show">
-								<span id="archieve_list">
-								<?php foreach($remaing_journals as $list){ ?>
-								<input  type="checkbox" name="article_ids[]" value="<?php echo $list['article_id']; ?>">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $list['title']; ?><br>
-								
-								<?php } ?>
-								
-								</span>
-								</span>
+									<input type="text" class="form-control" name="subtitle" value="" id="subtitle" placeholder="Enter Subtitle" />
 								</div>
 							</div>
                         </div>
-						
-						
-						
-					
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class=" control-label">Link</label>
+								<div class="">
+									<input type="text" class="form-control" name="link" value="" id="link" placeholder="Enter Link" />
+								</div>
+							</div>
+                        </div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class=" control-label">Text</label>
+								<div class="">
+									<input type="text" class="form-control" name="text"  id="text" placeholder="Enter Text" />
+								</div>
+							</div>
+                        </div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class=" control-label">Email</label>
+								<div class="">
+									<input type="text" class="form-control" name="email"  id="email" placeholder="Enter Email" />
+								</div>
+							</div>
+                        </div>					
 						<div class="clearfix">&nbsp;</div>
-						  <div class="form-group">
+						 <div class="form-group">
                             <div class="col-lg-4 col-lg-offset-8">
-                                <button type="submit" id="test" class="btn btn-primary" name="signup" value="Sign up">Update</button>
+                                <button type="submit" id="test"  class="btn btn-primary" name="signup" value="Sign up">Add</button>
 								<a href="<?php echo base_url('dashboard'); ?>" type="submit" class="btn btn-warning" >Cancel</a>
-                                
-                            </div>
-                        </div>
-						
-						
+                             </div>
+                        </div>						
                     </form>
 					<div class="clearfix">&nbsp;</div>
-          </div>
+				</div>
           </div>
           <!-- /.box -->
 
@@ -163,7 +118,6 @@
     </section> 
 </div>
   <script type="text/javascript">
-  
   function checkvalidation(){
 	  var inputList = document.getElementsByTagName("input");
         var numChecked = 0;
@@ -184,8 +138,6 @@
 	 
 	 
   }
-	
-
   function get_article_list(year){
 	 var cat_id=$('#category').val();
 	 var journal_id=$('#journal').val();
@@ -203,7 +155,7 @@
 						$('#archieve_show').show();
    						$('#archieve_list').empty();
    						for(i=0; i<data.list.length; i++) {
-   							$('#archieve_list').append("<input type='checkbox' name='article_ids[]' value="+data.list[i].a_id+">&nbsp;&nbsp;&nbsp;&nbsp;"+data.list[i].title+"<br>");                      
+   							$('#archieve_list').append("<input type='checkbox' name='article_ids[]' value="+data.list[i].a_id+">&nbsp;&nbsp;&nbsp;"+data.list[i].title+"<br>");                      
                          
    						}
    						//console.log(data);return false;
@@ -253,6 +205,9 @@ $(document).ready(function() {
 			
 			image: {
                 validators: {
+					notEmpty: {
+						message: 'Select Image is required'
+					},
 					regexp: {
 					regexp: "(.*?)\.(png|jpg|jpeg|gif)$",
 					message: 'Uploaded file is not a valid. Only png,jpg,jpeg,gif file are allowed'
